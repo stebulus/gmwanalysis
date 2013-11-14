@@ -1,0 +1,94 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">vertiginous</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=130511">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">me to we veil wax vulture vineyard version vest vessel vert vertiginous me opera rest towel valley yard vulture vexed vast verb vest version very vert vertiginous lunkhead revert topiary vacuous yammer witticism vociferous veteran vapid vegan vellum venerated veritable vestibule vertex vessel verve vertical verts vertigo vertices vertiginous luxury roux wield thrice undergo vilify utensil vamoose vehicle viaduct vesicle ventricle verify vertigo vermilion verse vert vertical vertically vertices vertiginous satisfy timid volume under vapid venom viper vestibule verify vertiginous ma rye upward whiten ventilate wattle volley viceroy versatile vibrant vestal vertigo vertebrate vertical verticil verticillate vertiginous lubricious rabbinical truancy valance yeomen winsome vulva venerable voltage vintage verve venerate versatile verse versus vert verts vertiginous myrtle typo wax up urban utter uxorious wad wack vivid vex vacuum verity vestibule vessel vervain verso vertical vertigo vertices vertiginous ma vapid yam would vote vet vat veal very venous veracity vermin verse vertical verve vertigo vertically vertiginous lunitidal reviewer undulate whither vulcanologist vacillate villein venal via veridical veterinarian vestibule vesicle verruca verve vertical vertigo vertiginous lyrics tyro vacillate wurst wacky vexatious vast vermin veteran vesicle verve versatile vertical vertiginous not think wart underwear vastly vulpine voracious verity vim via vertical vex veteran vest vesicle verve vertu vertically vertigo vertiginous humanism nacre suffrage verify worsted wane vortex villain vigilante vexing vestment verily vestiges veronica vestibule vespers vertebrae vertical vertiginous musty test vulture utter vest veal venom vermin vertigo vertical vertiginous marmoset robot unicorn wombat varicose voluptuous verbose vial vestal verse vesicle verve vertical verts vertices vertigo vertiginous media ta vector windlass vocation viable vet vellum venerate vessel verity vertigo vermin vernacular versify vertical vertiginous mu rho uxorious vector withers wasabi vulpine voluble vitiate vex vellum vendetta verify vestry verse vest versify verso vertiginous marginal umbrage yak vascular weevil vulcanism vilify venom victuals vestibule veracity veritas vertigo vermin versus vertical vertices vertiginous how man won one pen road song tree tong van wander very vast vent vertical verse verve vertigo vertiginous ma rabbi wasabi tempest udder venerate vulpine vitiate viaduct veritable vessel vesicle vertical verve vertigo vertiginous lead ring under wide vista vale vestal veer verdant vesicle vertiginous ooze sumptuous volume unholy vestibule varnish vee venomous verisimilitude vegetable very vermilion version vertical verve vertiginous macrame turmeric watchful unpunished vaginismus volatile verso vivid viable vestibular vertigo vertical vertiginous genteel superstructure wasted undulate vector volley virginal velocity victorious vestibule verify vessel vertigo vertiginous ma sac wad ugh vamp vim veer via vest vegetable veldt vend veritas very verse vertical verve vertiginous mac saber vac yabber wad vindicate venerate via veteran verisimilitude vermin vertical verve vertigo vertically vertiginous mile tab verbena zest wyvern vulture voluntary vile vibrate viaduct vest vertu versatile versicle vertical vertigo vertiginous mar tab vie udder vapid very vector vending veracity verisimilitude vernix versed verve vertex vertigo vertical vertiginous meme recluse stickler tranquil wayfarer viaduct umbilical unveil victuals upswell vainglory vehement vendetta vex vermin vertebrae vesper vertigo vertex vertical vertices vertiginous kudos pyre symbiont uvula wrought wacky verve variegated vehement vendetta venture vermouth vertiginous lovers sister verity yak worldview wag vulture vocation vine vexing vetted vestments version vesicle vert verve vertiginous kettle settle vetted unpleasant vaccine ventricle verdant versus vessel vertebra vertiginous ignoble penumbra salubrious wainscoting underfoot vixen upstage vacuous vestry vegetable venial verisimilitude vertigo vermin versal vertical vertiginous musty rigamarole uterus viable vanguard vestiges vegetarian vellum ventilate vertical vesicle verve vervain vertu vertiginous opera tetra unctuous yellow vivid uxorious various venous vial vex vested very veracity vernal verse vertigo versed vert vertebrae vertebrate vertical vertiginous monitor tonic weak unity vole vapid vestige veer velvet venom verge verse vertebra vertigo vertical vertiginous </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 11, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Nick Name</td><td>10</td><td>0:40</td><td title="satisfy-timid-volume-under-vapid-venom-viper-vestibule-verify-vertiginous">Guess history</td></tr>
+<tr><td>2</td><td>namuk</td><td>11</td><td>0:38</td><td title="lead-ring-under-wide-vista-vale-vestal-veer-verdant-vesicle-vertiginous">Guess history</td></tr>
+<tr><td>2</td><td>nightsky</td><td>11</td><td>1:20</td><td title="musty-test-vulture-utter-vest-veal-venom-vermin-vertigo-vertical-vertiginous">Guess history</td></tr>
+<tr><td>2</td><td>postbear</td><td>11</td><td>4:33</td><td title="kettle-settle-vetted-unpleasant-vaccine-ventricle-verdant-versus-vessel-vertebra-vertiginous">Guess history</td></tr>
+<tr><td>5</td><td>john plaut</td><td>12</td><td>5:00</td><td title="me-to-we-veil-wax-vulture-vineyard-version-vest-vessel-vert-vertiginous">Guess history</td></tr>
+<tr><td>6</td><td>Katherine</td><td>13</td><td>1:38</td><td title="macrame-turmeric-watchful-unpunished-vaginismus-volatile-verso-vivid-viable-vestibular-vertigo-vertical-vertiginous">Guess history</td></tr>
+<tr><td>6</td><td>Merri H</td><td>13</td><td>4:08</td><td title="kudos-pyre-symbiont-uvula-wrought-wacky-verve-variegated-vehement-vendetta-venture-vermouth-vertiginous">Guess history</td></tr>
+<tr><td>8</td><td>GFMorris</td><td>14</td><td>1:45</td><td title="genteel-superstructure-wasted-undulate-vector-volley-virginal-velocity-victorious-vestibule-verify-vessel-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>8</td><td>Supervenient Man</td><td>14</td><td>3:15</td><td title="lyrics-tyro-vacillate-wurst-wacky-vexatious-vast-vermin-veteran-vesicle-verve-versatile-vertical-vertiginous">Guess history</td></tr>
+<tr><td>10</td><td>chilean</td><td>15</td><td>3:29</td><td title="me-opera-rest-towel-valley-yard-vulture-vexed-vast-verb-vest-version-very-vert-vertiginous">Guess history</td></tr>
+<tr><td>10</td><td>LM</td><td>15</td><td>7:06</td><td title="musty-rigamarole-uterus-viable-vanguard-vestiges-vegetarian-vellum-ventilate-vertical-vesicle-verve-vervain-vertu-vertiginous">Guess history</td></tr>
+<tr><td>12</td><td>Norma</td><td>16</td><td>2:27</td><td title="mac-saber-vac-yabber-wad-vindicate-venerate-via-veteran-verisimilitude-vermin-vertical-verve-vertigo-vertically-vertiginous">Guess history</td></tr>
+<tr><td>12</td><td>karph54</td><td>16</td><td>2:44</td><td title="ma-rabbi-wasabi-tempest-udder-venerate-vulpine-vitiate-viaduct-veritable-vessel-vesicle-vertical-verve-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>12</td><td>bean</td><td>16</td><td>3:15</td><td title="ooze-sumptuous-volume-unholy-vestibule-varnish-vee-venomous-verisimilitude-vegetable-very-vermilion-version-vertical-verve-vertiginous">Guess history</td></tr>
+<tr><td>12</td><td>Marika</td><td>16</td><td>3:49</td><td title="monitor-tonic-weak-unity-vole-vapid-vestige-veer-velvet-venom-verge-verse-vertebra-vertigo-vertical-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>SML</td><td>17</td><td>1:44</td><td title="mar-tab-vie-udder-vapid-very-vector-vending-veracity-verisimilitude-vernix-versed-verve-vertex-vertigo-vertical-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>Barbara M</td><td>17</td><td>2:15</td><td title="mile-tab-verbena-zest-wyvern-vulture-voluntary-vile-vibrate-viaduct-vest-vertu-versatile-versicle-vertical-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>bird internet</td><td>17</td><td>2:54</td><td title="media-ta-vector-windlass-vocation-viable-vet-vellum-venerate-vessel-verity-vertigo-vermin-vernacular-versify-vertical-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>Orinda</td><td>17</td><td>2:59</td><td title="lovers-sister-verity-yak-worldview-wag-vulture-vocation-vine-vexing-vetted-vestments-version-vesicle-vert-verve-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>mike b</td><td>17</td><td>3:15</td><td title="ma-rye-upward-whiten-ventilate-wattle-volley-viceroy-versatile-vibrant-vestal-vertigo-vertebrate-vertical-verticil-verticillate-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>Mr. Mitten</td><td>17</td><td>3:24</td><td title="ignoble-penumbra-salubrious-wainscoting-underfoot-vixen-upstage-vacuous-vestry-vegetable-venial-verisimilitude-vertigo-vermin-versal-vertical-vertiginous">Guess history</td></tr>
+<tr><td>16</td><td>Kaya</td><td>17</td><td>7:49</td><td title="marmoset-robot-unicorn-wombat-varicose-voluptuous-verbose-vial-vestal-verse-vesicle-verve-vertical-verts-vertices-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>23</td><td>Jml</td><td>18</td><td>2:59</td><td title="ma-sac-wad-ugh-vamp-vim-veer-via-vest-vegetable-veldt-vend-veritas-very-verse-vertical-verve-vertiginous">Guess history</td></tr>
+<tr><td>23</td><td>sjt</td><td>18</td><td>3:34</td><td title="lunitidal-reviewer-undulate-whither-vulcanologist-vacillate-villein-venal-via-veridical-veterinarian-vestibule-vesicle-verruca-verve-vertical-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>23</td><td>kimmy</td><td>18</td><td>3:45</td><td title="ma-vapid-yam-would-vote-vet-vat-veal-very-venous-veracity-vermin-verse-vertical-verve-vertigo-vertically-vertiginous">Guess history</td></tr>
+<tr><td>23</td><td>seamus</td><td>18</td><td>6:22</td><td title="marginal-umbrage-yak-vascular-weevil-vulcanism-vilify-venom-victuals-vestibule-veracity-veritas-vertigo-vermin-versus-vertical-vertices-vertiginous">Guess history</td></tr>
+<tr><td>23</td><td>Andy</td><td>18</td><td>8:31</td><td title="lubricious-rabbinical-truancy-valance-yeomen-winsome-vulva-venerable-voltage-vintage-verve-venerate-versatile-verse-versus-vert-verts-vertiginous">Guess history</td></tr>
+<tr><td>28</td><td>Nancy R</td><td>19</td><td>1:43</td><td title="mu-rho-uxorious-vector-withers-wasabi-vulpine-voluble-vitiate-vex-vellum-vendetta-verify-vestry-verse-vest-versify-verso-vertiginous">Guess history</td></tr>
+<tr><td>28</td><td>benton</td><td>19</td><td>4:34</td><td title="humanism-nacre-suffrage-verify-worsted-wane-vortex-villain-vigilante-vexing-vestment-verily-vestiges-veronica-vestibule-vespers-vertebrae-vertical-vertiginous">Guess history</td></tr>
+<tr><td>28</td><td>clemanda</td><td>19</td><td>7:58</td><td title="how-man-won-one-pen-road-song-tree-tong-van-wander-very-vast-vent-vertical-verse-verve-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>31</td><td>moo</td><td>20</td><td>4:15</td><td title="not-think-wart-underwear-vastly-vulpine-voracious-verity-vim-via-vertical-vex-veteran-vest-vesicle-verve-vertu-vertically-vertigo-vertiginous">Guess history</td></tr>
+<tr><td>32</td><td>mean old elaine SHEESH</td><td>21</td><td>2:31</td><td title="myrtle-typo-wax-up-urban-utter-uxorious-wad-wack-vivid-vex-vacuum-verity-vestibule-vessel-vervain-verso-vertical-vertigo-vertices-vertiginous">Guess history</td></tr>
+<tr><td>32</td><td>Jon88</td><td>21</td><td>2:55</td><td title="luxury-roux-wield-thrice-undergo-vilify-utensil-vamoose-vehicle-viaduct-vesicle-ventricle-verify-vertigo-vermilion-verse-vert-vertical-vertically-vertices-vertiginous">Guess history</td></tr>
+<tr><td>34</td><td>===</td><td>22</td><td>4:00</td><td title="lunkhead-revert-topiary-vacuous-yammer-witticism-vociferous-veteran-vapid-vegan-vellum-venerated-veritable-vestibule-vertex-vessel-verve-vertical-verts-vertigo-vertices-vertiginous">Guess history</td></tr>
+<tr><td>34</td><td>chopperfoul</td><td>22</td><td>5:25</td><td title="meme-recluse-stickler-tranquil-wayfarer-viaduct-umbilical-unveil-victuals-upswell-vainglory-vehement-vendetta-vex-vermin-vertebrae-vesper-vertigo-vertex-vertical-vertices-vertiginous">Guess history</td></tr>
+<tr><td>34</td><td>gwynn-jenn</td><td>22</td><td>9:36</td><td title="opera-tetra-unctuous-yellow-vivid-uxorious-various-venous-vial-vex-vested-very-veracity-vernal-verse-vertigo-versed-vert-vertebrae-vertebrate-vertical-vertiginous">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

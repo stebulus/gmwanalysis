@@ -1,0 +1,90 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">backscatter</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120802">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">jambalaya dromedary bumblebee barbaric anoint aviary babble ballistic bagpipes bacchanal baffle badminton backwards back backpack backstop backpedal backroom backseat backsaw backscatter muleteer culotte azimuth brusque bezique babble befit bastinado baguette badinage baccalaureate bacteria bacon back backstroke backhand backhanded backing backlight backpack backpacking backseat backrest backroom backsaw backscatter piccolo guitar clapboard bongo artistry banal aubergine axis babble bah baddie backache bacon backgammon backside backpack backs backseat backscatter ma fab cab baby botulism bituminous befuddle bay bandage bag badinage backlash ballyhoo bacchanal backslap backpack backrest backseat backroom backs backscatter lysine flippant celebrate azure bonobo banal babe bale bade back backup backing backstop backpack backrest backseat backs backscatter mistletoe hickory dendrite buster anodyne axolotl bilious beatify bagatelle baccarat baffle badminton bacteria backward bachelor back backless backslide backlog backpedal backscatter lethargic cudgel abattoir bastion azure baffle backgammon bad backlash bacterial backslash backpack backscatter grunt burnish argumentative bedew banal atrophy avifauna azimuth bacchanal bafflegab badminton backtrack bachelor backbone background backpedal backs backspin backspace backslide backseat backsaw backscatter ma fa cad awkward bingo bamboo backbone ballad baggage backwash backpack backspace backroom backseat backsaw backscatter ma fa cab back brioche black beach bask balm baffle badminton bad bacon backup backer backing backlit backpedal backs backstabbing backseat backscatter macrame fruit canary baby bubble bottleneck beatific bauble baklava baffle bail badger bacon bacillus bacitracin baclofen backbiting backward backlit backpack backseat backrest backroom backs backsaw backscatter ma fab cab babe bowdlerize bitumen be band bag bad back backwards background backscatter strait languish drier briar azure behave banal babble baggage backgammon baffle badminton backward backhoe backpack backspace backpedal backseat backrest backroom backscatter ma fab cab babe blab bialy beach ban bail bad back bacon backstab backing backpack backrest backseat backsaw backscatter hover daunting bellow aspire baritone bacterial awe aye babbling baccarat back backpedal bacon backward backs backtrack backstreets backstage backslide backseat backscatter qi fab azure cello boron bellows bagpipe babble baffle badger backdraft bacteria backgammon backpack backstab backs backsplash backslide backseat backscatter ma far car bar am at aye back bale bag bad bacteria bacon background backup backroom backs backstreet backside backseat backscatter lipid fealty cerulean axiom bravado bevel battery bailiff backlit baffle baculum bacteria backroom backward backstroke backslide backseat backscatter opus jaguar friendship catalyst absolute beautiful basket aye azure bacon babble baby backhoe backslap backrest backrush backseat backsaw backscatter iambic cadmium bellicose barista amphitheater auditory babble bankrupt baggage badminton backgammon badass bacteria bacon backtrack backpack backstabber backseat backrest backsaw backscatter harmonica bed aye ba bead bat ban bad bacon baby backer backrest backseat backs backsaw backscatter me do bee axe bat back bad backlist backyard backscatter me do bee axe bat back backyard backwards backroom backseat backscatter paucity feckless cistern beckon aviary bastion badger awestruck axiom babble backhanded bacteria backslide backpack backpedal backrest backseat backs backsaw backscatter mold bold aye babe bib bee bay banter baffle baccarat badass bachelor bacteria back backgammon backhoe bacon baklava backup backrest backstage backside backsaw backseat backscatter nabob flummox cabriole ba bereaved barbaric bamboozle baffle baccalaureate badminton bacteria backgammon backwood backpack backslide backrest backslap backseat backsaw backscatter nary glorious clammer bleak azure beatific bagpipes backboard baffling bacterial backyard backgammon backpack backslide backscatter race mace grace delay brace average borrow bear band azimuth backing bagging baffled badland baculum bacon backwoods backstreet backpack backsplash backpedal backrest backseat backsaw backscatter mulch gulch dull canoe bilge anodyne ballad atavistic aye babble baggage bad back bacteria bacon backstroke backlash backpack backs backset backseat backscatter livid farce catatonic barrage averse bacteria aye baby babysitting baccarat backpedal backyard backstreet backslap backroom backscatter map gap dap bad ark ax azo back backwards backward backed backless backpedal backs backscatter backscatter </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Aug 2, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>   Vince  sandal </td><td>1</td><td>0:00</td><td title="backscatter">Guess history</td></tr>
+<tr><td>2</td><td>john plaut</td><td>10</td><td>2:32</td><td title="me-do-bee-axe-bat-back-bad-backlist-backyard-backscatter">Guess history</td></tr>
+<tr><td>3</td><td>chilean</td><td>11</td><td>9:13</td><td title="me-do-bee-axe-bat-back-backyard-backwards-backroom-backseat-backscatter">Guess history</td></tr>
+<tr><td>4</td><td>MCatherine</td><td>13</td><td>3:46</td><td title="lethargic-cudgel-abattoir-bastion-azure-baffle-backgammon-bad-backlash-bacterial-backslash-backpack-backscatter">Guess history</td></tr>
+<tr><td>5</td><td>Rich</td><td>14</td><td>1:33</td><td title="ma-fab-cab-babe-bowdlerize-bitumen-be-band-bag-bad-back-backwards-background-backscatter">Guess history</td></tr>
+<tr><td>6</td><td>CY</td><td>15</td><td>2:48</td><td title="map-gap-dap-bad-ark-ax-azo-back-backwards-backward-backed-backless-backpedal-backs-backscatter">Guess history</td></tr>
+<tr><td>6</td><td>ngtwng</td><td>15</td><td>2:50</td><td title="nary-glorious-clammer-bleak-azure-beatific-bagpipes-backboard-baffling-bacterial-backyard-backgammon-backpack-backslide-backscatter">Guess history</td></tr>
+<tr><td>8</td><td>mike b</td><td>16</td><td>2:46</td><td title="ma-fa-cad-awkward-bingo-bamboo-backbone-ballad-baggage-backwash-backpack-backspace-backroom-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>8</td><td>Joel Browning</td><td>16</td><td>3:19</td><td title="livid-farce-catatonic-barrage-averse-bacteria-aye-baby-babysitting-baccarat-backpedal-backyard-backstreet-backslap-backroom-backscatter">Guess history</td></tr>
+<tr><td>8</td><td>nrm</td><td>16</td><td>3:42</td><td title="harmonica-bed-aye-ba-bead-bat-ban-bad-bacon-baby-backer-backrest-backseat-backs-backsaw-backscatter">Guess history</td></tr>
+<tr><td>11</td><td>Billy</td><td>18</td><td>6:39</td><td title="lipid-fealty-cerulean-axiom-bravado-bevel-battery-bailiff-backlit-baffle-baculum-bacteria-backroom-backward-backstroke-backslide-backseat-backscatter">Guess history</td></tr>
+<tr><td>11</td><td>jkingdon</td><td>18</td><td>7:50</td><td title="lysine-flippant-celebrate-azure-bonobo-banal-babe-bale-bade-back-backup-backing-backstop-backpack-backrest-backseat-backs-backscatter">Guess history</td></tr>
+<tr><td>13</td><td>AmesGames</td><td>19</td><td>3:16</td><td title="ma-fab-cab-babe-blab-bialy-beach-ban-bail-bad-back-bacon-backstab-backing-backpack-backrest-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>13</td><td>Ertchin</td><td>19</td><td>4:51</td><td title="piccolo-guitar-clapboard-bongo-artistry-banal-aubergine-axis-babble-bah-baddie-backache-bacon-backgammon-backside-backpack-backs-backseat-backscatter">Guess history</td></tr>
+<tr><td>13</td><td>callie</td><td>19</td><td>5:47</td><td title="opus-jaguar-friendship-catalyst-absolute-beautiful-basket-aye-azure-bacon-babble-baby-backhoe-backslap-backrest-backrush-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>16</td><td>DaveK</td><td>20</td><td>3:38</td><td title="qi-fab-azure-cello-boron-bellows-bagpipe-babble-baffle-badger-backdraft-bacteria-backgammon-backpack-backstab-backs-backsplash-backslide-backseat-backscatter">Guess history</td></tr>
+<tr><td>16</td><td>Shoe</td><td>20</td><td>5:30</td><td title="paucity-feckless-cistern-beckon-aviary-bastion-badger-awestruck-axiom-babble-backhanded-bacteria-backslide-backpack-backpedal-backrest-backseat-backs-backsaw-backscatter">Guess history</td></tr>
+<tr><td>16</td><td>Neville's Mom</td><td>20</td><td>6:04</td><td title="nabob-flummox-cabriole-ba-bereaved-barbaric-bamboozle-baffle-baccalaureate-badminton-bacteria-backgammon-backwood-backpack-backslide-backrest-backslap-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>arg karph54</td><td>21</td><td>3:45</td><td title="ma-fab-cab-baby-botulism-bituminous-befuddle-bay-bandage-bag-badinage-backlash-ballyhoo-bacchanal-backslap-backpack-backrest-backseat-backroom-backs-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>SDW (argh!)</td><td>21</td><td>4:11</td><td title="iambic-cadmium-bellicose-barista-amphitheater-auditory-babble-bankrupt-baggage-badminton-backgammon-badass-bacteria-bacon-backtrack-backpack-backstabber-backseat-backrest-backsaw-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>Cat</td><td>21</td><td>4:34</td><td title="jambalaya-dromedary-bumblebee-barbaric-anoint-aviary-babble-ballistic-bagpipes-bacchanal-baffle-badminton-backwards-back-backpack-backstop-backpedal-backroom-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>h</td><td>21</td><td>5:52</td><td title="ma-far-car-bar-am-at-aye-back-bale-bag-bad-bacteria-bacon-background-backup-backroom-backs-backstreet-backside-backseat-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>Beaglemom</td><td>21</td><td>6:10</td><td title="strait-languish-drier-briar-azure-behave-banal-babble-baggage-backgammon-baffle-badminton-backward-backhoe-backpack-backspace-backpedal-backseat-backrest-backroom-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>Ric Q</td><td>21</td><td>7:12</td><td title="mistletoe-hickory-dendrite-buster-anodyne-axolotl-bilious-beatify-bagatelle-baccarat-baffle-badminton-bacteria-backward-bachelor-back-backless-backslide-backlog-backpedal-backscatter">Guess history</td></tr>
+<tr><td>19</td><td>Sophie URL</td><td>21</td><td>46:01</td><td title="hover-daunting-bellow-aspire-baritone-bacterial-awe-aye-babbling-baccarat-back-backpedal-bacon-backward-backs-backtrack-backstreets-backstage-backslide-backseat-backscatter">Guess history</td></tr>
+<tr><td>26</td><td>SML</td><td>22</td><td>3:08</td><td title="ma-fa-cab-back-brioche-black-beach-bask-balm-baffle-badminton-bad-bacon-backup-backer-backing-backlit-backpedal-backs-backstabbing-backseat-backscatter">Guess history</td></tr>
+<tr><td>26</td><td>Moose</td><td>22</td><td>5:18</td><td title="mulch-gulch-dull-canoe-bilge-anodyne-ballad-atavistic-aye-babble-baggage-bad-back-bacteria-bacon-backstroke-backlash-backpack-backs-backset-backseat-backscatter">Guess history</td></tr>
+<tr><td>28</td><td>joon</td><td>23</td><td>4:09</td><td title="grunt-burnish-argumentative-bedew-banal-atrophy-avifauna-azimuth-bacchanal-bafflegab-badminton-backtrack-bachelor-backbone-background-backpedal-backs-backspin-backspace-backslide-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>29</td><td>Norma</td><td>25</td><td>5:27</td><td title="mold-bold-aye-babe-bib-bee-bay-banter-baffle-baccarat-badass-bachelor-bacteria-back-backgammon-backhoe-bacon-baklava-backup-backrest-backstage-backside-backsaw-backseat-backscatter">Guess history</td></tr>
+<tr><td>29</td><td>Rogersr</td><td>25</td><td>10:33</td><td title="race-mace-grace-delay-brace-average-borrow-bear-band-azimuth-backing-bagging-baffled-badland-baculum-bacon-backwoods-backstreet-backpack-backsplash-backpedal-backrest-backseat-backsaw-backscatter">Guess history</td></tr>
+<tr><td>31</td><td>thanks RH2</td><td>26</td><td>3:39</td><td title="muleteer-culotte-azimuth-brusque-bezique-babble-befit-bastinado-baguette-badinage-baccalaureate-bacteria-bacon-back-backstroke-backhand-backhanded-backing-backlight-backpack-backpacking-backseat-backrest-backroom-backsaw-backscatter">Guess history</td></tr>
+<tr><td>31</td><td>Katherine</td><td>26</td><td>4:24</td><td title="macrame-fruit-canary-baby-bubble-bottleneck-beatific-bauble-baklava-baffle-bail-badger-bacon-bacillus-bacitracin-baclofen-backbiting-backward-backlit-backpack-backseat-backrest-backroom-backs-backsaw-backscatter">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

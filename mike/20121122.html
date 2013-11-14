@@ -1,0 +1,87 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">posset</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=121122">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">ma sack oak rabbit pablum pundit pilfer practice pocket ponderous potash porridge posthaste position posole possession postage possum possessive possible posset mush tyranny punish oak pabulum phylum pluck praxis pomelo possibility porous portion posh posse possession possessive possessor posset mountain sum pallet rabbit punt pest plod poorly praise pour portly potter pot posses possessive posthumous posts post possum possible possessor posset jambalaya tapir ocelot rhubarb pangolin putrid polenta providence potentate pomegranate popular posterior porridge pose posh positive possum possible posse possess possessed posset poor tour sour rare quaint preserve pram posture popular porridge pose position possum possess possible possessive possibility possessor posset effortless idyllic priory obscure pablum photon polyp pots porridge postmark postal positive possessive possum possible possibility posset nabob ragamuffin pusillanimous ossify pacific pinniped posthumous plantain pockmarked pommel popcorn portly posh possess postcard possible possession possessive posset kerchief pa underwrite shindig rampart qi plywood princess potholder pomace possum poplin portage portrait posada posse posset live pass tab rabbit qaid pill praise poll power pontiff port post positive positron possess possessive possible posset macabre swarthy put nut otter penchant pithy portend prose pregnant practise potato posthaste positivity posse possible possession possibility possessive possessory posset limit rabbit opine quell pressure pacify pill porous praline poverty pour positive potential potato posture possible posh posse possibility possess possessed possesses posset myrtle typo ox rye pye perquisite pix pox ply pneumonia poach pomade pot posset ma rabid oast pabulum quack pry ply pool preach powwow pout pouch post porpoise pose positive possible posse possession possessive possibility possets possessor posset ma ubiquitous qat oasis pa pneumonia pub poach pragmatic pom pouch poo pop port positive pot post possible posole posology possession possibility possessive posset woo mammoth stop quotient ontology quack play prosaic pneumatic pox pneumonia pollen porpoise pout posture possibility posh posing poi posit positive posse possessions possessive possessiveness posset moose papoose sluice ruse raspberry quorum puce prawn pickle portly pout posterior poser posh postage posse possum possible possession posset mussels thanksgiving pleasure restorative quince pustule privy potato pneumatic pocket pole porridge posterity portable pose posh posit possible posole possession posset minstrel tornado pristine quizzical nougat opposition pungent overland painkiller pillbox pounce place pneumonia poblano poise pollster pomegranate poodle popcorn porcini postulate portable poser posh position possible posse possibility posses possessive posset man rust pike queen pull poll public power post pop port possible ports posable posh posit posse posset ma sat oast quare pa pin pome pun prince practice portrait pot positive posole possible posse possess possession posset merchant valor oblong quinine pomegranate quail quagmire praline positive poverty potato potash postal positron postage possum possible posse possess possessive posset repurpose frenzy loony oligopoly preempt patisserie planar poseur powwow potpourri potlatch posthaste postdoc postdate posse possum possess possible possessor posset lungs revision ocher pseudonym patriarch philately plywood poverty poach pomade pop possum porcine porpoise posh positive possessed possessive possessiveness possibility posset macrame turmeric quick oasis pablum poach puberty proud pretty porch pratfall potato possible portico posh positive posse possibility possess possessive possessor posset iambic thankful libation piano rutabaga pyrrhic poetry priceless polecat potato porterhouse posterior portico posh positron possession possible possibility possessive possessiveness posset miniscule stratified proper niggardly ovulate partition piss posh preconceived prance pottery pot postmark posterity postal positron posit possessive possum posset testosterone demand locate nothing ranger perfect quiet purr ping pong potable poo poor portable positive posture posset puzzle muzzle nuzzle pabulum potentate portend positive possible possess posset libertine residual nuance prosaic palfrey platter poltergeist preamble pouty poodle postulate porcine porridge posh posse posthaste postage possible possessive possessor possibility posset </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Nov 22, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>LindaBee</td><td>10</td><td>0:41</td><td title="puzzle-muzzle-nuzzle-pabulum-potentate-portend-positive-possible-possess-posset">Guess history</td></tr>
+<tr><td>2</td><td>mean old elaine</td><td>14</td><td>0:49</td><td title="myrtle-typo-ox-rye-pye-perquisite-pix-pox-ply-pneumonia-poach-pomade-pot-posset">Guess history</td></tr>
+<tr><td>3</td><td>mike b</td><td>17</td><td>3:04</td><td title="kerchief-pa-underwrite-shindig-rampart-qi-plywood-princess-potholder-pomace-possum-poplin-portage-portrait-posada-posse-posset">Guess history</td></tr>
+<tr><td>3</td><td>gungadin</td><td>17</td><td>3:39</td><td title="testosterone-demand-locate-nothing-ranger-perfect-quiet-purr-ping-pong-potable-poo-poor-portable-positive-posture-posset">Guess history</td></tr>
+<tr><td>3</td><td>Drew</td><td>17</td><td>6:50</td><td title="effortless-idyllic-priory-obscure-pablum-photon-polyp-pots-porridge-postmark-postal-positive-possessive-possum-possible-possibility-posset">Guess history</td></tr>
+<tr><td>6</td><td>Nka</td><td>18</td><td>3:05</td><td title="man-rust-pike-queen-pull-poll-public-power-post-pop-port-possible-ports-posable-posh-posit-posse-posset">Guess history</td></tr>
+<tr><td>6</td><td>Jon88</td><td>18</td><td>3:11</td><td title="mush-tyranny-punish-oak-pabulum-phylum-pluck-praxis-pomelo-possibility-porous-portion-posh-posse-possession-possessive-possessor-posset">Guess history</td></tr>
+<tr><td>6</td><td>kp not in rehab</td><td>18</td><td>5:27</td><td title="live-pass-tab-rabbit-qaid-pill-praise-poll-power-pontiff-port-post-positive-positron-possess-possessive-possible-posset">Guess history</td></tr>
+<tr><td>9</td><td>Nick Name</td><td>19</td><td>2:50</td><td title="poor-tour-sour-rare-quaint-preserve-pram-posture-popular-porridge-pose-position-possum-possess-possible-possessive-possibility-possessor-posset">Guess history</td></tr>
+<tr><td>9</td><td>Lane</td><td>19</td><td>3:31</td><td title="nabob-ragamuffin-pusillanimous-ossify-pacific-pinniped-posthumous-plantain-pockmarked-pommel-popcorn-portly-posh-possess-postcard-possible-possession-possessive-posset">Guess history</td></tr>
+<tr><td>9</td><td>pvh</td><td>19</td><td>3:53</td><td title="ma-sat-oast-quare-pa-pin-pome-pun-prince-practice-portrait-pot-positive-posole-possible-posse-possess-possession-posset">Guess history</td></tr>
+<tr><td>12</td><td>jrock</td><td>20</td><td>1:30</td><td title="moose-papoose-sluice-ruse-raspberry-quorum-puce-prawn-pickle-portly-pout-posterior-poser-posh-postage-posse-possum-possible-possession-posset">Guess history</td></tr>
+<tr><td>12</td><td>Joel Browning</td><td>20</td><td>2:38</td><td title="miniscule-stratified-proper-niggardly-ovulate-partition-piss-posh-preconceived-prance-pottery-pot-postmark-posterity-postal-positron-posit-possessive-possum-posset">Guess history</td></tr>
+<tr><td>12</td><td>chopperfoul</td><td>20</td><td>4:26</td><td title="repurpose-frenzy-loony-oligopoly-preempt-patisserie-planar-poseur-powwow-potpourri-potlatch-posthaste-postdoc-postdate-posse-possum-possess-possible-possessor-posset">Guess history</td></tr>
+<tr><td>15</td><td>Ab</td><td>21</td><td>1:53</td><td title="mussels-thanksgiving-pleasure-restorative-quince-pustule-privy-potato-pneumatic-pocket-pole-porridge-posterity-portable-pose-posh-posit-possible-posole-possession-posset">Guess history</td></tr>
+<tr><td>15</td><td>Tyler M</td><td>21</td><td>3:18</td><td title="lungs-revision-ocher-pseudonym-patriarch-philately-plywood-poverty-poach-pomade-pop-possum-porcine-porpoise-posh-positive-possessed-possessive-possessiveness-possibility-posset">Guess history</td></tr>
+<tr><td>15</td><td>smack</td><td>21</td><td>3:32</td><td title="macabre-swarthy-put-nut-otter-penchant-pithy-portend-prose-pregnant-practise-potato-posthaste-positivity-posse-possible-possession-possibility-possessive-possessory-posset">Guess history</td></tr>
+<tr><td>15</td><td>SDW</td><td>21</td><td>3:55</td><td title="iambic-thankful-libation-piano-rutabaga-pyrrhic-poetry-priceless-polecat-potato-porterhouse-posterior-portico-posh-positron-possession-possible-possibility-possessive-possessiveness-posset">Guess history</td></tr>
+<tr><td>15</td><td>H</td><td>21</td><td>4:55</td><td title="ma-sack-oak-rabbit-pablum-pundit-pilfer-practice-pocket-ponderous-potash-porridge-posthaste-position-posole-possession-postage-possum-possessive-possible-posset">Guess history</td></tr>
+<tr><td>15</td><td>Bvm</td><td>21</td><td>8:54</td><td title="merchant-valor-oblong-quinine-pomegranate-quail-quagmire-praline-positive-poverty-potato-potash-postal-positron-postage-possum-possible-posse-possess-possessive-posset">Guess history</td></tr>
+<tr><td>21</td><td>Cat</td><td>22</td><td>4:14</td><td title="jambalaya-tapir-ocelot-rhubarb-pangolin-putrid-polenta-providence-potentate-pomegranate-popular-posterior-porridge-pose-posh-positive-possum-possible-posse-possess-possessed-posset">Guess history</td></tr>
+<tr><td>21</td><td>Katherine</td><td>22</td><td>4:16</td><td title="macrame-turmeric-quick-oasis-pablum-poach-puberty-proud-pretty-porch-pratfall-potato-possible-portico-posh-positive-posse-possibility-possess-possessive-possessor-posset">Guess history</td></tr>
+<tr><td>21</td><td>Finally</td><td>22</td><td>5:33</td><td title="mountain-sum-pallet-rabbit-punt-pest-plod-poorly-praise-pour-portly-potter-pot-posses-possessive-posthumous-posts-post-possum-possible-possessor-posset">Guess history</td></tr>
+<tr><td>21</td><td>Billy</td><td>22</td><td>6:02</td><td title="libertine-residual-nuance-prosaic-palfrey-platter-poltergeist-preamble-pouty-poodle-postulate-porcine-porridge-posh-posse-posthaste-postage-possible-possessive-possessor-possibility-posset">Guess history</td></tr>
+<tr><td>25</td><td>jkingdon</td><td>23</td><td>5:57</td><td title="limit-rabbit-opine-quell-pressure-pacify-pill-porous-praline-poverty-pour-positive-potential-potato-posture-possible-posh-posse-possibility-possess-possessed-possesses-posset">Guess history</td></tr>
+<tr><td>26</td><td>KatD</td><td>24</td><td>3:33</td><td title="ma-ubiquitous-qat-oasis-pa-pneumonia-pub-poach-pragmatic-pom-pouch-poo-pop-port-positive-pot-post-possible-posole-posology-possession-possibility-possessive-posset">Guess history</td></tr>
+<tr><td>26</td><td>SML</td><td>24</td><td>5:36</td><td title="ma-rabid-oast-pabulum-quack-pry-ply-pool-preach-powwow-pout-pouch-post-porpoise-pose-positive-possible-posse-possession-possessive-possibility-possets-possessor-posset">Guess history</td></tr>
+<tr><td>28</td><td></td><td>26</td><td>26:21</td><td title="woo-mammoth-stop-quotient-ontology-quack-play-prosaic-pneumatic-pox-pneumonia-pollen-porpoise-pout-posture-possibility-posh-posing-poi-posit-positive-posse-possessions-possessive-possessiveness-posset">Guess history</td></tr>
+<tr><td>29</td><td>Linda</td><td>31</td><td>3:36</td><td title="minstrel-tornado-pristine-quizzical-nougat-opposition-pungent-overland-painkiller-pillbox-pounce-place-pneumonia-poblano-poise-pollster-pomegranate-poodle-popcorn-porcini-postulate-portable-poser-posh-position-possible-posse-possibility-posses-possessive-posset">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

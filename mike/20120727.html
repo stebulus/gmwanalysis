@@ -1,0 +1,94 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">ichor</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120727">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">night day jane harried iambic ionosphere inane idyll icicle ibis ichor maestro dilemma gherkin juniper iceberg javelin iodine igneous ideology id ichthyology icebox icehouse iceman ices ichor infinitive eternal gosh humdinger illegitimate ibis iffy ideate icicle icebox ichthyology iceman ices ich ichor mirror jab cog estuary gab habitual iamb immolate idiocy ibex ichor qi fab kite idiom haberdasher hostel iamb icicle ice ich ichor muster foist joist hoist hubris jig jeremiad immoral idiot hydrate iambic icicle ice iceman ices ich ichor ma ha kayak jackknife iambic immure iguana ideology icicle ibis ich ichthyology ichthyologist ichs ichor nabob gadfly influenza huckleberry iguana ideology hydrangea iambic icicle ibex ibis ichthyology icebreaker iceman ichor fracas pelota nativity iridium halve ideate hubris hymen iambic icicle ice ichthyology icecap ichor extrapolate monitor facet homily kangaroo icon humectant iambic ice icicle iced ich ichneumon ichor me do go la is hoax ibis indoors identical iconoclast icon ice icebreaker icemaker ichor hunch munch klutz juniper inept ignorant iconoclastic hyperbole ibex ichor jambalaya dromedary flamingo hamster iguana holistic hummus icicle hustle hysterical iambic ibex icebox icecap icehouse ices ichor ma fa jaw hyena interlude immortal iceberg idealize icehouse icicle ichor loose fealty humus junket javelin indolent iffy hypnotize icicle iamb ibis ichor kerfuffle go jo ha in hurtful iambic idiomatic icicle ibidem ice ichor ma fab habit jab iamb ill if ichthyology ibex ice ichthyologist ices ichthyological ichor midrange gaffe karat indigent hostile ichthyosaur humble iambic ibuprofen iceman ichor iambic salacious octagon lamprey jabberwocky incandescent iguana ideology icebreaker ichthyology icemaker ichneumon ichthyofauna ichor pablum earthen lycra hippodrome kit implacable hydrangea ibex igneous iconoclast ichthyology icehouse ichneumon icicle ichor macabre eavesdrop habitat jabber iamb illustrate idiocy ibis ichor ma had iatrogenic lad jade imagination idiomatic ibidem ice ideate ichthyology ichor limerick cranky husbandry juniper igloo ice idiom ichthyology iced ices ich ichs ichor man dill grate jab ilk hover hustings iamb if ideology ice ictus icing ichthyology ices ichor nonchalant bizarre dazzle frazzle guzzle muzzle iambic jungle jab itinerate ibis ignoble idiosyncrasy idiomatic idiom icicle ibuprofen icebreaker ichor nebulous facetious imminent heaven ibex ignoble ides icicle ice icehouse iceman ichnite ichthyic ichor lyric fabulous hygiene kangaroo isthmus iguana ichthyology iceberg icemaker ichor ma fab iamb kill ken kale iota idea iambic ice icon ichor militant huckster kabala ivy ipecac icky hysteria iatrogenic ibogaine ichor lecture diatribe giraffe idolize haunch holiday iambic icing icehouse ichthyosaur icemaker ichnite ichthyology ichnolite ichor limpet dandruff grenade inquest heifer hybrid iguana ichthyosaur iambic ibis icebreaker ichor mom home lingonberry industry iambic iliac idiot ichthyosaur ice icily icebreaker iced icehouse ices ichor mill grist jazz hurried inept if hype icicle iambic ibis ice ices ichthyology ichor ma fab jab had iamb ipsilateral ignorant ideate ices icteric iconoclast icky icicle ichthyology ichor migratory gallop igneous henpecked happenstance hyena idolatry ice identity iconic iciness ichor myrtle hex jinx it ibis in id ice ich icicle ichor </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jul 27, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Margaret</td><td>9</td><td>1:09</td><td title="macabre-eavesdrop-habitat-jabber-iamb-illustrate-idiocy-ibis-ichor">Guess history</td></tr>
+<tr><td>2</td><td>Ric Q</td><td>10</td><td>1:17</td><td title="militant-huckster-kabala-ivy-ipecac-icky-hysteria-iatrogenic-ibogaine-ichor">Guess history</td></tr>
+<tr><td>2</td><td>Marika</td><td>10</td><td>3:11</td><td title="hunch-munch-klutz-juniper-inept-ignorant-iconoclastic-hyperbole-ibex-ichor">Guess history</td></tr>
+<tr><td>2</td><td>Al S.</td><td>10</td><td>3:49</td><td title="lyric-fabulous-hygiene-kangaroo-isthmus-iguana-ichthyology-iceberg-icemaker-ichor">Guess history</td></tr>
+<tr><td>5</td><td>Maureen R</td><td>11</td><td>0:56</td><td title="mirror-jab-cog-estuary-gab-habitual-iamb-immolate-idiocy-ibex-ichor">Guess history</td></tr>
+<tr><td>5</td><td>ngtwng</td><td>11</td><td>1:36</td><td title="night-day-jane-harried-iambic-ionosphere-inane-idyll-icicle-ibis-ichor">Guess history</td></tr>
+<tr><td>5</td><td>Mean Old Elaine</td><td>11</td><td>1:37</td><td title="myrtle-hex-jinx-it-ibis-in-id-ice-ich-icicle-ichor">Guess history</td></tr>
+<tr><td>5</td><td>Lace</td><td>11</td><td>1:42</td><td title="midrange-gaffe-karat-indigent-hostile-ichthyosaur-humble-iambic-ibuprofen-iceman-ichor">Guess history</td></tr>
+<tr><td>5</td><td>mike b</td><td>11</td><td>1:50</td><td title="ma-fa-jaw-hyena-interlude-immortal-iceberg-idealize-icehouse-icicle-ichor">Guess history</td></tr>
+<tr><td>5</td><td>DaveK</td><td>11</td><td>3:25</td><td title="qi-fab-kite-idiom-haberdasher-hostel-iamb-icicle-ice-ich-ichor">Guess history</td></tr>
+<tr><td>11</td><td>joon</td><td>12</td><td>0:51</td><td title="limpet-dandruff-grenade-inquest-heifer-hybrid-iguana-ichthyosaur-iambic-ibis-icebreaker-ichor">Guess history</td></tr>
+<tr><td>11</td><td>bobk</td><td>12</td><td>1:02</td><td title="kerfuffle-go-jo-ha-in-hurtful-iambic-idiomatic-icicle-ibidem-ice-ichor">Guess history</td></tr>
+<tr><td>11</td><td>pvh</td><td>12</td><td>1:48</td><td title="ma-had-iatrogenic-lad-jade-imagination-idiomatic-ibidem-ice-ideate-ichthyology-ichor">Guess history</td></tr>
+<tr><td>11</td><td>Rich</td><td>12</td><td>2:19</td><td title="ma-fab-iamb-kill-ken-kale-iota-idea-iambic-ice-icon-ichor">Guess history</td></tr>
+<tr><td>11</td><td>Billy</td><td>12</td><td>3:42</td><td title="loose-fealty-humus-junket-javelin-indolent-iffy-hypnotize-icicle-iamb-ibis-ichor">Guess history</td></tr>
+<tr><td>11</td><td>Laura K</td><td>12</td><td>4:18</td><td title="migratory-gallop-igneous-henpecked-happenstance-hyena-idolatry-ice-identity-iconic-iciness-ichor">Guess history</td></tr>
+<tr><td>17</td><td>stoooopid</td><td>13</td><td>13:47</td><td title="limerick-cranky-husbandry-juniper-igloo-ice-idiom-ichthyology-iced-ices-ich-ichs-ichor">Guess history</td></tr>
+<tr><td>18</td><td>cazique/ken</td><td>14</td><td>1:58</td><td title="fracas-pelota-nativity-iridium-halve-ideate-hubris-hymen-iambic-icicle-ice-ichthyology-icecap-ichor">Guess history</td></tr>
+<tr><td>18</td><td>xxx</td><td>14</td><td>3:27</td><td title="extrapolate-monitor-facet-homily-kangaroo-icon-humectant-iambic-ice-icicle-iced-ich-ichneumon-ichor">Guess history</td></tr>
+<tr><td>18</td><td>callie</td><td>14</td><td>3:37</td><td title="nebulous-facetious-imminent-heaven-ibex-ignoble-ides-icicle-ice-icehouse-iceman-ichnite-ichthyic-ichor">Guess history</td></tr>
+<tr><td>18</td><td>SDW</td><td>14</td><td>3:37</td><td title="iambic-salacious-octagon-lamprey-jabberwocky-incandescent-iguana-ideology-icebreaker-ichthyology-icemaker-ichneumon-ichthyofauna-ichor">Guess history</td></tr>
+<tr><td>18</td><td>ward</td><td>14</td><td>3:57</td><td title="mill-grist-jazz-hurried-inept-if-hype-icicle-iambic-ibis-ice-ices-ichthyology-ichor">Guess history</td></tr>
+<tr><td>18</td><td>AmesGames</td><td>14</td><td>5:24</td><td title="ma-fab-habit-jab-iamb-ill-if-ichthyology-ibex-ice-ichthyologist-ices-ichthyological-ichor">Guess history</td></tr>
+<tr><td>24</td><td>Ertchin</td><td>15</td><td>1:27</td><td title="infinitive-eternal-gosh-humdinger-illegitimate-ibis-iffy-ideate-icicle-icebox-ichthyology-iceman-ices-ich-ichor">Guess history</td></tr>
+<tr><td>24</td><td>karph54</td><td>15</td><td>1:58</td><td title="ma-fab-jab-had-iamb-ipsilateral-ignorant-ideate-ices-icteric-iconoclast-icky-icicle-ichthyology-ichor">Guess history</td></tr>
+<tr><td>24</td><td>hmmm</td><td>15</td><td>3:13</td><td title="pablum-earthen-lycra-hippodrome-kit-implacable-hydrangea-ibex-igneous-iconoclast-ichthyology-icehouse-ichneumon-icicle-ichor">Guess history</td></tr>
+<tr><td>24</td><td>===</td><td>15</td><td>4:40</td><td title="ma-ha-kayak-jackknife-iambic-immure-iguana-ideology-icicle-ibis-ich-ichthyology-ichthyologist-ichs-ichor">Guess history</td></tr>
+<tr><td>24</td><td>MB</td><td>15</td><td>4:43</td><td title="mom-home-lingonberry-industry-iambic-iliac-idiot-ichthyosaur-ice-icily-icebreaker-iced-icehouse-ices-ichor">Guess history</td></tr>
+<tr><td>24</td><td>Lane</td><td>15</td><td>4:59</td><td title="nabob-gadfly-influenza-huckleberry-iguana-ideology-hydrangea-iambic-icicle-ibex-ibis-ichthyology-icebreaker-iceman-ichor">Guess history</td></tr>
+<tr><td>24</td><td>john plaut</td><td>15</td><td>7:03</td><td title="me-do-go-la-is-hoax-ibis-indoors-identical-iconoclast-icon-ice-icebreaker-icemaker-ichor">Guess history</td></tr>
+<tr><td>24</td><td>Rosie</td><td>15</td><td>9:28</td><td title="lecture-diatribe-giraffe-idolize-haunch-holiday-iambic-icing-icehouse-ichthyosaur-icemaker-ichnite-ichthyology-ichnolite-ichor">Guess history</td></tr>
+<tr><td>32</td><td>nka</td><td>16</td><td>2:22</td><td title="man-dill-grate-jab-ilk-hover-hustings-iamb-if-ideology-ice-ictus-icing-ichthyology-ices-ichor">Guess history</td></tr>
+<tr><td>32</td><td>Jon88</td><td>16</td><td>2:27</td><td title="maestro-dilemma-gherkin-juniper-iceberg-javelin-iodine-igneous-ideology-id-ichthyology-icebox-icehouse-iceman-ices-ichor">Guess history</td></tr>
+<tr><td>34</td><td>Cat</td><td>17</td><td>5:16</td><td title="jambalaya-dromedary-flamingo-hamster-iguana-holistic-hummus-icicle-hustle-hysterical-iambic-ibex-icebox-icecap-icehouse-ices-ichor">Guess history</td></tr>
+<tr><td>34</td><td>Judy</td><td>17</td><td>6:38</td><td title="muster-foist-joist-hoist-hubris-jig-jeremiad-immoral-idiot-hydrate-iambic-icicle-ice-iceman-ices-ich-ichor">Guess history</td></tr>
+<tr><td>36</td><td>LindaBee</td><td>19</td><td>6:39</td><td title="nonchalant-bizarre-dazzle-frazzle-guzzle-muzzle-iambic-jungle-jab-itinerate-ibis-ignoble-idiosyncrasy-idiomatic-idiom-icicle-ibuprofen-icebreaker-ichor">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon" selected="selected">joon</option>
+<option value="mike">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">quinquennial</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=joon&date=120611">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">na ta qaid rabat qoph quaalude qwerty quiet quirk quinoa quint quinoline quinquennial ma ta python rubric relic raconteur quince quotidian quit quirk quintuplet quintessential quinine quint quinoa quinquennial myopia turtle pizza rabid qualm quorum quite queen quibble quince quip quintessential quinine quint quinnats quinsies quinoa quinoid quinsy quinquennia quinsied quins quinquennium quinquennial myelin tye rye pye relinquish rapscallion quid radish quorum quip quill quintet quinine quinquennial madden sadden padding quack rabbit quince quorum quondam quit quirk quip quintuplet quint quinine quinquennial qi udder settee respite quorum quest quisling queue quid quill quip quintile quin quince quinoa quint quinolones quinsy quinquennial myth tab pa roommate qi rabbit quince quiver quirk quinoa quintet quinsy quinone quinquennial ghoulish stationery llama ouster quixotic prattle quaver queasy quibble quintet quid quinoa quintessence quinquennial marmoset robot opulent quietude raze rabble quorum quisling quintuplet quill quinella quinine quinoa quint quins quinquennial ma saber oak quack rabbi quick quota quit quill quince quip quint quinine quinoa quinquennial mystery talented quack sabot real quotation quiet quizzical quintet quill quinine quinone quint quinquennial llama parge syringe rhetoric quorum puce quash quicken quite quire quince quip quintuplet quintuplet quint quinoa quinquennial nick temporary password sarcasm rad quark quizzical quest quiet quill quip quinine quintet quintessence quinsy quinquennial madrigal retro physics quad radio quilt quorum quiz quite quince quip quintillion quintessence quint quinoa quinquennial me to pee re queue rand quod quinine quit quirt quinquennial morning summertime panacea rose pyrite ranch rabbit quantum quadplex quatrain rabat quicken quipster quinine quintain quinoa quint quinsy quinolin quinquennial murky unclear question science rhombus rabid quorum quintuplet quicksand quiff quill quince quintessential quinine quinquennial puzzle quizzical pyrite quack quixotic querulous quibble quintessential quidnunc quill quinoa quintal quinquennial mariachi petunia sepulchre ruffian quandary ribald quondam quixotic quell quiescent quintessential quinoa quinquennial mutilate torus quisling octagon pi pyrite querulous quietude quill quintet quincunx quintessential quinone quintessence quint quinolone quinquennial nabob rabid paean plethora putrid quaint question quiver quibble quill quince quip quinine quintuplets quintal quinsy quinoa quinoline quinquennial mold told quack rabbi quote quibble quiz quintessential quill quilt quinine quint quinoa quinoid quinolone quinquennial flounder scoundrel lemonade pus ratchet quill quota quorum quip quintuplet quince quint quinine quinquennial night wing robin ornery possible quickly raccoon quoth quintessential quid quilts quinquennial mandarin quiet vixen true repose rabbi quotient quint quill quilt quin quinoa quinquennium quinone quinquennia quinquennial mortise palpitation rhodium quasar rabbit quotation quaver quell quintet quibble quicken quillet quinine quintessential quinsy quinquennial mainstay spring prudent rascal quip pulsate quaver question quid quill quintuplet quilt quinine quinoa quinquennial halibut sandwich pecuniary regimen pyloric quintessence quinine quinquennial middle saddle piano reticent quirky punk qualm queue quibble quill quip quintet quilling quince quinine quinoa quinta quinsy quinonoid quinquennial kitsch punchy rusticate referral quintuple pyramid quagmire question quibbles quill quinoa quintessential quinte quinsy quinquennial iambic rutabaga macabre peppermint raspberry pompadour quorum pyromania quinsy quarterly questionnaire quicksilver quill quinoa quinquennial mother soapbox panacea reciprocal quorum potboiler quagmire quasar quibble quinine quisling quintile quinoa quintessence quint quinoid quinsy quinquennial north south river queen quote quiet quite quiff quince quip quintan quinone quinquennia quins quinquennium quinquennial </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jun 11, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Jill</td><td>8</td><td>14:13</td><td title="halibut-sandwich-pecuniary-regimen-pyloric-quintessence-quinine-quinquennial">Guess history</td></tr>
+<tr><td>2</td><td>john plaut</td><td>11</td><td>2:17</td><td title="me-to-pee-re-queue-rand-quod-quinine-quit-quirt-quinquennial">Guess history</td></tr>
+<tr><td>3</td><td>ngtwng</td><td>12</td><td>3:34</td><td title="night-wing-robin-ornery-possible-quickly-raccoon-quoth-quintessential-quid-quilts-quinquennial">Guess history</td></tr>
+<tr><td>4</td><td>Frances</td><td>13</td><td>3:17</td><td title="na-ta-qaid-rabat-qoph-quaalude-qwerty-quiet-quirk-quinoa-quint-quinoline-quinquennial">Guess history</td></tr>
+<tr><td>4</td><td>AV!</td><td>13</td><td>3:29</td><td title="mariachi-petunia-sepulchre-ruffian-quandary-ribald-quondam-quixotic-quell-quiescent-quintessential-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>4</td><td>LindaBee, thanks to google</td><td>13</td><td>6:25</td><td title="puzzle-quizzical-pyrite-quack-quixotic-querulous-quibble-quintessential-quidnunc-quill-quinoa-quintal-quinquennial">Guess history</td></tr>
+<tr><td>7</td><td>Lynne</td><td>14</td><td>1:57</td><td title="flounder-scoundrel-lemonade-pus-ratchet-quill-quota-quorum-quip-quintuplet-quince-quint-quinine-quinquennial">Guess history</td></tr>
+<tr><td>7</td><td>Jon88</td><td>14</td><td>1:58</td><td title="myelin-tye-rye-pye-relinquish-rapscallion-quid-radish-quorum-quip-quill-quintet-quinine-quinquennial">Guess history</td></tr>
+<tr><td>7</td><td>mike b</td><td>14</td><td>2:53</td><td title="myth-tab-pa-roommate-qi-rabbit-quince-quiver-quirk-quinoa-quintet-quinsy-quinone-quinquennial">Guess history</td></tr>
+<tr><td>7</td><td>oeuftete</td><td>14</td><td>3:19</td><td title="mystery-talented-quack-sabot-real-quotation-quiet-quizzical-quintet-quill-quinine-quinone-quint-quinquennial">Guess history</td></tr>
+<tr><td>7</td><td>Evad</td><td>14</td><td>4:42</td><td title="ghoulish-stationery-llama-ouster-quixotic-prattle-quaver-queasy-quibble-quintet-quid-quinoa-quintessence-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>AmesGames</td><td>15</td><td>1:15</td><td title="ma-saber-oak-quack-rabbi-quick-quota-quit-quill-quince-quip-quint-quinine-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>Katie</td><td>15</td><td>1:18</td><td title="madden-sadden-padding-quack-rabbit-quince-quorum-quondam-quit-quirk-quip-quintuplet-quint-quinine-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>ward</td><td>15</td><td>1:52</td><td title="murky-unclear-question-science-rhombus-rabid-quorum-quintuplet-quicksand-quiff-quill-quince-quintessential-quinine-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>Moose</td><td>15</td><td>2:06</td><td title="mainstay-spring-prudent-rascal-quip-pulsate-quaver-question-quid-quill-quintuplet-quilt-quinine-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>Peter W</td><td>15</td><td>3:18</td><td title="kitsch-punchy-rusticate-referral-quintuple-pyramid-quagmire-question-quibbles-quill-quinoa-quintessential-quinte-quinsy-quinquennial">Guess history</td></tr>
+<tr><td>12</td><td>SDW</td><td>15</td><td>4:59</td><td title="iambic-rutabaga-macabre-peppermint-raspberry-pompadour-quorum-pyromania-quinsy-quarterly-questionnaire-quicksilver-quill-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>GT</td><td>16</td><td>2:27</td><td title="ma-ta-python-rubric-relic-raconteur-quince-quotidian-quit-quirk-quintuplet-quintessential-quinine-quint-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>amy</td><td>16</td><td>3:31</td><td title="mandarin-quiet-vixen-true-repose-rabbi-quotient-quint-quill-quilt-quin-quinoa-quinquennium-quinone-quinquennia-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td></td><td>16</td><td>4:00</td><td title="nick-temporary-password-sarcasm-rad-quark-quizzical-quest-quiet-quill-quip-quinine-quintet-quintessence-quinsy-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>Dan & Jackie</td><td>16</td><td>4:07</td><td title="madrigal-retro-physics-quad-radio-quilt-quorum-quiz-quite-quince-quip-quintillion-quintessence-quint-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>Kaya</td><td>16</td><td>4:27</td><td title="marmoset-robot-opulent-quietude-raze-rabble-quorum-quisling-quintuplet-quill-quinella-quinine-quinoa-quint-quins-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>Norma</td><td>16</td><td>5:16</td><td title="mold-told-quack-rabbi-quote-quibble-quiz-quintessential-quill-quilt-quinine-quint-quinoa-quinoid-quinolone-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>So close so often</td><td>16</td><td>5:59</td><td title="north-south-river-queen-quote-quiet-quite-quiff-quince-quip-quintan-quinone-quinquennia-quins-quinquennium-quinquennial">Guess history</td></tr>
+<tr><td>18</td><td>Bvm</td><td>16</td><td>7:16</td><td title="mortise-palpitation-rhodium-quasar-rabbit-quotation-quaver-quell-quintet-quibble-quicken-quillet-quinine-quintessential-quinsy-quinquennial">Guess history</td></tr>
+<tr><td>26</td><td>jrock</td><td>17</td><td>2:07</td><td title="llama-parge-syringe-rhetoric-quorum-puce-quash-quicken-quite-quire-quince-quip-quintuplet-quintuplet-quint-quinoa-quinquennial">Guess history</td></tr>
+<tr><td>26</td><td>Ric Q FAIL</td><td>17</td><td>11:53</td><td title="mutilate-torus-quisling-octagon-pi-pyrite-querulous-quietude-quill-quintet-quincunx-quintessential-quinone-quintessence-quint-quinolone-quinquennial">Guess history</td></tr>
+<tr><td>28</td><td>Natalie Spring LART 2012</td><td>18</td><td>8:15</td><td title="mother-soapbox-panacea-reciprocal-quorum-potboiler-quagmire-quasar-quibble-quinine-quisling-quintile-quinoa-quintessence-quint-quinoid-quinsy-quinquennial">Guess history</td></tr>
+<tr><td>29</td><td>Neville's Mom</td><td>19</td><td>5:23</td><td title="nabob-rabid-paean-plethora-putrid-quaint-question-quiver-quibble-quill-quince-quip-quinine-quintuplets-quintal-quinsy-quinoa-quinoline-quinquennial">Guess history</td></tr>
+<tr><td>29</td><td>DaveK</td><td>19</td><td>5:26</td><td title="qi-udder-settee-respite-quorum-quest-quisling-queue-quid-quill-quip-quintile-quin-quince-quinoa-quint-quinolones-quinsy-quinquennial">Guess history</td></tr>
+<tr><td>31</td><td>Bonnie</td><td>20</td><td>5:19</td><td title="middle-saddle-piano-reticent-quirky-punk-qualm-queue-quibble-quill-quip-quintet-quilling-quince-quinine-quinoa-quinta-quinsy-quinonoid-quinquennial">Guess history</td></tr>
+<tr><td>31</td><td>callie</td><td>20</td><td>11:08</td><td title="morning-summertime-panacea-rose-pyrite-ranch-rabbit-quantum-quadplex-quatrain-rabat-quicken-quipster-quinine-quintain-quinoa-quint-quinsy-quinolin-quinquennial">Guess history</td></tr>
+<tr><td>33</td><td>Tara</td><td>24</td><td>6:38</td><td title="myopia-turtle-pizza-rabid-qualm-quorum-quite-queen-quibble-quince-quip-quintessential-quinine-quint-quinnats-quinsies-quinoa-quinoid-quinsy-quinquennia-quinsied-quins-quinquennium-quinquennial">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=mike">mike</a></p>
+</body>
+</html>

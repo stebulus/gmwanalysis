@@ -1,0 +1,71 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">penguin</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120206">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">varicose hunt limerick syllabus proud nasty ox parent pee pimp phone pest pent peg pellet penile pen pend penguin ma tab pa rabbi poblano pestilence pat pea pedagogy pelt pep pen people penis pendulum penile penguin manner pontoon pandemonium paste please pastry peace place peg pert perhaps pelt pemmican pent pendant pensive pending pens penguin map turtle no otter pet pad payer paw pays pea ped peg pellet pen pep people pens penal penis pend pending pends penguin men tom rat pan qat pray pen pneumonia pixel pet per pep pent penis pencil penile pendulum penguin gorilla kick piston pack peck pickle pensive pectoral peg penchant pendant pendulum penitentiary penetrate penetration penitent penis penile penicillin penguin lamp stamp oven ramp quest prune pale pint people pattern peach peel pen penchant penultimate pensive pendant penguin recondite llama ocular pus otter philately panjandrum pestilence peach pelt people pemmican penance penury penguin cackle mountain soft powder orange pancreas penitentiary pectoral pelican pejorative penalty pending penis penetrated penetration penile penial penguin nab tab pace race place pelican pharmacology petit perfunctory penitent pelvis penalty pendulum penguin map truce paper sun radio put pen pin petulant perk pepper penultimate penny penchant pendulum penlight penguin elephant master orate wane varicose quaff peer python phyla person peg pelt penchant peony pension penguin jambalaya tapir ocelot rhetoric pangolin putrid percolate paraffin peacock penmanship pelican pellmell pencil pendulum peevish penetrate penguin </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Feb 6, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>onebluepanda</td><td>14</td><td>3:57</td><td title="nab-tab-pace-race-place-pelican-pharmacology-petit-perfunctory-penitent-pelvis-penalty-pendulum-penguin">Guess history</td></tr>
+<tr><td>2</td><td>Ric Q</td><td>15</td><td>1:28</td><td title="recondite-llama-ocular-pus-otter-philately-panjandrum-pestilence-peach-pelt-people-pemmican-penance-penury-penguin">Guess history</td></tr>
+<tr><td>3</td><td>Beaglemom</td><td>16</td><td>2:11</td><td title="elephant-master-orate-wane-varicose-quaff-peer-python-phyla-person-peg-pelt-penchant-peony-pension-penguin">Guess history</td></tr>
+<tr><td>4</td><td>beth</td><td>17</td><td>2:04</td><td title="ma-tab-pa-rabbi-poblano-pestilence-pat-pea-pedagogy-pelt-pep-pen-people-penis-pendulum-penile-penguin">Guess history</td></tr>
+<tr><td>4</td><td>Cat</td><td>17</td><td>2:32</td><td title="jambalaya-tapir-ocelot-rhetoric-pangolin-putrid-percolate-paraffin-peacock-penmanship-pelican-pellmell-pencil-pendulum-peevish-penetrate-penguin">Guess history</td></tr>
+<tr><td>4</td><td>rebecca</td><td>17</td><td>2:40</td><td title="map-truce-paper-sun-radio-put-pen-pin-petulant-perk-pepper-penultimate-penny-penchant-pendulum-penlight-penguin">Guess history</td></tr>
+<tr><td>7</td><td>Melissa</td><td>18</td><td>2:37</td><td title="cackle-mountain-soft-powder-orange-pancreas-penitentiary-pectoral-pelican-pejorative-penalty-pending-penis-penetrated-penetration-penile-penial-penguin">Guess history</td></tr>
+<tr><td>7</td><td>Hugh</td><td>18</td><td>4:06</td><td title="lamp-stamp-oven-ramp-quest-prune-pale-pint-people-pattern-peach-peel-pen-penchant-penultimate-pensive-pendant-penguin">Guess history</td></tr>
+<tr><td>7</td><td>Nixon</td><td>18</td><td>4:20</td><td title="men-tom-rat-pan-qat-pray-pen-pneumonia-pixel-pet-per-pep-pent-penis-pencil-penile-pendulum-penguin">Guess history</td></tr>
+<tr><td>10</td><td>Hollyyyyyyy</td><td>19</td><td>2:19</td><td title="varicose-hunt-limerick-syllabus-proud-nasty-ox-parent-pee-pimp-phone-pest-pent-peg-pellet-penile-pen-pend-penguin">Guess history</td></tr>
+<tr><td>10</td><td>LindaBee</td><td>19</td><td>6:17</td><td title="manner-pontoon-pandemonium-paste-please-pastry-peace-place-peg-pert-perhaps-pelt-pemmican-pent-pendant-pensive-pending-pens-penguin">Guess history</td></tr>
+<tr><td>12</td><td>Beaver Cleaver</td><td>20</td><td>11:36</td><td title="gorilla-kick-piston-pack-peck-pickle-pensive-pectoral-peg-penchant-pendant-pendulum-penitentiary-penetrate-penetration-penitent-penis-penile-penicillin-penguin">Guess history</td></tr>
+<tr><td>13</td><td>Curtis</td><td>23</td><td>2:24</td><td title="map-turtle-no-otter-pet-pad-payer-paw-pays-pea-ped-peg-pellet-pen-pep-people-pens-penal-penis-pend-pending-pends-penguin">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

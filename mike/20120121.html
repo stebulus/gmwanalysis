@@ -1,0 +1,88 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">adiabatic</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120121">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">mixologist bartender adequate astatine amicable aitch affable adroit adipose adherent adieu adhesive adhibit adiabatic mythology gadfly daunting bucolic azimuth advocate abacas accelerate adder adjective adept adhesive adipose adieu adiabatic lush gouache dizzy buzz autistic agile adequate aegis adulation adipose adhere adhesive adios adieu adhesiveness adhibit adiabatic snow epigraphy callow banter apple ability agile allow adore accurate adapt adipic adept adhere adios adhesion adieu adhesive adiabatic lilliputian decrepit burrow amnesty adjacent abrupt acclimate actuary adamant adios addition address adequate adherent adhesive adieu adhibit adiabatic lilliputian decrepit burrow amnesty adjacent abrupt acclimate actuary adamant adios addition address adequate adherent adhesive adieu adhibit adiabatic lion bug auk ampere against abate adherent advocate administer adjunct adipose adieu adhesion adiabatic nary hairy dairy berry awry angry aggravate adduce aerie adsorb admonish adjudicate adhere adipose adiabatic jobless embed cerebellum beseech angst adrenalin abhor abysmal acquiesce adjutant acrostic adeem adieu adhere adhesive adhibit adiabatic flange dyspepsia byzantine armoire alimony adze abalone actuary adding ado adipose adept adhere adiabatic junket eulogy coddle bequest arbiter affront ablative acknowledge adamant adrift adipose adept adhesive adieu adhesiveness adiabatic majestic heuristic cilia after able active addle aerate ads ado adept adjacent adequate adhesive adjective adjacence adiabatic ma fa cab azure alliance acrimony affable aegis adipose adage adept adiabatic jambalaya druid bumblebee barbarian astound alliance agora abeyance affluent adjunct acclimate accommodate additive adept adhesive adjective adjacent adiabatic myth guess czar beg amity aerial achieve adage advocate adulation adenoid admission adjutant adjacent adequate adhesive adieu adiabatic mackerel embryonic bunting arugula affable academic adroit acrylic adenoid admonish adipose adiabatic mite fight cite bite ait abbey ace adder after aerie adjective adhere adit adipose adhered adhering adieu adiabatic mother breast age aardvark acne aegis addle adroit adjourn adept adherence adipose adamant adherent adhesion adhesive adipic adhesiveness adiabatic individual callous avarice addendum amiable aglet affable aerospace adrenaline adit adenosine adhesive adipose adhibit adieu adios adhibiting adiabatic lichen extracurricular cadre bastion arduous ampersand aggregate acclimate aether adjective acrid adamant additive adhere adipose adhesive adiabatic meretricious durian behemoth alabaster adrenal abhorrent acrimonious adenoid adipose adherent adiabatic sore north hour dowel cow bowel air able affable actual additive adept adroit admiral adhere adherence adiabatic no fa cat be at ad ah aft adept afar adroit adjunct adios adieu adhere adherent adhesive adiabatic dog bag ate age ado able ace adhere adjoin adit adios adhesive adiabatic like elegant bum apple aerospace aerodynamic abduct account add advert address advantage adherent admonish adjective adiabatic nabob flummox cabriole babe aim abrupt accolades admonition actuary addendum adjust addled adjective address adherent adipose adhesive adieu adiabatic ma gab dab blithe argon ailment adenine afterthought adoration adipose adiabatic mammal charisma antelope addled agnosia aerodynamic adjourn adequate adiabatic marble giraffe clear barn apple aggravate ablative affable addictive advertise adjunct adhere adjective adhesive adjacent adipose adiabatic lug frosty doggerel capricious bagatelle amorous agile addled aerie adorable adipose adenoids adept adequate adios adieu adiabatic </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jan 21, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Fiona K</td><td>9</td><td>3:44</td><td title="mammal-charisma-antelope-addled-agnosia-aerodynamic-adjourn-adequate-adiabatic">Guess history</td></tr>
+<tr><td>2</td><td>Andy K.</td><td>11</td><td>0:47</td><td title="meretricious-durian-behemoth-alabaster-adrenal-abhorrent-acrimonious-adenoid-adipose-adherent-adiabatic">Guess history</td></tr>
+<tr><td>2</td><td>Toastyroasty</td><td>11</td><td>2:08</td><td title="ma-gab-dab-blithe-argon-ailment-adenine-afterthought-adoration-adipose-adiabatic">Guess history</td></tr>
+<tr><td>4</td><td>GT</td><td>12</td><td>0:45</td><td title="ma-fa-cab-azure-alliance-acrimony-affable-aegis-adipose-adage-adept-adiabatic">Guess history</td></tr>
+<tr><td>4</td><td>joon</td><td>12</td><td>0:59</td><td title="mackerel-embryonic-bunting-arugula-affable-academic-adroit-acrylic-adenoid-admonish-adipose-adiabatic">Guess history</td></tr>
+<tr><td>6</td><td>Gretchen G</td><td>13</td><td>3:16</td><td title="dog-bag-ate-age-ado-able-ace-adhere-adjoin-adit-adios-adhesive-adiabatic">Guess history</td></tr>
+<tr><td>7</td><td>French</td><td>14</td><td>0:49</td><td title="flange-dyspepsia-byzantine-armoire-alimony-adze-abalone-actuary-adding-ado-adipose-adept-adhere-adiabatic">Guess history</td></tr>
+<tr><td>7</td><td>thanks RH2</td><td>14</td><td>3:17</td><td title="mixologist-bartender-adequate-astatine-amicable-aitch-affable-adroit-adipose-adherent-adieu-adhesive-adhibit-adiabatic">Guess history</td></tr>
+<tr><td>7</td><td>lovapug</td><td>14</td><td>10:18</td><td title="lion-bug-auk-ampere-against-abate-adherent-advocate-administer-adjunct-adipose-adieu-adhesion-adiabatic">Guess history</td></tr>
+<tr><td>10</td><td>Ric Q</td><td>15</td><td>2:43</td><td title="nary-hairy-dairy-berry-awry-angry-aggravate-adduce-aerie-adsorb-admonish-adjudicate-adhere-adipose-adiabatic">Guess history</td></tr>
+<tr><td>10</td><td>Lane</td><td>15</td><td>6:30</td><td title="mythology-gadfly-daunting-bucolic-azimuth-advocate-abacas-accelerate-adder-adjective-adept-adhesive-adipose-adieu-adiabatic">Guess history</td></tr>
+<tr><td>12</td><td>Kyellll</td><td>16</td><td>2:27</td><td title="like-elegant-bum-apple-aerospace-aerodynamic-abduct-account-add-advert-address-advantage-adherent-admonish-adjective-adiabatic">Guess history</td></tr>
+<tr><td>12</td><td>Ringoes</td><td>16</td><td>6:38</td><td title="junket-eulogy-coddle-bequest-arbiter-affront-ablative-acknowledge-adamant-adrift-adipose-adept-adhesive-adieu-adhesiveness-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>Rogersr</td><td>17</td><td>3:50</td><td title="sore-north-hour-dowel-cow-bowel-air-able-affable-actual-additive-adept-adroit-admiral-adhere-adherence-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>Sairenja</td><td>17</td><td>4:54</td><td title="majestic-heuristic-cilia-after-able-active-addle-aerate-ads-ado-adept-adjacent-adequate-adhesive-adjective-adjacence-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>chopperfoul</td><td>17</td><td>5:07</td><td title="jobless-embed-cerebellum-beseech-angst-adrenalin-abhor-abysmal-acquiesce-adjutant-acrostic-adeem-adieu-adhere-adhesive-adhibit-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>Debby</td><td>17</td><td>9:40</td><td title="marble-giraffe-clear-barn-apple-aggravate-ablative-affable-addictive-advertise-adjunct-adhere-adjective-adhesive-adjacent-adipose-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>Billy</td><td>17</td><td>10:58</td><td title="lichen-extracurricular-cadre-bastion-arduous-ampersand-aggregate-acclimate-aether-adjective-acrid-adamant-additive-adhere-adipose-adhesive-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>===</td><td>17</td><td>13:45</td><td title="lush-gouache-dizzy-buzz-autistic-agile-adequate-aegis-adulation-adipose-adhere-adhesive-adios-adieu-adhesiveness-adhibit-adiabatic">Guess history</td></tr>
+<tr><td>14</td><td>Moose</td><td>17</td><td>33:09</td><td title="lug-frosty-doggerel-capricious-bagatelle-amorous-agile-addled-aerie-adorable-adipose-adenoids-adept-adequate-adios-adieu-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>Cat</td><td>18</td><td>2:31</td><td title="jambalaya-druid-bumblebee-barbarian-astound-alliance-agora-abeyance-affluent-adjunct-acclimate-accommodate-additive-adept-adhesive-adjective-adjacent-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>Suze</td><td>18</td><td>3:34</td><td title="individual-callous-avarice-addendum-amiable-aglet-affable-aerospace-adrenaline-adit-adenosine-adhesive-adipose-adhibit-adieu-adios-adhibiting-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>mike b</td><td>18</td><td>3:59</td><td title="myth-guess-czar-beg-amity-aerial-achieve-adage-advocate-adulation-adenoid-admission-adjutant-adjacent-adequate-adhesive-adieu-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td></td><td>18</td><td>6:20</td><td title="lilliputian-decrepit-burrow-amnesty-adjacent-abrupt-acclimate-actuary-adamant-adios-addition-address-adequate-adherent-adhesive-adieu-adhibit-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>tt</td><td>18</td><td>6:20</td><td title="lilliputian-decrepit-burrow-amnesty-adjacent-abrupt-acclimate-actuary-adamant-adios-addition-address-adequate-adherent-adhesive-adieu-adhibit-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>HRM</td><td>18</td><td>8:53</td><td title="mite-fight-cite-bite-ait-abbey-ace-adder-after-aerie-adjective-adhere-adit-adipose-adhered-adhering-adieu-adiabatic">Guess history</td></tr>
+<tr><td>21</td><td>B</td><td>18</td><td>10:30</td><td title="no-fa-cat-be-at-ad-ah-aft-adept-afar-adroit-adjunct-adios-adieu-adhere-adherent-adhesive-adiabatic">Guess history</td></tr>
+<tr><td>28</td><td>Neville's Mom</td><td>19</td><td>4:25</td><td title="nabob-flummox-cabriole-babe-aim-abrupt-accolades-admonition-actuary-addendum-adjust-addled-adjective-address-adherent-adipose-adhesive-adieu-adiabatic">Guess history</td></tr>
+<tr><td>28</td><td>JenniferRu</td><td>19</td><td>8:41</td><td title="snow-epigraphy-callow-banter-apple-ability-agile-allow-adore-accurate-adapt-adipic-adept-adhere-adios-adhesion-adieu-adhesive-adiabatic">Guess history</td></tr>
+<tr><td>28</td><td>MCatherine</td><td>19</td><td>15:54</td><td title="mother-breast-age-aardvark-acne-aegis-addle-adroit-adjourn-adept-adherence-adipose-adamant-adherent-adhesion-adhesive-adipic-adhesiveness-adiabatic">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

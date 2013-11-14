@@ -1,0 +1,88 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="131113">Nov 13, 2013</option>
+<option value="131112">Nov 12, 2013</option>
+<option value="131111">Nov 11, 2013</option>
+<option value="131110">Nov 10, 2013</option>
+<option value="131109">Nov 9, 2013</option>
+<option value="131108">Nov 8, 2013</option>
+<option value="131107">Nov 7, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">metonymy</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=131020">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">penchant furry jukebox opulent mince ladder maple meltdown microphone mewl memory mettle mermaid messy metabolism metric meticulous metonymy miasma ghetto krill leather luxury matte mendicant mew mephitis mettle mermaid mestizo metier metric metonymy cab rabbi ma oafish nabob miscreant meritocracy miasma mezzanine meteorite mettle methylamine metropolitan meticulous metronome metonymy nabob gadfly kudzu macerate minnow mescaline miasma mewl meticulous mettle metier metronome metric metonymy nabob flummox jab lab ma mercurial mollify migrant mesclun middling mettle mesquite metallic method metier metric metonymic metonymy ma qat oasis na mnemonic mimosa me mi mem met mews metronome methamphetamine meticulous metonymy motif grist jamb littoral marshall method mirth miasma mewl metronome metonym metric metonymy ma rabbi quash oar nabob mizzen mesclun miasma mews mettle metal metformin meticulous metronome metro metope metier metonym metonymy neology gerund lenticular moron mach mixer meander micturate mess mews mettle metaphor meticulous metonymy lumen rhymes passionately nellie mimic matured messianic microfilm methodologies mi metre methylene metis metonymy marmoset robot opulent neap mugwump miasma mewl mealworm meningitis mescal mete meticulous mew metric metre metonym metonymy pansy claret lion nonce mirth lissome marble mettle mead mellow mermaid mesquite metronome met metonymy libation raspberry nitrogen micturate lysine mechanism mendacity mesmerize mewl mettle metaphor meticulous metonymy mellifluous ruminant packet nebula mordant mince meticulous middling miasma mewl mettle metronome metonymy mess ratify opulent nil mound morass modify mingle middling metropolitan metier metronome metonymic metonymy myriad filial ha la lynx me mice mesa mew met mettle meteor meticulous metronome metre metier metonym metopic metonymy minimize egregious indigo kayak lambaste mammary mesmerize miasma mew meticulous metric metier metonym metonymy macrame turmeric quail oasis napkin mom mimosa measure meme met mewl metronome meter metric methadone method metre meticulous metonymy i ta no ka la ma mi me men met mew meter metric methodology meticulous metre meticulously metonymy mitigate fresh islet loop mallard merriment miasma mew methane metronome metier metonymy lecture rocket overthrow mortgage meander mitigate miasma messy mewl metric mete metonymy lyrical repute pachyderm nacho mitigate meander mephitic miasma mettle merriment mescaline metaphor meticulous metonym metric metonymy lysozyme ruffle offline natch mildew meander messy mica mewl metier mettle metronome metre metonymy lycanthropy tether opportune myth mizzen mechanic miasma mellifluous mermaid mezzanine mewl mesomorph metropolitan meta meting metropolis metro metric metre metonym metonymy muzzle huzzah juggle mace moratorium metal mewl metro metronome metallic metaphysical metonymy ma ta pa na millinery mead miasma mezzanine meme metal mew meuniere metonymy minaret egress kudzu libido macerated meritocracy middling mezzanine meticulous metronome metonymy lime tree punt mile lost mate mid met microphone mew metropolis metronome meteor methadone methodology metrical metre methylated meticulous metonym metope metonymy medieval sad opal need my moody mix mezzanine mercy metal mew metropolis meter method metre meticulous metopic metonym metope metopae metonymical metonyms metonymy mud hog jog log mad mid medium metal mezzanine mew metatarsal metonymy </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Oct 20, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>postbear</td><td>11</td><td>0:59</td><td title="minaret-egress-kudzu-libido-macerated-meritocracy-middling-mezzanine-meticulous-metronome-metonymy">Guess history</td></tr>
+<tr><td>2</td><td>Ephraim</td><td>12</td><td>1:15</td><td title="mud-hog-jog-log-mad-mid-medium-metal-mezzanine-mew-metatarsal-metonymy">Guess history</td></tr>
+<tr><td>2</td><td>julie</td><td>12</td><td>1:39</td><td title="mitigate-fresh-islet-loop-mallard-merriment-miasma-mew-methane-metronome-metier-metonymy">Guess history</td></tr>
+<tr><td>2</td><td>LindaBee</td><td>12</td><td>2:22</td><td title="muzzle-huzzah-juggle-mace-moratorium-metal-mewl-metro-metronome-metallic-metaphysical-metonymy">Guess history</td></tr>
+<tr><td>2</td><td>Rosie</td><td>12</td><td>3:22</td><td title="lecture-rocket-overthrow-mortgage-meander-mitigate-miasma-messy-mewl-metric-mete-metonymy">Guess history</td></tr>
+<tr><td>6</td><td>Asperity</td><td>13</td><td>1:19</td><td title="ma-ta-pa-na-millinery-mead-miasma-mezzanine-meme-metal-mew-meuniere-metonymy">Guess history</td></tr>
+<tr><td>6</td><td>Billy</td><td>13</td><td>1:44</td><td title="libation-raspberry-nitrogen-micturate-lysine-mechanism-mendacity-mesmerize-mewl-mettle-metaphor-meticulous-metonymy">Guess history</td></tr>
+<tr><td>6</td><td>Jill</td><td>13</td><td>1:59</td><td title="motif-grist-jamb-littoral-marshall-method-mirth-miasma-mewl-metronome-metonym-metric-metonymy">Guess history</td></tr>
+<tr><td>6</td><td>Simon S</td><td>13</td><td>3:37</td><td title="mellifluous-ruminant-packet-nebula-mordant-mince-meticulous-middling-miasma-mewl-mettle-metronome-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>bird internet</td><td>14</td><td>2:40</td><td title="neology-gerund-lenticular-moron-mach-mixer-meander-micturate-mess-mews-mettle-metaphor-meticulous-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>Mary</td><td>14</td><td>2:59</td><td title="mess-ratify-opulent-nil-mound-morass-modify-mingle-middling-metropolitan-metier-metronome-metonymic-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>Lane</td><td>14</td><td>2:59</td><td title="nabob-gadfly-kudzu-macerate-minnow-mescaline-miasma-mewl-meticulous-mettle-metier-metronome-metric-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>LEIF</td><td>14</td><td>3:45</td><td title="minimize-egregious-indigo-kayak-lambaste-mammary-mesmerize-miasma-mew-meticulous-metric-metier-metonym-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>Moose</td><td>14</td><td>6:22</td><td title="lysozyme-ruffle-offline-natch-mildew-meander-messy-mica-mewl-metier-mettle-metronome-metre-metonymy">Guess history</td></tr>
+<tr><td>10</td><td>sjtbot2</td><td>14</td><td>13:01</td><td title="lumen-rhymes-passionately-nellie-mimic-matured-messianic-microfilm-methodologies-mi-metre-methylene-metis-metonymy">Guess history</td></tr>
+<tr><td>16</td><td>KatD</td><td>15</td><td>1:32</td><td title="ma-qat-oasis-na-mnemonic-mimosa-me-mi-mem-met-mews-metronome-methamphetamine-meticulous-metonymy">Guess history</td></tr>
+<tr><td>16</td><td>xx</td><td>15</td><td>1:59</td><td title="pansy-claret-lion-nonce-mirth-lissome-marble-mettle-mead-mellow-mermaid-mesquite-metronome-met-metonymy">Guess history</td></tr>
+<tr><td>16</td><td>martinet</td><td>15</td><td>2:25</td><td title="miasma-ghetto-krill-leather-luxury-matte-mendicant-mew-mephitis-mettle-mermaid-mestizo-metier-metric-metonymy">Guess history</td></tr>
+<tr><td>19</td><td>===</td><td>16</td><td>2:07</td><td title="lyrical-repute-pachyderm-nacho-mitigate-meander-mephitic-miasma-mettle-merriment-mescaline-metaphor-meticulous-metonym-metric-metonymy">Guess history</td></tr>
+<tr><td>19</td><td>Andy</td><td>16</td><td>10:13</td><td title="cab-rabbi-ma-oafish-nabob-miscreant-meritocracy-miasma-mezzanine-meteorite-mettle-methylamine-metropolitan-meticulous-metronome-metonymy">Guess history</td></tr>
+<tr><td>21</td><td>Kaya</td><td>17</td><td>5:33</td><td title="marmoset-robot-opulent-neap-mugwump-miasma-mewl-mealworm-meningitis-mescal-mete-meticulous-mew-metric-metre-metonym-metonymy">Guess history</td></tr>
+<tr><td>22</td><td>Daily Alice</td><td>18</td><td>2:49</td><td title="penchant-furry-jukebox-opulent-mince-ladder-maple-meltdown-microphone-mewl-memory-mettle-mermaid-messy-metabolism-metric-meticulous-metonymy">Guess history</td></tr>
+<tr><td>22</td><td>nrm</td><td>18</td><td>3:35</td><td title="i-ta-no-ka-la-ma-mi-me-men-met-mew-meter-metric-methodology-meticulous-metre-meticulously-metonymy">Guess history</td></tr>
+<tr><td>22</td><td>Neville's Mom</td><td>18</td><td>6:21</td><td title="nabob-flummox-jab-lab-ma-mercurial-mollify-migrant-mesclun-middling-mettle-mesquite-metallic-method-metier-metric-metonymic-metonymy">Guess history</td></tr>
+<tr><td>25</td><td>Katherine</td><td>19</td><td>2:12</td><td title="macrame-turmeric-quail-oasis-napkin-mom-mimosa-measure-meme-met-mewl-metronome-meter-metric-methadone-method-metre-meticulous-metonymy">Guess history</td></tr>
+<tr><td>25</td><td>arg karph54</td><td>19</td><td>4:01</td><td title="ma-rabbi-quash-oar-nabob-mizzen-mesclun-miasma-mews-mettle-metal-metformin-meticulous-metronome-metro-metope-metier-metonym-metonymy">Guess history</td></tr>
+<tr><td>25</td><td>moi (avec des autres)</td><td>19</td><td>5:39</td><td title="myriad-filial-ha-la-lynx-me-mice-mesa-mew-met-mettle-meteor-meticulous-metronome-metre-metier-metonym-metopic-metonymy">Guess history</td></tr>
+<tr><td>28</td><td>Stefan</td><td>21</td><td>3:40</td><td title="lycanthropy-tether-opportune-myth-mizzen-mechanic-miasma-mellifluous-mermaid-mezzanine-mewl-mesomorph-metropolitan-meta-meting-metropolis-metro-metric-metre-metonym-metonymy">Guess history</td></tr>
+<tr><td>29</td><td>kb</td><td>22</td><td>3:27</td><td title="lime-tree-punt-mile-lost-mate-mid-met-microphone-mew-metropolis-metronome-meteor-methadone-methodology-metrical-metre-methylated-meticulous-metonym-metope-metonymy">Guess history</td></tr>
+<tr><td>30</td><td>AKt</td><td>23</td><td>6:16</td><td title="medieval-sad-opal-need-my-moody-mix-mezzanine-mercy-metal-mew-metropolis-meter-method-metre-meticulous-metopic-metonym-metope-metopae-metonymical-metonyms-metonymy">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

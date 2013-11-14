@@ -1,0 +1,93 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon" selected="selected">joon</option>
+<option value="mike">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">entente</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=joon&date=120603">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">ma gab cab ear fabulous etcetera emigrate error end equine epicenter eon enter enhance enormous enrage ensure entailment entangle entelechy entente myrtle hex dye fox exude embroil eohippus end engage enigmatic enlace enmity enough enrage enteric ensign entail entente nabob flummox cabriole eager fa entice eclectic effervescent eject eminent endear enmity enough ensue enterprise entangle enteric entente illusory ersatz cad duality elfin entreaty emcee enact engage enlist enrage entertain ensign entail entangle entente mirror habit cygnet eye dye elementary etagere escheat enamored eon enmity entrails enquiry enroll ensnare entail entertaining entente muffle cuff fluff enough feign esurient entity empty encroach engorge enormity enquiry ensconce entail entertain enter entangle entente mink fledgling chattel dirndl dungarees feint fastidious entice ebullient egregious elucidate embalm encroach enmity ensign entangle entente ma ha dastardly favorite eccentric evocative emanate ephemeral endemic envious ennead entropy enough enquiry ensure entail enthrall entertain entangle entente myopia goat dabble eye dysfunctional eminence entrails entropy enact enmity enough enrage ensile entail entice enter enthrall entangle entente na gab dab each fa eke er en epact eobiont enshrined enticed entered ensile ensue entangle entente mnemonic fraudulent chickadee doowop eczema flamboyant festival factotum empiric excerpt erbium engorge epiphany entropy enliven ennoble enquire ensemble ensue entail entity entente fulcrum dacron ethanol dynamite egregious eminent epistle encomium ennui epaulette entreat ensconce entente me call foe do eel fan extend egregious elephant emphasis equality epic enthusiasm enema enquiry entente nine eight ice game fab ergonomic enemy epic pe ennui envy entice enquire enrich enshrine enter ensue enswathes entails entangle entelechy entente myth gad cad entryway echo eggplant emerald engrave enterprise enrich ensure entente maze garden baker delve earlobe funky fable epic effeminate elephant entourage emit emulate entente derelict lumen gargantuan eel fern fabulous ewe eider ejecta epigraph eminent eon enervate envy english enlargement entropy ensnare ensure entail enthrall enter entente lithography ecology hibiscus foliage euphemism entropy encomium enmity enormity ensconce enshrine entail entangle entrapment entourage entomb entitlement enterprise enteric entente nature friendly cornflower dramatic elegant eye elope eon enter emerald enfold enhance enmesh ensign ensoul enswathe entangle entasis entente more free best drug easier ester egregious emigrate erroneous epicure enervate enough epaulet enzyme enraged entropy ensure entail enteric entangled entente piazza miasma liaison guzzle eye each edify ensure entity entente panther father cistern diligent ecru estuary eminent epistle entourage enamored engorge enormous enslave entitled entertainment ensure entablature entail entasis entellus enter entente loco hobo dodo foment echolalia fanciful errant effervescent embellish epithet entertain emu encompass engross enlarge ennoble enquire ensure entangle enterprise enteral entente multiply guarantee cardamom enigma fragrant fab erratic episode eon entertain enlarge enough enquire enrage ensign entail entente me do go eel favor esteem ego emerald epic enter enable end enforce engine enlist enquiry enrichment ensign ensure entailment entanglement entente locus exuberance cavalcade destrier ebullient emulate escargot epinephrine enmesh enumerate enquiry ensnare entitled entangle entertain entente mayday giraffe counsel envelope damn donate educate either element empty encroach enough enter enquire ensign ensure entail entente angelic grisly barricade detriment egoist flamingo elongate ferruginous endow famished epoch entangle enter entente stifle miniscule livid graft farce drab edify ewe eminent estrogen erectile eon enough enunciate enquire entourage ensues enthrals entails entanglement enterprise enteritis entente mull gull dull fail endoscopy eugenics esoteric equestrian epaulet enzyme enmity entrails enrol ensue enteric entail entangle enter entente quisling fletch cooper ecru factual ellipsis ewer episodic entanglement epaulet envelope entrust enter entente mother foster cubit euphoria demur dubious either emotive epoxy epaulet encrypt enmity enrich enthrall ensign ensure enter entente lion baby huge duke fugue exit essential eosin effluence eight elocution emotion enemy entry engine entente trust guess dove find easy fancy empty erase epic ensky entry entia entail enter entasis entellus entente jambalaya druid flamingo elephant fault erratic emissary epithet epaulet energize enrage enthrall ensue entail enter entente </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jun 3, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>LindaBee</td><td>10</td><td>1:55</td><td title="piazza-miasma-liaison-guzzle-eye-each-edify-ensure-entity-entente">Guess history</td></tr>
+<tr><td>2</td><td>mike b</td><td>12</td><td>1:50</td><td title="myth-gad-cad-entryway-echo-eggplant-emerald-engrave-enterprise-enrich-ensure-entente">Guess history</td></tr>
+<tr><td>3</td><td>Evad</td><td>13</td><td>3:36</td><td title="fulcrum-dacron-ethanol-dynamite-egregious-eminent-epistle-encomium-ennui-epaulette-entreat-ensconce-entente">Guess history</td></tr>
+<tr><td>4</td><td>Jenny</td><td>14</td><td>2:00</td><td title="maze-garden-baker-delve-earlobe-funky-fable-epic-effeminate-elephant-entourage-emit-emulate-entente">Guess history</td></tr>
+<tr><td>4</td><td>Donna!!!!!</td><td>14</td><td>4:01</td><td title="quisling-fletch-cooper-ecru-factual-ellipsis-ewer-episodic-entanglement-epaulet-envelope-entrust-enter-entente">Guess history</td></tr>
+<tr><td>4</td><td>Bvm</td><td>14</td><td>8:20</td><td title="angelic-grisly-barricade-detriment-egoist-flamingo-elongate-ferruginous-endow-famished-epoch-entangle-enter-entente">Guess history</td></tr>
+<tr><td>7</td><td>Cat</td><td>16</td><td>2:22</td><td title="jambalaya-druid-flamingo-elephant-fault-erratic-emissary-epithet-epaulet-energize-enrage-enthrall-ensue-entail-enter-entente">Guess history</td></tr>
+<tr><td>7</td><td>benton</td><td>16</td><td>2:34</td><td title="illusory-ersatz-cad-duality-elfin-entreaty-emcee-enact-engage-enlist-enrage-entertain-ensign-entail-entangle-entente">Guess history</td></tr>
+<tr><td>7</td><td>john plaut</td><td>16</td><td>3:16</td><td title="me-call-foe-do-eel-fan-extend-egregious-elephant-emphasis-equality-epic-enthusiasm-enema-enquiry-entente">Guess history</td></tr>
+<tr><td>7</td><td>lovapug</td><td>16</td><td>7:08</td><td title="lion-baby-huge-duke-fugue-exit-essential-eosin-effluence-eight-elocution-emotion-enemy-entry-engine-entente">Guess history</td></tr>
+<tr><td>7</td><td>Billy</td><td>16</td><td>7:13</td><td title="locus-exuberance-cavalcade-destrier-ebullient-emulate-escargot-epinephrine-enmesh-enumerate-enquiry-ensnare-entitled-entangle-entertain-entente">Guess history</td></tr>
+<tr><td>12</td><td>Laura Dove</td><td>17</td><td>2:07</td><td title="mink-fledgling-chattel-dirndl-dungarees-feint-fastidious-entice-ebullient-egregious-elucidate-embalm-encroach-enmity-ensign-entangle-entente">Guess history</td></tr>
+<tr><td>12</td><td>ward</td><td>17</td><td>2:30</td><td title="multiply-guarantee-cardamom-enigma-fragrant-fab-erratic-episode-eon-entertain-enlarge-enough-enquire-enrage-ensign-entail-entente">Guess history</td></tr>
+<tr><td>12</td><td>Frances</td><td>17</td><td>3:09</td><td title="na-gab-dab-each-fa-eke-er-en-epact-eobiont-enshrined-enticed-entered-ensile-ensue-entangle-entente">Guess history</td></tr>
+<tr><td>12</td><td>Great Caesar's Ghost</td><td>17</td><td>10:03</td><td title="trust-guess-dove-find-easy-fancy-empty-erase-epic-ensky-entry-entia-entail-enter-entasis-entellus-entente">Guess history</td></tr>
+<tr><td>16</td><td>Maureen R</td><td>18</td><td>1:33</td><td title="mirror-habit-cygnet-eye-dye-elementary-etagere-escheat-enamored-eon-enmity-entrails-enquiry-enroll-ensnare-entail-entertaining-entente">Guess history</td></tr>
+<tr><td>16</td><td>Jon88</td><td>18</td><td>2:31</td><td title="muffle-cuff-fluff-enough-feign-esurient-entity-empty-encroach-engorge-enormity-enquiry-ensconce-entail-entertain-enter-entangle-entente">Guess history</td></tr>
+<tr><td>16</td><td>Mean Old Elaine</td><td>18</td><td>3:29</td><td title="myrtle-hex-dye-fox-exude-embroil-eohippus-end-engage-enigmatic-enlace-enmity-enough-enrage-enteric-ensign-entail-entente">Guess history</td></tr>
+<tr><td>16</td><td>Neville's Mom</td><td>18</td><td>4:34</td><td title="nabob-flummox-cabriole-eager-fa-entice-eclectic-effervescent-eject-eminent-endear-enmity-enough-ensue-enterprise-entangle-enteric-entente">Guess history</td></tr>
+<tr><td>16</td><td>Natalie Spring LART 2012</td><td>18</td><td>5:19</td><td title="mother-foster-cubit-euphoria-demur-dubious-either-emotive-epoxy-epaulet-encrypt-enmity-enrich-enthrall-ensign-ensure-enter-entente">Guess history</td></tr>
+<tr><td>16</td><td>Lace</td><td>18</td><td>7:03</td><td title="mayday-giraffe-counsel-envelope-damn-donate-educate-either-element-empty-encroach-enough-enter-enquire-ensign-ensure-entail-entente">Guess history</td></tr>
+<tr><td>22</td><td>Tara</td><td>19</td><td>3:27</td><td title="myopia-goat-dabble-eye-dysfunctional-eminence-entrails-entropy-enact-enmity-enough-enrage-ensile-entail-entice-enter-enthrall-entangle-entente">Guess history</td></tr>
+<tr><td>22</td><td>callie</td><td>19</td><td>5:13</td><td title="nature-friendly-cornflower-dramatic-elegant-eye-elope-eon-enter-emerald-enfold-enhance-enmesh-ensign-ensoul-enswathe-entangle-entasis-entente">Guess history</td></tr>
+<tr><td>22</td><td>Ric Q FAIL</td><td>19</td><td>8:28</td><td title="mull-gull-dull-fail-endoscopy-eugenics-esoteric-equestrian-epaulet-enzyme-enmity-entrails-enrol-ensue-enteric-entail-entangle-enter-entente">Guess history</td></tr>
+<tr><td>25</td><td>===</td><td>20</td><td>3:46</td><td title="ma-ha-dastardly-favorite-eccentric-evocative-emanate-ephemeral-endemic-envious-ennead-entropy-enough-enquiry-ensure-entail-enthrall-entertain-entangle-entente">Guess history</td></tr>
+<tr><td>25</td><td>Ringoes</td><td>20</td><td>5:09</td><td title="lithography-ecology-hibiscus-foliage-euphemism-entropy-encomium-enmity-enormity-ensconce-enshrine-entail-entangle-entrapment-entourage-entomb-entitlement-enterprise-enteric-entente">Guess history</td></tr>
+<tr><td>27</td><td>L</td><td>21</td><td>4:41</td><td title="ma-gab-cab-ear-fabulous-etcetera-emigrate-error-end-equine-epicenter-eon-enter-enhance-enormous-enrage-ensure-entailment-entangle-entelechy-entente">Guess history</td></tr>
+<tr><td>27</td><td></td><td>21</td><td>6:47</td><td title="more-free-best-drug-easier-ester-egregious-emigrate-erroneous-epicure-enervate-enough-epaulet-enzyme-enraged-entropy-ensure-entail-enteric-entangled-entente">Guess history</td></tr>
+<tr><td>29</td><td>Gareth</td><td>22</td><td>2:34</td><td title="mnemonic-fraudulent-chickadee-doowop-eczema-flamboyant-festival-factotum-empiric-excerpt-erbium-engorge-epiphany-entropy-enliven-ennoble-enquire-ensemble-ensue-entail-entity-entente">Guess history</td></tr>
+<tr><td>29</td><td>Shoe</td><td>22</td><td>6:07</td><td title="panther-father-cistern-diligent-ecru-estuary-eminent-epistle-entourage-enamored-engorge-enormous-enslave-entitled-entertainment-ensure-entablature-entail-entasis-entellus-enter-entente">Guess history</td></tr>
+<tr><td>29</td><td>Eddy</td><td>22</td><td>7:04</td><td title="loco-hobo-dodo-foment-echolalia-fanciful-errant-effervescent-embellish-epithet-entertain-emu-encompass-engross-enlarge-ennoble-enquire-ensure-entangle-enterprise-enteral-entente">Guess history</td></tr>
+<tr><td>29</td><td>Sophiegirl</td><td>22</td><td>9:19</td><td title="nine-eight-ice-game-fab-ergonomic-enemy-epic-pe-ennui-envy-entice-enquire-enrich-enshrine-enter-ensue-enswathes-entails-entangle-entelechy-entente">Guess history</td></tr>
+<tr><td>29</td><td>chilean</td><td>22</td><td>11:50</td><td title="me-do-go-eel-favor-esteem-ego-emerald-epic-enter-enable-end-enforce-engine-enlist-enquiry-enrichment-ensign-ensure-entailment-entanglement-entente">Guess history</td></tr>
+<tr><td>34</td><td>Joel Browning</td><td>23</td><td>3:54</td><td title="stifle-miniscule-livid-graft-farce-drab-edify-ewe-eminent-estrogen-erectile-eon-enough-enunciate-enquire-entourage-ensues-enthrals-entails-entanglement-enterprise-enteritis-entente">Guess history</td></tr>
+<tr><td>34</td><td>dca</td><td>23</td><td>3:55</td><td title="derelict-lumen-gargantuan-eel-fern-fabulous-ewe-eider-ejecta-epigraph-eminent-eon-enervate-envy-english-enlargement-entropy-ensnare-ensure-entail-enthrall-enter-entente">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=mike">mike</a></p>
+</body>
+</html>

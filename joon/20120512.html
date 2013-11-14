@@ -1,0 +1,92 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon" selected="selected">joon</option>
+<option value="mike">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">quietus</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=joon&date=120512">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">mundane prosaic wimpy trite silly ridiculous quaint rapscallion radical quorum quintillion querulous quincunx quin quid quietude quiff quietus id reef name parachute pumpkin queue rabid quoth quit quiet quill quietus reverb luster nested packet quack rabid quirky queen quell quire quench query quest queue quibble quid quip quieter quietly quill quietness quiets quiff quietus machismo swarthy portend race quip python quagmire quarter questions quicksilver quilt quiet quiff quietude quietus ma ta pa ravage quack quorum quick quizzical quidnunc quip quinine quill quiet quiff quietus quandary ukulele sassafras rabbet quisling quench quibble quill quiff quid quiescent quietude quietus nabob ragamuffin orotund quintessence pusillanimous pyromania quark query quicksand quidnunc quill quiet quiff quietism quietly quietness quietus mirror systemic python rabble quietude quotidian quod quintessential quill quiff quietus me to rally oar pen queue rabbit quotation quivering quit quinine quilt quick quiet quietus ma rabbi pea quack quote quiz quest quibble quiver quip quicksand quiff quicksilver quid quiescent quiets quietus ignoble oxygen sync rabbi posh queasy quorum quicken quiver quidnunc quince quill quietus myrtle typical ox pye rye rabid quest quisling quibble quilt quietus myth qua tab rhumba rad quotation quintet quaver quibble quicksilver quince quietude quilt quill quiff quietus modus torus porpoise ruckus rabid quince puzzle pyrite query queue quid quill quiescent quiet quiff quietude quietus happy sad peace rich pretty quick rapid radio rabble quote quiver quill quiet quietus man rust pike queen radish quoth quill quest quibble quid quiet quietus qadi thrush sanguine rhubarb ragamuffin queue rabbi quoth quixotic quiche quintile quilt quiet quill quietude quiff quietus moron stupid pabulum rabid quorum puzzle query quizzical quibble quintet quiff quickly quid quiet quietude quietudes quietus licorice sartorial pathetic rambunctious quasi quisling query quidnunc quintuplet quilt quietude quiff quietus juggle puzzle tussle quizzical quackery questionable quip quill quibble quidnunc quiet quietly quietness quietus macabre saber quasar rabble quirt quest queue quibble quiff quid quiet quietly quietus marmoset robot opulent quietude race quintuplet quill quiff quietudes quietus ma saber oak quack rabbi quick quorum quintuplets quill quid quiet quiff quietude quietudes quietus lambaste salmon omicron rascal pinnacle qualia rakish racoon quiescent quorum quince quilt quill quietude quietus nabob turgid superfluous sanguine rancid plethora pusillanimous pygmy rabbi pyromania quaver quiver question quibble quill quid quiescent quiff quietly quietude quietus incandescent rutabaga middleman prattle rabbit pyromania quota quake quinsy questionnaire quick quiff quiet quietus trap jail nail quail rail rabbit quote quince queasy quick quiet quietude quilt quietus ma pa sat rat pun quare quotient quinine question quibble quill quicken quidnunc quietus liver quiver mile olive pry quake quell quest quiet quill quiff quietus moxie sanguine pseudonym raze queue quotidian quorum quixotic quill quibble quiescent quietude quietus mom tom plump rump ramp pump quick rabid quotient quire quid quintessential quintessential quint quill quiet quietus myopia turtle pizza quoth pyromaniac qualm queen quite quibble quip quick quill quid quiet quiff quietly quietude quietus ma sack oak rack puck queen quota quill quibble quid quiescent quiff quietus macrame turmeric quail satchel rhubarb quotation quince quill queen quick quid quietude quiff quietus </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 12, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Kaya</td><td>10</td><td>7:16</td><td title="marmoset-robot-opulent-quietude-race-quintuplet-quill-quiff-quietudes-quietus">Guess history</td></tr>
+<tr><td>2</td><td>Mean Old Elaine</td><td>11</td><td>1:02</td><td title="myrtle-typical-ox-pye-rye-rabid-quest-quisling-quibble-quilt-quietus">Guess history</td></tr>
+<tr><td>2</td><td>Maureen R</td><td>11</td><td>2:03</td><td title="mirror-systemic-python-rabble-quietude-quotidian-quod-quintessential-quill-quiff-quietus">Guess history</td></tr>
+<tr><td>4</td><td>bobk</td><td>12</td><td>1:07</td><td title="id-reef-name-parachute-pumpkin-queue-rabid-quoth-quit-quiet-quill-quietus">Guess history</td></tr>
+<tr><td>4</td><td>NKA</td><td>12</td><td>1:37</td><td title="man-rust-pike-queen-radish-quoth-quill-quest-quibble-quid-quiet-quietus">Guess history</td></tr>
+<tr><td>4</td><td>Rogersr</td><td>12</td><td>2:43</td><td title="liver-quiver-mile-olive-pry-quake-quell-quest-quiet-quill-quiff-quietus">Guess history</td></tr>
+<tr><td>7</td><td>john farmer</td><td>13</td><td>1:42</td><td title="ignoble-oxygen-sync-rabbi-posh-queasy-quorum-quicken-quiver-quidnunc-quince-quill-quietus">Guess history</td></tr>
+<tr><td>7</td><td>Donna!!!!!</td><td>13</td><td>2:02</td><td title="quandary-ukulele-sassafras-rabbet-quisling-quench-quibble-quill-quiff-quid-quiescent-quietude-quietus">Guess history</td></tr>
+<tr><td>7</td><td>L</td><td>13</td><td>2:13</td><td title="ma-sack-oak-rack-puck-queen-quota-quill-quibble-quid-quiescent-quiff-quietus">Guess history</td></tr>
+<tr><td>7</td><td>Ringoes</td><td>13</td><td>3:27</td><td title="licorice-sartorial-pathetic-rambunctious-quasi-quisling-query-quidnunc-quintuplet-quilt-quietude-quiff-quietus">Guess history</td></tr>
+<tr><td>7</td><td>Margaret</td><td>13</td><td>3:57</td><td title="macabre-saber-quasar-rabble-quirt-quest-queue-quibble-quiff-quid-quiet-quietly-quietus">Guess history</td></tr>
+<tr><td>7</td><td>Natalie Spring LART 2012</td><td>13</td><td>6:33</td><td title="moxie-sanguine-pseudonym-raze-queue-quotidian-quorum-quixotic-quill-quibble-quiescent-quietude-quietus">Guess history</td></tr>
+<tr><td>13</td><td>pvh</td><td>14</td><td>1:25</td><td title="ma-pa-sat-rat-pun-quare-quotient-quinine-question-quibble-quill-quicken-quidnunc-quietus">Guess history</td></tr>
+<tr><td>13</td><td>SDW</td><td>14</td><td>2:03</td><td title="incandescent-rutabaga-middleman-prattle-rabbit-pyromania-quota-quake-quinsy-questionnaire-quick-quiff-quiet-quietus">Guess history</td></tr>
+<tr><td>13</td><td>Janet Lee</td><td>14</td><td>2:35</td><td title="happy-sad-peace-rich-pretty-quick-rapid-radio-rabble-quote-quiver-quill-quiet-quietus">Guess history</td></tr>
+<tr><td>13</td><td>Elaine LART211</td><td>14</td><td>2:36</td><td title="trap-jail-nail-quail-rail-rabbit-quote-quince-queasy-quick-quiet-quietude-quilt-quietus">Guess history</td></tr>
+<tr><td>13</td><td>Katherine</td><td>14</td><td>2:46</td><td title="macrame-turmeric-quail-satchel-rhubarb-quotation-quince-quill-queen-quick-quid-quietude-quiff-quietus">Guess history</td></tr>
+<tr><td>13</td><td>LindaBee</td><td>14</td><td>4:09</td><td title="juggle-puzzle-tussle-quizzical-quackery-questionable-quip-quill-quibble-quidnunc-quiet-quietly-quietness-quietus">Guess history</td></tr>
+<tr><td>19</td><td>===</td><td>15</td><td>1:28</td><td title="ma-ta-pa-ravage-quack-quorum-quick-quizzical-quidnunc-quip-quinine-quill-quiet-quiff-quietus">Guess history</td></tr>
+<tr><td>19</td><td>AmesGames</td><td>15</td><td>2:47</td><td title="ma-saber-oak-quack-rabbi-quick-quorum-quintuplets-quill-quid-quiet-quiff-quietude-quietudes-quietus">Guess history</td></tr>
+<tr><td>19</td><td>john plaut</td><td>15</td><td>4:09</td><td title="me-to-rally-oar-pen-queue-rabbit-quotation-quivering-quit-quinine-quilt-quick-quiet-quietus">Guess history</td></tr>
+<tr><td>19</td><td>Billy</td><td>15</td><td>6:07</td><td title="lambaste-salmon-omicron-rascal-pinnacle-qualia-rakish-racoon-quiescent-quorum-quince-quilt-quill-quietude-quietus">Guess history</td></tr>
+<tr><td>19</td><td>smack</td><td>15</td><td>6:33</td><td title="machismo-swarthy-portend-race-quip-python-quagmire-quarter-questions-quicksilver-quilt-quiet-quiff-quietude-quietus">Guess history</td></tr>
+<tr><td>24</td><td>mike b</td><td>16</td><td>2:49</td><td title="myth-qua-tab-rhumba-rad-quotation-quintet-quaver-quibble-quicksilver-quince-quietude-quilt-quill-quiff-quietus">Guess history</td></tr>
+<tr><td>25</td><td>MB</td><td>17</td><td>2:22</td><td title="mom-tom-plump-rump-ramp-pump-quick-rabid-quotient-quire-quid-quintessential-quintessential-quint-quill-quiet-quietus">Guess history</td></tr>
+<tr><td>25</td><td>Peter W</td><td>17</td><td>3:58</td><td title="qadi-thrush-sanguine-rhubarb-ragamuffin-queue-rabbi-quoth-quixotic-quiche-quintile-quilt-quiet-quill-quietude-quiff-quietus">Guess history</td></tr>
+<tr><td>25</td><td>karph54</td><td>17</td><td>4:19</td><td title="ma-rabbi-pea-quack-quote-quiz-quest-quibble-quiver-quip-quicksand-quiff-quicksilver-quid-quiescent-quiets-quietus">Guess history</td></tr>
+<tr><td>25</td><td></td><td>17</td><td>5:21</td><td title="moron-stupid-pabulum-rabid-quorum-puzzle-query-quizzical-quibble-quintet-quiff-quickly-quid-quiet-quietude-quietudes-quietus">Guess history</td></tr>
+<tr><td>25</td><td>Lane</td><td>17</td><td>6:49</td><td title="nabob-ragamuffin-orotund-quintessence-pusillanimous-pyromania-quark-query-quicksand-quidnunc-quill-quiet-quiff-quietism-quietly-quietness-quietus">Guess history</td></tr>
+<tr><td>25</td><td>Ric Q FAIL</td><td>17</td><td>7:13</td><td title="modus-torus-porpoise-ruckus-rabid-quince-puzzle-pyrite-query-queue-quid-quill-quiescent-quiet-quiff-quietude-quietus">Guess history</td></tr>
+<tr><td>31</td><td>Jon88</td><td>18</td><td>2:41</td><td title="mundane-prosaic-wimpy-trite-silly-ridiculous-quaint-rapscallion-radical-quorum-quintillion-querulous-quincunx-quin-quid-quietude-quiff-quietus">Guess history</td></tr>
+<tr><td>31</td><td>Tara</td><td>18</td><td>2:48</td><td title="myopia-turtle-pizza-quoth-pyromaniac-qualm-queen-quite-quibble-quip-quick-quill-quid-quiet-quiff-quietly-quietude-quietus">Guess history</td></tr>
+<tr><td>33</td><td>Neville's Mom</td><td>21</td><td>6:47</td><td title="nabob-turgid-superfluous-sanguine-rancid-plethora-pusillanimous-pygmy-rabbi-pyromania-quaver-quiver-question-quibble-quill-quid-quiescent-quiff-quietly-quietude-quietus">Guess history</td></tr>
+<tr><td>34</td><td>Drew</td><td>24</td><td>5:21</td><td title="reverb-luster-nested-packet-quack-rabid-quirky-queen-quell-quire-quench-query-quest-queue-quibble-quid-quip-quieter-quietly-quill-quietness-quiets-quiff-quietus">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=mike">mike</a></p>
+</body>
+</html>

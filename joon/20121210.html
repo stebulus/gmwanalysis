@@ -1,0 +1,95 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon" selected="selected">joon</option>
+<option value="mike">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">albedo</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=joon&date=121210">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">lurid guzzle dizzy blurry ampule agency airfoil albumen ajar alabaster alacrity alas albacore albino albedo jambalaya dromedary bumblebee barbaric anoint allegory agnostic ajar albacore algebra alchemist albino albeit albatross albedo malleable gale fail dale bail andromeda affable ajar amnesia amass albino akin alas albatross albeit albedo ma gab cab babble alimony adieu agriculture alabaster algebra alcove albatross alchemy albumin albino albeit albedo ma fab cab baby aggravate atavistic appease alimony ailment ajar alabaster algebra alder alchemy alarm albatross album albino albeit albedo madden fable cable babble ample agitate ail alabaster alter algae alder alcohol albedo muckraker frenchify besmirch aluminum addition affable aggregate ailment alibi alabaster ale alcohol albumin alarm albedo malaguena gavotte chaconne allemande abacus adenoid agitprop aileron akimbo algebra albacore alewife alderman alcohol albumen albino albatross albeit albedo lyric fabulous clutter azimuth amulet affable aisle albacore amatory alimentary alfalfa alderman alcove albumen albatross albeit albedo infinity doggerel bottom alterations addenda affairs airlines albumin ait alarum ab alb albs albacore albeit albatross albedo lymph girt dirge bluster austere alabaster aqueous antique amethyst alumnus alimony algorithm alchemy albatross albino albeit albedo patriarch gorge collapse belfry alligator activate aggregate airmail alcove albatross alchemy albino albeit albedo ma fa cab ba am affect al alms algae alcove albino alacrity alas alba albacore albatross albeit albedo na ha dab cab ba am ag ajar al allelism albumin albedo magic horse dragon buzz arcade adze animal after agriculture alight alien alacrity alarm alarming ale album alarms albino alas albatross albeit albedo nabob flummox cabriole ba amity aficionado aiglet akimbo alien alacrity ale alderman albeit alas albacore albatross albedo joke ghost cistern basic amaretto addition agriculture aim alimony alabaster ale albino albedo ma fa cab azure alimony accrue affable aileron akin alabaster alewife albumen alar albedo ma fab cab baa amaze air alacrity all alder alb alchemy albatross albumen albumen album albino albeit albedo myopia goat dabble bye azimuth amicable age aggregate allocate ail alimony alas ale alb alcove albumen albino albatross albeit albedo luv dew catalyst beckon apology altogether activate ahoy albumen airship aitch alack alar albite alas alate albatross albino albinism albertite albedo macabre eavesdrop cabinet babble aghast anodyne alcohol airhead alabaster albacore alchemy albino albeit albedo iambic chimichangas beacon ambiguous ailment alligator alabaster algae alewife albino alas albatross albeit albedo me coach bee axe add age all aid alimony alert alas albeit albedo molybdenum frustum calcium avocado angina affable air alimony aisle alabaster alewife alcohol albacore albeit albatross albedo macrame fruit canary baby aroma after ammonia ajar aluminum alabaster alfalfa alewife albatross alcove albumen albs albino albeit albedo lecture diatribe butcher azure analysis adhesive aim allure ajar alack align alert alcohol alb albino albatross albeit albedo lycra cudgel abattoir botulism azure amateurish agriculture ailment albatross alchemy albeit albedo mi fa by ay am ad ah al allegory alderman alchemy alarm albino alas alba albedo ma fa cyan beck attenuate altitude advice aggregate akimbo ale alar albumen albacore albeit albatross albedo my friend canary aye amicable after aim akimbo alms alb alibi ale alder albatross alchemy albuterol albino albeit albedo palaver farfalle calumny avalanche antimony aghast allspice aileron alderman akimbo alack albedo stupendous fantastic bountiful azure arrogant abrogate acclimate anorexic afghan ahoy ailment allure alabaster alcohol almond albino alacrity alder albatross albumen albedo mall doll ball affable azure amoral akimbo alabaster amass alimony algebra albino alacrity alarmism albatross albeit albedo homologous diploid evolution biology advanced bald awkward ammo after ailing alloy aim align albatross alderman albeit albumen albino albedo lemon friar custard bauble amateur addendum aggregate alienate alchemist albacore albatross albeit albedo lesion eureka circumference bolero atrophy alabaster apnea amorous alternative alligator algae alcohol albatross albumin albino albedo </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Dec 10, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Frances</td><td>12</td><td>1:45</td><td title="na-ha-dab-cab-ba-am-ag-ajar-al-allelism-albumin-albedo">Guess history</td></tr>
+<tr><td>1</td><td>Ange SW</td><td>12</td><td>2:36</td><td title="palaver-farfalle-calumny-avalanche-antimony-aghast-allspice-aileron-alderman-akimbo-alack-albedo">Guess history</td></tr>
+<tr><td>1</td><td>MCatherine</td><td>12</td><td>2:54</td><td title="lycra-cudgel-abattoir-botulism-azure-amateurish-agriculture-ailment-albatross-alchemy-albeit-albedo">Guess history</td></tr>
+<tr><td>4</td><td>David R</td><td>13</td><td>0:46</td><td title="joke-ghost-cistern-basic-amaretto-addition-agriculture-aim-alimony-alabaster-ale-albino-albedo">Guess history</td></tr>
+<tr><td>4</td><td>Katie</td><td>13</td><td>0:55</td><td title="madden-fable-cable-babble-ample-agitate-ail-alabaster-alter-algae-alder-alcohol-albedo">Guess history</td></tr>
+<tr><td>4</td><td>john plaut</td><td>13</td><td>4:04</td><td title="me-coach-bee-axe-add-age-all-aid-alimony-alert-alas-albeit-albedo">Guess history</td></tr>
+<tr><td>4</td><td>huh?</td><td>13</td><td>5:25</td><td title="lemon-friar-custard-bauble-amateur-addendum-aggregate-alienate-alchemist-albacore-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>8</td><td>GT</td><td>14</td><td>1:06</td><td title="ma-fa-cab-azure-alimony-accrue-affable-aileron-akin-alabaster-alewife-albumen-alar-albedo">Guess history</td></tr>
+<tr><td>8</td><td>SDW</td><td>14</td><td>1:41</td><td title="iambic-chimichangas-beacon-ambiguous-ailment-alligator-alabaster-algae-alewife-albino-alas-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>8</td><td>mike b</td><td>14</td><td>2:58</td><td title="patriarch-gorge-collapse-belfry-alligator-activate-aggregate-airmail-alcove-albatross-alchemy-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>8</td><td>Margaret</td><td>14</td><td>3:28</td><td title="macabre-eavesdrop-cabinet-babble-aghast-anodyne-alcohol-airhead-alabaster-albacore-alchemy-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>12</td><td>Ab</td><td>15</td><td>1:31</td><td title="muckraker-frenchify-besmirch-aluminum-addition-affable-aggregate-ailment-alibi-alabaster-ale-alcohol-albumin-alarm-albedo">Guess history</td></tr>
+<tr><td>12</td><td>===</td><td>15</td><td>2:00</td><td title="lurid-guzzle-dizzy-blurry-ampule-agency-airfoil-albumen-ajar-alabaster-alacrity-alas-albacore-albino-albedo">Guess history</td></tr>
+<tr><td>12</td><td>Cat</td><td>15</td><td>2:49</td><td title="jambalaya-dromedary-bumblebee-barbaric-anoint-allegory-agnostic-ajar-albacore-algebra-alchemist-albino-albeit-albatross-albedo">Guess history</td></tr>
+<tr><td>15</td><td>Tyler Hinman</td><td>16</td><td>1:20</td><td title="molybdenum-frustum-calcium-avocado-angina-affable-air-alimony-aisle-alabaster-alewife-alcohol-albacore-albeit-albatross-albedo">Guess history</td></tr>
+<tr><td>15</td><td>SML</td><td>16</td><td>1:57</td><td title="ma-fa-cyan-beck-attenuate-altitude-advice-aggregate-akimbo-ale-alar-albumen-albacore-albeit-albatross-albedo">Guess history</td></tr>
+<tr><td>15</td><td>muffuletta</td><td>16</td><td>2:46</td><td title="mi-fa-by-ay-am-ad-ah-al-allegory-alderman-alchemy-alarm-albino-alas-alba-albedo">Guess history</td></tr>
+<tr><td>15</td><td>Bob M.</td><td>16</td><td>3:31</td><td title="malleable-gale-fail-dale-bail-andromeda-affable-ajar-amnesia-amass-albino-akin-alas-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>15</td><td>Billy</td><td>16</td><td>4:08</td><td title="lesion-eureka-circumference-bolero-atrophy-alabaster-apnea-amorous-alternative-alligator-algae-alcohol-albatross-albumin-albino-albedo">Guess history</td></tr>
+<tr><td>15</td><td>H</td><td>16</td><td>5:14</td><td title="ma-gab-cab-babble-alimony-adieu-agriculture-alabaster-algebra-alcove-albatross-alchemy-albumin-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>21</td><td>Carrie S.</td><td>17</td><td>2:38</td><td title="lymph-girt-dirge-bluster-austere-alabaster-aqueous-antique-amethyst-alumnus-alimony-algorithm-alchemy-albatross-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>21</td><td>bobk</td><td>17</td><td>3:19</td><td title="infinity-doggerel-bottom-alterations-addenda-affairs-airlines-albumin-ait-alarum-ab-alb-albs-albacore-albeit-albatross-albedo">Guess history</td></tr>
+<tr><td>21</td><td>Al S.</td><td>17</td><td>3:25</td><td title="lyric-fabulous-clutter-azimuth-amulet-affable-aisle-albacore-amatory-alimentary-alfalfa-alderman-alcove-albumen-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>21</td><td>Natalie P.</td><td>17</td><td>4:51</td><td title="mall-doll-ball-affable-azure-amoral-akimbo-alabaster-amass-alimony-algebra-albino-alacrity-alarmism-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>21</td><td>Neville's Mom</td><td>17</td><td>7:14</td><td title="nabob-flummox-cabriole-ba-amity-aficionado-aiglet-akimbo-alien-alacrity-ale-alderman-albeit-alas-albacore-albatross-albedo">Guess history</td></tr>
+<tr><td>26</td><td>AmesGames</td><td>18</td><td>1:48</td><td title="ma-fab-cab-baa-amaze-air-alacrity-all-alder-alb-alchemy-albatross-albumen-albumen-album-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>26</td><td>KatD</td><td>18</td><td>6:35</td><td title="ma-fa-cab-ba-am-affect-al-alms-algae-alcove-albino-alacrity-alas-alba-albacore-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>26</td><td>Rosie</td><td>18</td><td>11:17</td><td title="lecture-diatribe-butcher-azure-analysis-adhesive-aim-allure-ajar-alack-align-alert-alcohol-alb-albino-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>29</td><td>Jon88</td><td>19</td><td>2:31</td><td title="malaguena-gavotte-chaconne-allemande-abacus-adenoid-agitprop-aileron-akimbo-algebra-albacore-alewife-alderman-alcohol-albumen-albino-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>29</td><td>Katherine</td><td>19</td><td>2:51</td><td title="macrame-fruit-canary-baby-aroma-after-ammonia-ajar-aluminum-alabaster-alfalfa-alewife-albatross-alcove-albumen-albs-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>29</td><td>grace</td><td>19</td><td>4:37</td><td title="homologous-diploid-evolution-biology-advanced-bald-awkward-ammo-after-ailing-alloy-aim-align-albatross-alderman-albeit-albumen-albino-albedo">Guess history</td></tr>
+<tr><td>29</td><td>callie</td><td>19</td><td>6:34</td><td title="my-friend-canary-aye-amicable-after-aim-akimbo-alms-alb-alibi-ale-alder-albatross-alchemy-albuterol-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>33</td><td>arg karph54</td><td>20</td><td>3:23</td><td title="ma-fab-cab-baby-aggravate-atavistic-appease-alimony-ailment-ajar-alabaster-algebra-alder-alchemy-alarm-albatross-album-albino-albeit-albedo">Guess history</td></tr>
+<tr><td>33</td><td>Tara </td><td>20</td><td>3:38</td><td title="myopia-goat-dabble-bye-azimuth-amicable-age-aggregate-allocate-ail-alimony-alas-ale-alb-alcove-albumen-albino-albatross-albeit-albedo">Guess history</td></tr>
+<tr><td>35</td><td>Tyler M</td><td>21</td><td>4:50</td><td title="luv-dew-catalyst-beckon-apology-altogether-activate-ahoy-albumen-airship-aitch-alack-alar-albite-alas-alate-albatross-albino-albinism-albertite-albedo">Guess history</td></tr>
+<tr><td>35</td><td>LindaBee</td><td>21</td><td>5:08</td><td title="stupendous-fantastic-bountiful-azure-arrogant-abrogate-acclimate-anorexic-afghan-ahoy-ailment-allure-alabaster-alcohol-almond-albino-alacrity-alder-albatross-albumen-albedo">Guess history</td></tr>
+<tr><td>37</td><td>Pat</td><td>22</td><td>4:41</td><td title="magic-horse-dragon-buzz-arcade-adze-animal-after-agriculture-alight-alien-alacrity-alarm-alarming-ale-album-alarms-albino-alas-albatross-albeit-albedo">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=mike">mike</a></p>
+</body>
+</html>

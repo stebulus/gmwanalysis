@@ -1,0 +1,92 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">edgewise</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=121124">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">myriad deck gab fab dry dyke elephantine ego ed effable eerie eds edema edit edict edge edgewise nabob gadfly excruciating crabapple drywall emblematic eavesdrop egotist eddy effete educate edict edema edgy edge edgewise nabob flummox cabriole eager fa eminent eider ecumenical edifice edible edema edgy edge edgewise mellow ease friend flail fab erstwhile end element eccentric eel eddy edge educate edification edgy edging edger edges edgewise humiliate chelate facelift ducky eggplant educt easterly echolocation eddy edifice edema edgewise lump buzz fuzz dumb excel egg ebb eddy effete eel edifice edge edible edger edging edgy edges edgier edgewise mat fat band day end dry dull ebb effigy educate echo ectoplasm edict edge edgy edging edgewise live fab cab dab eat either effort edible eccentric echo ecstatic eddy edge edgy edges edging edgiest edgier edgewise ma fa cab dab each em ef eccentric ed eek education edifice eddy edge edible edges edging edgier edgewise fricassee dinky elephant druthers earthwork eccentric effrontery edgy economics ecru ecstatic ectoplasm ecumenical eczema edge edgewise milliner filter callback damage elephant dungeon easel eddy effect eel education edifice edema edge edible edging edgy edges edgewise noon festoon croon effigy dressage earthy eddy eel edible edema edgewise ivory every aver buzz court duvet endoscope egghead ecstasy effrontery edema educate edgewise paucity feckless cistern dither ecru ephemeral efficacious edema eerie education edify edge edict edgy edging edges edgewise macabre gaol daft ether each ember egg eddy eel edgewise hyacinth duvet forage ellipsis educate each ecosystem ectopic edible ecumenical edenic edgy edge edging edger edges edgier edgewise macabre eavesdrop halal fungible falafel embroil ecclesiastical egghead edgewise mac gab cab eager fab eminent effort echo edgy ecstasy ecumenical edema edge edged edgier edgiest edger edgewise sappy fell breach drake excellent debit effluent earring ebb eczema eddy eek educate edema editor edit edging edge edged edger edgewise mollusk clam gherkin delicatessen egg drubbing dybbuk edifice ebullient eclogue edible ectoplasm ecumenical eddy edema edentate edge edgewise milk farm cat eat essay elaborate education ebony ed edible edge edges edgy edging edgewise pancake facsimile castanet durian eldritch ectoplasm ejecta effortless edelweiss efface eerie educe edifice edgewise neap heap deep feet facet enormous dunce elan echo ecumenical edify edge edible edgy edging edged edger edgewise iambic chimichangas exact dirigible eavesdrop enamel eggnog eclair eerie edible ecru eddy edge edgy edging edgewise mu gamma crux dither eider durable eager eddy effect eel educate edge educable edgewise ma fa dab dull eagle end egress edge effort eel educate edify edible edging edges edgier edgeways edgewise myrtle hex dye fiacre exult eminent eh ebb eddy effulgence edify edge edible edgy edgewise macrame fruit canary donkey elegant eagle eight ebullient echo education ectoplasm edict ecumenical edema edible edentate edgewise lyric fabulous clutter dystopia embroider effete eclectic educate ecumenical edema edify edgewise moratorium grotesque carbon eggplant delinquent driven ebullient education echolocation ecru edible edenic edge edges edging edgewise liege dingbat handful fulcrum emancipation dropcloth eerie dystopian echolocation edict ectoplasm eczema edible eddy edema edgy edenic edge edging edger edges edgewise sunder blunder plunder glutton gab funnel fab dunderhead dye eyeful elderberry echo edelweiss egregious effete educe edible edgewise languid farcical crucify dulcet encyclical egret earnest edify echinacea ecumenical edenic edgy edged edges edgewise spatula hark clamor election deal ear either edify ebb echelon ecru eddy edge edh edgewise </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Nov 24, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>joon</td><td>9</td><td>0:34</td><td title="macabre-eavesdrop-halal-fungible-falafel-embroil-ecclesiastical-egghead-edgewise">Guess history</td></tr>
+<tr><td>2</td><td>smack</td><td>10</td><td>0:38</td><td title="macabre-gaol-daft-ether-each-ember-egg-eddy-eel-edgewise">Guess history</td></tr>
+<tr><td>3</td><td>ngtwng</td><td>11</td><td>3:02</td><td title="noon-festoon-croon-effigy-dressage-earthy-eddy-eel-edible-edema-edgewise">Guess history</td></tr>
+<tr><td>4</td><td>Al S.</td><td>12</td><td>1:16</td><td title="lyric-fabulous-clutter-dystopia-embroider-effete-eclectic-educate-ecumenical-edema-edify-edgewise">Guess history</td></tr>
+<tr><td>4</td><td>Jill</td><td>12</td><td>4:13</td><td title="humiliate-chelate-facelift-ducky-eggplant-educt-easterly-echolocation-eddy-edifice-edema-edgewise">Guess history</td></tr>
+<tr><td>6</td><td>john farmer</td><td>13</td><td>1:47</td><td title="ivory-every-aver-buzz-court-duvet-endoscope-egghead-ecstasy-effrontery-edema-educate-edgewise">Guess history</td></tr>
+<tr><td>7</td><td>Nancy R</td><td>14</td><td>1:22</td><td title="mu-gamma-crux-dither-eider-durable-eager-eddy-effect-eel-educate-edge-educable-edgewise">Guess history</td></tr>
+<tr><td>7</td><td>Neville's Mom</td><td>14</td><td>3:00</td><td title="nabob-flummox-cabriole-eager-fa-eminent-eider-ecumenical-edifice-edible-edema-edgy-edge-edgewise">Guess history</td></tr>
+<tr><td>7</td><td>Ange SW</td><td>14</td><td>3:08</td><td title="pancake-facsimile-castanet-durian-eldritch-ectoplasm-ejecta-effortless-edelweiss-efface-eerie-educe-edifice-edgewise">Guess history</td></tr>
+<tr><td>10</td><td>mean old elaine</td><td>15</td><td>1:02</td><td title="myrtle-hex-dye-fiacre-exult-eminent-eh-ebb-eddy-effulgence-edify-edge-edible-edgy-edgewise">Guess history</td></tr>
+<tr><td>10</td><td>Stella</td><td>15</td><td>1:21</td><td title="spatula-hark-clamor-election-deal-ear-either-edify-ebb-echelon-ecru-eddy-edge-edh-edgewise">Guess history</td></tr>
+<tr><td>10</td><td>Ertchin</td><td>15</td><td>1:40</td><td title="languid-farcical-crucify-dulcet-encyclical-egret-earnest-edify-echinacea-ecumenical-edenic-edgy-edged-edges-edgewise">Guess history</td></tr>
+<tr><td>10</td><td>I Love Casey</td><td>15</td><td>4:51</td><td title="milk-farm-cat-eat-essay-elaborate-education-ebony-ed-edible-edge-edges-edgy-edging-edgewise">Guess history</td></tr>
+<tr><td>14</td><td>SDW</td><td>16</td><td>2:02</td><td title="iambic-chimichangas-exact-dirigible-eavesdrop-enamel-eggnog-eclair-eerie-edible-ecru-eddy-edge-edgy-edging-edgewise">Guess history</td></tr>
+<tr><td>14</td><td>Lane</td><td>16</td><td>2:46</td><td title="nabob-gadfly-excruciating-crabapple-drywall-emblematic-eavesdrop-egotist-eddy-effete-educate-edict-edema-edgy-edge-edgewise">Guess history</td></tr>
+<tr><td>14</td><td>Peter W</td><td>16</td><td>2:48</td><td title="fricassee-dinky-elephant-druthers-earthwork-eccentric-effrontery-edgy-economics-ecru-ecstatic-ectoplasm-ecumenical-eczema-edge-edgewise">Guess history</td></tr>
+<tr><td>14</td><td>ward</td><td>16</td><td>3:13</td><td title="moratorium-grotesque-carbon-eggplant-delinquent-driven-ebullient-education-echolocation-ecru-edible-edenic-edge-edges-edging-edgewise">Guess history</td></tr>
+<tr><td>18</td><td>[Politics]BobDole</td><td>17</td><td>1:06</td><td title="myriad-deck-gab-fab-dry-dyke-elephantine-ego-ed-effable-eerie-eds-edema-edit-edict-edge-edgewise">Guess history</td></tr>
+<tr><td>18</td><td>x</td><td>17</td><td>1:56</td><td title="mat-fat-band-day-end-dry-dull-ebb-effigy-educate-echo-ectoplasm-edict-edge-edgy-edging-edgewise">Guess history</td></tr>
+<tr><td>18</td><td>Katherine</td><td>17</td><td>4:44</td><td title="macrame-fruit-canary-donkey-elegant-eagle-eight-ebullient-echo-education-ectoplasm-edict-ecumenical-edema-edible-edentate-edgewise">Guess history</td></tr>
+<tr><td>18</td><td>Shoe</td><td>17</td><td>4:44</td><td title="paucity-feckless-cistern-dither-ecru-ephemeral-efficacious-edema-eerie-education-edify-edge-edict-edgy-edging-edges-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>Jon88</td><td>18</td><td>2:04</td><td title="mollusk-clam-gherkin-delicatessen-egg-drubbing-dybbuk-edifice-ebullient-eclogue-edible-ectoplasm-ecumenical-eddy-edema-edentate-edge-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>LindaBee</td><td>18</td><td>2:07</td><td title="sunder-blunder-plunder-glutton-gab-funnel-fab-dunderhead-dye-eyeful-elderberry-echo-edelweiss-egregious-effete-educe-edible-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>Marika</td><td>18</td><td>4:23</td><td title="neap-heap-deep-feet-facet-enormous-dunce-elan-echo-ecumenical-edify-edge-edible-edgy-edging-edged-edger-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>Norma</td><td>18</td><td>4:30</td><td title="mac-gab-cab-eager-fab-eminent-effort-echo-edgy-ecstasy-ecumenical-edema-edge-edged-edgier-edgiest-edger-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>SML</td><td>18</td><td>4:52</td><td title="ma-fa-dab-dull-eagle-end-egress-edge-effort-eel-educate-edify-edible-edging-edges-edgier-edgeways-edgewise">Guess history</td></tr>
+<tr><td>22</td><td>sandav</td><td>18</td><td>13:29</td><td title="hyacinth-duvet-forage-ellipsis-educate-each-ecosystem-ectopic-edible-ecumenical-edenic-edgy-edge-edging-edger-edges-edgier-edgewise">Guess history</td></tr>
+<tr><td>28</td><td>Beaglemom</td><td>19</td><td>3:21</td><td title="mellow-ease-friend-flail-fab-erstwhile-end-element-eccentric-eel-eddy-edge-educate-edification-edgy-edging-edger-edges-edgewise">Guess history</td></tr>
+<tr><td>28</td><td>Linda</td><td>19</td><td>3:30</td><td title="milliner-filter-callback-damage-elephant-dungeon-easel-eddy-effect-eel-education-edifice-edema-edge-edible-edging-edgy-edges-edgewise">Guess history</td></tr>
+<tr><td>28</td><td>patd</td><td>19</td><td>4:33</td><td title="lump-buzz-fuzz-dumb-excel-egg-ebb-eddy-effete-eel-edifice-edge-edible-edger-edging-edgy-edges-edgier-edgewise">Guess history</td></tr>
+<tr><td>28</td><td>KatD</td><td>19</td><td>7:08</td><td title="ma-fa-cab-dab-each-em-ef-eccentric-ed-eek-education-edifice-eddy-edge-edible-edges-edging-edgier-edgewise">Guess history</td></tr>
+<tr><td>28</td><td>kp not in rehab</td><td>19</td><td>7:40</td><td title="live-fab-cab-dab-eat-either-effort-edible-eccentric-echo-ecstatic-eddy-edge-edgy-edges-edging-edgiest-edgier-edgewise">Guess history</td></tr>
+<tr><td>33</td><td>twangster</td><td>21</td><td>1:30</td><td title="sappy-fell-breach-drake-excellent-debit-effluent-earring-ebb-eczema-eddy-eek-educate-edema-editor-edit-edging-edge-edged-edger-edgewise">Guess history</td></tr>
+<tr><td>34</td><td>Tyler M</td><td>22</td><td>9:37</td><td title="liege-dingbat-handful-fulcrum-emancipation-dropcloth-eerie-dystopian-echolocation-edict-ectoplasm-eczema-edible-eddy-edema-edgy-edenic-edge-edging-edger-edges-edgewise">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

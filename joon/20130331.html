@@ -1,0 +1,96 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon" selected="selected">joon</option>
+<option value="mike">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">cromulent</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=joon&date=130331">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">me go do be cat daring cupric clamor cordite crass crudity crimp crowbar cross criterion critter croft croissant cromulent me do axe be coach dark cuddle cost creek crucial crocodile croup crossfire croquet cronyism crofter croissant crony crone cromulent endemic claustrophobia dendrite crayon dabbler curare crux cringe crotchety crocus crony croissant crone cromulent nabob flummox cabriole dabble conundrum curmudgeon cozy crescent cubby crucify crock crown crony croissant cromulent mu gamma crux ancillary blather cerise clafouti copse crafty creche crisis crocus crucible cromulent lead friend cry apple brine cedar correlate craven crime crotchety crochet croissant crop crony crone cromulent mud dewy brew crude burn cairn cede chute clue cork crazy creme critter crop croak crocodile croft croissant cromulent lunk dismal cajole cuneiform civilian countenance cremains crybaby critical crustacean croupier crocodile crop cromulent lunitidal distain beagle civet crackpot cyst culinary cuckold cruciform criminy crochet croupier crone croissant cromulent love grace beauty delight charity curry cordial crest crying crumpet crofter crowbar cromulent this is how ferns curl against beams cause churls crisp cube crunch crossword croak croft croon cromulent molybdenum frustum calcium draught cyberspace citrus cop cubby cover coxswain cozen cub credenza crop critical crock cromulent mom fee coo dill cull crop cow crate creep critter crock crone croissant cromulent jumping collection froggy direction cull crossword crafty crisscross crop crockpot crofter crone croissant croissants cromulent middle day aubade byline codicil cudgel crinoline cry croupier crocodile croft croquet croissant cromulent macrame fruit canary donkey cutthroat circle cobblestone crayfish crux crotch crisis crock crony croissant cromulent hand doofus bath card cootie dead dab curmudgeon courtship cub cow coy coz crinkle crown croak crock croon croissant cromulent mortified glum churlish ebullient dowager curtain collapse credential crucible critical crocodile croquette crone crocus croissant cromulent fish crone barber care cloud cone cotton crayon creep cromulent purple crone cromulent sediment mystic gymnosperm cytoplasm augur bystander cinnamon concave cupric cucumber courier creation cropper critter crocus cromulent loris fathom celadon dimple craven damnation cruet cringe crone croak crocodile cromulent mac cab gab eager dab coach costume covert coy cub crab crock croup crook croissant cromulent to go bo do cot de dad cud crud crap cringe crop crock croissant croon crony crone croissants cromulent nap cake guess egg dab click cur cob cry crab creep crinkle crop cripple critical crock crockery cromulent leisure fluke cupcake banana bunghole ceiling coma cumin comely coy cue cubby coz crepuscule crust croak cruel croissant crow crop cromulent muffin fingers datum bungled cilia dab cunning coaxed costume cub coxswain coy cozy crumpet cooper cradle crick crop critical crocodile crofter croissant crooner crone croissants cromulent movie juke egg baste dark catamaran city cull cope cub crevice cruel crop crib critical crocodile cromulent decking buck colic cyberspace cupric contrivance crux crisp crock cruise cross croissant crook cromulent bus melon igloo dangerous crab cumin crock crud crop crocodile croissant cromulent mint garage car ear dab cur cilia core crazy cub crud criteria crop croak crocodile cromulent gerontology cicada empress diverticulum dada colostomy crescent cunning crone cribbage croft croissant cromlech cromulent pilfer ledger curmudgeon belfry buttress ceramic codger coulee cruise crepe criminy cromulent marled heathen diocese burly carbuncle dab core curlicue crisp crab cub croquet crocodile croissant crooner cromulent nab gab dab bad cab cob cut cab cub coy cried crud crisis critique crucifix cry crone crochet cromulent urbane ma fab bar dab cad cult critter cry croon crock croissant cromulent sure confident indeed definitely current crystal cracker crockery crust crucifix crotchet cross cromulent hurry dreary audio crash dabble curry cromulent </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Mar 31, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td></td><td>3</td><td>0:09</td><td title="purple-crone-cromulent">Guess history</td></tr>
+<tr><td>2</td><td>pvs</td><td>7</td><td>1:06</td><td title="hurry-dreary-audio-crash-dabble-curry-cromulent">Guess history</td></tr>
+<tr><td>3</td><td>stefron</td><td>10</td><td>1:03</td><td title="fish-crone-barber-care-cloud-cone-cotton-crayon-creep-cromulent">Guess history</td></tr>
+<tr><td>4</td><td>Cassy nice</td><td>12</td><td>0:56</td><td title="bus-melon-igloo-dangerous-crab-cumin-crock-crud-crop-crocodile-croissant-cromulent">Guess history</td></tr>
+<tr><td>4</td><td>Mr. Mitten</td><td>12</td><td>1:56</td><td title="pilfer-ledger-curmudgeon-belfry-buttress-ceramic-codger-coulee-cruise-crepe-criminy-cromulent">Guess history</td></tr>
+<tr><td>4</td><td>Billy</td><td>12</td><td>3:50</td><td title="loris-fathom-celadon-dimple-craven-damnation-cruet-cringe-crone-croak-crocodile-cromulent">Guess history</td></tr>
+<tr><td>7</td><td>e</td><td>13</td><td>1:28</td><td title="sure-confident-indeed-definitely-current-crystal-cracker-crockery-crust-crucifix-crotchet-cross-cromulent">Guess history</td></tr>
+<tr><td>7</td><td>Orinda</td><td>13</td><td>1:44</td><td title="love-grace-beauty-delight-charity-curry-cordial-crest-crying-crumpet-crofter-crowbar-cromulent">Guess history</td></tr>
+<tr><td>7</td><td>Alex M</td><td>13</td><td>4:01</td><td title="urbane-ma-fab-bar-dab-cad-cult-critter-cry-croon-crock-croissant-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>Nancy R</td><td>14</td><td>0:57</td><td title="mu-gamma-crux-ancillary-blather-cerise-clafouti-copse-crafty-creche-crisis-crocus-crucible-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>Jon88</td><td>14</td><td>1:55</td><td title="middle-day-aubade-byline-codicil-cudgel-crinoline-cry-croupier-crocodile-croft-croquet-croissant-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>GoodReason</td><td>14</td><td>2:08</td><td title="decking-buck-colic-cyberspace-cupric-contrivance-crux-crisp-crock-cruise-cross-croissant-crook-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>===</td><td>14</td><td>2:16</td><td title="lunk-dismal-cajole-cuneiform-civilian-countenance-cremains-crybaby-critical-crustacean-croupier-crocodile-crop-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>M</td><td>14</td><td>3:11</td><td title="mom-fee-coo-dill-cull-crop-cow-crate-creep-critter-crock-crone-croissant-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>mm</td><td>14</td><td>5:03</td><td title="endemic-claustrophobia-dendrite-crayon-dabbler-curare-crux-cringe-crotchety-crocus-crony-croissant-crone-cromulent">Guess history</td></tr>
+<tr><td>10</td><td>postbear</td><td>14</td><td>5:28</td><td title="gerontology-cicada-empress-diverticulum-dada-colostomy-crescent-cunning-crone-cribbage-croft-croissant-cromlech-cromulent">Guess history</td></tr>
+<tr><td>17</td><td>Katherine</td><td>15</td><td>1:54</td><td title="macrame-fruit-canary-donkey-cutthroat-circle-cobblestone-crayfish-crux-crotch-crisis-crock-crony-croissant-cromulent">Guess history</td></tr>
+<tr><td>17</td><td>Neville's Mom</td><td>15</td><td>4:14</td><td title="nabob-flummox-cabriole-dabble-conundrum-curmudgeon-cozy-crescent-cubby-crucify-crock-crown-crony-croissant-cromulent">Guess history</td></tr>
+<tr><td>17</td><td>sjt</td><td>15</td><td>8:06</td><td title="lunitidal-distain-beagle-civet-crackpot-cyst-culinary-cuckold-cruciform-criminy-crochet-croupier-crone-croissant-cromulent">Guess history</td></tr>
+<tr><td>17</td><td>tania</td><td>15</td><td>8:51</td><td title="jumping-collection-froggy-direction-cull-crossword-crafty-crisscross-crop-crockpot-crofter-crone-croissant-croissants-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>simpsooooon</td><td>16</td><td>1:27</td><td title="sediment-mystic-gymnosperm-cytoplasm-augur-bystander-cinnamon-concave-cupric-cucumber-courier-creation-cropper-critter-crocus-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>namuk</td><td>16</td><td>2:40</td><td title="lead-friend-cry-apple-brine-cedar-correlate-craven-crime-crotchety-crochet-croissant-crop-crony-crone-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>Marsha</td><td>16</td><td>2:59</td><td title="mint-garage-car-ear-dab-cur-cilia-core-crazy-cub-crud-criteria-crop-croak-crocodile-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>Norma</td><td>16</td><td>3:59</td><td title="mac-cab-gab-eager-dab-coach-costume-covert-coy-cub-crab-crock-croup-crook-croissant-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>ward! hahahahahaha!</td><td>16</td><td>5:24</td><td title="mortified-glum-churlish-ebullient-dowager-curtain-collapse-credential-crucible-critical-crocodile-croquette-crone-crocus-croissant-cromulent">Guess history</td></tr>
+<tr><td>21</td><td>LM</td><td>16</td><td>7:00</td><td title="marled-heathen-diocese-burly-carbuncle-dab-core-curlicue-crisp-crab-cub-croquet-crocodile-croissant-crooner-cromulent">Guess history</td></tr>
+<tr><td>27</td><td>Tyler Hinman</td><td>17</td><td>0:59</td><td title="molybdenum-frustum-calcium-draught-cyberspace-citrus-cop-cubby-cover-coxswain-cozen-cub-credenza-crop-critical-crock-cromulent">Guess history</td></tr>
+<tr><td>27</td><td>moo</td><td>17</td><td>2:44</td><td title="this-is-how-ferns-curl-against-beams-cause-churls-crisp-cube-crunch-crossword-croak-croft-croon-cromulent">Guess history</td></tr>
+<tr><td>27</td><td>Mark C</td><td>17</td><td>3:55</td><td title="movie-juke-egg-baste-dark-catamaran-city-cull-cope-cub-crevice-cruel-crop-crib-critical-crocodile-cromulent">Guess history</td></tr>
+<tr><td>30</td><td>GE</td><td>18</td><td>3:48</td><td title="nap-cake-guess-egg-dab-click-cur-cob-cry-crab-creep-crinkle-crop-cripple-critical-crock-crockery-cromulent">Guess history</td></tr>
+<tr><td>31</td><td>bobk</td><td>19</td><td>2:23</td><td title="me-go-do-be-cat-daring-cupric-clamor-cordite-crass-crudity-crimp-crowbar-cross-criterion-critter-croft-croissant-cromulent">Guess history</td></tr>
+<tr><td>31</td><td>Sandy</td><td>19</td><td>3:13</td><td title="mud-dewy-brew-crude-burn-cairn-cede-chute-clue-cork-crazy-creme-critter-crop-croak-crocodile-croft-croissant-cromulent">Guess history</td></tr>
+<tr><td>31</td><td>nrm</td><td>19</td><td>3:45</td><td title="to-go-bo-do-cot-de-dad-cud-crud-crap-cringe-crop-crock-croissant-croon-crony-crone-croissants-cromulent">Guess history</td></tr>
+<tr><td>31</td><td>Adam</td><td>19</td><td>4:15</td><td title="nab-gab-dab-bad-cab-cob-cut-cab-cub-coy-cried-crud-crisis-critique-crucifix-cry-crone-crochet-cromulent">Guess history</td></tr>
+<tr><td>35</td><td>Lee-kai</td><td>20</td><td>3:42</td><td title="hand-doofus-bath-card-cootie-dead-dab-curmudgeon-courtship-cub-cow-coy-coz-crinkle-crown-croak-crock-croon-croissant-cromulent">Guess history</td></tr>
+<tr><td>35</td><td>john plaut</td><td>20</td><td>4:32</td><td title="me-do-axe-be-coach-dark-cuddle-cost-creek-crucial-crocodile-croup-crossfire-croquet-cronyism-crofter-croissant-crony-crone-cromulent">Guess history</td></tr>
+<tr><td>37</td><td>not_on_display</td><td>21</td><td>3:26</td><td title="leisure-fluke-cupcake-banana-bunghole-ceiling-coma-cumin-comely-coy-cue-cubby-coz-crepuscule-crust-croak-cruel-croissant-crow-crop-cromulent">Guess history</td></tr>
+<tr><td>38</td><td>JESSAMYN</td><td>26</td><td>3:55</td><td title="muffin-fingers-datum-bungled-cilia-dab-cunning-coaxed-costume-cub-coxswain-coy-cozy-crumpet-cooper-cradle-crick-crop-critical-crocodile-crofter-croissant-crooner-crone-croissants-cromulent">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=mike">mike</a></p>
+</body>
+</html>

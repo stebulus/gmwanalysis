@@ -1,0 +1,90 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">nephritic</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120728">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">ma ta pa nabob obelisk nougat niche nebulous nettle nefarious neighborhood neonate nephrology nephew nephritic luminous puma mumble numb nimble naphtha nectarine niacin nephew nevus nereid nepotism nephritis nephritic nabob ragamuffin pusillanimous ombudsman ochre nudism nifty neologism niacin network nervous nepotism neoprene nephew nephrite nephritic ma ubiquitous qat oasis na no nib ne nemesis nevi nerd neodymium nepotism neolithic neomycin neon neorealism neoteny nephrology nephritic kerfuffle to pa my oar no nabob nightly negativity nibble newborn nematode network neocolonial nepotism nepenthe nephew nephritis nephritic lackey rainbow nappy primrose otic notate nihilism neuroscience necrophilia neoplasm nerve nepenthe nephrology nephew nephrite nephritis nephritic mom tom quill nether narwhale naw neat nellie nestor nephew nepotism nephritic myth tab pa novel neon neutral neoprene nervous nephron nephew nephrite nephritic ma sack oak nab no new nasty nebula nemesis nerd nepotism neon neophyte nephrology nephew nephology nephritis nephrectomy nephridia nephrite nephritic lyric rye nuzzle muzzle nictitate nebula nettle nefarious nemesis nepotism nephritic man rust pike over nonce mill mull nadir nit neologism next nervous nepotism neoteric nephew nephritic ma saber oak nab nib near nematode nephritis nemesis nephew nephritic mull tendentious propensity obstreperous noxious nihilism nascent nexus naysayer negligent nepotism nene neonatal nephritic macabre synchronicity pancreas necktie omnipotent nourish nitpick newsreel nemesis nerdy nepotism nene neon nephron nepenthe nephew nephritis nephritic muscular triceps pectorals nimble native nearly never nene nepotism neophyte nephrology nephrite nephritis nephrites nephritic mordant rucksack pachyderm nowadays nevermore mudslinger myself naturopathic neatnik negligible neigh nerd nematode neoplasty nepotism nephritis nephew nephritic grave malaise trace race pace null nor nil mullet near nether nectar nemesis neonatal nerdy neophyte nepotism nephew nephrotic nephron nephrectomy nephrology nephridia nephridium nephritis nephritic marvelous stupendous preposterous noxious mundane nefarious niggling nexus nervous nemesis nepotism nene neonate nepenthe nephew nephron nephritic listless rickshaw numismatics moratorium nematode nocturne niggling nettle nepotism neoconservative nephron neon neophyte neoprene nephew nephritis nephric nephrite nephritic machismo swarthy punk nun nab nip neat nettle nemesis nerd nephrite nepotism nephrotic nephrosis nephrologist nephritic mummy tummy summation pabulum nostrum nab noisome nether nadir nearby nestle nemesis neon nervous neorealism nephritis nephritic thinker particle jubilation laugher marked noxious narthex nibble nefarious nepotism negligent nematode nene nepeta nephew nephrology nephology nephrectomy nephritis nephridia nephrite nephritic eve mummer pious odious nonesuch nimble nascent nebulous nervy neophyte nephew nepotism nephritic madrigal scheme oracle newscast mothball nabob nebbish nemesis nephew nestle nerts nerd nephritis nephritic living tracks run partridge mumps nibble nearsighted nematode nestle neologism nepotism neonatal neoprene nephrite nephrology nephrologist nephritic ma pa oast nacre ninepins nectar nibble nemesis nepotism neonatal neotropics nepenthe nephew nepotic nephritis nephritic ma pa oath nickel moult nab nebula newfound nemesis nesting neophyte nereid neoprene nepotism nephritic pixilated iatrogenic lilt nostrum monstrance myeloma nil nectar neutral neoplasm nervy nereid nepotism nepenthe nephew nephrology nephritic numismatist hydrangea lycra myopic nipper nexus nabob nefarious nettle neophyte nepotism nepheline nephrology nephew nephron nephrite nephritic marmoset robot opulent neap oater nonmajor nice neuter nemesis nesting neophyte neritic nepotism neotype nephew nepotic nephritic mat tat pat oat navy nope needy niche never nervous neglect neon nepotism nephew nephrology nephritic night flight might muon next nacre nebbish neither neolithic nerdy nepotism nephew nephritic </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jul 28, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Al S.</td><td>11</td><td>0:57</td><td title="lyric-rye-nuzzle-muzzle-nictitate-nebula-nettle-nefarious-nemesis-nepotism-nephritic">Guess history</td></tr>
+<tr><td>1</td><td>AmesGames</td><td>11</td><td>1:45</td><td title="ma-saber-oak-nab-nib-near-nematode-nephritis-nemesis-nephew-nephritic">Guess history</td></tr>
+<tr><td>3</td><td>mike b</td><td>12</td><td>2:41</td><td title="myth-tab-pa-novel-neon-neutral-neoprene-nervous-nephron-nephew-nephrite-nephritic">Guess history</td></tr>
+<tr><td>3</td><td>MB</td><td>12</td><td>3:31</td><td title="mom-tom-quill-nether-narwhale-naw-neat-nellie-nestor-nephew-nepotism-nephritic">Guess history</td></tr>
+<tr><td>5</td><td>ngtwng</td><td>13</td><td>2:05</td><td title="night-flight-might-muon-next-nacre-nebbish-neither-neolithic-nerdy-nepotism-nephew-nephritic">Guess history</td></tr>
+<tr><td>5</td><td>benton</td><td>13</td><td>2:30</td><td title="eve-mummer-pious-odious-nonesuch-nimble-nascent-nebulous-nervy-neophyte-nephew-nepotism-nephritic">Guess history</td></tr>
+<tr><td>7</td><td>Judy</td><td>14</td><td>1:37</td><td title="mull-tendentious-propensity-obstreperous-noxious-nihilism-nascent-nexus-naysayer-negligent-nepotism-nene-neonatal-nephritic">Guess history</td></tr>
+<tr><td>7</td><td>Dan Katz</td><td>14</td><td>1:50</td><td title="madrigal-scheme-oracle-newscast-mothball-nabob-nebbish-nemesis-nephew-nestle-nerts-nerd-nephritis-nephritic">Guess history</td></tr>
+<tr><td>7</td><td>Jon88</td><td>14</td><td>2:17</td><td title="luminous-puma-mumble-numb-nimble-naphtha-nectarine-niacin-nephew-nevus-nereid-nepotism-nephritis-nephritic">Guess history</td></tr>
+<tr><td>10</td><td>Ab</td><td>15</td><td>1:45</td><td title="muscular-triceps-pectorals-nimble-native-nearly-never-nene-nepotism-neophyte-nephrology-nephrite-nephritis-nephrites-nephritic">Guess history</td></tr>
+<tr><td>10</td><td>===</td><td>15</td><td>2:19</td><td title="ma-ta-pa-nabob-obelisk-nougat-niche-nebulous-nettle-nefarious-neighborhood-neonate-nephrology-nephew-nephritic">Guess history</td></tr>
+<tr><td>10</td><td>SML</td><td>15</td><td>5:00</td><td title="ma-pa-oath-nickel-moult-nab-nebula-newfound-nemesis-nesting-neophyte-nereid-neoprene-nepotism-nephritic">Guess history</td></tr>
+<tr><td>13</td><td>x</td><td>16</td><td>1:51</td><td title="mat-tat-pat-oat-navy-nope-needy-niche-never-nervous-neglect-neon-nepotism-nephew-nephrology-nephritic">Guess history</td></tr>
+<tr><td>13</td><td>nka</td><td>16</td><td>1:56</td><td title="man-rust-pike-over-nonce-mill-mull-nadir-nit-neologism-next-nervous-nepotism-neoteric-nephew-nephritic">Guess history</td></tr>
+<tr><td>13</td><td>pvh</td><td>16</td><td>4:31</td><td title="ma-pa-oast-nacre-ninepins-nectar-nibble-nemesis-nepotism-neonatal-neotropics-nepenthe-nephew-nepotic-nephritis-nephritic">Guess history</td></tr>
+<tr><td>13</td><td>smack</td><td>16</td><td>4:36</td><td title="machismo-swarthy-punk-nun-nab-nip-neat-nettle-nemesis-nerd-nephrite-nepotism-nephrotic-nephrosis-nephrologist-nephritic">Guess history</td></tr>
+<tr><td>13</td><td>Lane</td><td>16</td><td>5:55</td><td title="nabob-ragamuffin-pusillanimous-ombudsman-ochre-nudism-nifty-neologism-niacin-network-nervous-nepotism-neoprene-nephew-nephrite-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>joon</td><td>17</td><td>1:15</td><td title="marvelous-stupendous-preposterous-noxious-mundane-nefarious-niggling-nexus-nervous-nemesis-nepotism-nene-neonate-nepenthe-nephew-nephron-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>LindaBee</td><td>17</td><td>3:46</td><td title="mummy-tummy-summation-pabulum-nostrum-nab-noisome-nether-nadir-nearby-nestle-nemesis-neon-nervous-neorealism-nephritis-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>Your words are way too obscure</td><td>17</td><td>4:17</td><td title="numismatist-hydrangea-lycra-myopic-nipper-nexus-nabob-nefarious-nettle-neophyte-nepotism-nepheline-nephrology-nephew-nephron-nephrite-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>Ertchin</td><td>17</td><td>4:58</td><td title="living-tracks-run-partridge-mumps-nibble-nearsighted-nematode-nestle-neologism-nepotism-neonatal-neoprene-nephrite-nephrology-nephrologist-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>Marika</td><td>17</td><td>6:16</td><td title="lackey-rainbow-nappy-primrose-otic-notate-nihilism-neuroscience-necrophilia-neoplasm-nerve-nepenthe-nephrology-nephew-nephrite-nephritis-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>Bidge Manley</td><td>17</td><td>7:26</td><td title="marmoset-robot-opulent-neap-oater-nonmajor-nice-neuter-nemesis-nesting-neophyte-neritic-nepotism-neotype-nephew-nepotic-nephritic">Guess history</td></tr>
+<tr><td>18</td><td>Ric Q FAIL</td><td>17</td><td>8:49</td><td title="pixilated-iatrogenic-lilt-nostrum-monstrance-myeloma-nil-nectar-neutral-neoplasm-nervy-nereid-nepotism-nepenthe-nephew-nephrology-nephritic">Guess history</td></tr>
+<tr><td>25</td><td>SDW</td><td>18</td><td>2:43</td><td title="macabre-synchronicity-pancreas-necktie-omnipotent-nourish-nitpick-newsreel-nemesis-nerdy-nepotism-nene-neon-nephron-nepenthe-nephew-nephritis-nephritic">Guess history</td></tr>
+<tr><td>25</td><td>Jill</td><td>18</td><td>4:11</td><td title="mordant-rucksack-pachyderm-nowadays-nevermore-mudslinger-myself-naturopathic-neatnik-negligible-neigh-nerd-nematode-neoplasty-nepotism-nephritis-nephew-nephritic">Guess history</td></tr>
+<tr><td>27</td><td>bobk</td><td>19</td><td>3:04</td><td title="kerfuffle-to-pa-my-oar-no-nabob-nightly-negativity-nibble-newborn-nematode-network-neocolonial-nepotism-nepenthe-nephew-nephritis-nephritic">Guess history</td></tr>
+<tr><td>27</td><td>Billy</td><td>19</td><td>7:22</td><td title="listless-rickshaw-numismatics-moratorium-nematode-nocturne-niggling-nettle-nepotism-neoconservative-nephron-neon-neophyte-neoprene-nephew-nephritis-nephric-nephrite-nephritic">Guess history</td></tr>
+<tr><td>29</td><td>KatD</td><td>20</td><td>7:54</td><td title="ma-ubiquitous-qat-oasis-na-no-nib-ne-nemesis-nevi-nerd-neodymium-nepotism-neolithic-neomycin-neon-neorealism-neoteny-nephrology-nephritic">Guess history</td></tr>
+<tr><td>30</td><td>L</td><td>21</td><td>7:38</td><td title="ma-sack-oak-nab-no-new-nasty-nebula-nemesis-nerd-nepotism-neon-neophyte-nephrology-nephew-nephology-nephritis-nephrectomy-nephridia-nephrite-nephritic">Guess history</td></tr>
+<tr><td>31</td><td>Peter W</td><td>22</td><td>8:32</td><td title="thinker-particle-jubilation-laugher-marked-noxious-narthex-nibble-nefarious-nepotism-negligent-nematode-nene-nepeta-nephew-nephrology-nephology-nephrectomy-nephritis-nephridia-nephrite-nephritic">Guess history</td></tr>
+<tr><td>32</td><td>Rogersr </td><td>26</td><td>8:32</td><td title="grave-malaise-trace-race-pace-null-nor-nil-mullet-near-nether-nectar-nemesis-neonatal-nerdy-neophyte-nepotism-nephew-nephrotic-nephron-nephrectomy-nephrology-nephridia-nephridium-nephritis-nephritic">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

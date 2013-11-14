@@ -1,0 +1,92 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">telethon</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=121216">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">loupe soup whoop troop tape tiptoe tepid tea teflon tempestuous telephone temerity telling telescope tell teletype telethon poor snore tour team timid thanks tenuous tell tedious teflon telephone television telethon kudos putrid suture uvula tumult thoughtless tepid tabled tea teapot telling tedious tell tee teflon televisual telephone telethon lugubrious tendentious propensity saucer tacky taffy tatters teacup technicality telepathy temperate temerity telltale tell television telephone teleport teletype telescope telethon lugubrious tryst precarious rime sardonic spy temerity supper tavern teflon television tela teleconference telemetry teletype telephone teles telescope telethon labile rune tune sarcastic summary trivial tapas thane tepid tear telly tedious telamon telepathy telescope televise telethon middle puma sharp tureen tarpaulin torque tickle tension teflon telepathy temperature teller telephone television telescope telescopic telethon nabob ragamuffin underwhelm sabbatical tabulate typhoon tontine tibia technology thousand text tempura television teenager telegram telemarketing telephone telescope teletype telethon ma sack vacuum tab udder thanks tea tension teddy telephone temerity tell telescope television telescopic televise telescoping telethon ivy rabid umbrage suffrage tortoise terse tambourine tawny tepid telltale tedious teflon tell telephone television televise telethon serendipity water too ta tip tepid tatter teach tell tech teem teflon teg tela television telephone telescope teleview telescopic telethon ma qat ubiquitous sack ta ti tea thae tempest teg telephone telethon macrame scythe tryst sufficient tempest talisman tarnish tedious teflon temblor telltale telepathy television telephone televise telescope telethon marlin sanctify turret surreptitious terminate taciturn tarantula terabyte tarpon teal telemetry tenement tempest temerity telltale teletype telephone telescope telethon macabre swarthy wunderkind type ten tack tea teller teflon telephone television telekinesis teleport telescope telethon laugh sub umbrella tell tablet teach teflon telephone telescope telethon creature history mental revere sundry tungsten thermostat temper taxidermist teapot teflon telepathy telethon iambic rummage syzygy turbine tinderbox teacup textbook television tedious teflon telegram telephone telescope teletype telethon plinth solenoid turbine tentacle sylph talkative tavern tectonic telekinetic temerity telluride telescope television teletype telescopy telethon loco putz singlet testee subsoil swingman tableau teleport terabyte tenfold temptress tempeh telophase teletype telescope telesis telethon jubilee rabbit tab volt unction tobacco tension tally telegraph tempt temperament telex telephoto telescope telethon jonquil terse outdone raven sarsaparilla sauterne taxman teeter telemetry tenacious temperature temerity tellurium telephone teller television telescope televise teletype telescopic telethon lecture rocket telekinesis vehicle underhand triumph tipster terror tepid temerity teleport televised telescope telethon lwei reveille tarantella underwrite topograph thunderstorm tenterhooks technophobe telecom temperature temerity teletype telegram telephone telescope telethon ma tab vole udder toll tick tension taut tee telephone temerity tell television televise teleplay teleport televangelist telescope telescoping telethon milk time pen ran sink tan tent tax tea ted teleport temporary telling teles telex television telescope telethon lanky rusty tar veer unsettling tundra tesla teacher teddy telegraph tenure temporal telethon museum wally teacup upper typical tirade that temper teflon telephone temerity tell telescope television televise telescopy teletype teletext telethon plummet slump whorl wacky uvula tussle tab trounce treadle tizzy tibia tea tetrahedron temerity tedious telepathy telephone telethon macrame turmeric quail satin tablet timid temerity taupe teamster teller tech teetotaler tegmental tel telecast television telephone telescope teletype telethon listless residual thatch shallow sorcery tallow teamster tepid teflon telethon meringue sherbert volcano tripe tart thirsty tea thatch tepid teg telephone tent temptress telomere teles television televise telethon jambalaya tapir wallaby umbrella tundra topiary telescope timber tibia thrall titter tether tenterhooks template telltale television telethon night wing titan superhero telegenic thrasher tepid telephone temptation telltale teleport telethon </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Dec 16, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Billy</td><td>10</td><td>1:55</td><td title="listless-residual-thatch-shallow-sorcery-tallow-teamster-tepid-teflon-telethon">Guess history</td></tr>
+<tr><td>1</td><td>kp not in rehab</td><td>10</td><td>2:23</td><td title="laugh-sub-umbrella-tell-tablet-teach-teflon-telephone-telescope-telethon">Guess history</td></tr>
+<tr><td>3</td><td>KatD</td><td>12</td><td>1:15</td><td title="ma-qat-ubiquitous-sack-ta-ti-tea-thae-tempest-teg-telephone-telethon">Guess history</td></tr>
+<tr><td>3</td><td>ngtwng</td><td>12</td><td>2:17</td><td title="night-wing-titan-superhero-telegenic-thrasher-tepid-telephone-temptation-telltale-teleport-telethon">Guess history</td></tr>
+<tr><td>5</td><td>Drew</td><td>13</td><td>1:26</td><td title="creature-history-mental-revere-sundry-tungsten-thermostat-temper-taxidermist-teapot-teflon-telepathy-telethon">Guess history</td></tr>
+<tr><td>5</td><td>Nick Name</td><td>13</td><td>1:58</td><td title="poor-snore-tour-team-timid-thanks-tenuous-tell-tedious-teflon-telephone-television-telethon">Guess history</td></tr>
+<tr><td>5</td><td>Bear!!</td><td>13</td><td>5:05</td><td title="lanky-rusty-tar-veer-unsettling-tundra-tesla-teacher-teddy-telegraph-tenure-temporal-telethon">Guess history</td></tr>
+<tr><td>8</td><td>Rosie</td><td>14</td><td>3:45</td><td title="lecture-rocket-telekinesis-vehicle-underhand-triumph-tipster-terror-tepid-temerity-teleport-televised-telescope-telethon">Guess history</td></tr>
+<tr><td>9</td><td>SDW</td><td>15</td><td>3:08</td><td title="iambic-rummage-syzygy-turbine-tinderbox-teacup-textbook-television-tedious-teflon-telegram-telephone-telescope-teletype-telethon">Guess history</td></tr>
+<tr><td>9</td><td>mike b</td><td>15</td><td>3:21</td><td title="jubilee-rabbit-tab-volt-unction-tobacco-tension-tally-telegraph-tempt-temperament-telex-telephoto-telescope-telethon">Guess history</td></tr>
+<tr><td>9</td><td>smack</td><td>15</td><td>4:21</td><td title="macabre-swarthy-wunderkind-type-ten-tack-tea-teller-teflon-telephone-television-telekinesis-teleport-telescope-telethon">Guess history</td></tr>
+<tr><td>12</td><td>Ange SW</td><td>16</td><td>4:14</td><td title="plinth-solenoid-turbine-tentacle-sylph-talkative-tavern-tectonic-telekinetic-temerity-telluride-telescope-television-teletype-telescopy-telethon">Guess history</td></tr>
+<tr><td>12</td><td>Tyler M</td><td>16</td><td>5:26</td><td title="lwei-reveille-tarantella-underwrite-topograph-thunderstorm-tenterhooks-technophobe-telecom-temperature-temerity-teletype-telegram-telephone-telescope-telethon">Guess history</td></tr>
+<tr><td>14</td><td>jrock</td><td>17</td><td>1:46</td><td title="middle-puma-sharp-tureen-tarpaulin-torque-tickle-tension-teflon-telepathy-temperature-teller-telephone-television-telescope-telescopic-telethon">Guess history</td></tr>
+<tr><td>14</td><td>Jon88</td><td>17</td><td>2:36</td><td title="loupe-soup-whoop-troop-tape-tiptoe-tepid-tea-teflon-tempestuous-telephone-temerity-telling-telescope-tell-teletype-telethon">Guess history</td></tr>
+<tr><td>14</td><td>Cat</td><td>17</td><td>2:46</td><td title="jambalaya-tapir-wallaby-umbrella-tundra-topiary-telescope-timber-tibia-thrall-titter-tether-tenterhooks-template-telltale-television-telethon">Guess history</td></tr>
+<tr><td>14</td><td>chopperfoul</td><td>17</td><td>4:22</td><td title="loco-putz-singlet-testee-subsoil-swingman-tableau-teleport-terabyte-tenfold-temptress-tempeh-telophase-teletype-telescope-telesis-telethon">Guess history</td></tr>
+<tr><td>14</td><td>Marika</td><td>17</td><td>4:51</td><td title="labile-rune-tune-sarcastic-summary-trivial-tapas-thane-tepid-tear-telly-tedious-telamon-telepathy-telescope-televise-telethon">Guess history</td></tr>
+<tr><td>14</td><td>benton</td><td>17</td><td>8:59</td><td title="ivy-rabid-umbrage-suffrage-tortoise-terse-tambourine-tawny-tepid-telltale-tedious-teflon-tell-telephone-television-televise-telethon">Guess history</td></tr>
+<tr><td>14</td><td>mh</td><td>17</td><td>13:02</td><td title="macrame-scythe-tryst-sufficient-tempest-talisman-tarnish-tedious-teflon-temblor-telltale-telepathy-television-telephone-televise-telescope-telethon">Guess history</td></tr>
+<tr><td>21</td><td>Jayne</td><td>18</td><td>3:01</td><td title="kudos-putrid-suture-uvula-tumult-thoughtless-tepid-tabled-tea-teapot-telling-tedious-tell-tee-teflon-televisual-telephone-telethon">Guess history</td></tr>
+<tr><td>21</td><td>owl</td><td>18</td><td>3:36</td><td title="meringue-sherbert-volcano-tripe-tart-thirsty-tea-thatch-tepid-teg-telephone-tent-temptress-telomere-teles-television-televise-telethon">Guess history</td></tr>
+<tr><td>21</td><td>LindaBee</td><td>18</td><td>3:41</td><td title="plummet-slump-whorl-wacky-uvula-tussle-tab-trounce-treadle-tizzy-tibia-tea-tetrahedron-temerity-tedious-telepathy-telephone-telethon">Guess history</td></tr>
+<tr><td>21</td><td>H</td><td>18</td><td>7:16</td><td title="ma-sack-vacuum-tab-udder-thanks-tea-tension-teddy-telephone-temerity-tell-telescope-television-telescopic-televise-telescoping-telethon">Guess history</td></tr>
+<tr><td>21</td><td>I Love Casey</td><td>18</td><td>8:39</td><td title="milk-time-pen-ran-sink-tan-tent-tax-tea-ted-teleport-temporary-telling-teles-telex-television-telescope-telethon">Guess history</td></tr>
+<tr><td>26</td><td>===</td><td>19</td><td>3:52</td><td title="lugubrious-tryst-precarious-rime-sardonic-spy-temerity-supper-tavern-teflon-television-tela-teleconference-telemetry-teletype-telephone-teles-telescope-telethon">Guess history</td></tr>
+<tr><td>26</td><td>Ringoes</td><td>19</td><td>5:58</td><td title="marlin-sanctify-turret-surreptitious-terminate-taciturn-tarantula-terabyte-tarpon-teal-telemetry-tenement-tempest-temerity-telltale-teletype-telephone-telescope-telethon">Guess history</td></tr>
+<tr><td>26</td><td></td><td>19</td><td>10:57</td><td title="museum-wally-teacup-upper-typical-tirade-that-temper-teflon-telephone-temerity-tell-telescope-television-televise-telescopy-teletype-teletext-telethon">Guess history</td></tr>
+<tr><td>29</td><td>nrm</td><td>20</td><td>2:06</td><td title="serendipity-water-too-ta-tip-tepid-tatter-teach-tell-tech-teem-teflon-teg-tela-television-telephone-telescope-teleview-telescopic-telethon">Guess history</td></tr>
+<tr><td>29</td><td>Katherine</td><td>20</td><td>4:15</td><td title="macrame-turmeric-quail-satin-tablet-timid-temerity-taupe-teamster-teller-tech-teetotaler-tegmental-tel-telecast-television-telephone-telescope-teletype-telethon">Guess history</td></tr>
+<tr><td>29</td><td>Judy</td><td>20</td><td>4:53</td><td title="lugubrious-tendentious-propensity-saucer-tacky-taffy-tatters-teacup-technicality-telepathy-temperate-temerity-telltale-tell-television-telephone-teleport-teletype-telescope-telethon">Guess history</td></tr>
+<tr><td>29</td><td>Lane</td><td>20</td><td>5:41</td><td title="nabob-ragamuffin-underwhelm-sabbatical-tabulate-typhoon-tontine-tibia-technology-thousand-text-tempura-television-teenager-telegram-telemarketing-telephone-telescope-teletype-telethon">Guess history</td></tr>
+<tr><td>29</td><td>SML</td><td>20</td><td>5:41</td><td title="ma-tab-vole-udder-toll-tick-tension-taut-tee-telephone-temerity-tell-television-televise-teleplay-teleport-televangelist-telescope-telescoping-telethon">Guess history</td></tr>
+<tr><td>34</td><td>dandavsan</td><td>21</td><td>6:56</td><td title="jonquil-terse-outdone-raven-sarsaparilla-sauterne-taxman-teeter-telemetry-tenacious-temperature-temerity-tellurium-telephone-teller-television-telescope-televise-teletype-telescopic-telethon">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

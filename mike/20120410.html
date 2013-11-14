@@ -1,0 +1,98 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">atherosclerosis</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120410">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">qi fab azure aghast alloy atavistic augur atrophy athlete atheist atherosclerosis madden fabulous cabinet banana ample at avenue audio attrition atelier atrophy athlete atherosclerosis lenient heady depend brave awe amble attach approve arrogant assess ate atomic athwart athlete atheism atherosclerosis nymph firth bulb aye alimentary argon attenuate asinine atelier atom athletic athlete atheism atheroma athirst athetosis atherosclerosis la gab dab baa an at awesome august atrophy athlete atelier atheism atheist atherosclerosis ma gab cab back avarice able aim amenable ash attack aster ate atoll athlete atheist atheoretical athetosis athetoid atherosclerosis macrame fruit canary baby artist austere assuage assume attic atavistic atlas ate atilt atelier atheneum atherosclerosis my gyp cyst aye any answer ask aver ate autism atlas athlete atelier atheist atherosclerosis nabob flummox cabriole asparagus banal azure attrition asterisk ataxia attempt ate athlete atheist atherosclerosis smattering help crass bathe allergy are aureole at attrition athlete ate atelier atherosclerosis lysine diabolical biff ax after am at augur attune atropine atavistic ate athenaeum atlatl atlas atheneum atherosclerosis ma fa cab azure allege ardent athlete askance asthma atavistic ate atelier atherosclerosis incandescent copious barracuda amphitheater asinine automobile at atrocious atheist atmosphere atlas athletic atherosclerosis fulsome catamaran catamaran backdraft aquiline axel arugula asterisk athlete atavistic ate atelier atherosclerosis pump dump azure abacus alabaster amuse athlete aqua artisan astute atelier atheist atheism atherosclerosis me coast boat axe amid article atone atemporal atomic atmosphere atheism athletics athirst atheistic atherosclerosis jewel drumbeat bugaboo attenuate acronym alimony apparatus assuage atheneum atonal atlas atherosclerosis muddle huddle cuddle blubber atrophy allotropic aorta aqueous ascend asylum atherosclerosis myth gad cab artist beef bad at auction atrium athlete atelier atheism atheroma atherosclerosis loiter foist cloister boisterous anaerobe baffle aromatic attenuation aspirin atheist atlas athlete atherosclerosis jambalaya druid bumblebee barbaric anoint aviator arrears automatic attenuate assert atelier athlete atheism athirst atheist atheroma atherosclerosis macabre gable dabble blithe armament bellicose astrolabe auspicious attrition atelier atmosphere atherosclerosis jonquil dragon bylaws baggy amity attitude aptitude argue asinine atherosclerosis deliver clever aisle bale aver amortize attend aorta assess atom assume asylum athlete ataxia atenolol atheist atherosclerosis macaw fab cab babe amaze arbor at avatar auk atlas ate athwart athirst atelier atheist atheists atherosclerosis middle haunch curdle brunch barnacle apricot astral axis athlete astronomy ataxia atelier atheist atherosclerosis set deranged brief apple banana avalanche atrocious around ask asunder ate atone atlas atheist atherosclerosis ma fab cab baby atavistic audacious atherosclerosis pasteurize lambast drastic ballistic amber anguish apostrophe aviary arbor attic assuage aster atmosphere atherosclerosis nonesuch fantastic creaky bowdlerize aptitude barometer atavistic axiomatic autistic attenuate athletic ate athlete atheist atheistic atherosclerosis jackass dancer ballast amphitheater ashen awful attitude aster atelier atoll atherosclerosis madrigal decalog berserk annihilate auricle armament aspersion attenuate atelier atmosphere atheroma atlas athlete atherosclerosis stoichiometry fringe chemistry ba at aw auk atrial atherosclerosis jackal cougar bear align appetite attempt arrest assault attack attach astute ataxia athlete atheist atheroma atherosclerosis modify gander dander brandish banquet ambush astrology avuncular aura atoll atavistic ate atelier athlete atheist athetosis atherosclerosis myopia goat dabble bye azimuth amicable apple axe atop aqua argue astound ate atlas athwart atheist athlete athirst athenaeum atherosclerosis gossamer czarina azimuth ampere arrhythmia august atherosclerosis happy glad care bare are aye article awe austere arty ash at atomic ate atom athlete atheism athenaeum athirst atherosclerosis mustard giraffe daisy baby arch axe autism attitude assuage attack atavism ate atheist atonement atomic atmosphere athlete athetosis atherosclerosis lion baby adamant azure amateur anaerobic aperture aviary arrowroot astrological atrophy atrocious astronomy asymmetric atresia atomizer atherosclerosis </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Apr 10, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>karph54</td><td>7</td><td>0:36</td><td title="ma-fab-cab-baby-atavistic-audacious-atherosclerosis">Guess history</td></tr>
+<tr><td>1</td><td>John M</td><td>7</td><td>0:57</td><td title="gossamer-czarina-azimuth-ampere-arrhythmia-august-atherosclerosis">Guess history</td></tr>
+<tr><td>3</td><td>nrm</td><td>9</td><td>0:47</td><td title="stoichiometry-fringe-chemistry-ba-at-aw-auk-atrial-atherosclerosis">Guess history</td></tr>
+<tr><td>4</td><td>halfstone</td><td>10</td><td>1:14</td><td title="jonquil-dragon-bylaws-baggy-amity-attitude-aptitude-argue-asinine-atherosclerosis">Guess history</td></tr>
+<tr><td>5</td><td>Suze</td><td>11</td><td>1:19</td><td title="jackass-dancer-ballast-amphitheater-ashen-awful-attitude-aster-atelier-atoll-atherosclerosis">Guess history</td></tr>
+<tr><td>5</td><td>DaveK</td><td>11</td><td>3:00</td><td title="qi-fab-azure-aghast-alloy-atavistic-augur-atrophy-athlete-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>5</td><td>Ric Q f'reelz</td><td>11</td><td>4:07</td><td title="muddle-huddle-cuddle-blubber-atrophy-allotropic-aorta-aqueous-ascend-asylum-atherosclerosis">Guess history</td></tr>
+<tr><td>8</td><td>Jill</td><td>12</td><td>2:40</td><td title="jewel-drumbeat-bugaboo-attenuate-acronym-alimony-apparatus-assuage-atheneum-atonal-atlas-atherosclerosis">Guess history</td></tr>
+<tr><td>8</td><td>Toastyroasty</td><td>12</td><td>2:43</td><td title="macabre-gable-dabble-blithe-armament-bellicose-astrolabe-auspicious-attrition-atelier-atmosphere-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>GT</td><td>13</td><td>1:09</td><td title="ma-fa-cab-azure-allege-ardent-athlete-askance-asthma-atavistic-ate-atelier-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>Stella</td><td>13</td><td>1:50</td><td title="smattering-help-crass-bathe-allergy-are-aureole-at-attrition-athlete-ate-atelier-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>Katie</td><td>13</td><td>1:53</td><td title="madden-fabulous-cabinet-banana-ample-at-avenue-audio-attrition-atelier-atrophy-athlete-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>SDW</td><td>13</td><td>1:55</td><td title="incandescent-copious-barracuda-amphitheater-asinine-automobile-at-atrocious-atheist-atmosphere-atlas-athletic-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>john farmer</td><td>13</td><td>2:21</td><td title="fulsome-catamaran-catamaran-backdraft-aquiline-axel-arugula-asterisk-athlete-atavistic-ate-atelier-atherosclerosis">Guess history</td></tr>
+<tr><td>10</td><td>2 toughies today!</td><td>13</td><td>2:27</td><td title="loiter-foist-cloister-boisterous-anaerobe-baffle-aromatic-attenuation-aspirin-atheist-atlas-athlete-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>mike b</td><td>14</td><td>2:29</td><td title="myth-gad-cab-artist-beef-bad-at-auction-atrium-athlete-atelier-atheism-atheroma-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>mh</td><td>14</td><td>2:57</td><td title="pasteurize-lambast-drastic-ballistic-amber-anguish-apostrophe-aviary-arbor-attic-assuage-aster-atmosphere-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>MtlMike</td><td>14</td><td>3:47</td><td title="la-gab-dab-baa-an-at-awesome-august-atrophy-athlete-atelier-atheism-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>Neville's Mom</td><td>14</td><td>4:05</td><td title="nabob-flummox-cabriole-asparagus-banal-azure-attrition-asterisk-ataxia-attempt-ate-athlete-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>Ringoes</td><td>14</td><td>4:39</td><td title="madrigal-decalog-berserk-annihilate-auricle-armament-aspersion-attenuate-atelier-atmosphere-atheroma-atlas-athlete-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>jrock</td><td>14</td><td>4:59</td><td title="middle-haunch-curdle-brunch-barnacle-apricot-astral-axis-athlete-astronomy-ataxia-atelier-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>16</td><td>LindaBee</td><td>14</td><td>6:38</td><td title="pump-dump-azure-abacus-alabaster-amuse-athlete-aqua-artisan-astute-atelier-atheist-atheism-atherosclerosis">Guess history</td></tr>
+<tr><td>23</td><td>patd</td><td>15</td><td>4:15</td><td title="my-gyp-cyst-aye-any-answer-ask-aver-ate-autism-atlas-athlete-atelier-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>23</td><td>JenniferRu</td><td>15</td><td>4:21</td><td title="set-deranged-brief-apple-banana-avalanche-atrocious-around-ask-asunder-ate-atone-atlas-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>23</td><td>chilean</td><td>15</td><td>11:46</td><td title="me-coast-boat-axe-amid-article-atone-atemporal-atomic-atmosphere-atheism-athletics-athirst-atheistic-atherosclerosis">Guess history</td></tr>
+<tr><td>26</td><td>Ertchin (whew!)</td><td>16</td><td>4:47</td><td title="nonesuch-fantastic-creaky-bowdlerize-aptitude-barometer-atavistic-axiomatic-autistic-attenuate-athletic-ate-athlete-atheist-atheistic-atherosclerosis">Guess history</td></tr>
+<tr><td>26</td><td>Katherine</td><td>16</td><td>5:12</td><td title="macrame-fruit-canary-baby-artist-austere-assuage-assume-attic-atavistic-atlas-ate-atilt-atelier-atheneum-atherosclerosis">Guess history</td></tr>
+<tr><td>26</td><td>Marika</td><td>16</td><td>5:32</td><td title="lenient-heady-depend-brave-awe-amble-attach-approve-arrogant-assess-ate-atomic-athwart-athlete-atheism-atherosclerosis">Guess history</td></tr>
+<tr><td>26</td><td>DR. VINNIE BOOMBOTTS</td><td>16</td><td>13:39</td><td title="jackal-cougar-bear-align-appetite-attempt-arrest-assault-attack-attach-astute-ataxia-athlete-atheist-atheroma-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>AmesGame</td><td>17</td><td>3:59</td><td title="macaw-fab-cab-babe-amaze-arbor-at-avatar-auk-atlas-ate-athwart-athirst-atelier-atheist-atheists-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>Cat</td><td>17</td><td>5:59</td><td title="jambalaya-druid-bumblebee-barbaric-anoint-aviator-arrears-automatic-attenuate-assert-atelier-athlete-atheism-athirst-atheist-atheroma-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>Kyle</td><td>17</td><td>6:13</td><td title="lysine-diabolical-biff-ax-after-am-at-augur-attune-atropine-atavistic-ate-athenaeum-atlatl-atlas-atheneum-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>Moose</td><td>17</td><td>6:47</td><td title="modify-gander-dander-brandish-banquet-ambush-astrology-avuncular-aura-atoll-atavistic-ate-atelier-athlete-atheist-athetosis-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>lovapug</td><td>17</td><td>7:11</td><td title="lion-baby-adamant-azure-amateur-anaerobic-aperture-aviary-arrowroot-astrological-atrophy-atrocious-astronomy-asymmetric-atresia-atomizer-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>Rogersr</td><td>17</td><td>9:31</td><td title="deliver-clever-aisle-bale-aver-amortize-attend-aorta-assess-atom-assume-asylum-athlete-ataxia-atenolol-atheist-atherosclerosis">Guess history</td></tr>
+<tr><td>30</td><td>Sophiegirl</td><td>17</td><td>11:19</td><td title="nymph-firth-bulb-aye-alimentary-argon-attenuate-asinine-atelier-atom-athletic-athlete-atheism-atheroma-athirst-athetosis-atherosclerosis">Guess history</td></tr>
+<tr><td>37</td><td>L</td><td>19</td><td>6:50</td><td title="ma-gab-cab-back-avarice-able-aim-amenable-ash-attack-aster-ate-atoll-athlete-atheist-atheoretical-athetosis-athetoid-atherosclerosis">Guess history</td></tr>
+<tr><td>37</td><td>Hugh</td><td>19</td><td>8:03</td><td title="mustard-giraffe-daisy-baby-arch-axe-autism-attitude-assuage-attack-atavism-ate-atheist-atonement-atomic-atmosphere-athlete-athetosis-atherosclerosis">Guess history</td></tr>
+<tr><td>39</td><td>Tara</td><td>20</td><td>2:26</td><td title="myopia-goat-dabble-bye-azimuth-amicable-apple-axe-atop-aqua-argue-astound-ate-atlas-athwart-atheist-athlete-athirst-athenaeum-atherosclerosis">Guess history</td></tr>
+<tr><td>39</td><td>grace</td><td>20</td><td>4:09</td><td title="happy-glad-care-bare-are-aye-article-awe-austere-arty-ash-at-atomic-ate-atom-athlete-atheism-athenaeum-athirst-atherosclerosis">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

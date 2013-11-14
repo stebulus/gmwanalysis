@@ -1,0 +1,91 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">vanadium</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120714">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">mulch sultry tureen whittle uvula vortex vacuous vittles vestry vast validate vanguard valve vamoose vandal vampire vanadium morsel truffle window usury value warble vulture vicissitude varicose vandal vamoose vanadium dichotomy midge riposte wastrel ubiquitous volition uvula vamoose vicissitude vendetta vector vaunted varsity vapid vandal vampire vanadium millimeter tonne velocipede ugly utensil variant vacuous vagabond vamoose vapid vanquish van vanguard vandal vanadium ma sack vacuum yak wacky vile vet vast vagary valley vapid van vanish vane vanadium ma typo wasabi underwire vengeance utter vagina veal varmint validity vapid van vanilla vane vandal vanadium ma ubiquitous xylophone wack vacation vocation veal van vasectomy vapor vapid vane vanadium lyric rye typhoon wunderkind waddle utensil vendetta vagrant vault vapid valance vamoose vanity vane vampire vanilla vanadium fa pa wad soothe under vat upwind vacancy valley varnish vanity vampire vanguard vandalize vanadium myrtle typo uxorious wan vapid vacuole vandal vague vain vale vamoose vanadium shuffle turbulence uppermost vittles vanguard vacillate vainglorious valiant valley valour value vane vamp van vanadium calling mini wallet phone super umbrella violence uvula vagrant vehement valve vaseline vanish vampire vanguard vanadium linguini rivalry tincture varmint tungsten unguent utmost vagary vanguard valiant vampire vane vanadium lycanthropy rhapsody turgid weaponry utterance vittles vellum varsity vagaries vamoose vapid vanity vanadium ma qat ta vac xi wyte vulgar victim vector vat vampire vapid vanity vane vampiric van vandalism vandal vanadium hunch punch tune warren variegated urchin vainglorious vanguard vamp vandal van vanadium rage turbulent vendetta ungulate vanguard ursine utmost vacant vagina valiant vamoose vane vampire vanadium kerfuffle rust tab underwear yipe vie vacancy vector vaticinate valiant vapid van vantage vane vanadium flange rhubarb wax tend vanquish ungulate utter vagina valid van vane vanadium metallic rostrum vandal topiary unctuous utilize vacuous valiant valuation vampire vanadium iambic pompadour tyrannical wriggle verisimilitude unabashed uptight vacuum vector vapid vagabond valance vanilla vampire vane vandal vanadium maxim portcullis thalamus wurst vandal unapologetic unyielding urticaria vacuum vagrant valiant vamoose vampire van vanadium marmoset robot unicorn xylophone water varicose utter uvula vacation vamp vapid van vanquish vanity vane vandalize vanadium qi udder xi wafer vestment uxorial variable vacant vamoose vapid vanguard vandalize vampire van vandal vanadium multiplication subtraction vestment trollop undermine uvula vacation vault vantage vagina valid vamoose vanguard vane vampire vanadium nabob saber wade tyrant vexation upheaval vagrant vehement vanity valise vampire vanadium rhombus trombone umbrella vixen vanguard utmost uvea vacuous vainglorious vampire vandal vanadium platitude tee vee use ute vaw vacuum valiant vamoose vapor vandalize vampire van vandal vanadium mystic tip what ungulate vent utmost vain veal varicose vamoose vapid van vanish vane vanadium natatorium udder wisteria vagary vulva voluble villain vector vast vanity valuable vamoose vanadium fluke numb straitjacket waylay trinket undertaker vagabond vomit vesper vapor valid vanguard vamoose vanity vanadium me to stout vary unique van vapor vanadium night wing titan underwear violent vascular utterly uvula vainglorious vanguard vanadium </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jul 14, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>john plaut</td><td>8</td><td>1:13</td><td title="me-to-stout-vary-unique-van-vapor-vanadium">Guess history</td></tr>
+<tr><td>2</td><td>Ringoes</td><td>11</td><td>2:27</td><td title="metallic-rostrum-vandal-topiary-unctuous-utilize-vacuous-valiant-valuation-vampire-vanadium">Guess history</td></tr>
+<tr><td>2</td><td>ngtwng</td><td>11</td><td>2:57</td><td title="night-wing-titan-underwear-violent-vascular-utterly-uvula-vainglorious-vanguard-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>Ab</td><td>12</td><td>0:47</td><td title="morsel-truffle-window-usury-value-warble-vulture-vicissitude-varicose-vandal-vamoose-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>French</td><td>12</td><td>0:50</td><td title="flange-rhubarb-wax-tend-vanquish-ungulate-utter-vagina-valid-van-vane-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>Mean Old Elaine</td><td>12</td><td>1:11</td><td title="myrtle-typo-uxorious-wan-vapid-vacuole-vandal-vague-vain-vale-vamoose-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>BJ</td><td>12</td><td>1:46</td><td title="nabob-saber-wade-tyrant-vexation-upheaval-vagrant-vehement-vanity-valise-vampire-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>Peter W</td><td>12</td><td>2:24</td><td title="rhombus-trombone-umbrella-vixen-vanguard-utmost-uvea-vacuous-vainglorious-vampire-vandal-vanadium">Guess history</td></tr>
+<tr><td>4</td><td>Marika</td><td>12</td><td>3:52</td><td title="hunch-punch-tune-warren-variegated-urchin-vainglorious-vanguard-vamp-vandal-van-vanadium">Guess history</td></tr>
+<tr><td>10</td><td>Ric Q</td><td>13</td><td>1:30</td><td title="natatorium-udder-wisteria-vagary-vulva-voluble-villain-vector-vast-vanity-valuable-vamoose-vanadium">Guess history</td></tr>
+<tr><td>10</td><td>KatD</td><td>13</td><td>2:31</td><td title="ma-ubiquitous-xylophone-wack-vacation-vocation-veal-van-vasectomy-vapor-vapid-vane-vanadium">Guess history</td></tr>
+<tr><td>10</td><td>Toastyroasty</td><td>13</td><td>4:04</td><td title="lycanthropy-rhapsody-turgid-weaponry-utterance-vittles-vellum-varsity-vagaries-vamoose-vapid-vanity-vanadium">Guess history</td></tr>
+<tr><td>10</td><td>Billy</td><td>13</td><td>5:06</td><td title="linguini-rivalry-tincture-varmint-tungsten-unguent-utmost-vagary-vanguard-valiant-vampire-vane-vanadium">Guess history</td></tr>
+<tr><td>14</td><td>joon</td><td>14</td><td>1:08</td><td title="rage-turbulent-vendetta-ungulate-vanguard-ursine-utmost-vacant-vagina-valiant-vamoose-vane-vampire-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>Stella</td><td>15</td><td>1:07</td><td title="mystic-tip-what-ungulate-vent-utmost-vain-veal-varicose-vamoose-vapid-van-vanish-vane-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>jon88</td><td>15</td><td>1:23</td><td title="millimeter-tonne-velocipede-ugly-utensil-variant-vacuous-vagabond-vamoose-vapid-vanquish-van-vanguard-vandal-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>L</td><td>15</td><td>1:44</td><td title="ma-sack-vacuum-yak-wacky-vile-vet-vast-vagary-valley-vapid-van-vanish-vane-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>bobk</td><td>15</td><td>1:45</td><td title="kerfuffle-rust-tab-underwear-yipe-vie-vacancy-vector-vaticinate-valiant-vapid-van-vantage-vane-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>nrm</td><td>15</td><td>2:10</td><td title="platitude-tee-vee-use-ute-vaw-vacuum-valiant-vamoose-vapor-vandalize-vampire-van-vandal-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>SML</td><td>15</td><td>2:16</td><td title="fluke-numb-straitjacket-waylay-trinket-undertaker-vagabond-vomit-vesper-vapor-valid-vanguard-vamoose-vanity-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>mike b</td><td>15</td><td>2:37</td><td title="fa-pa-wad-soothe-under-vat-upwind-vacancy-valley-varnish-vanity-vampire-vanguard-vandalize-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>Jill</td><td>15</td><td>3:45</td><td title="maxim-portcullis-thalamus-wurst-vandal-unapologetic-unyielding-urticaria-vacuum-vagrant-valiant-vamoose-vampire-van-vanadium">Guess history</td></tr>
+<tr><td>15</td><td>Mark P.</td><td>15</td><td>3:54</td><td title="shuffle-turbulence-uppermost-vittles-vanguard-vacillate-vainglorious-valiant-valley-valour-value-vane-vamp-van-vanadium">Guess history</td></tr>
+<tr><td>24</td><td>JenniferRu</td><td>16</td><td>1:24</td><td title="calling-mini-wallet-phone-super-umbrella-violence-uvula-vagrant-vehement-valve-vaseline-vanish-vampire-vanguard-vanadium">Guess history</td></tr>
+<tr><td>24</td><td>ward (chemistry teacher)</td><td>16</td><td>2:15</td><td title="multiplication-subtraction-vestment-trollop-undermine-uvula-vacation-vault-vantage-vagina-valid-vamoose-vanguard-vane-vampire-vanadium">Guess history</td></tr>
+<tr><td>24</td><td>karph54</td><td>16</td><td>2:41</td><td title="ma-typo-wasabi-underwire-vengeance-utter-vagina-veal-varmint-validity-vapid-van-vanilla-vane-vandal-vanadium">Guess history</td></tr>
+<tr><td>24</td><td>DaveK</td><td>16</td><td>2:57</td><td title="qi-udder-xi-wafer-vestment-uxorial-variable-vacant-vamoose-vapid-vanguard-vandalize-vampire-van-vandal-vanadium">Guess history</td></tr>
+<tr><td>28</td><td>jrock</td><td>17</td><td>1:46</td><td title="mulch-sultry-tureen-whittle-uvula-vortex-vacuous-vittles-vestry-vast-validate-vanguard-valve-vamoose-vandal-vampire-vanadium">Guess history</td></tr>
+<tr><td>28</td><td>Kaya</td><td>17</td><td>2:23</td><td title="marmoset-robot-unicorn-xylophone-water-varicose-utter-uvula-vacation-vamp-vapid-van-vanquish-vanity-vane-vandalize-vanadium">Guess history</td></tr>
+<tr><td>28</td><td>SDW</td><td>17</td><td>2:38</td><td title="iambic-pompadour-tyrannical-wriggle-verisimilitude-unabashed-uptight-vacuum-vector-vapid-vagabond-valance-vanilla-vampire-vane-vandal-vanadium">Guess history</td></tr>
+<tr><td>28</td><td>Al S.</td><td>17</td><td>3:08</td><td title="lyric-rye-typhoon-wunderkind-waddle-utensil-vendetta-vagrant-vault-vapid-valance-vamoose-vanity-vane-vampire-vanilla-vanadium">Guess history</td></tr>
+<tr><td>28</td><td>John M</td><td>17</td><td>5:41</td><td title="dichotomy-midge-riposte-wastrel-ubiquitous-volition-uvula-vamoose-vicissitude-vendetta-vector-vaunted-varsity-vapid-vandal-vampire-vanadium">Guess history</td></tr>
+<tr><td>33</td><td>SHAW</td><td>19</td><td>3:30</td><td title="ma-qat-ta-vac-xi-wyte-vulgar-victim-vector-vat-vampire-vapid-vanity-vane-vampiric-van-vandalism-vandal-vanadium">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

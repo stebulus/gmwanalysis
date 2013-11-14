@@ -1,0 +1,89 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">scandium</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=130409">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">once twice rabble scimitar risible rococo ruche samovar saying scandalous scheme scarf scape scanty scanner scandium pathetic sad tyrant tantrum spackle sibilant semaphore sedentary sarong school scathe savor say scabrous scam scapula scant scan scanner scandal scandalous scandium ma rabbi wasabi udder tab sabine shyster segue saponification sciatic scab scenery scald scenario scaup scar scandal scapegoat scanty scans scandium bestiality science mauve recidivism rudimentary rye salacious scar sap scan scandium nut rust van sand tin strew slander shoe send secede school scam scene scatter scamper scapegoat scandalous scant scandium jambalaya tapir ocelot reticule sojourn sally slander shallot seedy sassy scoff scant saucy sawyer saying scabies scallion scamp scan scandal scanner scandalize scandalous scandium lattice tachometer purulent ruminate sophomore savant shelter semblance scribble scepter scabbard scandal scenario scarlet scarcity scandalous scanty scandium knockout pa viceroy rim tab strobe shipwreck rye scallop selenium scribble scirocco scavenger scarcity scandal scapular scant scandium oaf suffrage rabbi seraphim roster sabre savvy scoundrel scintilla scenario scabbard scamper scarify scandalous scape scant scandium milky rabbit tendril shill rummy sabre scoundrel scarce samurai satisfaction savor scab scam scanner scamper scandal scandalize scannable scandent scandium methionine thicket quango sapient sordid sight semilunar screed scapula saunter sawbuck scalar scampi scandal scant scanner scandalous scandium gyrate synergy myopic ovulate rabbit sabot sophist segregate sea samovar sawmill schism scab scenic scallawag scapula scamper scape scanty scantily scant scan scanner scandal scandalous scandium ma taffy pear red sad sly shy sew saxophone sear seaboard say sea scabbard scull scrap sclerotic school schedule scatter scam scarred scandal scapula scansion scanned scandalous scanner scandalize scandium moisture slovenly prolix rodeo sapor silver sediment scintillating saxophone sciatica scathing scabbard scam scapula scanty scamp scandium joker training mashed rosebud saturation technically solitude shambles scathing saucy saw saying scam scarring scandalous scare scarab scattered scantily scanner scandals scandalize scandic scandium litmus tarragon pine rostrum slate scepter rut samovar saturate scandium limber racket tabby sabbatical snare shambles scour scanty sanction saunter scads scalar scamper scan scandal scandium incandescent radish tycoon shampoo rustic seaborgium salami scorpion sarcophagus scapegoat savory saxophone scalene scant scampi scanner scan scandal scandium loathsome tyrannical repulsive sickening rotten seditious satanic scurrilous sawbones scandalous scimitar scenery scatological scapula scanty scanning scandium ma rabid sun sack son sin sent say sea scone scab schism scepter scatter scar scads scale scandal scapula scans scanner scandalous scandium meticulous thyroid pancreas sarcophagus suture somnolent sentinel scandium leprosy sabbatical valiant unabashed tapioca symbiotic slather sibilant segue schism sayonara scavenger scaly scamper scatological scapegoat scandalous scansion scandium macrame turmeric quail parmesan sandwich subsidy since seam schema scab scan scent scavenger scar scapula scant scanner scandal scandalous scandals scandent scandium man sun pun ran run sat set seal scab scar scaffold scalar scan scape scam scandal scanner scandalous skank scanned scannable scandium reticent turbulent serendipity sacred sea samaritan saturate say scythe scathe scab scarce scam scanner scan scans scandal scandalous scandium gadfly penitent superstructure rhetoric sallied slow shale sexual saw sea say scintillating scab scat scale scam scampered scar scandalous scanty scans scandium me to pet rand sex put sand scattering sat savvy scandal scape scanning scandium ma qat ubiquitous sack ta smack shack sea same scat save saw saxophone say saying scandium lucky rhapsody value tapioca sepia rubbish salmon scope scapula saxophone scabies scalp scant scamp scandal scanner scandalous scannable scandium moth silly quit rested rusted sally sell science savage scat say scabrous scalene scam scare scanner scandalous scandium microwave television pterosaur stereo salamander scarcity scab scalded scanner scandal scandia scandium </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Apr 9, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>the imaginary Catherine</td><td>8</td><td>0:43</td><td title="meticulous-thyroid-pancreas-sarcophagus-suture-somnolent-sentinel-scandium">Guess history</td></tr>
+<tr><td>2</td><td>joon</td><td>10</td><td>0:38</td><td title="litmus-tarragon-pine-rostrum-slate-scepter-rut-samovar-saturate-scandium">Guess history</td></tr>
+<tr><td>3</td><td>KNOL</td><td>11</td><td>1:56</td><td title="bestiality-science-mauve-recidivism-rudimentary-rye-salacious-scar-sap-scan-scandium">Guess history</td></tr>
+<tr><td>4</td><td>postbear</td><td>12</td><td>5:21</td><td title="microwave-television-pterosaur-stereo-salamander-scarcity-scab-scalded-scanner-scandal-scandia-scandium">Guess history</td></tr>
+<tr><td>5</td><td>john plaut</td><td>14</td><td>2:10</td><td title="me-to-pet-rand-sex-put-sand-scattering-sat-savvy-scandal-scape-scanning-scandium">Guess history</td></tr>
+<tr><td>6</td><td>KatD</td><td>16</td><td>1:34</td><td title="ma-qat-ubiquitous-sack-ta-smack-shack-sea-same-scat-save-saw-saxophone-say-saying-scandium">Guess history</td></tr>
+<tr><td>6</td><td>Jon88</td><td>16</td><td>2:20</td><td title="once-twice-rabble-scimitar-risible-rococo-ruche-samovar-saying-scandalous-scheme-scarf-scape-scanty-scanner-scandium">Guess history</td></tr>
+<tr><td>6</td><td>Billy</td><td>16</td><td>4:13</td><td title="limber-racket-tabby-sabbatical-snare-shambles-scour-scanty-sanction-saunter-scads-scalar-scamper-scan-scandal-scandium">Guess history</td></tr>
+<tr><td>9</td><td>mm</td><td>17</td><td>2:59</td><td title="moisture-slovenly-prolix-rodeo-sapor-silver-sediment-scintillating-saxophone-sciatica-scathing-scabbard-scam-scapula-scanty-scamp-scandium">Guess history</td></tr>
+<tr><td>9</td><td>benton</td><td>17</td><td>3:59</td><td title="oaf-suffrage-rabbi-seraphim-roster-sabre-savvy-scoundrel-scintilla-scenario-scabbard-scamper-scarify-scandalous-scape-scant-scandium">Guess history</td></tr>
+<tr><td>9</td><td>ax</td><td>17</td><td>7:02</td><td title="loathsome-tyrannical-repulsive-sickening-rotten-seditious-satanic-scurrilous-sawbones-scandalous-scimitar-scenery-scatological-scapula-scanty-scanning-scandium">Guess history</td></tr>
+<tr><td>12</td><td>Gareth</td><td>18</td><td>2:47</td><td title="methionine-thicket-quango-sapient-sordid-sight-semilunar-screed-scapula-saunter-sawbuck-scalar-scampi-scandal-scant-scanner-scandalous-scandium">Guess history</td></tr>
+<tr><td>12</td><td>mike b</td><td>18</td><td>3:48</td><td title="knockout-pa-viceroy-rim-tab-strobe-shipwreck-rye-scallop-selenium-scribble-scirocco-scavenger-scarcity-scandal-scapular-scant-scandium">Guess history</td></tr>
+<tr><td>12</td><td>Ringoes</td><td>18</td><td>3:52</td><td title="lattice-tachometer-purulent-ruminate-sophomore-savant-shelter-semblance-scribble-scepter-scabbard-scandal-scenario-scarlet-scarcity-scandalous-scanty-scandium">Guess history</td></tr>
+<tr><td>12</td><td>LM</td><td>18</td><td>14:26</td><td title="moth-silly-quit-rested-rusted-sally-sell-science-savage-scat-say-scabrous-scalene-scam-scare-scanner-scandalous-scandium">Guess history</td></tr>
+<tr><td>16</td><td>drjinx</td><td>19</td><td>3:59</td><td title="reticent-turbulent-serendipity-sacred-sea-samaritan-saturate-say-scythe-scathe-scab-scarce-scam-scanner-scan-scans-scandal-scandalous-scandium">Guess history</td></tr>
+<tr><td>16</td><td>My Fair Lady</td><td>19</td><td>4:09</td><td title="leprosy-sabbatical-valiant-unabashed-tapioca-symbiotic-slather-sibilant-segue-schism-sayonara-scavenger-scaly-scamper-scatological-scapegoat-scandalous-scansion-scandium">Guess history</td></tr>
+<tr><td>16</td><td>NerysX</td><td>19</td><td>4:16</td><td title="nut-rust-van-sand-tin-strew-slander-shoe-send-secede-school-scam-scene-scatter-scamper-scapegoat-scandalous-scant-scandium">Guess history</td></tr>
+<tr><td>16</td><td>SDW</td><td>19</td><td>4:29</td><td title="incandescent-radish-tycoon-shampoo-rustic-seaborgium-salami-scorpion-sarcophagus-scapegoat-savory-saxophone-scalene-scant-scampi-scanner-scan-scandal-scandium">Guess history</td></tr>
+<tr><td>16</td><td>Mr. Mitten</td><td>19</td><td>9:04</td><td title="lucky-rhapsody-value-tapioca-sepia-rubbish-salmon-scope-scapula-saxophone-scabies-scalp-scant-scamp-scandal-scanner-scandalous-scannable-scandium">Guess history</td></tr>
+<tr><td>21</td><td>Einstein</td><td>20</td><td>3:56</td><td title="milky-rabbit-tendril-shill-rummy-sabre-scoundrel-scarce-samurai-satisfaction-savor-scab-scam-scanner-scamper-scandal-scandalize-scannable-scandent-scandium">Guess history</td></tr>
+<tr><td>22</td><td>arg karph54</td><td>21</td><td>3:35</td><td title="ma-rabbi-wasabi-udder-tab-sabine-shyster-segue-saponification-sciatic-scab-scenery-scald-scenario-scaup-scar-scandal-scapegoat-scanty-scans-scandium">Guess history</td></tr>
+<tr><td>23</td><td>GFMorris</td><td>22</td><td>2:16</td><td title="gadfly-penitent-superstructure-rhetoric-sallied-slow-shale-sexual-saw-sea-say-scintillating-scab-scat-scale-scam-scampered-scar-scandalous-scanty-scans-scandium">Guess history</td></tr>
+<tr><td>23</td><td>Ertchin</td><td>22</td><td>2:27</td><td title="pathetic-sad-tyrant-tantrum-spackle-sibilant-semaphore-sedentary-sarong-school-scathe-savor-say-scabrous-scam-scapula-scant-scan-scanner-scandal-scandalous-scandium">Guess history</td></tr>
+<tr><td>23</td><td>Katherine</td><td>22</td><td>3:28</td><td title="macrame-turmeric-quail-parmesan-sandwich-subsidy-since-seam-schema-scab-scan-scent-scavenger-scar-scapula-scant-scanner-scandal-scandalous-scandals-scandent-scandium">Guess history</td></tr>
+<tr><td>23</td><td>Garrett</td><td>22</td><td>14:38</td><td title="man-sun-pun-ran-run-sat-set-seal-scab-scar-scaffold-scalar-scan-scape-scam-scandal-scanner-scandalous-skank-scanned-scannable-scandium">Guess history</td></tr>
+<tr><td>27</td><td>Aaron</td><td>23</td><td>3:50</td><td title="ma-rabid-sun-sack-son-sin-sent-say-sea-scone-scab-schism-scepter-scatter-scar-scads-scale-scandal-scapula-scans-scanner-scandalous-scandium">Guess history</td></tr>
+<tr><td>28</td><td>Cat</td><td>24</td><td>3:35</td><td title="jambalaya-tapir-ocelot-reticule-sojourn-sally-slander-shallot-seedy-sassy-scoff-scant-saucy-sawyer-saying-scabies-scallion-scamp-scan-scandal-scanner-scandalize-scandalous-scandium">Guess history</td></tr>
+<tr><td>28</td><td>tania</td><td>24</td><td>9:48</td><td title="joker-training-mashed-rosebud-saturation-technically-solitude-shambles-scathing-saucy-saw-saying-scam-scarring-scandalous-scare-scarab-scattered-scantily-scanner-scandals-scandalize-scandic-scandium">Guess history</td></tr>
+<tr><td>30</td><td>MWH</td><td>26</td><td>3:48</td><td title="gyrate-synergy-myopic-ovulate-rabbit-sabot-sophist-segregate-sea-samovar-sawmill-schism-scab-scenic-scallawag-scapula-scamper-scape-scanty-scantily-scant-scan-scanner-scandal-scandalous-scandium">Guess history</td></tr>
+<tr><td>31</td><td>SML</td><td>30</td><td>4:52</td><td title="ma-taffy-pear-red-sad-sly-shy-sew-saxophone-sear-seaboard-say-sea-scabbard-scull-scrap-sclerotic-school-schedule-scatter-scam-scarred-scandal-scapula-scansion-scanned-scandalous-scanner-scandalize-scandium">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

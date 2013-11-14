@@ -1,0 +1,83 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="130705">Jul 5, 2013</option>
+<option value="130704">Jul 4, 2013</option>
+<option value="130703">Jul 3, 2013</option>
+<option value="130702">Jul 2, 2013</option>
+<option value="130701">Jul 1, 2013</option>
+<option value="130630">Jun 30, 2013</option>
+<option value="130629">Jun 29, 2013</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">soursop</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=120526">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">nightingale swan robin sparrow seagull sloop songbird sow sot souse soth sots soul sounder soup sour sourpuss sousaphone sours sous soursop porcine ursine semaphore thingamajig spurious slingshot snooker southpaw snuffle soloist sorely sot sourpuss southerly souse sousaphone sous soursop father madras tantrum nocturnal panther rancid seance succulent simpleton soporific squire spurious spangled sourpuss spackle sower sow southern sousaphone sous sours sourwood soursop messenger tourist rabid sapid stylus sporran shudder smudge soak spa sorghum sow sot sought sovereign sour southwest southeast south souse source sourdough sous sourpuss soursop me we roast to tab rust sex sox six slender smear snatch soap sorority sound sovereignty soursop nonpareil prop waive stately rancid rye seldom sordid squire spitfire spackle sovereign soulmate sour souse sours soursop medicine reticulate sundry shelter spotty slang smack snack sober sow solo sophomore sorbet sot sounder sovereign souse soup sour sourpuss sous sours soursop mom rum was simp temp stir slump sorry spry spar sow sou soup soupcon sourdough sovereign southpaw sous sourly sourpuss sourpusses sours sourwood soursop myrtle tyro ox pye rye syce secular six sox sky sly snide soak somnolent soon sore sot sou sovereign sound soup sour souse sourpuss soursop maneuver standdown opener quarry saturate simulate sort square spare spacious soy sorbet sovereign south soulmate souplike sourish sourpuss souse sourwood soursop kerfuffle rust tab snout sugary spout sooner soya sort sot southern sou soul sounding soupy soursop orange smile uvula took tad soon sum stand squire spam soon sow soup sovereign sour sousaphone souring sours soursop orange soon uvula soursop memorial prove truant rune stump sail shoulder slander spout snoop sour space sow souse sousaphone sourpuss soursop luxury ruckus tuck suck sobriquet standard sovereign somber soupcon southpaw soursop macrame turmeric quail sandwich tablet subterranean soba squish splendid solution spank soya sorry south souffle soulful soup sourpuss sous sours sourwood soursop moot prawn syringe rhubarb ruse sickly sorbet stoic starch sprout spread sostenuto sparing south sot sound sour souse souring sours soursop lox serum tumescent talcum sordid stodgy squalid spiculum spanakopita soulless spackle sovereign southern soupy sourpuss sousaphone soursop juniper lump mummify nullify putrefy quotable sundown rustic sable stubble scroll stroll southern sebaceous sibilant sizzle skimpy slumber snood snooze sobriety soul sourdough souse sousaphone sourpuss soursop ma pa tat sat summary somnambulism spore space soporific souffle sovereign sough souk soup sourdough southpaw souse sourpuss sousaphone soursop machismo swarthy portend rabbi ruthless seaward six slumber stab sombre spoke spake soul sow sovereign south sound soupy sourdough sousaphone sours sous sourwood soursop iambic syzygy macabre punctual rigmarole shellfish straightforward specimen sledgehammer snapdragon sonorous soybean sorghum southpaw souffle soursop junk trunk open rabid sad surly sift sop stab squire spade soy sot sow soul sovereign sous soup sour sourpuss sours sourwood soursop mystery taste pretzel right shell sympathy somebody stitch splice sound spade sow sovereign south soup sour source souse sourdough sousaphone sourness sourpuss sourwood soursop munition restoration uvula sharing tempest svelte slimy spay snitch snuck soda space sot sow sovereign southern sots sound soup sour sous sourpuss sours soursop </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 26, 2012:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td></td><td>4</td><td>0:16</td><td title="orange-soon-uvula-soursop">Guess history</td></tr>
+<tr><td>2</td><td>john farmer</td><td>11</td><td>2:02</td><td title="luxury-ruckus-tuck-suck-sobriquet-standard-sovereign-somber-soupcon-southpaw-soursop">Guess history</td></tr>
+<tr><td>3</td><td>bobk</td><td>16</td><td>2:07</td><td title="kerfuffle-rust-tab-snout-sugary-spout-sooner-soya-sort-sot-southern-sou-soul-sounding-soupy-soursop">Guess history</td></tr>
+<tr><td>3</td><td>SDW</td><td>16</td><td>2:40</td><td title="iambic-syzygy-macabre-punctual-rigmarole-shellfish-straightforward-specimen-sledgehammer-snapdragon-sonorous-soybean-sorghum-southpaw-souffle-soursop">Guess history</td></tr>
+<tr><td>5</td><td>Marika</td><td>17</td><td>4:21</td><td title="memorial-prove-truant-rune-stump-sail-shoulder-slander-spout-snoop-sour-space-sow-souse-sousaphone-sourpuss-soursop">Guess history</td></tr>
+<tr><td>5</td><td>Beaglemom</td><td>17</td><td>4:28</td><td title="nonpareil-prop-waive-stately-rancid-rye-seldom-sordid-squire-spitfire-spackle-sovereign-soulmate-sour-souse-sours-soursop">Guess history</td></tr>
+<tr><td>5</td><td>Billy</td><td>17</td><td>4:43</td><td title="lox-serum-tumescent-talcum-sordid-stodgy-squalid-spiculum-spanakopita-soulless-spackle-sovereign-southern-soupy-sourpuss-sousaphone-soursop">Guess history</td></tr>
+<tr><td>5</td><td>john plaut</td><td>17</td><td>7:18</td><td title="me-we-roast-to-tab-rust-sex-sox-six-slender-smear-snatch-soap-sorority-sound-sovereignty-soursop">Guess history</td></tr>
+<tr><td>9</td><td>Jill</td><td>18</td><td>4:15</td><td title="porcine-ursine-semaphore-thingamajig-spurious-slingshot-snooker-southpaw-snuffle-soloist-sorely-sot-sourpuss-southerly-souse-sousaphone-sous-soursop">Guess history</td></tr>
+<tr><td>10</td><td>Samuel</td><td>19</td><td>3:25</td><td title="orange-smile-uvula-took-tad-soon-sum-stand-squire-spam-soon-sow-soup-sovereign-sour-sousaphone-souring-sours-soursop">Guess history</td></tr>
+<tr><td>11</td><td>pvh</td><td>20</td><td>4:36</td><td title="ma-pa-tat-sat-summary-somnambulism-spore-space-soporific-souffle-sovereign-sough-souk-soup-sourdough-southpaw-souse-sourpuss-sousaphone-soursop">Guess history</td></tr>
+<tr><td>12</td><td>jrock</td><td>21</td><td>1:56</td><td title="moot-prawn-syringe-rhubarb-ruse-sickly-sorbet-stoic-starch-sprout-spread-sostenuto-sparing-south-sot-sound-sour-souse-souring-sours-soursop">Guess history</td></tr>
+<tr><td>12</td><td>ngtwng</td><td>21</td><td>4:26</td><td title="nightingale-swan-robin-sparrow-seagull-sloop-songbird-sow-sot-souse-soth-sots-soul-sounder-soup-sour-sourpuss-sousaphone-sours-sous-soursop">Guess history</td></tr>
+<tr><td>12</td><td>callie</td><td>21</td><td>5:57</td><td title="maneuver-standdown-opener-quarry-saturate-simulate-sort-square-spare-spacious-soy-sorbet-sovereign-south-soulmate-souplike-sourish-sourpuss-souse-sourwood-soursop">Guess history</td></tr>
+<tr><td>15</td><td>Katherine</td><td>22</td><td>4:17</td><td title="macrame-turmeric-quail-sandwich-tablet-subterranean-soba-squish-splendid-solution-spank-soya-sorry-south-souffle-soulful-soup-sourpuss-sous-sours-sourwood-soursop">Guess history</td></tr>
+<tr><td>16</td><td>Drew</td><td>23</td><td>3:54</td><td title="medicine-reticulate-sundry-shelter-spotty-slang-smack-snack-sober-sow-solo-sophomore-sorbet-sot-sounder-sovereign-souse-soup-sour-sourpuss-sous-sours-soursop">Guess history</td></tr>
+<tr><td>16</td><td>Shoe</td><td>23</td><td>5:30</td><td title="father-madras-tantrum-nocturnal-panther-rancid-seance-succulent-simpleton-soporific-squire-spurious-spangled-sourpuss-spackle-sower-sow-southern-sousaphone-sous-sours-sourwood-soursop">Guess history</td></tr>
+<tr><td>16</td><td>Sophietrue</td><td>23</td><td>6:00</td><td title="junk-trunk-open-rabid-sad-surly-sift-sop-stab-squire-spade-soy-sot-sow-soul-sovereign-sous-soup-sour-sourpuss-sours-sourwood-soursop">Guess history</td></tr>
+<tr><td>19</td><td>Cheryllll</td><td>24</td><td>3:46</td><td title="munition-restoration-uvula-sharing-tempest-svelte-slimy-spay-snitch-snuck-soda-space-sot-sow-sovereign-southern-sots-sound-soup-sour-sous-sourpuss-sours-soursop">Guess history</td></tr>
+<tr><td>19</td><td>smack</td><td>24</td><td>5:46</td><td title="machismo-swarthy-portend-rabbi-ruthless-seaward-six-slumber-stab-sombre-spoke-spake-soul-sow-sovereign-south-sound-soupy-sourdough-sousaphone-sours-sous-sourwood-soursop">Guess history</td></tr>
+<tr><td>19</td><td>MB</td><td>24</td><td>5:47</td><td title="mom-rum-was-simp-temp-stir-slump-sorry-spry-spar-sow-sou-soup-soupcon-sourdough-sovereign-southpaw-sous-sourly-sourpuss-sourpusses-sours-sourwood-soursop">Guess history</td></tr>
+<tr><td>19</td><td>Hugh</td><td>24</td><td>8:01</td><td title="mystery-taste-pretzel-right-shell-sympathy-somebody-stitch-splice-sound-spade-sow-sovereign-south-soup-sour-source-souse-sourdough-sousaphone-sourness-sourpuss-sourwood-soursop">Guess history</td></tr>
+<tr><td>23</td><td>Mean Old Elaine sheesh</td><td>25</td><td>3:24</td><td title="myrtle-tyro-ox-pye-rye-syce-secular-six-sox-sky-sly-snide-soak-somnolent-soon-sore-sot-sou-sovereign-sound-soup-sour-souse-sourpuss-soursop">Guess history</td></tr>
+<tr><td>23</td><td>Jon88</td><td>25</td><td>3:41</td><td title="messenger-tourist-rabid-sapid-stylus-sporran-shudder-smudge-soak-spa-sorghum-sow-sot-sought-sovereign-sour-southwest-southeast-south-souse-source-sourdough-sous-sourpuss-soursop">Guess history</td></tr>
+<tr><td>25</td><td>LindaBee + google</td><td>27</td><td>8:56</td><td title="juniper-lump-mummify-nullify-putrefy-quotable-sundown-rustic-sable-stubble-scroll-stroll-southern-sebaceous-sibilant-sizzle-skimpy-slumber-snood-snooze-sobriety-soul-sourdough-souse-sousaphone-sourpuss-soursop">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>
