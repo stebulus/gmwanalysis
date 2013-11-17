@@ -1,3 +1,5 @@
+.DELETE_ON_ERROR:
+
 include dates.mk
 dates.mk: dates
 	awk '{print "DATES += " $$0}' $< >$@
