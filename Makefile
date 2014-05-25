@@ -18,3 +18,6 @@ ngram/googlebooks-eng-all-1gram-20120701-%.twl: ngram/googlebooks-eng-all-1gram-
 	zcat $< | ngram/shorten | sort >$@
 ngram/googlebooks-eng-all-1gram-20120701-%.gz:
 	wget -P ngram http://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-$*.gz
+
+wikt/enwikt.xml.bz2:
+	wget -O "$@" http://dumps.wikimedia.org/enwiktionary/20140504/enwiktionary-20140504-pages-articles-multistream.xml.bz2
