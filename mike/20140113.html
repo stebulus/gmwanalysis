@@ -1,0 +1,71 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">aleatoric</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140113">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">ma fa cab baa alabaster at an am all algebra alder ale alga aleph alehouse alec aleatoric myriad fling cling bring azure ail at ark am alchemy alms algae ale alfredo aleph alef alee alec aleatoric lustre dogmatic capacitance avenge anarchist agar allotment albumin alight alertness alderman alec aldosterone ale aleatory aleatoric latency complacency accuracy azimuth apatite agitate alimentary aioli akimbo alabaster alcohol ale algae alga alfalfa aleatory aleatoric ma fab cab baby aperture agitate alimentary ail ajar akimbo alar albino alchemy aerate ahi alewife alder ale alembic alee aleatory aleatoric kettle car bye bad apple ace after album annotate amber alkane ale algae alfalfa alee aleatoric liken flighty book avarice allosaurus ace afterword ai alba algae alewife alderman ale alert alee aleatory aleatoric monitor dogma capture bullish banquet allowance accentuate adopt affordable agnostic al aliquot alabaster ales albino alchemist ale alec albeit aleatory aleatoric man eve bet ant act all add agonize akin alibi alas aleatory alchemy aldehyde aldosterone ale aleatoric myriad fanatic calibre babble arabesque afar amaryllis airy alkaline alabaster alfalfa ale alert aleph alehouse aleatory aleatoric kettle cat at aft an ail al am alt ale alfalfa ales alee alec aleatory aleatoric mystery ketchup cistern badminton antagonist aggressive ajar ally akimbo alabaster almanac algebra alchemy ale alfalfa alehouse alec aleatoric ma do cab bad am aft airplane ale already almost alive algebra alfredo aleatoric </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jan 13, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>gifo</td><td>14</td><td>2:07</td><td title="ma-do-cab-bad-am-aft-airplane-ale-already-almost-alive-algebra-alfredo-aleatoric">Guess history</td></tr>
+<tr><td>2</td><td>Marsha</td><td>16</td><td>1:45</td><td title="kettle-car-bye-bad-apple-ace-after-album-annotate-amber-alkane-ale-algae-alfalfa-alee-aleatoric">Guess history</td></tr>
+<tr><td>2</td><td>nrm</td><td>16</td><td>1:58</td><td title="kettle-cat-at-aft-an-ail-al-am-alt-ale-alfalfa-ales-alee-alec-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>2</td><td>sjtbot3</td><td>16</td><td>15:01</td><td title="lustre-dogmatic-capacitance-avenge-anarchist-agar-allotment-albumin-alight-alertness-alderman-alec-aldosterone-ale-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>5</td><td>Jon88</td><td>17</td><td>1:33</td><td title="latency-complacency-accuracy-azimuth-apatite-agitate-alimentary-aioli-akimbo-alabaster-alcohol-ale-algae-alga-alfalfa-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>5</td><td>Thom</td><td>17</td><td>3:27</td><td title="ma-fa-cab-baa-alabaster-at-an-am-all-algebra-alder-ale-alga-aleph-alehouse-alec-aleatoric">Guess history</td></tr>
+<tr><td>5</td><td>m</td><td>17</td><td>4:06</td><td title="myriad-fanatic-calibre-babble-arabesque-afar-amaryllis-airy-alkaline-alabaster-alfalfa-ale-alert-aleph-alehouse-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>5</td><td>Karen</td><td>17</td><td>4:58</td><td title="liken-flighty-book-avarice-allosaurus-ace-afterword-ai-alba-algae-alewife-alderman-ale-alert-alee-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>5</td><td>john plaut</td><td>17</td><td>6:12</td><td title="man-eve-bet-ant-act-all-add-agonize-akin-alibi-alas-aleatory-alchemy-aldehyde-aldosterone-ale-aleatoric">Guess history</td></tr>
+<tr><td>10</td><td>ward</td><td>18</td><td>2:57</td><td title="mystery-ketchup-cistern-badminton-antagonist-aggressive-ajar-ally-akimbo-alabaster-almanac-algebra-alchemy-ale-alfalfa-alehouse-alec-aleatoric">Guess history</td></tr>
+<tr><td>11</td><td>moi (avec des autres)</td><td>19</td><td>5:22</td><td title="myriad-fling-cling-bring-azure-ail-at-ark-am-alchemy-alms-algae-ale-alfredo-aleph-alef-alee-alec-aleatoric">Guess history</td></tr>
+<tr><td>12</td><td>xyz</td><td>21</td><td>6:31</td><td title="monitor-dogma-capture-bullish-banquet-allowance-accentuate-adopt-affordable-agnostic-al-aliquot-alabaster-ales-albino-alchemist-ale-alec-albeit-aleatory-aleatoric">Guess history</td></tr>
+<tr><td>13</td><td>arg karph54</td><td>22</td><td>2:11</td><td title="ma-fab-cab-baby-aperture-agitate-alimentary-ail-ajar-akimbo-alar-albino-alchemy-aerate-ahi-alewife-alder-ale-alembic-alee-aleatory-aleatoric">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

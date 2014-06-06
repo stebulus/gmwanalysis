@@ -1,0 +1,102 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">aground</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140517">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">kerfuffle decry bonus ascend angst aglet akela ahead aha agronomy ague aground modicum foist clapboard axiom affable amniocentesis ahi agrarian agriculture ah ague ags agronomic aground lice dice ace byte baize anodyne aileron adult afflict aghast ahi agony ah agouti agrarian agree agriculture agronomy aground nabob gadfly crabapple azimuth amplitude aggressive aisle ahi ague agony aground kayak cacophony babble antimony agar align aimless ahem aghast aha agronomy ags aground query jackal extrovert azure alacrity affliction aide agreement ahoy ahem aground loris debacle cannery bacillus anchor addendum ajar aggregate aisle ahoy agronomy aha aground lilt gilt dill bill ail able aghast ahem agog agora ahead agriculture agronomy aha ague aground nurture element briar amiable able affect ail aha agile agoraphobia ague agriculture agronomy aground macrame cache azalea adroit apropos alfalfa airborne affront agoraphobia ahem ague agriculture agronomy aground fab cab awkward after apt anti ailment age aid ah agree agreement agriculture ags aground ma fab cab baa alacrity again ahead aghast agnostic ago agog aha agrarian agriculture aground mink fledgling char avarice alcohol accuse ahi agita agriculture ague agriculturist aground lead friend cry apple affable ample alacrity aggregate aileron ahi agoraphobia agriculture ahead agronomy aha aground doodle brazen ashamed aerobics antidote alleged agnostic albatross airmail airbag ague agrimony aground man eve can band all act afford ah agonize agreed aground lice binge ail acrid addle affect aged ahem agora ague agriculture aground liability fanfare cabal antimony actinium aggregate ample airy ago aimless aided ague agog agoraphobia agoraphobic agree agreement agreements ags agrees agriculture agricultures agronomy aground nabob flummox cabaret babe anterior affable am aisle agate ahem agree agriculture ague agronomy aground hug bug after bad awesome aide ageism ahead agriculture aground locket eminent beckon augment agnostic anaconda alimentary ajar agouti airless ahoy agriculture ague agronomy aground mint dog bye aim add age ahoy aground mat fat cat bat and act after ahead age agrarian ague agree aground jonquil fuzzy codicil babble amorous affable aimless agriculture ahi ague agronomy aground lam grippe chad baluster aorta accolade ajar aegis agate ail ahem agoraphobia agriculture aha ague agronomy aground millipede gnat centipede ant act affair akimbo ahead agate ago aha agora agriculture agronomy ague aground man dill awe all adage ago aim ahem agree agriculture agronomy aha aground macabre eavesdrop cabinet babble arsenic aghast anodyne alabaster ailment aha agony agriculture aground ma fa cab ba am aft ajar ag ah aghast aging ago agriculture ags aground salamander grating busking agitation basking baa alimony ah ago agave agone agnostic agonize agoraphobia agree agronomy aground plethora javelin grievous dapper bedlam apple adder altruistic afterthought ahi agora agriculture aha agrimony aground mutiny globulin damask bellicose antonym adroit agglomerate alanine aioli agribusiness aha agronomy ague aground marmoset cygnet baby amber actual agate ajar ail aha aghast agile agog agora agronomy ags aground militant gallon crescendo benzene astringent akimbo admonish affront aileron aggressive ahoy agnostic agrarian ague agriculture agronomy aground mac cab amniotic agribusiness alabaster ahi aha agriculture aground noon facet capital bereft awesome addax amphora afterward agate airy aha agriculture aground pious iota cerise bevel apiary affable ailment agrarian ague agriculture aground platoon fruition chambermaid bellwether antelope agonist ajuga ahold ague agree agriculture agronomy aground lesser dandle beneath armor alibi acrid affable ahimsa aggregate agronomy aha ags aground mist hirsute candle batty aster ago anonymous ajar aha ailing ague agony agree agronomy aground gyrate bye aye amplification abyss aerospace aggravated alimental airy ahoy ahead agreeable ague agria aground plagiarize gullible drab cloyingly brusque blithe baa arable animosity aha adamant affable against aggregate agronomy aground fatuous celadon azure amethyst algorithm affable airtight agoraphobia ah agreement agronomist agronomy aground glacier brace average angler agile altitude aircraft agriculture ahem agronomy ahead aground </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 17, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Crystalnotinrehab</td><td>8</td><td>0:39</td><td title="mint-dog-bye-aim-add-age-ahoy-aground">Guess history</td></tr>
+<tr><td>2</td><td>Norma</td><td>9</td><td>1:50</td><td title="mac-cab-amniotic-agribusiness-alabaster-ahi-aha-agriculture-aground">Guess history</td></tr>
+<tr><td>3</td><td>MB</td><td>10</td><td>1:39</td><td title="hug-bug-after-bad-awesome-aide-ageism-ahead-agriculture-aground">Guess history</td></tr>
+<tr><td>4</td><td>john plaut</td><td>11</td><td>1:10</td><td title="man-eve-can-band-all-act-afford-ah-agonize-agreed-aground">Guess history</td></tr>
+<tr><td>4</td><td>Lane</td><td>11</td><td>1:22</td><td title="nabob-gadfly-crabapple-azimuth-amplitude-aggressive-aisle-ahi-ague-agony-aground">Guess history</td></tr>
+<tr><td>4</td><td>benton</td><td>11</td><td>2:17</td><td title="pious-iota-cerise-bevel-apiary-affable-ailment-agrarian-ague-agriculture-aground">Guess history</td></tr>
+<tr><td>4</td><td>Els</td><td>11</td><td>2:49</td><td title="query-jackal-extrovert-azure-alacrity-affliction-aide-agreement-ahoy-ahem-aground">Guess history</td></tr>
+<tr><td>8</td><td>xx</td><td>12</td><td>1:29</td><td title="lice-binge-ail-acrid-addle-affect-aged-ahem-agora-ague-agriculture-aground">Guess history</td></tr>
+<tr><td>8</td><td>bobk</td><td>12</td><td>1:46</td><td title="kerfuffle-decry-bonus-ascend-angst-aglet-akela-ahead-aha-agronomy-ague-aground">Guess history</td></tr>
+<tr><td>8</td><td>davsan</td><td>12</td><td>2:46</td><td title="jonquil-fuzzy-codicil-babble-amorous-affable-aimless-agriculture-ahi-ague-agronomy-aground">Guess history</td></tr>
+<tr><td>8</td><td>Laura Dove</td><td>12</td><td>4:09</td><td title="mink-fledgling-char-avarice-alcohol-accuse-ahi-agita-agriculture-ague-agriculturist-aground">Guess history</td></tr>
+<tr><td>8</td><td>Rogersr</td><td>12</td><td>5:29</td><td title="glacier-brace-average-angler-agile-altitude-aircraft-agriculture-ahem-agronomy-ahead-aground">Guess history</td></tr>
+<tr><td>13</td><td>x</td><td>13</td><td>0:53</td><td title="mat-fat-cat-bat-and-act-after-ahead-age-agrarian-ague-agree-aground">Guess history</td></tr>
+<tr><td>13</td><td>joon and caroline</td><td>13</td><td>0:57</td><td title="lesser-dandle-beneath-armor-alibi-acrid-affable-ahimsa-aggregate-agronomy-aha-ags-aground">Guess history</td></tr>
+<tr><td>13</td><td>martinet</td><td>13</td><td>1:15</td><td title="noon-facet-capital-bereft-awesome-addax-amphora-afterward-agate-airy-aha-agriculture-aground">Guess history</td></tr>
+<tr><td>13</td><td>Margaret</td><td>13</td><td>2:06</td><td title="macabre-eavesdrop-cabinet-babble-arsenic-aghast-anodyne-alabaster-ailment-aha-agony-agriculture-aground">Guess history</td></tr>
+<tr><td>13</td><td>mike b</td><td>13</td><td>2:24</td><td title="doodle-brazen-ashamed-aerobics-antidote-alleged-agnostic-albatross-airmail-airbag-ague-agrimony-aground">Guess history</td></tr>
+<tr><td>13</td><td>nka</td><td>13</td><td>2:35</td><td title="man-dill-awe-all-adage-ago-aim-ahem-agree-agriculture-agronomy-aha-aground">Guess history</td></tr>
+<tr><td>13</td><td>jmb</td><td>13</td><td>3:38</td><td title="kayak-cacophony-babble-antimony-agar-align-aimless-ahem-aghast-aha-agronomy-ags-aground">Guess history</td></tr>
+<tr><td>13</td><td>Billy</td><td>13</td><td>3:57</td><td title="loris-debacle-cannery-bacillus-anchor-addendum-ajar-aggregate-aisle-ahoy-agronomy-aha-aground">Guess history</td></tr>
+<tr><td>13</td><td>bird internet meep</td><td>13</td><td>10:15</td><td title="fatuous-celadon-azure-amethyst-algorithm-affable-airtight-agoraphobia-ah-agreement-agronomist-agronomy-aground">Guess history</td></tr>
+<tr><td>13</td><td>Nina's friend</td><td>13</td><td>18:53</td><td title="platoon-fruition-chambermaid-bellwether-antelope-agonist-ajuga-ahold-ague-agree-agriculture-agronomy-aground">Guess history</td></tr>
+<tr><td>23</td><td>Judy</td><td>14</td><td>1:42</td><td title="modicum-foist-clapboard-axiom-affable-amniocentesis-ahi-agrarian-agriculture-ah-ague-ags-agronomic-aground">Guess history</td></tr>
+<tr><td>23</td><td>Beaglemom</td><td>14</td><td>2:34</td><td title="nurture-element-briar-amiable-able-affect-ail-aha-agile-agoraphobia-ague-agriculture-agronomy-aground">Guess history</td></tr>
+<tr><td>23</td><td>Simon S</td><td>14</td><td>3:00</td><td title="mutiny-globulin-damask-bellicose-antonym-adroit-agglomerate-alanine-aioli-agribusiness-aha-agronomy-ague-aground">Guess history</td></tr>
+<tr><td>23</td><td>mh</td><td>14</td><td>7:20</td><td title="macrame-cache-azalea-adroit-apropos-alfalfa-airborne-affront-agoraphobia-ahem-ague-agriculture-agronomy-aground">Guess history</td></tr>
+<tr><td>27</td><td>AmesGames</td><td>15</td><td>1:19</td><td title="ma-fab-cab-baa-alacrity-again-ahead-aghast-agnostic-ago-agog-aha-agrarian-agriculture-aground">Guess history</td></tr>
+<tr><td>27</td><td>KatD</td><td>15</td><td>2:22</td><td title="ma-fa-cab-ba-am-aft-ajar-ag-ah-aghast-aging-ago-agriculture-ags-aground">Guess history</td></tr>
+<tr><td>27</td><td>Ringoes</td><td>15</td><td>2:50</td><td title="locket-eminent-beckon-augment-agnostic-anaconda-alimentary-ajar-agouti-airless-ahoy-agriculture-ague-agronomy-aground">Guess history</td></tr>
+<tr><td>27</td><td>kp not in rehab</td><td>15</td><td>4:11</td><td title="fab-cab-awkward-after-apt-anti-ailment-age-aid-ah-agree-agreement-agriculture-ags-aground">Guess history</td></tr>
+<tr><td>27</td><td>Neville's Mom</td><td>15</td><td>4:18</td><td title="nabob-flummox-cabaret-babe-anterior-affable-am-aisle-agate-ahem-agree-agriculture-ague-agronomy-aground">Guess history</td></tr>
+<tr><td>27</td><td>m</td><td>15</td><td>5:09</td><td title="gyrate-bye-aye-amplification-abyss-aerospace-aggravated-alimental-airy-ahoy-ahead-agreeable-ague-agria-aground">Guess history</td></tr>
+<tr><td>27</td><td>Jacksons</td><td>15</td><td>5:12</td><td title="mist-hirsute-candle-batty-aster-ago-anonymous-ajar-aha-ailing-ague-agony-agree-agronomy-aground">Guess history</td></tr>
+<tr><td>27</td><td>kristin</td><td>15</td><td>6:03</td><td title="plethora-javelin-grievous-dapper-bedlam-apple-adder-altruistic-afterthought-ahi-agora-agriculture-aha-agrimony-aground">Guess history</td></tr>
+<tr><td>35</td><td>Barbara M</td><td>16</td><td>2:36</td><td title="millipede-gnat-centipede-ant-act-affair-akimbo-ahead-agate-ago-aha-agora-agriculture-agronomy-ague-aground">Guess history</td></tr>
+<tr><td>35</td><td>jb</td><td>16</td><td>3:00</td><td title="plagiarize-gullible-drab-cloyingly-brusque-blithe-baa-arable-animosity-aha-adamant-affable-against-aggregate-agronomy-aground">Guess history</td></tr>
+<tr><td>35</td><td>Kaya</td><td>16</td><td>3:20</td><td title="marmoset-cygnet-baby-amber-actual-agate-ajar-ail-aha-aghast-agile-agog-agora-agronomy-ags-aground">Guess history</td></tr>
+<tr><td>35</td><td>namuk</td><td>16</td><td>3:25</td><td title="lead-friend-cry-apple-affable-ample-alacrity-aggregate-aileron-ahi-agoraphobia-agriculture-ahead-agronomy-aha-aground">Guess history</td></tr>
+<tr><td>35</td><td>on guard</td><td>16</td><td>12:54</td><td title="lilt-gilt-dill-bill-ail-able-aghast-ahem-agog-agora-ahead-agriculture-agronomy-aha-ague-aground">Guess history</td></tr>
+<tr><td>40</td><td>ward</td><td>17</td><td>2:46</td><td title="militant-gallon-crescendo-benzene-astringent-akimbo-admonish-affront-aileron-aggressive-ahoy-agnostic-agrarian-ague-agriculture-agronomy-aground">Guess history</td></tr>
+<tr><td>40</td><td>Nina Koch</td><td>17</td><td>5:31</td><td title="lam-grippe-chad-baluster-aorta-accolade-ajar-aegis-agate-ail-ahem-agoraphobia-agriculture-aha-ague-agronomy-aground">Guess history</td></tr>
+<tr><td>40</td><td>dav</td><td>17</td><td>6:13</td><td title="salamander-grating-busking-agitation-basking-baa-alimony-ah-ago-agave-agone-agnostic-agonize-agoraphobia-agree-agronomy-aground">Guess history</td></tr>
+<tr><td>43</td><td>Jon88</td><td>19</td><td>2:59</td><td title="lice-dice-ace-byte-baize-anodyne-aileron-adult-afflict-aghast-ahi-agony-ah-agouti-agrarian-agree-agriculture-agronomy-aground">Guess history</td></tr>
+<tr><td>44</td><td>Jaeryn</td><td>24</td><td>9:57</td><td title="liability-fanfare-cabal-antimony-actinium-aggregate-ample-airy-ago-aimless-aided-ague-agog-agoraphobia-agoraphobic-agree-agreement-agreements-ags-agrees-agriculture-agricultures-agronomy-aground">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

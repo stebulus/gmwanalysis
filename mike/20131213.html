@@ -1,0 +1,123 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">azalea</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=131213">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">jambalaya bumblebee anoint barbaric bombastic archery atelier azure augury avarice aware axiom azalea lipid flippant blip amulet azimuth asthma athwart automatic aviatrix axe azalea ma fab cab baby agitate apiary arcane autism ay azimuth aye ayurveda azalea ma fab cab baa alacrity arable at aw ax aye azimuth azalea locket docket beak animosity anvil avarice badminton axle babble axiom azimuth azalea stun honey bunny askance barrier atavistic ball auburn azure avuncular awesome axiomatic azimuth aye azalea nabob gadfly crabapple azimuth amplitude assonance autistic awful aye azalea mirror habit cygnet aye bye biannual be bamboo baffle bad babble azure azalea lead friend cry apple brine bestial azure asinine attic augment aviary axe aye azeotrope azalea milk heavy chat bat apple azure as author awe axe aye azalea myrrh dragon cab back angle asinine atrocious auger avarice awesome azure axial aye azimuth ays azalea pistol luster herald dryer bender amateur austere basil backroom avionics axle babble azure azimuth aye azaleas azalea mu gamma crux ancillary blather axiom betide basilisk babble aye azimuth ayes azalea plaited grimace clobber brusque barter anodyne ardent assiduous athlete autism averse axiom azalea lyrical duet banshee accordion architect attic azure avenue axe aye azide ays azalea fab cab babble antimacassar arriviste auteur azimuth avuncular awesome axiom ay azalea marmoset cygnet baby amber art augment azure awesome aye azo ayes azalea mensch goon drapery bunkum audio bathtub azure avian awestruck axion axolotl aye azimuth azalea massage fruitless enjoin detonate cordial annihilation behead beatitude axiomatic azimuth azalea my gyp cyst aye buzz bin bay bank bag back babble azure ayes azalea masochist easement briquet argyle belittle banish avatar azalea query jackal eject avarice ceviche banana babble axle azure aye azalea facade cacophony babble alabaster archaic attitude avarice axiom azalea macrame cacophony azalea miserable fungible crucible baggage antagonist astringent azure austerity await axiom azalea lustre dogmatic capacitance avenge blond beginner barbarous backup ay bacilli baal azimuth ayurvedic azathioprine azalea oak fa cab baa aquanaut augment autonomy avionics azalea meager eager cougar badger aggregate aperitif awl axe azimuth ay azalea no ad go chip ba at awe aye azure azalea oyez flaccid byzantine azure amplitude arras aversion ax aye azimuth azalea ma gab cab babble amnesty atrocious awe azimuth ax aye azalea myrtle hex dye bye babble ammonite ax aye azure azimuth azalea mat fat cat bat and avid babble azure aye azalea ma fa cab ba am austere avenue aw ax ay azalea nacre egret cerise bevel apiary baffle ardour atrium auspicious awestruck backgammon azure aye azalea laconic docile bodacious azalea mollycoddle gabardine cilia balance amplitude arid avid axolotl azimuth azalea high cab away bison beat babble axon aye azalea jar eat cut boy ant axe bent banter baby azure azalea marcher federal caster breccia abstemious awe babble average axe aye azimuth ayurveda azide azalea myopic elf boss azure agent ample atrophy aviation axe aye azalea lyric fabulous clutter azimuth amulet asymptote auspicious avarice avuncular axiom axolotl azalea misty buffalo arena assailant babble azalea man dill awe burn bell bad aye babble azure azalea ma ha each cab baa amatory atavism awe ax ayah azimuth azalea participle grease druid buttress babble arsenic atrophy awash axe azure azalea man eve center bare and art asset attend aura banal bad avid awe axe babe aye azalea iambic cab babble ambition armadillo aviation axiom azimuth axolotl ayatollah azalea maverick gumshoe banana alkaline azure appear arcane attune aviary azalea la environs cat at bat bag azalea mandala fa bo at bad azure avid axle aye azote ays azalea minimize egregious cilia barbaric answer attitude avian babble axiom azure ayahuasca azalea glimmer cochlear bastion alabaster aught ballast babble aye azure azalea gin dashiki bulwark bacchanal avarice awkward azimuth axiom aye azure azalea luck fab cab babble aid ax azure aye azalea mess guess celestial asterisk best ballistic avid awry badger bachelor axis azure azimuth azalea monitor dogma catapult bogus apnea bartend axion azure aye azo azalea kitten environs butter abacus ayes berate bariatric baccarat azimuth azalea noon great cinder baby allow astray avuncular axed ayatollah azotemia azalea ma emphatic cadence binge ancillary babble ardent august axiomatic azure axon azalea lecture diatribe butcher azure allure analysis aster austere avuncular axe aye azalea ma fa cab baa ale at awe ax aye azimuth azalea nabbed churlish astigmatism bereft azalea phylum fecund bullion azimuth anterior asymptote auric awful aye ays azalea epiphany banana acrimonious affluent asphalt auspicious babbling avarice awesome azure axiom azalea </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Dec 13, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>mh</td><td>3</td><td>0:08</td><td title="macrame-cacophony-azalea">Guess history</td></tr>
+<tr><td>2</td><td>sb</td><td>4</td><td>0:33</td><td title="laconic-docile-bodacious-azalea">Guess history</td></tr>
+<tr><td>3</td><td>postbear</td><td>5</td><td>0:25</td><td title="nabbed-churlish-astigmatism-bereft-azalea">Guess history</td></tr>
+<tr><td>4</td><td>KNOL</td><td>6</td><td>0:51</td><td title="misty-buffalo-arena-assailant-babble-azalea">Guess history</td></tr>
+<tr><td>5</td><td>nrm</td><td>7</td><td>0:24</td><td title="la-environs-cat-at-bat-bag-azalea">Guess history</td></tr>
+<tr><td>6</td><td>joon</td><td>8</td><td>0:28</td><td title="masochist-easement-briquet-argyle-belittle-banish-avatar-azalea">Guess history</td></tr>
+<tr><td>7</td><td>Supervenient Man</td><td>9</td><td>1:06</td><td title="facade-cacophony-babble-alabaster-archaic-attitude-avarice-axiom-azalea">Guess history</td></tr>
+<tr><td>7</td><td>mike b</td><td>9</td><td>1:13</td><td title="oak-fa-cab-baa-aquanaut-augment-autonomy-avionics-azalea">Guess history</td></tr>
+<tr><td>7</td><td>we're in rehab</td><td>9</td><td>1:20</td><td title="high-cab-away-bison-beat-babble-axon-aye-azalea">Guess history</td></tr>
+<tr><td>7</td><td>Crystalnotinrehab</td><td>9</td><td>1:23</td><td title="luck-fab-cab-babble-aid-ax-azure-aye-azalea">Guess history</td></tr>
+<tr><td>11</td><td>Jackie B.</td><td>10</td><td>0:40</td><td title="no-ad-go-chip-ba-at-awe-aye-azure-azalea">Guess history</td></tr>
+<tr><td>11</td><td>x</td><td>10</td><td>0:41</td><td title="mat-fat-cat-bat-and-avid-babble-azure-aye-azalea">Guess history</td></tr>
+<tr><td>11</td><td>katport</td><td>10</td><td>1:02</td><td title="maverick-gumshoe-banana-alkaline-azure-appear-arcane-attune-aviary-azalea">Guess history</td></tr>
+<tr><td>11</td><td>nka</td><td>10</td><td>1:06</td><td title="man-dill-awe-burn-bell-bad-aye-babble-azure-azalea">Guess history</td></tr>
+<tr><td>11</td><td>budmelman</td><td>10</td><td>1:15</td><td title="glimmer-cochlear-bastion-alabaster-aught-ballast-babble-aye-azure-azalea">Guess history</td></tr>
+<tr><td>11</td><td>susanunit</td><td>10</td><td>1:23</td><td title="kitten-environs-butter-abacus-ayes-berate-bariatric-baccarat-azimuth-azalea">Guess history</td></tr>
+<tr><td>11</td><td>Francis</td><td>10</td><td>1:25</td><td title="mollycoddle-gabardine-cilia-balance-amplitude-arid-avid-axolotl-azimuth-azalea">Guess history</td></tr>
+<tr><td>11</td><td>Lane</td><td>10</td><td>2:56</td><td title="nabob-gadfly-crabapple-azimuth-amplitude-assonance-autistic-awful-aye-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Ertchin</td><td>11</td><td>0:30</td><td title="meager-eager-cougar-badger-aggregate-aperitif-awl-axe-azimuth-ay-azalea">Guess history</td></tr>
+<tr><td>19</td><td>BruceW</td><td>11</td><td>0:37</td><td title="jar-eat-cut-boy-ant-axe-bent-banter-baby-azure-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Thom</td><td>11</td><td>0:45</td><td title="ma-fa-cab-baa-ale-at-awe-ax-aye-azimuth-azalea">Guess history</td></tr>
+<tr><td>19</td><td>SDW</td><td>11</td><td>0:47</td><td title="iambic-cab-babble-ambition-armadillo-aviation-axiom-azimuth-axolotl-ayatollah-azalea">Guess history</td></tr>
+<tr><td>19</td><td>ward</td><td>11</td><td>0:52</td><td title="miserable-fungible-crucible-baggage-antagonist-astringent-azure-austerity-await-axiom-azalea">Guess history</td></tr>
+<tr><td>19</td><td>L</td><td>11</td><td>0:54</td><td title="ma-gab-cab-babble-amnesty-atrocious-awe-azimuth-ax-aye-azalea">Guess history</td></tr>
+<tr><td>19</td><td>KatD</td><td>11</td><td>0:54</td><td title="ma-fa-cab-ba-am-austere-avenue-aw-ax-ay-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Jon88</td><td>11</td><td>0:55</td><td title="lipid-flippant-blip-amulet-azimuth-asthma-athwart-automatic-aviatrix-axe-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Donna!</td><td>11</td><td>1:07</td><td title="oyez-flaccid-byzantine-azure-amplitude-arras-aversion-ax-aye-azimuth-azalea">Guess history</td></tr>
+<tr><td>19</td><td>BrainBoggler</td><td>11</td><td>1:48</td><td title="massage-fruitless-enjoin-detonate-cordial-annihilation-behead-beatitude-axiomatic-azimuth-azalea">Guess history</td></tr>
+<tr><td>19</td><td>kamalei</td><td>11</td><td>1:50</td><td title="noon-great-cinder-baby-allow-astray-avuncular-axed-ayatollah-azotemia-azalea">Guess history</td></tr>
+<tr><td>19</td><td>nightsky</td><td>11</td><td>1:57</td><td title="myopic-elf-boss-azure-agent-ample-atrophy-aviation-axe-aye-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Stefan</td><td>11</td><td>2:50</td><td title="phylum-fecund-bullion-azimuth-anterior-asymptote-auric-awful-aye-ays-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Blerg</td><td>11</td><td>3:07</td><td title="participle-grease-druid-buttress-babble-arsenic-atrophy-awash-axe-azure-azalea">Guess history</td></tr>
+<tr><td>19</td><td>Els</td><td>11</td><td>3:12</td><td title="query-jackal-eject-avarice-ceviche-banana-babble-axle-azure-aye-azalea">Guess history</td></tr>
+<tr><td>19</td><td>mean old elaine</td><td>11</td><td>3:49</td><td title="myrtle-hex-dye-bye-babble-ammonite-ax-aye-azure-azimuth-azalea">Guess history</td></tr>
+<tr><td>19</td><td>xxx</td><td>11</td><td>3:52</td><td title="monitor-dogma-catapult-bogus-apnea-bartend-axion-azure-aye-azo-azalea">Guess history</td></tr>
+<tr><td>19</td><td>John M</td><td>11</td><td>4:16</td><td title="gin-dashiki-bulwark-bacchanal-avarice-awkward-azimuth-axiom-aye-azure-azalea">Guess history</td></tr>
+<tr><td>37</td><td>LEIF</td><td>12</td><td>0:35</td><td title="minimize-egregious-cilia-barbaric-answer-attitude-avian-babble-axiom-azure-ayahuasca-azalea">Guess history</td></tr>
+<tr><td>37</td><td>AmesGames</td><td>12</td><td>0:41</td><td title="ma-fab-cab-baa-alacrity-arable-at-aw-ax-aye-azimuth-azalea">Guess history</td></tr>
+<tr><td>37</td><td>n</td><td>12</td><td>0:49</td><td title="mandala-fa-bo-at-bad-azure-avid-axle-aye-azote-ays-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Al S.</td><td>12</td><td>0:56</td><td title="lyric-fabulous-clutter-azimuth-amulet-asymptote-auspicious-avarice-avuncular-axiom-axolotl-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Asperity</td><td>12</td><td>1:16</td><td title="ma-ha-each-cab-baa-amatory-atavism-awe-ax-ayah-azimuth-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Rosie</td><td>12</td><td>1:31</td><td title="lecture-diatribe-butcher-azure-allure-analysis-aster-austere-avuncular-axe-aye-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Hugh and Andy</td><td>12</td><td>1:33</td><td title="fab-cab-babble-antimacassar-arriviste-auteur-azimuth-avuncular-awesome-axiom-ay-azalea">Guess history</td></tr>
+<tr><td>37</td><td>kristin</td><td>12</td><td>1:35</td><td title="milk-heavy-chat-bat-apple-azure-as-author-awe-axe-aye-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Ringoes</td><td>12</td><td>1:37</td><td title="locket-docket-beak-animosity-anvil-avarice-badminton-axle-babble-axiom-azimuth-azalea">Guess history</td></tr>
+<tr><td>37</td><td>vocab</td><td>12</td><td>1:59</td><td title="ma-emphatic-cadence-binge-ancillary-babble-ardent-august-axiomatic-azure-axon-azalea">Guess history</td></tr>
+<tr><td>37</td><td>B</td><td>12</td><td>2:19</td><td title="epiphany-banana-acrimonious-affluent-asphalt-auspicious-babbling-avarice-awesome-azure-axiom-azalea">Guess history</td></tr>
+<tr><td>37</td><td>Kaya</td><td>12</td><td>6:30</td><td title="marmoset-cygnet-baby-amber-art-augment-azure-awesome-aye-azo-ayes-azalea">Guess history</td></tr>
+<tr><td>49</td><td>Maureen R</td><td>13</td><td>0:37</td><td title="mirror-habit-cygnet-aye-bye-biannual-be-bamboo-baffle-bad-babble-azure-azalea">Guess history</td></tr>
+<tr><td>49</td><td>Mark P.</td><td>13</td><td>0:50</td><td title="plaited-grimace-clobber-brusque-barter-anodyne-ardent-assiduous-athlete-autism-averse-axiom-azalea">Guess history</td></tr>
+<tr><td>49</td><td>Cat</td><td>13</td><td>1:02</td><td title="jambalaya-bumblebee-anoint-barbaric-bombastic-archery-atelier-azure-augury-avarice-aware-axiom-azalea">Guess history</td></tr>
+<tr><td>49</td><td>karph54</td><td>13</td><td>1:41</td><td title="ma-fab-cab-baby-agitate-apiary-arcane-autism-ay-azimuth-aye-ayurveda-azalea">Guess history</td></tr>
+<tr><td>49</td><td>Nancy R</td><td>13</td><td>2:04</td><td title="mu-gamma-crux-ancillary-blather-axiom-betide-basilisk-babble-aye-azimuth-ayes-azalea">Guess history</td></tr>
+<tr><td>49</td><td>Tj</td><td>13</td><td>2:32</td><td title="lyrical-duet-banshee-accordion-architect-attic-azure-avenue-axe-aye-azide-ays-azalea">Guess history</td></tr>
+<tr><td>55</td><td>patd</td><td>14</td><td>1:09</td><td title="my-gyp-cyst-aye-buzz-bin-bay-bank-bag-back-babble-azure-ayes-azalea">Guess history</td></tr>
+<tr><td>55</td><td>martinet</td><td>14</td><td>1:24</td><td title="mensch-goon-drapery-bunkum-audio-bathtub-azure-avian-awestruck-axion-axolotl-aye-azimuth-azalea">Guess history</td></tr>
+<tr><td>55</td><td>Mary</td><td>14</td><td>2:21</td><td title="mess-guess-celestial-asterisk-best-ballistic-avid-awry-badger-bachelor-axis-azure-azimuth-azalea">Guess history</td></tr>
+<tr><td>55</td><td>benton</td><td>14</td><td>2:32</td><td title="nacre-egret-cerise-bevel-apiary-baffle-ardour-atrium-auspicious-awestruck-backgammon-azure-aye-azalea">Guess history</td></tr>
+<tr><td>55</td><td>melannen</td><td>14</td><td>7:34</td><td title="marcher-federal-caster-breccia-abstemious-awe-babble-average-axe-aye-azimuth-ayurveda-azide-azalea">Guess history</td></tr>
+<tr><td>60</td><td>namuk</td><td>15</td><td>0:59</td><td title="lead-friend-cry-apple-brine-bestial-azure-asinine-attic-augment-aviary-axe-aye-azeotrope-azalea">Guess history</td></tr>
+<tr><td>60</td><td>MB</td><td>15</td><td>2:02</td><td title="stun-honey-bunny-askance-barrier-atavistic-ball-auburn-azure-avuncular-awesome-axiomatic-azimuth-aye-azalea">Guess history</td></tr>
+<tr><td>60</td><td>sjtbot3</td><td>15</td><td>14:02</td><td title="lustre-dogmatic-capacitance-avenge-blond-beginner-barbarous-backup-ay-bacilli-baal-azimuth-ayurvedic-azathioprine-azalea">Guess history</td></tr>
+<tr><td>63</td><td>mm</td><td>16</td><td>3:42</td><td title="myrrh-dragon-cab-back-angle-asinine-atrocious-auger-avarice-awesome-azure-axial-aye-azimuth-ays-azalea">Guess history</td></tr>
+<tr><td>64</td><td>Grrrr</td><td>17</td><td>4:40</td><td title="pistol-luster-herald-dryer-bender-amateur-austere-basil-backroom-avionics-axle-babble-azure-azimuth-aye-azaleas-azalea">Guess history</td></tr>
+<tr><td>64</td><td>john plaut</td><td>17</td><td>2:13:45</td><td title="man-eve-center-bare-and-art-asset-attend-aura-banal-bad-avid-awe-axe-babe-aye-azalea">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

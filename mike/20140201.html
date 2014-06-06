@@ -1,0 +1,81 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">disillusion</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140201">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">lye fly bye dye claque daffodil dragoon dizzy defamatory diadem dilettante diocese dirndl diurnal ditch disgorge disown dismay dish disjointed disinterest disinfect disheveled dishonor dishpan disincentive disillusion mariachi dendrite humorous gesticulate effigy diligent dressage dormant divulge dissect diocese disabled discuss dispersion disgust dislocate dishy disjointed disintegrate disincentive disillusioned disillusion lead friend cry eagle dint dour division dire ditty distal disarming disinter discovery disengage disheveled disintegrate disillusioned dishonesty disillusion lustre dogmatic capacitance cos deflect dichotomy discursive dissipation disobey disillusion man eve better den enter dust dorm dimmer dock dip direction distension disconnect dispute disdain dismay disinfect disembody disillusion locket eulogy cacophony daffy effluent driftwood docile dengue diehard diphthong diversion distaste dirty discursive dismiss disgust dislocation dishpan dislike disk disinfectant dishwasher disillusioned disillusion lead freak cat dog dabble dig dizzy dimmer distant dipper dire disappoint dislike disease disgust disjointed dishpan disinterest disinherit disinformation disinfect disillusioned disillusion mad gab bad ear crab dear drop dire dollar dither distance disability discourage dismay disgruntle disjoin dishearten disintegrate dishonorable disillusion frill backup chide eave derriere draught ditzy dibs dimwit dirigible disingenuous disabuse disown discrete disfavor dishevel dishonor disinfect dishwater dishy disinclined disillusion latitude drift bed chalice dab dill don dock divest dingy diss dirt disaster dish dismal disk dishwasher disintegrate disinfect disillusioned disillusion mulligatawny gadabout cistern entrails drachma dabble ditto deltoid dharma dichotomy dill diode directory distaff dirndl disheveled dismay diskette disinterested dishonor disillusioned dishy disillusion maelstrom hillock chill elf ding dull dolorous docent dirigible distraught dismay discombobulate dishabille disingenuous disheveled dishonorable disillusion lurid grace dance fury fashion dinge dunce dope dogma diverse direct ditto distill dishevel dissolve disjointed disingenuous disinfectant dishonor dishpan dishwasher disillusioned disillusion marmoset cygnet ion fete eaves dupe dirigible dope divot ditto disc display disguise disown disk disjoin dish disintegrate dishpan dishy disinform disillusion myriad fecund brazen crave dirigible either eat druthers dove dithers disk dirt disc dish disincentive dishes dishwasher disillusionment disillusion hurried dalliance fruitful elegant door decline disinfectant dharma dial die dilapidated dip disable disengage disguise dishonor dishy disinfect disillusion mac cab gab eager dab dominant diadem dimple dispel disarm dismal disk disdain disgorge dislodge dish disinfectant disillusioned disheartened disheveled dishonest dishonorable dishpan dishrag dishwasher dishwater dishy disillusion ma gab cab ear dab dock dead dibs dither dimension dipole dissertation direct disable dish dismay disk dishevel disingenuous disillusion hearth claim erase dingy either eat do ditty dip direct dis dispel disengage dislike disinclined disfavor disgorge dish dishwasher dishy disillusioned disillusion maze cab gulf dab egg duvet do dive dead dial dingo dirt distillery distaff dizzy dissertation disc disdain dislike disgust dish disintegrate dishpan dishwasher disinclined dishy disillusion mark daydream giant elephant duration docent delicate dictionary dit dim diocese direction dissertation disavow disgruntled dismember disk dishwater disinterested disinfect dishtowel disillusioned disillusion jones crash entice developer dusty dragoon dildo doorbell docket distill dint dipstick dirty discuss dismantle disjoint disfigure disguise dishtowel disinter dishwater disintegrate disillusion nastily effendi brindle cryogenic disillusion </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Feb 1, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>postbear</td><td>5</td><td>0:32</td><td title="nastily-effendi-brindle-cryogenic-disillusion">Guess history</td></tr>
+<tr><td>2</td><td>sjtbot3</td><td>10</td><td>9:00</td><td title="lustre-dogmatic-capacitance-cos-deflect-dichotomy-discursive-dissipation-disobey-disillusion">Guess history</td></tr>
+<tr><td>3</td><td>Mary</td><td>17</td><td>3:44</td><td title="maelstrom-hillock-chill-elf-ding-dull-dolorous-docent-dirigible-distraught-dismay-discombobulate-dishabille-disingenuous-disheveled-dishonorable-disillusion">Guess history</td></tr>
+<tr><td>4</td><td>namuk</td><td>19</td><td>2:07</td><td title="lead-friend-cry-eagle-dint-dour-division-dire-ditty-distal-disarming-disinter-discovery-disengage-disheveled-disintegrate-disillusioned-dishonesty-disillusion">Guess history</td></tr>
+<tr><td>4</td><td>moi</td><td>19</td><td>2:15</td><td title="myriad-fecund-brazen-crave-dirigible-either-eat-druthers-dove-dithers-disk-dirt-disc-dish-disincentive-dishes-dishwasher-disillusionment-disillusion">Guess history</td></tr>
+<tr><td>4</td><td>john plaut</td><td>19</td><td>4:32</td><td title="man-eve-better-den-enter-dust-dorm-dimmer-dock-dip-direction-distension-disconnect-dispute-disdain-dismay-disinfect-disembody-disillusion">Guess history</td></tr>
+<tr><td>4</td><td>Nathan</td><td>19</td><td>4:55</td><td title="hurried-dalliance-fruitful-elegant-door-decline-disinfectant-dharma-dial-die-dilapidated-dip-disable-disengage-disguise-dishonor-dishy-disinfect-disillusion">Guess history</td></tr>
+<tr><td>8</td><td>L2</td><td>20</td><td>2:51</td><td title="ma-gab-cab-ear-dab-dock-dead-dibs-dither-dimension-dipole-dissertation-direct-disable-dish-dismay-disk-dishevel-disingenuous-disillusion">Guess history</td></tr>
+<tr><td>8</td><td>Gram</td><td>20</td><td>10:54</td><td title="mad-gab-bad-ear-crab-dear-drop-dire-dollar-dither-distance-disability-discourage-dismay-disgruntle-disjoin-dishearten-disintegrate-dishonorable-disillusion">Guess history</td></tr>
+<tr><td>10</td><td>kristin</td><td>21</td><td>4:50</td><td title="latitude-drift-bed-chalice-dab-dill-don-dock-divest-dingy-diss-dirt-disaster-dish-dismal-disk-dishwasher-disintegrate-disinfect-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>11</td><td>Stella</td><td>22</td><td>1:35</td><td title="hearth-claim-erase-dingy-either-eat-do-ditty-dip-direct-dis-dispel-disengage-dislike-disinclined-disfavor-disgorge-dish-dishwasher-dishy-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>11</td><td>chopperfoul</td><td>22</td><td>4:55</td><td title="frill-backup-chide-eave-derriere-draught-ditzy-dibs-dimwit-dirigible-disingenuous-disabuse-disown-discrete-disfavor-dishevel-dishonor-disinfect-dishwater-dishy-disinclined-disillusion">Guess history</td></tr>
+<tr><td>11</td><td>Kaya</td><td>22</td><td>7:46</td><td title="marmoset-cygnet-ion-fete-eaves-dupe-dirigible-dope-divot-ditto-disc-display-disguise-disown-disk-disjoin-dish-disintegrate-dishpan-dishy-disinform-disillusion">Guess history</td></tr>
+<tr><td>11</td><td>B</td><td>22</td><td>7:51</td><td title="mariachi-dendrite-humorous-gesticulate-effigy-diligent-dressage-dormant-divulge-dissect-diocese-disabled-discuss-dispersion-disgust-dislocate-dishy-disjointed-disintegrate-disincentive-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>15</td><td>joon</td><td>23</td><td>1:26</td><td title="jones-crash-entice-developer-dusty-dragoon-dildo-doorbell-docket-distill-dint-dipstick-dirty-discuss-dismantle-disjoint-disfigure-disguise-dishtowel-disinter-dishwater-disintegrate-disillusion">Guess history</td></tr>
+<tr><td>15</td><td>Francis</td><td>23</td><td>3:46</td><td title="mulligatawny-gadabout-cistern-entrails-drachma-dabble-ditto-deltoid-dharma-dichotomy-dill-diode-directory-distaff-dirndl-disheveled-dismay-diskette-disinterested-dishonor-disillusioned-dishy-disillusion">Guess history</td></tr>
+<tr><td>15</td><td>Mark C</td><td>23</td><td>4:45</td><td title="mark-daydream-giant-elephant-duration-docent-delicate-dictionary-dit-dim-diocese-direction-dissertation-disavow-disgruntled-dismember-disk-dishwater-disinterested-disinfect-dishtowel-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>15</td><td>L</td><td>23</td><td>8:28</td><td title="lead-freak-cat-dog-dabble-dig-dizzy-dimmer-distant-dipper-dire-disappoint-dislike-disease-disgust-disjointed-dishpan-disinterest-disinherit-disinformation-disinfect-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>15</td><td></td><td>23</td><td>11:55</td><td title="lurid-grace-dance-fury-fashion-dinge-dunce-dope-dogma-diverse-direct-ditto-distill-dishevel-dissolve-disjointed-disingenuous-disinfectant-dishonor-dishpan-dishwasher-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>20</td><td>Ringoes</td><td>24</td><td>5:10</td><td title="locket-eulogy-cacophony-daffy-effluent-driftwood-docile-dengue-diehard-diphthong-diversion-distaste-dirty-discursive-dismiss-disgust-dislocation-dishpan-dislike-disk-disinfectant-dishwasher-disillusioned-disillusion">Guess history</td></tr>
+<tr><td>21</td><td>Jon88</td><td>27</td><td>2:41</td><td title="lye-fly-bye-dye-claque-daffodil-dragoon-dizzy-defamatory-diadem-dilettante-diocese-dirndl-diurnal-ditch-disgorge-disown-dismay-dish-disjointed-disinterest-disinfect-disheveled-dishonor-dishpan-disincentive-disillusion">Guess history</td></tr>
+<tr><td>21</td><td>jacksons</td><td>27</td><td>15:48</td><td title="maze-cab-gulf-dab-egg-duvet-do-dive-dead-dial-dingo-dirt-distillery-distaff-dizzy-dissertation-disc-disdain-dislike-disgust-dish-disintegrate-dishpan-dishwasher-disinclined-dishy-disillusion">Guess history</td></tr>
+<tr><td>23</td><td>Norma</td><td>28</td><td>7:07</td><td title="mac-cab-gab-eager-dab-dominant-diadem-dimple-dispel-disarm-dismal-disk-disdain-disgorge-dislodge-dish-disinfectant-disillusioned-disheartened-disheveled-dishonest-dishonorable-dishpan-dishrag-dishwasher-dishwater-dishy-disillusion">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

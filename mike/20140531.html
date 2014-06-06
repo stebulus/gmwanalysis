@@ -1,0 +1,99 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531" selected="selected">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">copacetic</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140531">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">lead friend cry apple brine cinder cote clerestory coastal conical corrugated cooper copper cope coot copacetic mu gamma crux ancillary blather bucolic cerise clafouti copse coaxial cog coitus collate commute coop cop cope copay copacetic lull dull bull cull ceviche coax cricket coprolite comb cooee cop coping cope copal copacetic kerfuffle fury decry bonus clear coral compass copper contingent convent cony cooperage coot cowslip cooties copter cop cope copayment copay coping copacetic funnel coitus dudgeon cylinder crux coxswain copse collimate commingle coop copacetic ludicrous dirty byzantine catheter cumulus circumvent covalent colander copious commence conduit cooper cope coot copacetic locket eager badminton cumbersome cashew cloak continue credible coven cornet cope coordinate coot copacetic lopsided diabolical camphor cruel cincture colitis craven cottage contraband corvine coprolite coopt cope copacetic lilt gilt dill bill cable cyan cilia crab colt cow cord con coot copse cope cop copay copal copacetic nabob flummox cabernet dab cider coax crab company cost corridor connote cope constant cool coordinate coot copacetic lyre gyrate bye eyesore cyanide clamor copper coax cohort comatose convictions coo cop coping cope coparent copacetic nabob gadfly crabapple azimuth cabal citrus column cover correct conifer copulate coop cop copilot cope copacetic cheddar flyer density dabble creature copper clamour cleanse climate cocoa coma conduit cooper coping cooter coper copacetic lustre dogmatic capacitance cos clipping computerize contiguous cops conversational cooler coordinator copious cope cop coparcener copal copaiba copacetic mirror habit cygnet bye clamor coati crab coma con cop cot coral coquette cope copacetic flaccid cooper egad dyad dab custard crabby cowlick corrugated copper coop coot cop cope coparent copacetic magma earnest caddy dagger chasten cringe competitive contemptible cornucopia convey cordial cope convoluted coolant coordination copacetic macrame cache frivolous dahlia chrysalis commiserate copasetic conflict cooperate cootie cooties coparent copacetic elan bully cringe chide clod clueless conifer crafty cougar cotter copulate cooper copacetic kinky dado byzantine cinnamon cotillion clan clunker conifer coppice conger conquer cop copacetic lab dabble awkward cab clan create coffee crab continue cot cop core copulate cope copal copacetic orator garage dance brief cab cube ceiling court clout clue coal coil coma comma cope cool cooler cooped cooper cop copay copacetic automotive wistful truant disdain circular century cone cunning creamery coping coon cope coop coot copal cooter cooties cop copacetic macabre eavesdrop cabinet dabble clabber crabby coax colliery cost copper contempt cooperate coot cope copacetic mat fat cat day claw cull cold cry crab cover cop cord copper cope copacetic not dot bot cot cat city clot cob cog con cope cook coot cop copacetic marmoset cygnet baby bump cilia cop crass couch corrugate coquettish coquette copper copasetic copal copacetic healthy dangerous backward chariot copycat coal coil column cooper copout cope coot cootie copacetic man eve cost butler car cent cobra cold cope cooperative copacetic martian hooligan eraser balsamic church delicatessen crude cling copper cluck cnidarian code cone cooperate cop copious copacetic mack hug drogue blunt crap cap clap coke cowrie corny compadre condor coquetry copout contrail copacetic mitre gab cab each dab coffers cut croft craft copper collier connect cooper cope coot cop copacetic myriad gamut crucible bachelor bromine celery cloister copper cobalt congenital constant coop coot copacetic myriad farthing cat dryad elephant cry core chit circle clear cob cog coil cold come cone coo cop coral copter cope copacetic mac cab gab eager dab coma costume copulate conundrum coop cop copper cope copacetic man far cot bigot bug cent cilia cluck coat coffee come copper confine cooper cope coot cop copay copacetic ma had cad eager dad cinema cony cumulus crazy crab cordon coop copper coot cootie cop copacetic local elemental basilisk crampon capybara cistern clout couscous codfish cojones copacetic naked house bread elf drive cake dab custard cinch coat cub cover con cord coot coquette copper cop coping cope copacetic plebiscite handkerchief cantankerous flagrant demimonde crustacean chigger colic crack coulee copper communicate conniption cookie cop cope copal copacetic loo coo flu eat duty die dab cut cot cop cor copious cope copasetic copacetic </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 31, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>john plaut</td><td>11</td><td>1:10</td><td title="man-eve-cost-butler-car-cent-cobra-cold-cope-cooperative-copacetic">Guess history</td></tr>
+<tr><td>1</td><td>John M</td><td>11</td><td>2:01</td><td title="funnel-coitus-dudgeon-cylinder-crux-coxswain-copse-collimate-commingle-coop-copacetic">Guess history</td></tr>
+<tr><td>1</td><td>seamus</td><td>11</td><td>2:29</td><td title="local-elemental-basilisk-crampon-capybara-cistern-clout-couscous-codfish-cojones-copacetic">Guess history</td></tr>
+<tr><td>4</td><td>chopperfoul</td><td>13</td><td>1:54</td><td title="elan-bully-cringe-chide-clod-clueless-conifer-crafty-cougar-cotter-copulate-cooper-copacetic">Guess history</td></tr>
+<tr><td>4</td><td>sb</td><td>13</td><td>3:17</td><td title="kinky-dado-byzantine-cinnamon-cotillion-clan-clunker-conifer-coppice-conger-conquer-cop-copacetic">Guess history</td></tr>
+<tr><td>4</td><td>mh</td><td>13</td><td>22:47</td><td title="macrame-cache-frivolous-dahlia-chrysalis-commiserate-copasetic-conflict-cooperate-cootie-cooties-coparent-copacetic">Guess history</td></tr>
+<tr><td>7</td><td>ward</td><td>14</td><td>1:09</td><td title="myriad-gamut-crucible-bachelor-bromine-celery-cloister-copper-cobalt-congenital-constant-coop-coot-copacetic">Guess history</td></tr>
+<tr><td>7</td><td>Billy</td><td>14</td><td>2:08</td><td title="lopsided-diabolical-camphor-cruel-cincture-colitis-craven-cottage-contraband-corvine-coprolite-coopt-cope-copacetic">Guess history</td></tr>
+<tr><td>7</td><td>Norma</td><td>14</td><td>2:29</td><td title="mac-cab-gab-eager-dab-coma-costume-copulate-conundrum-coop-cop-copper-cope-copacetic">Guess history</td></tr>
+<tr><td>7</td><td>scrivener</td><td>14</td><td>3:36</td><td title="healthy-dangerous-backward-chariot-copycat-coal-coil-column-cooper-copout-cope-coot-cootie-copacetic">Guess history</td></tr>
+<tr><td>7</td><td>Ringoes</td><td>14</td><td>4:12</td><td title="locket-eager-badminton-cumbersome-cashew-cloak-continue-credible-coven-cornet-cope-coordinate-coot-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>x</td><td>15</td><td>0:43</td><td title="mat-fat-cat-day-claw-cull-cold-cry-crab-cover-cop-cord-copper-cope-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>Maureen R</td><td>15</td><td>1:15</td><td title="mirror-habit-cygnet-bye-clamor-coati-crab-coma-con-cop-cot-coral-coquette-cope-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>Margaret</td><td>15</td><td>1:21</td><td title="macabre-eavesdrop-cabinet-dabble-clabber-crabby-coax-colliery-cost-copper-contempt-cooperate-coot-cope-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>Jon88</td><td>15</td><td>1:23</td><td title="lull-dull-bull-cull-ceviche-coax-cricket-coprolite-comb-cooee-cop-coping-cope-copal-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>Kaya</td><td>15</td><td>1:31</td><td title="marmoset-cygnet-baby-bump-cilia-cop-crass-couch-corrugate-coquettish-coquette-copper-copasetic-copal-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>===</td><td>15</td><td>1:41</td><td title="ludicrous-dirty-byzantine-catheter-cumulus-circumvent-covalent-colander-copious-commence-conduit-cooper-cope-coot-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>nrm</td><td>15</td><td>1:53</td><td title="loo-coo-flu-eat-duty-die-dab-cut-cot-cop-cor-copious-cope-copasetic-copacetic">Guess history</td></tr>
+<tr><td>12</td><td>JPEG</td><td>15</td><td>4:12</td><td title="not-dot-bot-cot-cat-city-clot-cob-cog-con-cope-cook-coot-cop-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>brian</td><td>16</td><td>1:59</td><td title="mack-hug-drogue-blunt-crap-cap-clap-coke-cowrie-corny-compadre-condor-coquetry-copout-contrail-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>Lane</td><td>16</td><td>2:27</td><td title="nabob-gadfly-crabapple-azimuth-cabal-citrus-column-cover-correct-conifer-copulate-coop-cop-copilot-cope-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>namuk</td><td>16</td><td>2:28</td><td title="lead-friend-cry-apple-brine-cinder-cote-clerestory-coastal-conical-corrugated-cooper-copper-cope-coot-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>Donna</td><td>16</td><td>3:19</td><td title="flaccid-cooper-egad-dyad-dab-custard-crabby-cowlick-corrugated-copper-coop-coot-cop-cope-coparent-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>kp not in rehab</td><td>16</td><td>4:19</td><td title="lab-dabble-awkward-cab-clan-create-coffee-crab-continue-cot-cop-core-copulate-cope-copal-copacetic">Guess history</td></tr>
+<tr><td>20</td><td>Merri H</td><td>16</td><td>13:45</td><td title="magma-earnest-caddy-dagger-chasten-cringe-competitive-contemptible-cornucopia-convey-cordial-cope-convoluted-coolant-coordination-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>meagan</td><td>17</td><td>1:28</td><td title="mitre-gab-cab-each-dab-coffers-cut-croft-craft-copper-collier-connect-cooper-cope-coot-cop-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>pvh</td><td>17</td><td>1:52</td><td title="ma-had-cad-eager-dad-cinema-cony-cumulus-crazy-crab-cordon-coop-copper-coot-cootie-cop-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>m</td><td>17</td><td>2:14</td><td title="lyre-gyrate-bye-eyesore-cyanide-clamor-copper-coax-cohort-comatose-convictions-coo-cop-coping-cope-coparent-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>Neville's Mom</td><td>17</td><td>2:54</td><td title="nabob-flummox-cabernet-dab-cider-coax-crab-company-cost-corridor-connote-cope-constant-cool-coordinate-coot-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>Drew</td><td>17</td><td>2:55</td><td title="cheddar-flyer-density-dabble-creature-copper-clamour-cleanse-climate-cocoa-coma-conduit-cooper-coping-cooter-coper-copacetic">Guess history</td></tr>
+<tr><td>26</td><td>Amanda E</td><td>17</td><td>3:23</td><td title="martian-hooligan-eraser-balsamic-church-delicatessen-crude-cling-copper-cluck-cnidarian-code-cone-cooperate-cop-copious-copacetic">Guess history</td></tr>
+<tr><td>32</td><td>Karen</td><td>18</td><td>2:24</td><td title="plebiscite-handkerchief-cantankerous-flagrant-demimonde-crustacean-chigger-colic-crack-coulee-copper-communicate-conniption-cookie-cop-cope-copal-copacetic">Guess history</td></tr>
+<tr><td>32</td><td>sjtbot3</td><td>18</td><td>17:02</td><td title="lustre-dogmatic-capacitance-cos-clipping-computerize-contiguous-cops-conversational-cooler-coordinator-copious-cope-cop-coparcener-copal-copaiba-copacetic">Guess history</td></tr>
+<tr><td>34</td><td>Nancy R</td><td>19</td><td>2:01</td><td title="mu-gamma-crux-ancillary-blather-bucolic-cerise-clafouti-copse-coaxial-cog-coitus-collate-commute-coop-cop-cope-copay-copacetic">Guess history</td></tr>
+<tr><td>34</td><td>not so woo hoo</td><td>19</td><td>4:30</td><td title="automotive-wistful-truant-disdain-circular-century-cone-cunning-creamery-coping-coon-cope-coop-coot-copal-cooter-cooties-cop-copacetic">Guess history</td></tr>
+<tr><td>34</td><td>Di</td><td>19</td><td>5:19</td><td title="man-far-cot-bigot-bug-cent-cilia-cluck-coat-coffee-come-copper-confine-cooper-cope-coot-cop-copay-copacetic">Guess history</td></tr>
+<tr><td>34</td><td>so pathetic</td><td>19</td><td>8:36</td><td title="lilt-gilt-dill-bill-cable-cyan-cilia-crab-colt-cow-cord-con-coot-copse-cope-cop-copay-copal-copacetic">Guess history</td></tr>
+<tr><td>38</td><td>Gen</td><td>21</td><td>3:41</td><td title="naked-house-bread-elf-drive-cake-dab-custard-cinch-coat-cub-cover-con-cord-coot-coquette-copper-cop-coping-cope-copacetic">Guess history</td></tr>
+<tr><td>39</td><td>C. Robert Dimitri</td><td>22</td><td>2:18</td><td title="myriad-farthing-cat-dryad-elephant-cry-core-chit-circle-clear-cob-cog-coil-cold-come-cone-coo-cop-coral-copter-cope-copacetic">Guess history</td></tr>
+<tr><td>39</td><td>txdadu</td><td>22</td><td>6:03</td><td title="orator-garage-dance-brief-cab-cube-ceiling-court-clout-clue-coal-coil-coma-comma-cope-cool-cooler-cooped-cooper-cop-copay-copacetic">Guess history</td></tr>
+<tr><td>39</td><td>bobk</td><td>22</td><td>6:29</td><td title="kerfuffle-fury-decry-bonus-clear-coral-compass-copper-contingent-convent-cony-cooperage-coot-cowslip-cooties-copter-cop-cope-copayment-copay-coping-copacetic">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

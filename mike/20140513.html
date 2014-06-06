@@ -1,0 +1,92 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">archon</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140513">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">kerfuffle decry bonus ascend angst apple arrogant aqueous are arcade ardent arched archery architect architecture archon ma fab cab baby abridge actual adamant audacious aperture atavist arrogant aqua arbitrary argent arduous arch arcing arching archive arctic archly archway archosaur archness archon octopus kraken echinoderm cactus beast anemone arable azimuth atavistic asp artistry armament arf archery arduous ardent archon ma fa cab ba am austere ape ar as art arginine arc arduous arch ardent architecture arctic archon lucid dire button average agglomerate allegory aquatic aspire artisan arbor arhat ardor architecture ardent arco arcing architects archon mawkish denude bristle arrant allotrope amniotic aorta appurtenance areola arable arctangent arch architecture arcing archrival archly archon lump dump bump accolade azimuth aperture attitude ascetic argue aqueduct arbitrate area arc arduous arctic archduke arco architect arcing archon myriad fir call azimuth aft appetite aster article ark aqua ardent arbor arch architect arco archway archive archon lamprey buttress algorithm azure assimilate amazement arsenic aqueous arable arid arch ardent arching arcs arcing archival archives archiving archrival archon ma gab dab baa an as aorta argon aperture apple arable ardor arbitrary archive ardent arcing archon noose fester doodle awning ambition aperture atrium assist aqueous ardent arc archangel archway archenemy archer archery archly archness archon obelisk fake chimney ballad aperture asylum armadillo appraise architect argyle areola archpriest archive archivist archon molybdenum frustum calcium avocado annal art appetite aqueous arm ardor arbiter arch arcs arco arcing architect architecture archrival archon macabre eavesdrop cabinet babble arsenic aghast anodyne apricot aquifer arf ardent arable arbitrage arc archery arcsine archon mad gab eat bad act art agate align alternate amenity ancient apart arbitrator arm ardent arch arctic archives archway archivist archon jar eat cut boy ant axe arrive ape aqueous arable argent arc arduous archangel archive ardor archon juniper broken applet barrage awning aster aquatic artistic armband arch argument arduous ardent arcs archway arched arching archpriest archon man dill awe ace adage all antler arrears appear apricot ardent aquatic arachnid arch arcs architect archon mumble gadget cheesecloth aye alligator arena androgynous apportion aquiver arachnid arbiter ardent archduke arctangent arco architect archrival archness archon mammoth echidna catamount baccarat ammunition aristocrat aorta aquatic arachnid ardor arbor architrave arcs archon lactose eager cardamum antimony babble arsenic aqua arable arise area arch arduous arcs archer arco archon iambic cabbage babble alabaster arachnid attention askew armament argon arduous archery ardent archway archrival archosaur arching archipelago archives archon monitor dogma capture accent ballistic automatic allude animate aorta atone appear arouse are arachnoid arbor arch ardent architect arcing architectural archon minimize egregious cilia barbaric alimony ascetic annotate arthritic arithmetic aquifer arable arbiter archon mortician gardener dentist butler antagonist astringent aperture ascribe aquamarine ascetic armature argument arbor ardent archer arctic arcs arcing archive archon hat cat abridge bat around agog alabaster ant ape aqueduct aquifer arabesque are arc arduous ardor arcing arcade arch archangel archer archon sabotage garage cacophony auspicious abridge alleviate assume annotate approve articulate aquanaut ariel arboreal ardent arctangent archangel architect archway archive archrival archon lattice crest bristle ache adage always aster ampere aperture ardor approach arc archery archive ardent archon gustatory abrogate cloche bulwark baccarat absinthe avuncular amortize arrears aorta aqueous arbitrary argyle arduous archangel ardent arctangent archipelago architect architecture archive archon lustre dogmatic capacitance avenge anarchist arbitrarily assessor arrogant argentine archetype ardent archival archway archivist archon man eve call and bear at apple art arrange argue aquamarine aquiline arabesque are arc ardent arco arcade archaeopteryx archaic archon render medium idiom early blender amateur asterisk apple archaic architect ashamed army arguable ardent archway archrival architectural archon majestic humble driven belligerent abbreviate apple asylum aquifer archetype ascot argonaut ardent arco archive archrival archon python lyricist gymnast dysentery bye aye alimental arabesque aura asterisk artifact armory area arc ardent archaic arctic architect arco arcked arcing archivist archway archon </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for May 13, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>LEIF</td><td>13</td><td>0:42</td><td title="minimize-egregious-cilia-barbaric-alimony-ascetic-annotate-arthritic-arithmetic-aquifer-arable-arbiter-archon">Guess history</td></tr>
+<tr><td>2</td><td>brian</td><td>14</td><td>2:43</td><td title="mammoth-echidna-catamount-baccarat-ammunition-aristocrat-aorta-aquatic-arachnid-ardor-arbor-architrave-arcs-archon">Guess history</td></tr>
+<tr><td>3</td><td>mike b</td><td>15</td><td>2:31</td><td title="obelisk-fake-chimney-ballad-aperture-asylum-armadillo-appraise-architect-argyle-areola-archpriest-archive-archivist-archon">Guess history</td></tr>
+<tr><td>3</td><td>sjtbot3</td><td>15</td><td>14:01</td><td title="lustre-dogmatic-capacitance-avenge-anarchist-arbitrarily-assessor-arrogant-argentine-archetype-ardent-archival-archway-archivist-archon">Guess history</td></tr>
+<tr><td>5</td><td>jmb</td><td>16</td><td>1:47</td><td title="lactose-eager-cardamum-antimony-babble-arsenic-aqua-arable-arise-area-arch-arduous-arcs-archer-arco-archon">Guess history</td></tr>
+<tr><td>5</td><td>bobk</td><td>16</td><td>2:12</td><td title="kerfuffle-decry-bonus-ascend-angst-apple-arrogant-aqueous-are-arcade-ardent-arched-archery-architect-architecture-archon">Guess history</td></tr>
+<tr><td>5</td><td>Amanda E</td><td>16</td><td>3:32</td><td title="majestic-humble-driven-belligerent-abbreviate-apple-asylum-aquifer-archetype-ascot-argonaut-ardent-arco-archive-archrival-archon">Guess history</td></tr>
+<tr><td>5</td><td>Rogersr</td><td>16</td><td>5:42</td><td title="lattice-crest-bristle-ache-adage-always-aster-ampere-aperture-ardor-approach-arc-archery-archive-ardent-archon">Guess history</td></tr>
+<tr><td>9</td><td>Ertchin</td><td>17</td><td>1:12</td><td title="octopus-kraken-echinoderm-cactus-beast-anemone-arable-azimuth-atavistic-asp-artistry-armament-arf-archery-arduous-ardent-archon">Guess history</td></tr>
+<tr><td>9</td><td>nka</td><td>17</td><td>1:18</td><td title="man-dill-awe-ace-adage-all-antler-arrears-appear-apricot-ardent-aquatic-arachnid-arch-arcs-architect-archon">Guess history</td></tr>
+<tr><td>9</td><td>joon</td><td>17</td><td>1:41</td><td title="mawkish-denude-bristle-arrant-allotrope-amniotic-aorta-appurtenance-areola-arable-arctangent-arch-architecture-arcing-archrival-archly-archon">Guess history</td></tr>
+<tr><td>9</td><td>BruceW</td><td>17</td><td>2:12</td><td title="jar-eat-cut-boy-ant-axe-arrive-ape-aqueous-arable-argent-arc-arduous-archangel-archive-ardor-archon">Guess history</td></tr>
+<tr><td>9</td><td>mtlmike</td><td>17</td><td>2:31</td><td title="ma-gab-dab-baa-an-as-aorta-argon-aperture-apple-arable-ardor-arbitrary-archive-ardent-arcing-archon">Guess history</td></tr>
+<tr><td>9</td><td>Margaret</td><td>17</td><td>2:36</td><td title="macabre-eavesdrop-cabinet-babble-arsenic-aghast-anodyne-apricot-aquifer-arf-ardent-arable-arbitrage-arc-archery-arcsine-archon">Guess history</td></tr>
+<tr><td>15</td><td>moi [avec des autres]</td><td>18</td><td>2:45</td><td title="myriad-fir-call-azimuth-aft-appetite-aster-article-ark-aqua-ardent-arbor-arch-architect-arco-archway-archive-archon">Guess history</td></tr>
+<tr><td>15</td><td>Drew</td><td>18</td><td>3:53</td><td title="render-medium-idiom-early-blender-amateur-asterisk-apple-archaic-architect-ashamed-army-arguable-ardent-archway-archrival-architectural-archon">Guess history</td></tr>
+<tr><td>15</td><td>KatD</td><td>18</td><td>4:08</td><td title="ma-fa-cab-ba-am-austere-ape-ar-as-art-arginine-arc-arduous-arch-ardent-architecture-arctic-archon">Guess history</td></tr>
+<tr><td>15</td><td>===</td><td>18</td><td>4:37</td><td title="lucid-dire-button-average-agglomerate-allegory-aquatic-aspire-artisan-arbor-arhat-ardor-architecture-ardent-arco-arcing-architects-archon">Guess history</td></tr>
+<tr><td>19</td><td>Tyler Hinman (WTF)</td><td>19</td><td>1:44</td><td title="molybdenum-frustum-calcium-avocado-annal-art-appetite-aqueous-arm-ardor-arbiter-arch-arcs-arco-arcing-architect-architecture-archrival-archon">Guess history</td></tr>
+<tr><td>19</td><td>martinet</td><td>19</td><td>2:05</td><td title="noose-fester-doodle-awning-ambition-aperture-atrium-assist-aqueous-ardent-arc-archangel-archway-archenemy-archer-archery-archly-archness-archon">Guess history</td></tr>
+<tr><td>19</td><td>Francis</td><td>19</td><td>2:23</td><td title="mumble-gadget-cheesecloth-aye-alligator-arena-androgynous-apportion-aquiver-arachnid-arbiter-ardent-archduke-arctangent-arco-architect-archrival-archness-archon">Guess history</td></tr>
+<tr><td>19</td><td>SDW (ARgh)</td><td>19</td><td>3:16</td><td title="iambic-cabbage-babble-alabaster-arachnid-attention-askew-armament-argon-arduous-archery-ardent-archway-archrival-archosaur-arching-archipelago-archives-archon">Guess history</td></tr>
+<tr><td>19</td><td>tania</td><td>19</td><td>6:20</td><td title="juniper-broken-applet-barrage-awning-aster-aquatic-artistic-armband-arch-argument-arduous-ardent-arcs-archway-arched-arching-archpriest-archon">Guess history</td></tr>
+<tr><td>24</td><td>Jon88</td><td>20</td><td>2:01</td><td title="lump-dump-bump-accolade-azimuth-aperture-attitude-ascetic-argue-aqueduct-arbitrate-area-arc-arduous-arctic-archduke-arco-architect-arcing-archon">Guess history</td></tr>
+<tr><td>24</td><td>ward</td><td>20</td><td>5:30</td><td title="mortician-gardener-dentist-butler-antagonist-astringent-aperture-ascribe-aquamarine-ascetic-armature-argument-arbor-ardent-archer-arctic-arcs-arcing-archive-archon">Guess history</td></tr>
+<tr><td>24</td><td>ECC 4 Life!!!</td><td>20</td><td>7:36</td><td title="lamprey-buttress-algorithm-azure-assimilate-amazement-arsenic-aqueous-arable-arid-arch-ardent-arching-arcs-arcing-archival-archives-archiving-archrival-archon">Guess history</td></tr>
+<tr><td>27</td><td>xxx</td><td>21</td><td>3:21</td><td title="monitor-dogma-capture-accent-ballistic-automatic-allude-animate-aorta-atone-appear-arouse-are-arachnoid-arbor-arch-ardent-architect-arcing-architectural-archon">Guess history</td></tr>
+<tr><td>27</td><td>B</td><td>21</td><td>5:07</td><td title="sabotage-garage-cacophony-auspicious-abridge-alleviate-assume-annotate-approve-articulate-aquanaut-ariel-arboreal-ardent-arctangent-archangel-architect-archway-archive-archrival-archon">Guess history</td></tr>
+<tr><td>27</td><td>john plaut</td><td>21</td><td>5:35</td><td title="man-eve-call-and-bear-at-apple-art-arrange-argue-aquamarine-aquiline-arabesque-are-arc-ardent-arco-arcade-archaeopteryx-archaic-archon">Guess history</td></tr>
+<tr><td>27</td><td>Gram</td><td>21</td><td>7:31</td><td title="mad-gab-eat-bad-act-art-agate-align-alternate-amenity-ancient-apart-arbitrator-arm-ardent-arch-arctic-archives-archway-archivist-archon">Guess history</td></tr>
+<tr><td>31</td><td>CAssy yay</td><td>22</td><td>1:12</td><td title="hat-cat-abridge-bat-around-agog-alabaster-ant-ape-aqueduct-aquifer-arabesque-are-arc-arduous-ardor-arcing-arcade-arch-archangel-archer-archon">Guess history</td></tr>
+<tr><td>31</td><td>John M</td><td>22</td><td>5:27</td><td title="gustatory-abrogate-cloche-bulwark-baccarat-absinthe-avuncular-amortize-arrears-aorta-aqueous-arbitrary-argyle-arduous-archangel-ardent-arctangent-archipelago-architect-architecture-archive-archon">Guess history</td></tr>
+<tr><td>33</td><td>m</td><td>24</td><td>4:18</td><td title="python-lyricist-gymnast-dysentery-bye-aye-alimental-arabesque-aura-asterisk-artifact-armory-area-arc-ardent-archaic-arctic-architect-arco-arcked-arcing-archivist-archway-archon">Guess history</td></tr>
+<tr><td>34</td><td>lol karph54</td><td>25</td><td>4:37</td><td title="ma-fab-cab-baby-abridge-actual-adamant-audacious-aperture-atavist-arrogant-aqua-arbitrary-argent-arduous-arch-arcing-arching-archive-arctic-archly-archway-archosaur-archness-archon">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

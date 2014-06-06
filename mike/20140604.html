@@ -1,0 +1,73 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604" selected="selected">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">kashrut</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140604">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">last cast fast hast kazoo jack jocular juniper kabob kamikaze kaolin kappa katydid karat kat kasbah kasha kashrut obelisk doodle kayak frightening homely jackanapes junta kale karakul kashrut gab nabob lab iambic kabala kinetics kerosene kazoo karma kasha kava katydid kat kashrut myriad fig ha interim leg jilt kilt jump kernel ka karma keg kava kasha kat kashruth kashmir kashrut lustre dogmatic gunner insider knowledgeable issuance justifiable ki kay kaleidoscope kappa karyotype kata kashmir kat kashrut grandeur rite lynchpin husbandry iteration juniper languid labia kinship kelvin kabala kayak karma katydid kashmir katchina kashrut juniper mustache lonely kingpin kangaroo kettle keeper karma kayak kay kart kat kashmir kashrut man eve hoax lecture it lamb keen jinx kabob kebab kachina kalamata katakana kashrut middle gab jab lab kaftan kiosk kernel kazoo kangaroo karate katydid kat kashmir kashrut frippery postulate laminate ionize kalamata labile kleptomaniac keel kas kea kat kashmir kashrut miraculous harried knitted jack key junk juvenile kaolin kayak karyotype katydid kashmir katchina kashrut minimize cilia indigo kayak jackal jodhpur jumper kale karst katydid kasbah kashrut mu gamma hiatus lemur kiosk jackal kapok keystone karst key keg kedgeree kat kart kasha kashrut kashrut ma fa iatrogenic jab kay jib job judge jungle jut juxtapose juxtaposition kangaroo kas kat kashrut </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jun 4, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>mofo </td><td>1</td><td>0:01</td><td title="kashrut">Guess history</td></tr>
+<tr><td>2</td><td>mike b</td><td>10</td><td>2:05</td><td title="obelisk-doodle-kayak-frightening-homely-jackanapes-junta-kale-karakul-kashrut">Guess history</td></tr>
+<tr><td>3</td><td>LEIF</td><td>12</td><td>4:31</td><td title="minimize-cilia-indigo-kayak-jackal-jodhpur-jumper-kale-karst-katydid-kasbah-kashrut">Guess history</td></tr>
+<tr><td>4</td><td>ECC 4 now</td><td>13</td><td>7:18</td><td title="frippery-postulate-laminate-ionize-kalamata-labile-kleptomaniac-keel-kas-kea-kat-kashmir-kashrut">Guess history</td></tr>
+<tr><td>5</td><td>Bencoe</td><td>14</td><td>3:36</td><td title="middle-gab-jab-lab-kaftan-kiosk-kernel-kazoo-kangaroo-karate-katydid-kat-kashmir-kashrut">Guess history</td></tr>
+<tr><td>5</td><td>Amanda E</td><td>14</td><td>4:29</td><td title="miraculous-harried-knitted-jack-key-junk-juvenile-kaolin-kayak-karyotype-katydid-kashmir-katchina-kashrut">Guess history</td></tr>
+<tr><td>5</td><td>john plaut</td><td>14</td><td>4:55</td><td title="man-eve-hoax-lecture-it-lamb-keen-jinx-kabob-kebab-kachina-kalamata-katakana-kashrut">Guess history</td></tr>
+<tr><td>5</td><td>tania</td><td>14</td><td>5:25</td><td title="juniper-mustache-lonely-kingpin-kangaroo-kettle-keeper-karma-kayak-kay-kart-kat-kashmir-kashrut">Guess history</td></tr>
+<tr><td>5</td><td>Chaim Lebowitz</td><td>14</td><td>11:14</td><td title="gab-nabob-lab-iambic-kabala-kinetics-kerosene-kazoo-karma-kasha-kava-katydid-kat-kashrut">Guess history</td></tr>
+<tr><td>10</td><td>Nancy R</td><td>16</td><td>1:37</td><td title="mu-gamma-hiatus-lemur-kiosk-jackal-kapok-keystone-karst-key-keg-kedgeree-kat-kart-kasha-kashrut">Guess history</td></tr>
+<tr><td>10</td><td>KatD</td><td>16</td><td>1:57</td><td title="ma-fa-iatrogenic-jab-kay-jib-job-judge-jungle-jut-juxtapose-juxtaposition-kangaroo-kas-kat-kashrut">Guess history</td></tr>
+<tr><td>10</td><td>sjtbot3</td><td>16</td><td>15:02</td><td title="lustre-dogmatic-gunner-insider-knowledgeable-issuance-justifiable-ki-kay-kaleidoscope-kappa-karyotype-kata-kashmir-kat-kashrut">Guess history</td></tr>
+<tr><td>13</td><td>chopperfoul</td><td>17</td><td>6:07</td><td title="grandeur-rite-lynchpin-husbandry-iteration-juniper-languid-labia-kinship-kelvin-kabala-kayak-karma-katydid-kashmir-katchina-kashrut">Guess history</td></tr>
+<tr><td>14</td><td>moi</td><td>18</td><td>2:05</td><td title="myriad-fig-ha-interim-leg-jilt-kilt-jump-kernel-ka-karma-keg-kava-kasha-kat-kashruth-kashmir-kashrut">Guess history</td></tr>
+<tr><td>14</td><td>Jon88</td><td>18</td><td>3:45</td><td title="last-cast-fast-hast-kazoo-jack-jocular-juniper-kabob-kamikaze-kaolin-kappa-katydid-karat-kat-kasbah-kasha-kashrut">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

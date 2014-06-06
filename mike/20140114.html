@@ -1,0 +1,62 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">barycenter</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140114">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">inertia coordinates auspicious awe buttress balance barter bisection bezel beignet bay bat basal barycenter nabob flummox cabriole ba bight benign bawl baffle baseball banshee bare barn barometer barrel barstool basalt barter barycentric barware barycenter jab cab bedazzle audible ballade barometer bastion barricade basalt bartizan baryon barware barycenter monitor dogma capture bionic axion basic ba bandage banquet barrier barter bas bartering barware barwares barytone baryon barycentric barycenter </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Jan 14, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>mike b</td><td>13</td><td>2:32</td><td title="jab-cab-bedazzle-audible-ballade-barometer-bastion-barricade-basalt-bartizan-baryon-barware-barycenter">Guess history</td></tr>
+<tr><td>2</td><td>KNOL</td><td>14</td><td>3:46</td><td title="inertia-coordinates-auspicious-awe-buttress-balance-barter-bisection-bezel-beignet-bay-bat-basal-barycenter">Guess history</td></tr>
+<tr><td>3</td><td>xyz</td><td>19</td><td>10:25</td><td title="monitor-dogma-capture-bionic-axion-basic-ba-bandage-banquet-barrier-barter-bas-bartering-barware-barwares-barytone-baryon-barycentric-barycenter">Guess history</td></tr>
+<tr><td>4</td><td>Neville's Mom</td><td>20</td><td>7:44</td><td title="nabob-flummox-cabriole-ba-bight-benign-bawl-baffle-baseball-banshee-bare-barn-barometer-barrel-barstool-basalt-barter-barycentric-barware-barycenter">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

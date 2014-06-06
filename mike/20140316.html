@@ -1,0 +1,100 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">dogeared</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140316">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">kerfuffle decry fury earth donation difficult do dodo doggy doe does dog doge dogeared lichen bryophyte hyacinth daffodil excel dyspepsia doable dozen dollop doff doghouse dog dogged dogbane doge dogfight dogface dogear dogeared mu gamma crux dither eider durable dowager dogged docent doddering doe doff dog doge doggerel doges dogeared nabob gadfly crabapple excruciating drywall dabble distance dovetail docent dome dogged doe doff doge dogface dogeared lurid dirge grouse favorite echidna doughty docent doggerel doddering dog doge dogface doges dogedom dogear dogeared ma fa cab dab each diabolical do dot dom dog doily dogs dogged doge dogeared jamb eager bromide crustacean diaspora draft doldrums doable dogeared limpid facsimile cerulean diabolical ecumenical dory dividend doff dominion doily dogged dog dogfish dogcatcher doge dogeared ma fab cab dab ear dirigible doubt dizzy doable dog doll doily doff doggy doge doges dogeared cab rabbi lab faineant dab eagle divest durable doven docent doggerel dodecahedron doge dogged doges dogeared ma gab cab ear dab dock dun drab don dogma dodge doe dog doge doggerel dogeared microphone barrister garrulous cunning dreck dag diligent dormant docent dolly doggerel dodge dodgy doff dogear dogeared hat cat fat drawn cross danger distance dock dot don dolly doff doily dog doghouse dogged doge dogfish doges dogear dogeared ma fab cab dab each dial do drab don doily does dog dogs dogeared man eve call den eager dust dorm diameter din dock dog doll doggone doggery doggerel doge dogfish dogfight dogface dogeared earmark cacophony delicatessen document druid dormitory dogma dodgem doer dogged doeth doffer dogfish dogberry dogeared macrame cacophony hayseed falsehood dahlia easement dichotomy drought documentary drachma dominion dogeared nabob flummox cab dab eager docent dual domicile doll doff doily dogeared jonquil daffodil festoon empowering docent each duvet drivel doughboy dollop doggerel doer dogeared my gyp cyst excel dumb dime doll dizzy dock dog doing doggerel dogged doge dogfight doges dogear dogeared molybdenum frustum calcium draught curare diary done dire dobbin doff doing doggone dog dogbane doge dogged doges dogeared myrtle hex dye bye cox damn dew dither doxie dog doily doggerel dogeared meerkat ennui beach diagram duvet doctor drivel dowager doff doll doghouse dog dogged dogcatcher dogeared ma fa baa dab each dobbin drab dolt dog doily dogged doge dogface dogeared patty gate bladder divest fugue ersatz dry dovetail docent doll dogged dodecahedron doff dogeared lab dabble habit fab each doubt dead dingo doctor don doily dog dogear dogs dogma doggy dogeared iota dimple feral eavesdrop doggerel distain diurnal docent doddering doff dogeared dear leer has ember down dissolve docile domicile dog dollar doily dogeared mad hock llama bob dog egg dab each dungeon dual drive drab dot dome doily doghouse dogged doge dogfish dogface doges dogear dogeared mart eagle cart dead dis dung dote dock dojo doe doily dog doggone dogear dogged dogeared go dab fear egg drab deer dig donkey dog doll dogger dogged doge doges dogeared relentless manger idiom early bender dab drizzle dollop dither docket doggy doffed doggerel dogged doge dogeared myriad fin car drain dab dirge do doze don dog dole doily dogma dogged doge dogface dogeared hate clamp earful do duh dotty doily dodge dog dogged dogeared cat dog parrot elf dome don dolce dos dogs doggone dogged dogeared dogeared marmoset cygnet ion fete eaves dirigible dupe dope divot doable dome dogged dodge doe dog doge doges dogear dogears dogeared lead friend cry eagle dint dour division docket dolly doggerel dodgeball doe doff doge dogged dogface dogeared man dill grate frame ell dub dole dive dock dodge doge doily dogged doges dogeared mike dyke bake coke dam doc dual drop doyen don dodder doily dogs does dog dogeared motion gravity centrifugal entropy dinosaur dust dock drip dot don dog dole dojo dogma doge dogged dogeared mizzle gourd cumin durian delve dig doubt dock dog dominate doll dogs dogeared </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Mar 16, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>O</td><td>1</td><td>0:00</td><td title="dogeared">Guess history</td></tr>
+<tr><td>2</td><td>jmb</td><td>9</td><td>0:58</td><td title="jamb-eager-bromide-crustacean-diaspora-draft-doldrums-doable-dogeared">Guess history</td></tr>
+<tr><td>3</td><td>Stella</td><td>11</td><td>0:36</td><td title="hate-clamp-earful-do-duh-dotty-doily-dodge-dog-dogged-dogeared">Guess history</td></tr>
+<tr><td>3</td><td>benton</td><td>11</td><td>1:02</td><td title="iota-dimple-feral-eavesdrop-doggerel-distain-diurnal-docent-doddering-doff-dogeared">Guess history</td></tr>
+<tr><td>5</td><td>Miika</td><td>12</td><td>0:49</td><td title="dear-leer-has-ember-down-dissolve-docile-domicile-dog-dollar-doily-dogeared">Guess history</td></tr>
+<tr><td>5</td><td>Neville's Mom</td><td>12</td><td>1:21</td><td title="nabob-flummox-cab-dab-eager-docent-dual-domicile-doll-doff-doily-dogeared">Guess history</td></tr>
+<tr><td>5</td><td>Nyasu</td><td>12</td><td>2:02</td><td title="cat-dog-parrot-elf-dome-don-dolce-dos-dogs-doggone-dogged-dogeared">Guess history</td></tr>
+<tr><td>5</td><td>mh</td><td>12</td><td>2:41</td><td title="macrame-cacophony-hayseed-falsehood-dahlia-easement-dichotomy-drought-documentary-drachma-dominion-dogeared">Guess history</td></tr>
+<tr><td>9</td><td>dan</td><td>13</td><td>1:07</td><td title="mizzle-gourd-cumin-durian-delve-dig-doubt-dock-dog-dominate-doll-dogs-dogeared">Guess history</td></tr>
+<tr><td>9</td><td>mean old elaine</td><td>13</td><td>1:23</td><td title="myrtle-hex-dye-bye-cox-damn-dew-dither-doxie-dog-doily-doggerel-dogeared">Guess history</td></tr>
+<tr><td>9</td><td>davsan</td><td>13</td><td>1:59</td><td title="jonquil-daffodil-festoon-empowering-docent-each-duvet-drivel-doughboy-dollop-doggerel-doer-dogeared">Guess history</td></tr>
+<tr><td>12</td><td>AmesGames</td><td>14</td><td>0:42</td><td title="ma-fab-cab-dab-each-dial-do-drab-don-doily-does-dog-dogs-dogeared">Guess history</td></tr>
+<tr><td>12</td><td>bobk</td><td>14</td><td>1:29</td><td title="kerfuffle-decry-fury-earth-donation-difficult-do-dodo-doggy-doe-does-dog-doge-dogeared">Guess history</td></tr>
+<tr><td>12</td><td>MB</td><td>14</td><td>2:05</td><td title="patty-gate-bladder-divest-fugue-ersatz-dry-dovetail-docent-doll-dogged-dodecahedron-doff-dogeared">Guess history</td></tr>
+<tr><td>12</td><td>Thom</td><td>14</td><td>2:46</td><td title="ma-fa-baa-dab-each-dobbin-drab-dolt-dog-doily-dogged-doge-dogface-dogeared">Guess history</td></tr>
+<tr><td>16</td><td>KatD</td><td>15</td><td>1:06</td><td title="ma-fa-cab-dab-each-diabolical-do-dot-dom-dog-doily-dogs-dogged-doge-dogeared">Guess history</td></tr>
+<tr><td>16</td><td>nka</td><td>15</td><td>1:40</td><td title="man-dill-grate-frame-ell-dub-dole-dive-dock-dodge-doge-doily-dogged-doges-dogeared">Guess history</td></tr>
+<tr><td>16</td><td>katport</td><td>15</td><td>3:00</td><td title="meerkat-ennui-beach-diagram-duvet-doctor-drivel-dowager-doff-doll-doghouse-dog-dogged-dogcatcher-dogeared">Guess history</td></tr>
+<tr><td>16</td><td>B</td><td>15</td><td>4:03</td><td title="earmark-cacophony-delicatessen-document-druid-dormitory-dogma-dodgem-doer-dogged-doeth-doffer-dogfish-dogberry-dogeared">Guess history</td></tr>
+<tr><td>16</td><td>Dan and Ed</td><td>15</td><td>6:33</td><td title="go-dab-fear-egg-drab-deer-dig-donkey-dog-doll-dogger-dogged-doge-doges-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>n</td><td>16</td><td>1:28</td><td title="mike-dyke-bake-coke-dam-doc-dual-drop-doyen-don-dodder-doily-dogs-does-dog-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>Drew</td><td>16</td><td>1:55</td><td title="relentless-manger-idiom-early-bender-dab-drizzle-dollop-dither-docket-doggy-doffed-doggerel-dogged-doge-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>chopperfoul</td><td>16</td><td>2:17</td><td title="microphone-barrister-garrulous-cunning-dreck-dag-diligent-dormant-docent-dolly-doggerel-dodge-dodgy-doff-dogear-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>Mark in London</td><td>16</td><td>2:51</td><td title="mart-eagle-cart-dead-dis-dung-dote-dock-dojo-doe-doily-dog-doggone-dogear-dogged-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>Lane</td><td>16</td><td>2:52</td><td title="nabob-gadfly-crabapple-excruciating-drywall-dabble-distance-dovetail-docent-dome-dogged-doe-doff-doge-dogface-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>L</td><td>16</td><td>2:58</td><td title="ma-gab-cab-ear-dab-dock-dun-drab-don-dogma-dodge-doe-dog-doge-doggerel-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>Billy</td><td>16</td><td>3:35</td><td title="limpid-facsimile-cerulean-diabolical-ecumenical-dory-dividend-doff-dominion-doily-dogged-dog-dogfish-dogcatcher-doge-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>===</td><td>16</td><td>4:16</td><td title="lurid-dirge-grouse-favorite-echidna-doughty-docent-doggerel-doddering-dog-doge-dogface-doges-dogedom-dogear-dogeared">Guess history</td></tr>
+<tr><td>21</td><td>Basil Eddington</td><td>16</td><td>7:33</td><td title="cab-rabbi-lab-faineant-dab-eagle-divest-durable-doven-docent-doggerel-dodecahedron-doge-dogged-doges-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>Nancy R</td><td>17</td><td>1:42</td><td title="mu-gamma-crux-dither-eider-durable-dowager-dogged-docent-doddering-doe-doff-dog-doge-doggerel-doges-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>namuk</td><td>17</td><td>1:52</td><td title="lead-friend-cry-eagle-dint-dour-division-docket-dolly-doggerel-dodgeball-doe-doff-doge-dogged-dogface-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>moi</td><td>17</td><td>1:58</td><td title="myriad-fin-car-drain-dab-dirge-do-doze-don-dog-dole-doily-dogma-dogged-doge-dogface-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>karph54</td><td>17</td><td>2:15</td><td title="ma-fab-cab-dab-ear-dirigible-doubt-dizzy-doable-dog-doll-doily-doff-doggy-doge-doges-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>kp not in rehab</td><td>17</td><td>2:31</td><td title="lab-dabble-habit-fab-each-doubt-dead-dingo-doctor-don-doily-dog-dogear-dogs-dogma-doggy-dogeared">Guess history</td></tr>
+<tr><td>30</td><td>Barbara M</td><td>17</td><td>3:06</td><td title="motion-gravity-centrifugal-entropy-dinosaur-dust-dock-drip-dot-don-dog-dole-dojo-dogma-doge-dogged-dogeared">Guess history</td></tr>
+<tr><td>36</td><td>Tyler Hinman</td><td>18</td><td>1:13</td><td title="molybdenum-frustum-calcium-draught-curare-diary-done-dire-dobbin-doff-doing-doggone-dog-dogbane-doge-dogged-doges-dogeared">Guess history</td></tr>
+<tr><td>36</td><td>patd</td><td>18</td><td>3:20</td><td title="my-gyp-cyst-excel-dumb-dime-doll-dizzy-dock-dog-doing-doggerel-dogged-doge-dogfight-doges-dogear-dogeared">Guess history</td></tr>
+<tr><td>38</td><td>Jon88</td><td>19</td><td>2:14</td><td title="lichen-bryophyte-hyacinth-daffodil-excel-dyspepsia-doable-dozen-dollop-doff-doghouse-dog-dogged-dogbane-doge-dogfight-dogface-dogear-dogeared">Guess history</td></tr>
+<tr><td>39</td><td>Kaya</td><td>20</td><td>1:58</td><td title="marmoset-cygnet-ion-fete-eaves-dirigible-dupe-dope-divot-doable-dome-dogged-dodge-doe-dog-doge-doges-dogear-dogears-dogeared">Guess history</td></tr>
+<tr><td>39</td><td>john plaut</td><td>20</td><td>4:23</td><td title="man-eve-call-den-eager-dust-dorm-diameter-din-dock-dog-doll-doggone-doggery-doggerel-doge-dogfish-dogfight-dogface-dogeared">Guess history</td></tr>
+<tr><td>41</td><td>Cassy yay</td><td>21</td><td>1:05</td><td title="hat-cat-fat-drawn-cross-danger-distance-dock-dot-don-dolly-doff-doily-dog-doghouse-dogged-doge-dogfish-doges-dogear-dogeared">Guess history</td></tr>
+<tr><td>42</td><td>jacksons</td><td>23</td><td>6:55</td><td title="mad-hock-llama-bob-dog-egg-dab-each-dungeon-dual-drive-drab-dot-dome-doily-doghouse-dogged-doge-dogfish-dogface-doges-dogear-dogeared">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

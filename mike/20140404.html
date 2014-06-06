@@ -1,0 +1,92 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">spotless</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=140404">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">louche pouch touch sough tawdry swerve succinct spigot stabile spritz spoof sprain spout sporran spot spotless minx sputter patron radish rude sesame siesta sour spaceman spin spout splatter spore spot spouse spotter spotlight spotless nabob sanguine tab solace spangle squab specious spoor sprite spore spout sport spot spotty spotless locket stringent palliative risible savant slack sprawl soften soy specious spore spout spotty sportsman spotlight sporty spotless fryer miniature render tendril shelter tackle slope sour soya tabby strict spray spackle spender spinster spleen sporty sprang spout spotter spot spotted spotless kooky suffrage rabbi ruckus silo sophomore stoic staid spiffy sporadic sprightly sprawling spouse spotted sporty spot spotless ma rabbi wasabi tab sabine shyster sophist surge stab spud spindrift spontaneous sprain spout sport spot spots spotlight spotless metallurgy strontium participle rabbit rubidium sclera snorkel sprocket sophomore special spigot sponge spout sport spot spotty spotless juniper mustache toupee onion rosette soup taper summer stovepipe sporty stamped sputter sprout spray spout spotty spotting spotted spotlight spotless nabob sabine wacko tab simulcast stabile solipsistic spyglass spa sporadic spumoni sprint spray spout sportsman spot spotted spotless myriad sting pry rend sable shin soporific stab sour spin spoon spud spout spore spot spotty spotless obelisk sombrero vermillion underage thimble struggle stockade stagecoach spectrum sportscast squamous sprinkle sprig spousal sporty spotlight spotless kids time rhyme shame tamper strike slake snake spake sprocket splatter spread splutter spoke spout spontaneous spore spot spotted spotty spotlight spotless macrame sabotage tryst taciturn shlep sombrero squabble spritz sphagnum sphincter sporadic sprite sporty spotless molybdenum rambunctious vacuum strontium rubidium shark son spread spank spindle spoon sprawl spot sprain spout spotless myrtle tyro rye syce sew six sox succubus suasion soy spy spit spot sputter sputnik spotty spots spotless panoramic vista rancid sclera tub symphony slight spoon strange squire spy sputter spout spot spots spotless mercury rude under tab scat skate stubborn smother snorkel spot squat spy spun spout spotted spotless hue pew slew tutu teal sucrose sojourn specious squire splash sprocket spore sprawling spotty sporting spot spotless ma tab rabbi sac si so sub stab spackle squad spin spittoon sport sprocket spray spot sprain spout sprout sprig spotted spotless proper sate under tear star smile sneer spire square spore spud spouse spot spousal spotless mat tat pat rat sat slow such span spoon spur spud spore spot spout spouse spotty spotted spotless mike so we true tau sully staph snow spa square spunk spot sprung sprang spout spots spotless mirror systemic python saber slab soap stab spa squab splay sprain spode sponge spot spout spotless meet node salty xylophone uvula toucan tangy sun seller stellar six sleuth smart sporty stack spy spry spotty spots spot spotted spotter spotlight spotless ma qat ta rack sack smack stab snack so spa squad spin spout splice spoil spoke spotless mockery sailboat unfilled theft spatula tactful suture squid sprat spinet sporting spotty spotless abstract police server yellow tree sorrow spend steam square sphere sphinx spot spring sport spouse span spot spotted spotlight spot spotted spotless meme salacious vireo timorous strident simulate skim sluice spore squid squall sprite spot sprit spread sprat spout spouse spousal spotless happy pamphlet tomato quiz sanguine table smell svelte spot square spy sprout spout spotted spotless hat junk pan rabbit treasure satisfy syllable setting sitting sojourn sundown subzero substantial soya spurn special spike spinster spring spite spore sport sprang spot spouse spotlight spotless iambic syzygy myrrh pyrrhic sabbath silt solar steel springboard spade spider spoke spray spook spotted sports spotless monitor stability opaque quaint robust saturate simply sober spacious squander squall spurt sphere sport sprinkler sprain spouse spot spotlight spotless nabob ragamuffin underwhelm tabulate sabbatical sirloin stimulant sound spasm squirt spritz spittle sponsor sprawl sprang spout sport spotty spot spotted spotless </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Apr 4, 2014:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>Francis</td><td>13</td><td>1:30</td><td title="mockery-sailboat-unfilled-theft-spatula-tactful-suture-squid-sprat-spinet-sporting-spotty-spotless">Guess history</td></tr>
+<tr><td>2</td><td>mh</td><td>14</td><td>6:06</td><td title="macrame-sabotage-tryst-taciturn-shlep-sombrero-squabble-spritz-sphagnum-sphincter-sporadic-sprite-sporty-spotless">Guess history</td></tr>
+<tr><td>3</td><td>Beaglemom</td><td>15</td><td>1:39</td><td title="proper-sate-under-tear-star-smile-sneer-spire-square-spore-spud-spouse-spot-spousal-spotless">Guess history</td></tr>
+<tr><td>3</td><td>Neville's Mom</td><td>15</td><td>4:36</td><td title="nabob-sanguine-tab-solace-spangle-squab-specious-spoor-sprite-spore-spout-sport-spot-spotty-spotless">Guess history</td></tr>
+<tr><td>3</td><td>BMW</td><td>15</td><td>6:06</td><td title="happy-pamphlet-tomato-quiz-sanguine-table-smell-svelte-spot-square-spy-sprout-spout-spotted-spotless">Guess history</td></tr>
+<tr><td>6</td><td>Tyler Hinman</td><td>16</td><td>0:47</td><td title="molybdenum-rambunctious-vacuum-strontium-rubidium-shark-son-spread-spank-spindle-spoon-sprawl-spot-sprain-spout-spotless">Guess history</td></tr>
+<tr><td>6</td><td>Jon88</td><td>16</td><td>1:20</td><td title="louche-pouch-touch-sough-tawdry-swerve-succinct-spigot-stabile-spritz-spoof-sprain-spout-sporran-spot-spotless">Guess history</td></tr>
+<tr><td>6</td><td>Maureen R</td><td>16</td><td>1:28</td><td title="mirror-systemic-python-saber-slab-soap-stab-spa-squab-splay-sprain-spode-sponge-spot-spout-spotless">Guess history</td></tr>
+<tr><td>6</td><td>Amanda</td><td>16</td><td>2:04</td><td title="mercury-rude-under-tab-scat-skate-stubborn-smother-snorkel-spot-squat-spy-spun-spout-spotted-spotless">Guess history</td></tr>
+<tr><td>6</td><td>we're in rehab</td><td>16</td><td>2:40</td><td title="panoramic-vista-rancid-sclera-tub-symphony-slight-spoon-strange-squire-spy-sputter-spout-spot-spots-spotless">Guess history</td></tr>
+<tr><td>11</td><td>SDW</td><td>17</td><td>1:42</td><td title="iambic-syzygy-myrrh-pyrrhic-sabbath-silt-solar-steel-springboard-spade-spider-spoke-spray-spook-spotted-sports-spotless">Guess history</td></tr>
+<tr><td>11</td><td>KatD</td><td>17</td><td>1:43</td><td title="ma-qat-ta-rack-sack-smack-stab-snack-so-spa-squad-spin-spout-splice-spoil-spoke-spotless">Guess history</td></tr>
+<tr><td>11</td><td>n</td><td>17</td><td>1:44</td><td title="mike-so-we-true-tau-sully-staph-snow-spa-square-spunk-spot-sprung-sprang-spout-spots-spotless">Guess history</td></tr>
+<tr><td>11</td><td>moi</td><td>17</td><td>2:06</td><td title="myriad-sting-pry-rend-sable-shin-soporific-stab-sour-spin-spoon-spud-spout-spore-spot-spotty-spotless">Guess history</td></tr>
+<tr><td>11</td><td>ward</td><td>17</td><td>2:09</td><td title="metallurgy-strontium-participle-rabbit-rubidium-sclera-snorkel-sprocket-sophomore-special-spigot-sponge-spout-sport-spot-spotty-spotless">Guess history</td></tr>
+<tr><td>11</td><td>benton</td><td>17</td><td>2:46</td><td title="kooky-suffrage-rabbi-ruckus-silo-sophomore-stoic-staid-spiffy-sporadic-sprightly-sprawling-spouse-spotted-sporty-spot-spotless">Guess history</td></tr>
+<tr><td>11</td><td>mike b</td><td>17</td><td>2:52</td><td title="obelisk-sombrero-vermillion-underage-thimble-struggle-stockade-stagecoach-spectrum-sportscast-squamous-sprinkle-sprig-spousal-sporty-spotlight-spotless">Guess history</td></tr>
+<tr><td>11</td><td>Ringoes</td><td>17</td><td>3:13</td><td title="locket-stringent-palliative-risible-savant-slack-sprawl-soften-soy-specious-spore-spout-spotty-sportsman-spotlight-sporty-spotless">Guess history</td></tr>
+<tr><td>11</td><td>Birdbot</td><td>17</td><td>7:35</td><td title="hue-pew-slew-tutu-teal-sucrose-sojourn-specious-squire-splash-sprocket-spore-sprawling-spotty-sporting-spot-spotless">Guess history</td></tr>
+<tr><td>20</td><td>x</td><td>18</td><td>1:39</td><td title="mat-tat-pat-rat-sat-slow-such-span-spoon-spur-spud-spore-spot-spout-spouse-spotty-spotted-spotless">Guess history</td></tr>
+<tr><td>20</td><td>mean old elaine</td><td>18</td><td>2:14</td><td title="myrtle-tyro-rye-syce-sew-six-sox-succubus-suasion-soy-spy-spit-spot-sputter-sputnik-spotty-spots-spotless">Guess history</td></tr>
+<tr><td>20</td><td>martinet</td><td>18</td><td>2:15</td><td title="minx-sputter-patron-radish-rude-sesame-siesta-sour-spaceman-spin-spout-splatter-spore-spot-spouse-spotter-spotlight-spotless">Guess history</td></tr>
+<tr><td>20</td><td>Cilantro Jones</td><td>18</td><td>5:52</td><td title="nabob-sabine-wacko-tab-simulcast-stabile-solipsistic-spyglass-spa-sporadic-spumoni-sprint-spray-spout-sportsman-spot-spotted-spotless">Guess history</td></tr>
+<tr><td>24</td><td>arg karph54</td><td>19</td><td>1:54</td><td title="ma-rabbi-wasabi-tab-sabine-shyster-sophist-surge-stab-spud-spindrift-spontaneous-sprain-spout-sport-spot-spots-spotlight-spotless">Guess history</td></tr>
+<tr><td>25</td><td>xxx</td><td>20</td><td>3:13</td><td title="monitor-stability-opaque-quaint-robust-saturate-simply-sober-spacious-squander-squall-spurt-sphere-sport-sprinkler-sprain-spouse-spot-spotlight-spotless">Guess history</td></tr>
+<tr><td>25</td><td>tania</td><td>20</td><td>4:42</td><td title="juniper-mustache-toupee-onion-rosette-soup-taper-summer-stovepipe-sporty-stamped-sputter-sprout-spray-spout-spotty-spotting-spotted-spotlight-spotless">Guess history</td></tr>
+<tr><td>25</td><td>boop</td><td>20</td><td>7:12</td><td title="meme-salacious-vireo-timorous-strident-simulate-skim-sluice-spore-squid-squall-sprite-spot-sprit-spread-sprat-spout-spouse-spousal-spotless">Guess history</td></tr>
+<tr><td>28</td><td>Lane</td><td>21</td><td>4:09</td><td title="nabob-ragamuffin-underwhelm-tabulate-sabbatical-sirloin-stimulant-sound-spasm-squirt-spritz-spittle-sponsor-sprawl-sprang-spout-sport-spotty-spot-spotted-spotless">Guess history</td></tr>
+<tr><td>29</td><td>MB</td><td>22</td><td>3:17</td><td title="kids-time-rhyme-shame-tamper-strike-slake-snake-spake-sprocket-splatter-spread-splutter-spoke-spout-spontaneous-spore-spot-spotted-spotty-spotlight-spotless">Guess history</td></tr>
+<tr><td>29</td><td>mtlmike</td><td>22</td><td>6:53</td><td title="ma-tab-rabbi-sac-si-so-sub-stab-spackle-squad-spin-spittoon-sport-sprocket-spray-spot-sprain-spout-sprout-sprig-spotted-spotless">Guess history</td></tr>
+<tr><td>29</td><td>Abdulla</td><td>22</td><td>14:26</td><td title="abstract-police-server-yellow-tree-sorrow-spend-steam-square-sphere-sphinx-spot-spring-sport-spouse-span-spot-spotted-spotlight-spot-spotted-spotless">Guess history</td></tr>
+<tr><td>32</td><td>aaaaaaaaaaaaaahhhh</td><td>23</td><td>5:01</td><td title="fryer-miniature-render-tendril-shelter-tackle-slope-sour-soya-tabby-strict-spray-spackle-spender-spinster-spleen-sporty-sprang-spout-spotter-spot-spotted-spotless">Guess history</td></tr>
+<tr><td>33</td><td>Benny G</td><td>24</td><td>18:22</td><td title="meet-node-salty-xylophone-uvula-toucan-tangy-sun-seller-stellar-six-sleuth-smart-sporty-stack-spy-spry-spotty-spots-spot-spotted-spotter-spotlight-spotless">Guess history</td></tr>
+<tr><td>34</td><td>Julie b</td><td>27</td><td>6:15</td><td title="hat-junk-pan-rabbit-treasure-satisfy-syllable-setting-sitting-sojourn-sundown-subzero-substantial-soya-spurn-special-spike-spinster-spring-spite-spore-sport-sprang-spot-spouse-spotlight-spotless">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>

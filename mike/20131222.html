@@ -1,0 +1,105 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Guess my word!</title>
+<meta name="og:site_name" content="Harvard" />
+<meta name="fb:admins" content="jpahk" />
+<meta name="og:url" content="http://www.people.fas.harvard.edu/~pahk/dictionary/guess.cgi" />
+<meta name="og:type" content="game" />
+<meta name="og:description" content="A simple alphabetical word-guessing game" />
+<meta name="og:image" content="http://www.people.fas.harvard.edu/~pahk/dictionary/icon.jpg" />
+<meta name="og:title" content="Guess My Word!" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body onload="document.myform.guess.focus()">
+<h2>Guess my word!</h2>
+<form action="/~pahk/dictionary/guess.cgi" method="get" name="myform">
+View leaderboard for
+<select name="by" onChange="document.myform.submit()">
+<option value="joon">joon</option>
+<option value="mike" selected="selected">mike</option>
+</select>'s word from
+<select name="date">
+<option value="">Today</option>
+<option value="140605">Jun 5, 2014</option>
+<option value="140604">Jun 4, 2014</option>
+<option value="140603">Jun 3, 2014</option>
+<option value="140602">Jun 2, 2014</option>
+<option value="140601">Jun 1, 2014</option>
+<option value="140531">May 31, 2014</option>
+<option value="140530">May 30, 2014</option>
+</select>, sorted by
+<select name="sort">
+<option value="num" selected="selected"># of guesses</option>
+<option value="time">time</option>
+</select>
+<input type="submit" value="Submit">
+<input type="hidden" name="result" value="leaderboard">
+</form>
+<p>Select to reveal answer word: <span style="color:white">atavistic</span></p>
+<p>Or <a href="/~pahk/dictionary/guess.cgi?by=mike&date=131222">play this word</a></p>
+<p>
+<form action="http://www.wordle.net/advanced" method="POST">
+View the
+    <textarea name="text" style="display:none">kerfuffle decry bonus balm angst ascend baa awesome attain asinine at attar atmosphere atlas ate atavistic lyric diurnal byzantine azimuth altitude attitude aptitude aquiline aspire ate assortment assume astronomy asymmetrical atavism atavist ataxia atavistic mirror habit cygnet bye aye am at aural atone atelier ate atavistic mu gamma crux ancillary blather axiom attitude apoplexy asp atrium asthma atavistic miasma foolscap cerise apiary benchmark auger assuage atavistic cab babble aerodynamic aptitude avuncular assuage attest atavistic locket egregious buttonhole asterisk behemoth avarice attorney atavistic lachrymose folderol corpulent bezel akimbo banal awkward aubergine aperture asthma atrophy atavistic nice go can bad any ate ape aqua are assault astride aster atap atavistic nabob gadfly crabapple azimuth amplitude articulate attitude assonance atelier atavism ate atavist atavistic menses grouse dummy battle auspices adrenalin amethyst appalling attract around asymptotes atoll atavism atmosphere atheist ate atavistic molybdenum frustum calcium avocado annal appetite art attache assume ate aswarm asylum at atavist ataxia atavistic person harpoon farrow cardinal bakelite androgynous asparagus awful atrophy ataxia asterisk asylum atavistic fester certain aspect ballast auspicious atlas asthma atavistic pardon hearten bard aisle axiom apogee asinine atrium astringent atheist asunder asylum atavistic nabob flummox cabriole ba anterior asparagus attar asterisk astral astray atelier asymmetric ataxia atavism atavistic plug hug flog bog anteater bag attest armoire asinine athlete astern asymmetric ate atavistic ma fa cab ba am austere at attention atheist ataxia atavist atavistic fell cap bed apple ax at awe austere attune attest ate atavistic mellifluous grist cyst baleen amicable assiduous aver augur athwart asterisk asylum atelier ataxia asymptomatic atavism atavistic lying flying buying aye afghan apatite atavistic macabre eavesdrop cabinet babble arsenic atrophy ascent astrophysics ate asylum asymmetrical atavistic mythology gruesome cistern badminton annex astringent azure aversion auction atrium atavism atheist atelier ataxia atavist atavistic mellow gentle calm attenuated agile annuity arm astute ate astride atavism atavistic mackinaw fa catamite blaspheme arrival best beast aural assertive atavistic lustre dogmatic capacitance avenge anarchist arbitrarily assessor attenuation asymmetry atonement atherosclerosis ataxia asynchronous ataman atavism atavistic laugh drip byte babble alluring azure ankle apt avenue aster atelier atavistic ma ha each cab baa amatory atavist ax audible atypical atmosphere atheist ate ataxic atavistic man dill awe all antler ark ask attitude atlas assert astringent asymptote ate atavistic ma fab cab baa alacrity arable at avatar auk attach atop ate atavistic iambic calcium babble alabaster arachnid auditory atelier asinine astronomy asunder asylum at atavistic man horse cat ant aunt at attribute attend ate atavistic atavistic rabbi cab babble antimacassar assiduous atrophy atavistic ma fab cab baby ajar atavistic ma had cad bad amorous aqua ass attenuate assign aster atavism atelier atavistic minder fierce catapult barbiturate ammonia asset awestruck attitude ate aswoon ataxia atap atavism atavistic loquacious cardinal attractive alleviate appeal arrant asterisk ate astute aswarm atavistic monitor dogma capsule baton actions auto amend anoint aorta apnea aqueous articulate astute attrition attain athlete ataman atenolol ate atavism ataxia atavistic igloo cab aye ace ag and art avarice asp atheist at ate atavistic never hedonist decibel basic aorta asterisk awash attache asunder atelier atavistic itch chime brunt bindle bang awesome anthill apparition artistry audio arts audible arty athlete ash assiduous atavistic muttonchops garbanzo chilblains baccarat alongside arduous autopilot atelier assimilate atavism ataxia atavistic lichen dastardly beneath arugula azalea auspices asthma attention atavism athlete ate atavist ataxia atavists atavistic nucleus gorse cadmium atavistic silverfish hellion clamorous baby air arrogant aye auricle at attribute atherosclerosis ate atavistic juniper dogma android botch baby army awning attraction assign attache astute ate asunder asylum asymmetric asymmetry ataractic atavism ataxic atavist ataxia atavistic </textarea>
+    <input type="submit" value="Word cloud">
+formed by all of guesses on this leaderboard, courtesy of Wordle (requires Java)
+</form>
+</p>
+<h3>Correct solvers for Dec 22, 2013:</h3>
+<table border=1>
+<tr><th>Rank</th><th>Name</th><th>Guesses</th><th>Time</th><th>History (mouse over)</th></tr>
+<tr><td>1</td><td>kddskd</td><td>1</td><td>0:00</td><td title="atavistic">Guess history</td></tr>
+<tr><td>2</td><td>postbear</td><td>4</td><td>0:15</td><td title="nucleus-gorse-cadmium-atavistic">Guess history</td></tr>
+<tr><td>3</td><td></td><td>6</td><td>0:19</td><td title="ma-fab-cab-baby-ajar-atavistic">Guess history</td></tr>
+<tr><td>4</td><td>Jon88</td><td>7</td><td>0:29</td><td title="lying-flying-buying-aye-afghan-apatite-atavistic">Guess history</td></tr>
+<tr><td>4</td><td>Hugh</td><td>7</td><td>0:40</td><td title="rabbi-cab-babble-antimacassar-assiduous-atrophy-atavistic">Guess history</td></tr>
+<tr><td>6</td><td>benton</td><td>8</td><td>0:57</td><td title="miasma-foolscap-cerise-apiary-benchmark-auger-assuage-atavistic">Guess history</td></tr>
+<tr><td>6</td><td>Ringoes</td><td>8</td><td>1:04</td><td title="locket-egregious-buttonhole-asterisk-behemoth-avarice-attorney-atavistic">Guess history</td></tr>
+<tr><td>6</td><td>Daily Alice</td><td>8</td><td>1:09</td><td title="fester-certain-aspect-ballast-auspicious-atlas-asthma-atavistic">Guess history</td></tr>
+<tr><td>6</td><td>Andy</td><td>8</td><td>1:36</td><td title="cab-babble-aerodynamic-aptitude-avuncular-assuage-attest-atavistic">Guess history</td></tr>
+<tr><td>10</td><td>bird internet</td><td>10</td><td>1:12</td><td title="mackinaw-fa-catamite-blaspheme-arrival-best-beast-aural-assertive-atavistic">Guess history</td></tr>
+<tr><td>10</td><td>Jacksons</td><td>10</td><td>4:37</td><td title="man-horse-cat-ant-aunt-at-attribute-attend-ate-atavistic">Guess history</td></tr>
+<tr><td>12</td><td>Miika</td><td>11</td><td>1:57</td><td title="never-hedonist-decibel-basic-aorta-asterisk-awash-attache-asunder-atelier-atavistic">Guess history</td></tr>
+<tr><td>12</td><td>Karen</td><td>11</td><td>3:49</td><td title="loquacious-cardinal-attractive-alleviate-appeal-arrant-asterisk-ate-astute-aswarm-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>kristin</td><td>12</td><td>0:44</td><td title="fell-cap-bed-apple-ax-at-awe-austere-attune-attest-ate-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Nancy R</td><td>12</td><td>1:03</td><td title="mu-gamma-crux-ancillary-blather-axiom-attitude-apoplexy-asp-atrium-asthma-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Maureen R</td><td>12</td><td>1:16</td><td title="mirror-habit-cygnet-bye-aye-am-at-aural-atone-atelier-ate-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>John M</td><td>12</td><td>1:28</td><td title="lachrymose-folderol-corpulent-bezel-akimbo-banal-awkward-aubergine-aperture-asthma-atrophy-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Francis</td><td>12</td><td>1:31</td><td title="muttonchops-garbanzo-chilblains-baccarat-alongside-arduous-autopilot-atelier-assimilate-atavism-ataxia-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Barbara M</td><td>12</td><td>1:38</td><td title="mellow-gentle-calm-attenuated-agile-annuity-arm-astute-ate-astride-atavism-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Terri</td><td>12</td><td>1:46</td><td title="laugh-drip-byte-babble-alluring-azure-ankle-apt-avenue-aster-atelier-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>Margaret</td><td>12</td><td>2:10</td><td title="macabre-eavesdrop-cabinet-babble-arsenic-atrophy-ascent-astrophysics-ate-asylum-asymmetrical-atavistic">Guess history</td></tr>
+<tr><td>14</td><td>KatD</td><td>12</td><td>3:05</td><td title="ma-fa-cab-ba-am-austere-at-attention-atheist-ataxia-atavist-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>KJ</td><td>13</td><td>0:56</td><td title="igloo-cab-aye-ace-ag-and-art-avarice-asp-atheist-at-ate-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>Stella</td><td>13</td><td>1:01</td><td title="silverfish-hellion-clamorous-baby-air-arrogant-aye-auricle-at-attribute-atherosclerosis-ate-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>pvh</td><td>13</td><td>1:23</td><td title="ma-had-cad-bad-amorous-aqua-ass-attenuate-assign-aster-atavism-atelier-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>SDW</td><td>13</td><td>1:28</td><td title="iambic-calcium-babble-alabaster-arachnid-auditory-atelier-asinine-astronomy-asunder-asylum-at-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>AmesGames</td><td>13</td><td>1:31</td><td title="ma-fab-cab-baa-alacrity-arable-at-avatar-auk-attach-atop-ate-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>chopperfoul</td><td>13</td><td>2:41</td><td title="pardon-hearten-bard-aisle-axiom-apogee-asinine-atrium-astringent-atheist-asunder-asylum-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>jmb</td><td>13</td><td>2:51</td><td title="person-harpoon-farrow-cardinal-bakelite-androgynous-asparagus-awful-atrophy-ataxia-asterisk-asylum-atavistic">Guess history</td></tr>
+<tr><td>23</td><td>Lane</td><td>13</td><td>4:29</td><td title="nabob-gadfly-crabapple-azimuth-amplitude-articulate-attitude-assonance-atelier-atavism-ate-atavist-atavistic">Guess history</td></tr>
+<tr><td>31</td><td>nka</td><td>14</td><td>1:12</td><td title="man-dill-awe-all-antler-ark-ask-attitude-atlas-assert-astringent-asymptote-ate-atavistic">Guess history</td></tr>
+<tr><td>31</td><td>MB</td><td>14</td><td>1:59</td><td title="plug-hug-flog-bog-anteater-bag-attest-armoire-asinine-athlete-astern-asymmetric-ate-atavistic">Guess history</td></tr>
+<tr><td>31</td><td>kamalei</td><td>14</td><td>2:30</td><td title="minder-fierce-catapult-barbiturate-ammonia-asset-awestruck-attitude-ate-aswoon-ataxia-atap-atavism-atavistic">Guess history</td></tr>
+<tr><td>31</td><td>Melissa</td><td>14</td><td>2:32</td><td title="nice-go-can-bad-any-ate-ape-aqua-are-assault-astride-aster-atap-atavistic">Guess history</td></tr>
+<tr><td>35</td><td>joon</td><td>15</td><td>1:44</td><td title="lichen-dastardly-beneath-arugula-azalea-auspices-asthma-attention-atavism-athlete-ate-atavist-ataxia-atavists-atavistic">Guess history</td></tr>
+<tr><td>35</td><td>Asperity</td><td>15</td><td>3:02</td><td title="ma-ha-each-cab-baa-amatory-atavist-ax-audible-atypical-atmosphere-atheist-ate-ataxic-atavistic">Guess history</td></tr>
+<tr><td>35</td><td>Neville's Mom</td><td>15</td><td>3:15</td><td title="nabob-flummox-cabriole-ba-anterior-asparagus-attar-asterisk-astral-astray-atelier-asymmetric-ataxia-atavism-atavistic">Guess history</td></tr>
+<tr><td>38</td><td>Tyler Hinman (yipe)</td><td>16</td><td>1:31</td><td title="molybdenum-frustum-calcium-avocado-annal-appetite-art-attache-assume-ate-aswarm-asylum-at-atavist-ataxia-atavistic">Guess history</td></tr>
+<tr><td>38</td><td>ward (drat!)</td><td>16</td><td>2:17</td><td title="mythology-gruesome-cistern-badminton-annex-astringent-azure-aversion-auction-atrium-atavism-atheist-atelier-ataxia-atavist-atavistic">Guess history</td></tr>
+<tr><td>38</td><td>bobk</td><td>16</td><td>2:39</td><td title="kerfuffle-decry-bonus-balm-angst-ascend-baa-awesome-attain-asinine-at-attar-atmosphere-atlas-ate-atavistic">Guess history</td></tr>
+<tr><td>38</td><td>Mary</td><td>16</td><td>3:34</td><td title="mellifluous-grist-cyst-baleen-amicable-assiduous-aver-augur-athwart-asterisk-asylum-atelier-ataxia-asymptomatic-atavism-atavistic">Guess history</td></tr>
+<tr><td>38</td><td>sjtbot3</td><td>16</td><td>15:01</td><td title="lustre-dogmatic-capacitance-avenge-anarchist-arbitrarily-assessor-attenuation-asymmetry-atonement-atherosclerosis-ataxia-asynchronous-ataman-atavism-atavistic">Guess history</td></tr>
+<tr><td>43</td><td>martinet</td><td>17</td><td>2:18</td><td title="menses-grouse-dummy-battle-auspices-adrenalin-amethyst-appalling-attract-around-asymptotes-atoll-atavism-atmosphere-atheist-ate-atavistic">Guess history</td></tr>
+<tr><td>43</td><td>Mark P.</td><td>17</td><td>3:40</td><td title="itch-chime-brunt-bindle-bang-awesome-anthill-apparition-artistry-audio-arts-audible-arty-athlete-ash-assiduous-atavistic">Guess history</td></tr>
+<tr><td>45</td><td>===</td><td>18</td><td>5:40</td><td title="lyric-diurnal-byzantine-azimuth-altitude-attitude-aptitude-aquiline-aspire-ate-assortment-assume-astronomy-asymmetrical-atavism-atavist-ataxia-atavistic">Guess history</td></tr>
+<tr><td>46</td><td>tania</td><td>22</td><td>5:52</td><td title="juniper-dogma-android-botch-baby-army-awning-attraction-assign-attache-astute-ate-asunder-asylum-asymmetric-asymmetry-ataractic-atavism-ataxic-atavist-ataxia-atavistic">Guess history</td></tr>
+<tr><td>46</td><td>midykr</td><td>22</td><td>27:59</td><td title="monitor-dogma-capsule-baton-actions-auto-amend-anoint-aorta-apnea-aqueous-articulate-astute-attrition-attain-athlete-ataman-atenolol-ate-atavism-ataxia-atavistic">Guess history</td></tr>
+</table>
+<p>Have something to say about today's word? Join the discussion at the <a href="http://guessmyword.blogspot.com/">Guess My Word blog</a>.</p>
+You might also want to try to guess words chosen by: <a href="/~pahk/dictionary/guess.cgi?by=joon">joon</a></p>
+</body>
+</html>
