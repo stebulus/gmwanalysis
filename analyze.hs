@@ -16,6 +16,10 @@ picks xs = zip xs (dropped xs)
     where dropped [] = []
           dropped (x:xs) = xs : (map (x:) (dropped xs))
 
+--
+-- Maps whose values are lists
+--
+
 conj :: Ord a => a -> b -> Map a [b] -> Map a [b]
 conj k v m = M.insert k
                       (v:(fromMaybe [] (M.lookup k m)))
@@ -26,6 +30,10 @@ conjUp = foldl' (\m (k,v) -> conj k v m) M.empty
 
 splitValues :: Ord b => (a->b) -> Map [b] [a] -> Map [b] [a]
 splitValues f m = conjUp [ ((f v):k, v) | (k,vs) <- assocs m, v <- vs ]
+
+--
+-- Classed: a collection of things classified by feature
+--
 
 data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
@@ -45,6 +53,11 @@ splitClasses f cl = Classed { classers = f:(classers cl)
 
 classSize :: Ord b => Classed a b -> [b] -> Int
 classSize cl c = length $ fromMaybe [] $ M.lookup c (classes cl)
+
+--
+-- Model: a population with a probability distribution which matches
+-- a sample, as far as some features are concerned
+--
 
 data Model a b = Model { classedPop :: Classed a b
                        , classedSamp :: Classed a b
@@ -81,6 +94,10 @@ weightInClass model cls =
 weight :: (Ord b, Fractional c) => Model a b -> a -> c
 weight model x = weightInClass model $ classify model x
 
+--
+-- Refining a Model to increase the likelihood of its sample
+--
+
 sampleLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
 sampleLikelihood model =
     sum [ fromIntegral (length sampcls) * log (weightInClass model cls)
@@ -97,6 +114,10 @@ refinements model features =
     map fst
     $ takeWhile (not . null . snd)
     $ iterate refineBest (model, features)
+
+--
+-- Testing performance on a smallish example from twl and words
+--
 
 main = do
     n <- fmap (read . (!!0)) getArgs :: IO Int
