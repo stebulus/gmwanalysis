@@ -31,9 +31,9 @@ compositeFeature :: [Feature a b] -> Feature a [b]
 compositeFeature fs = Feature (intercalate " : " (map tag fs))
                               (\x -> map (($ x) . func) fs)
 
-refine :: Eq b => [a] -> [a]
+refineBest :: Eq b => [a] -> [a]
     -> ([Feature a b],[Feature a b]) -> ([Feature a b],[Feature a b])
-refine population sample (model,features) =
+refineBest population sample (model,features) =
     maximumBy (compare `on` (quality.fst))
               [(f:model,fs) | (f,fs) <- picks features]
     where quality model = sampleLikelihood population sample $ compositeFeature model
@@ -42,7 +42,7 @@ refinements :: Eq b => [a] -> [a] -> [Feature a b] -> [[Feature a b]]
 refinements population sample features =
     map fst
     $ takeWhile (not . null . snd)
-    $ iterate (refine population sample) ([], features)
+    $ iterate (refineBest population sample) ([], features)
 
 main = do
     n <- fmap (read . (!!0)) getArgs :: IO Int
