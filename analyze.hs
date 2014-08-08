@@ -43,6 +43,9 @@ splitClasses f cl = Classed { classers = f:(classers cl)
                             , classes = splitValues (func f) (classes cl)
                             }
 
+classSize :: Ord b => Classed a b -> [b] -> Int
+classSize cl c = length $ fromMaybe [] $ M.lookup c (classes cl)
+
 data Model a b = Model { classedPop :: Classed a b
                        , classedSamp :: Classed a b
                        }
@@ -70,17 +73,10 @@ classify model x = [func f x | f <- features model]
 sampleSize :: Ord b => Model a b -> Int
 sampleSize = length . sample
 
-classSizePop :: (Eq b, Ord b) => Model a b -> [b] -> Int
-classSizePop model cls =
-    length $ fromMaybe [] $ M.lookup cls $ classes $ classedPop model
-
-classSizeSamp :: (Eq b, Ord b) => Model a b -> [b] -> Int
-classSizeSamp model cls =
-    length $ fromMaybe [] $ M.lookup cls $ classes $ classedSamp model
-
 weight :: (Eq b, Ord b, Fractional c) => Model a b -> a -> c
 weight model x =
-    classSizeSamp model cls // ((classSizePop model cls) * (sampleSize model))
+    classSize (classedSamp model) cls
+    // ((classSize (classedPop model) cls) * (sampleSize model))
     where cls = classify model x
 
 sampleLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
