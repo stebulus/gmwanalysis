@@ -98,15 +98,15 @@ weight model x = weightInClass model $ classify model x
 -- Refining a Model to increase the likelihood of its sample
 --
 
-sampleLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
-sampleLikelihood model =
+sampleLogLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
+sampleLogLikelihood model =
     sum [ fromIntegral (length sampcls) * log (weightInClass model cls)
         | (cls,sampcls) <- assocs $ classes $ classedSamp model ]
 
 refineBest :: (Eq b, Ord b) =>
     (Model a b,[Feature a b]) -> (Model a b,[Feature a b])
 refineBest (model, features) =
-    maximumBy (compare `on` (sampleLikelihood.fst))
+    maximumBy (compare `on` (sampleLogLikelihood.fst))
               [(refine model f, fs) | (f,fs) <- picks features]
 
 refinements :: (Eq b, Ord b) => Model a b -> [Feature a b] -> [Model a b]
@@ -131,5 +131,5 @@ main = do
     let feats = [Feature [letter] (\word -> last word == letter)
                 | letter<-['a'..'z']]
     mapM_ print $ take n $
-        [(features model, sampleLikelihood model)
+        [(features model, sampleLogLikelihood model)
         | model<-refinements (nullModel allwords chosenwords) feats]
