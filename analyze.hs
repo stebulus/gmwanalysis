@@ -17,32 +17,36 @@ data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
 
-weight :: (Eq b, Fractional c) => [a] -> [a] -> Feature a b -> a -> c
-weight population sample classify x =
+data Model a b = Model { features :: [Feature a b] }
+
+classify :: Model a b -> a -> [b]
+classify model x = [func f x | f <- features model]
+
+refine :: Model a b -> Feature a b -> Model a b
+refine model f = Model (f:(features model))
+
+weight :: (Eq b, Fractional c) => [a] -> [a] -> Model a b -> a -> c
+weight population sample model x =
     (countClass sample) // ((countClass population) * (length sample))
-    where cls = func classify $ x
-          countClass xs = length $ filter (== cls) $ map (func classify) xs
+    where cls = classify model x
+          countClass xs = length $ filter (== cls) $ map (classify model) xs
 
-sampleLikelihood :: (Eq b, Floating c) => [a] -> [a] -> Feature a b -> c
-sampleLikelihood population sample feature =
-    sum $ map log $ map (weight population sample feature) sample
-
-compositeFeature :: [Feature a b] -> Feature a [b]
-compositeFeature fs = Feature (intercalate " : " (map tag fs))
-                              (\x -> map (($ x) . func) fs)
+sampleLikelihood :: (Eq b, Floating c) => [a] -> [a] -> Model a b -> c
+sampleLikelihood population sample model =
+    sum $ map log $ map (weight population sample model) sample
 
 refineBest :: Eq b => [a] -> [a]
-    -> ([Feature a b],[Feature a b]) -> ([Feature a b],[Feature a b])
-refineBest population sample (model,features) =
+    -> (Model a b,[Feature a b]) -> (Model a b,[Feature a b])
+refineBest population sample (model, features) =
     maximumBy (compare `on` (quality.fst))
-              [(f:model,fs) | (f,fs) <- picks features]
-    where quality model = sampleLikelihood population sample $ compositeFeature model
+              [(refine model f, fs) | (f,fs) <- picks features]
+    where quality model = sampleLikelihood population sample model
 
-refinements :: Eq b => [a] -> [a] -> [Feature a b] -> [[Feature a b]]
+refinements :: Eq b => [a] -> [a] -> [Feature a b] -> [Model a b]
 refinements population sample features =
     map fst
     $ takeWhile (not . null . snd)
-    $ iterate (refineBest population sample) ([], features)
+    $ iterate (refineBest population sample) (Model [], features)
 
 main = do
     n <- fmap (read . (!!0)) getArgs :: IO Int
@@ -53,8 +57,8 @@ main = do
         $ fmap (map ((!!2) . words))
         $ fmap lines
         $ readFile "words"
-    let features = [Feature [letter] (\word -> last word == letter)
-                   | letter<-['a'..'z']]
+    let feats = [Feature [letter] (\word -> last word == letter)
+                | letter<-['a'..'z']]
     mapM_ print $ take n $
-        [(fs, sampleLikelihood allwords chosenwords $ compositeFeature fs)
-        | fs<-refinements allwords chosenwords features]
+        [(features model, sampleLikelihood allwords chosenwords model)
+        | model<-refinements allwords chosenwords feats]
