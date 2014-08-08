@@ -28,16 +28,24 @@ nullModel = Model []
 classify :: Model a b -> a -> [b]
 classify model x = [func f x | f <- features model]
 
+sampleSize :: Model a b -> Int
+sampleSize = length . sample
+
+classSizePop :: Eq b => Model a b -> [b] -> Int
+classSizePop model cls =
+    length $ filter (== cls) $ map (classify model) $ population model
+
+classSizeSamp :: Eq b => Model a b -> [b] -> Int
+classSizeSamp model cls =
+    length $ filter (== cls) $ map (classify model) $ sample model
+
 refine :: Model a b -> Feature a b -> Model a b
 refine model f = model { features = f:(features model) }
 
 weight :: (Eq b, Fractional c) => Model a b -> a -> c
 weight model x =
-    (countClass samp) // ((countClass pop) * (length samp))
+    classSizeSamp model cls // ((classSizePop model cls) * (sampleSize model))
     where cls = classify model x
-          countClass xs = length $ filter (== cls) $ map (classify model) xs
-          pop = population model
-          samp = sample model
 
 sampleLikelihood :: (Eq b, Floating c) => Model a b -> c
 sampleLikelihood model =
