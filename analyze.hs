@@ -1,7 +1,8 @@
 import Control.Applicative
 import Data.Function
 import Data.List
-import Data.Map (Map, elems)
+import Data.Maybe
+import Data.Map (Map, elems, assocs)
 import qualified Data.Map as M
 import qualified Data.Set as S
 import System.Environment
@@ -18,6 +19,17 @@ picks xs = zip xs (dropped xs)
 data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
+
+conj :: Ord a => a -> b -> Map a [b] -> Map a [b]
+conj k v m = M.insert k
+                      (v:(fromMaybe [] (M.lookup k m)))
+                      m
+
+conjUp :: Ord a => [(a,b)] -> Map a [b]
+conjUp = foldl' (\m (k,v) -> conj k v m) M.empty
+
+splitValues :: Ord b => (a->b) -> Map [b] [a] -> Map [b] [a]
+splitValues f m = conjUp [ ((f v):k, v) | (k,vs) <- assocs m, v <- vs ]
 
 data Model a b = Model { features :: [Feature a b]
                        , classedPop :: Map [b] [a]
@@ -41,14 +53,17 @@ sampleSize = length . sample
 
 classSizePop :: (Eq b, Ord b) => Model a b -> [b] -> Int
 classSizePop model cls =
-    length $ filter (== cls) $ map (classify model) $ population model
+    length $ fromMaybe [] $ M.lookup cls $ classedPop model
 
 classSizeSamp :: (Eq b, Ord b) => Model a b -> [b] -> Int
 classSizeSamp model cls =
-    length $ filter (== cls) $ map (classify model) $ sample model
+    length $ fromMaybe [] $ M.lookup cls $ classedSamp model
 
-refine :: Model a b -> Feature a b -> Model a b
-refine model f = model { features = f:(features model) }
+refine :: Ord b => Model a b -> Feature a b -> Model a b
+refine model f = Model { features = f:(features model)
+                       , classedPop = splitValues (func f) (classedPop model)
+                       , classedSamp = splitValues (func f) (classedSamp model)
+                       }
 
 weight :: (Eq b, Ord b, Fractional c) => Model a b -> a -> c
 weight model x =
