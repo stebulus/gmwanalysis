@@ -73,15 +73,18 @@ classify model x = [func f x | f <- features model]
 sampleSize :: Ord b => Model a b -> Int
 sampleSize = length . sample
 
-weight :: (Eq b, Ord b, Fractional c) => Model a b -> a -> c
-weight model x =
+weightInClass :: (Ord b, Fractional c) => Model a b -> [b] -> c
+weightInClass model cls =
     classSize (classedSamp model) cls
     // ((classSize (classedPop model) cls) * (sampleSize model))
-    where cls = classify model x
+
+weight :: (Ord b, Fractional c) => Model a b -> a -> c
+weight model x = weightInClass model $ classify model x
 
 sampleLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
 sampleLikelihood model =
-    sum $ map log $ map (weight model) $ sample model
+    sum [ fromIntegral (length sampcls) * log (weightInClass model cls)
+        | (cls,sampcls) <- assocs $ classes $ classedSamp model ]
 
 refineBest :: (Eq b, Ord b) =>
     (Model a b,[Feature a b]) -> (Model a b,[Feature a b])
