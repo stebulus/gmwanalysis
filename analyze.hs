@@ -31,19 +31,38 @@ conjUp = foldl' (\m (k,v) -> conj k v m) M.empty
 splitValues :: Ord b => (a->b) -> Map [b] [a] -> Map [b] [a]
 splitValues f m = conjUp [ ((f v):k, v) | (k,vs) <- assocs m, v <- vs ]
 
-data Model a b = Model { features :: [Feature a b]
-                       , classedPop :: Map [b] [a]
-                       , classedSamp :: Map [b] [a]
+data Classed a b = Classed { classers :: [Feature a b]
+                           , classes :: Map [b] [a]
+                           }
+
+nullClassed :: Ord b => [a] -> Classed a b
+nullClassed xs = Classed [] (M.insert [] xs M.empty)
+
+splitClasses :: Ord b => Feature a b -> Classed a b -> Classed a b
+splitClasses f cl = Classed { classers = f:(classers cl)
+                            , classes = splitValues (func f) (classes cl)
+                            }
+
+data Model a b = Model { classedPop :: Classed a b
+                       , classedSamp :: Classed a b
                        }
 
+nullModel :: Ord b => [a] -> [a] -> Model a b
+nullModel = Model `on` nullClassed
+
+refine :: Ord b => Model a b -> Feature a b -> Model a b
+refine model f = Model { classedPop = splitClasses f (classedPop model)
+                       , classedSamp = splitClasses f (classedSamp model)
+                       }
+
+features :: Model a b -> [Feature a b]
+features = classers . classedPop
+
 population :: Ord b => Model a b -> [a]
-population = concat . elems . classedPop
+population = concat . elems . classes . classedPop
 
 sample :: Ord b => Model a b -> [a]
-sample = concat . elems . classedSamp
-
-nullModel :: Ord b => [a] -> [a] -> Model a b
-nullModel = Model [] `on` (\v -> M.insert [] v M.empty)
+sample = concat . elems . classes . classedSamp
 
 classify :: Model a b -> a -> [b]
 classify model x = [func f x | f <- features model]
@@ -53,17 +72,11 @@ sampleSize = length . sample
 
 classSizePop :: (Eq b, Ord b) => Model a b -> [b] -> Int
 classSizePop model cls =
-    length $ fromMaybe [] $ M.lookup cls $ classedPop model
+    length $ fromMaybe [] $ M.lookup cls $ classes $ classedPop model
 
 classSizeSamp :: (Eq b, Ord b) => Model a b -> [b] -> Int
 classSizeSamp model cls =
-    length $ fromMaybe [] $ M.lookup cls $ classedSamp model
-
-refine :: Ord b => Model a b -> Feature a b -> Model a b
-refine model f = Model { features = f:(features model)
-                       , classedPop = splitValues (func f) (classedPop model)
-                       , classedSamp = splitValues (func f) (classedSamp model)
-                       }
+    length $ fromMaybe [] $ M.lookup cls $ classes $ classedSamp model
 
 weight :: (Eq b, Ord b, Fractional c) => Model a b -> a -> c
 weight model x =
