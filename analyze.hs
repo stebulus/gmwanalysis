@@ -100,7 +100,7 @@ refinements model features =
 
 main = do
     n <- fmap (read . (!!0)) getArgs :: IO Int
-    allwords <- fmap ((take 20000) . lines) $ readFile "twl"
+    allwords <- fmap ((take 40000) . lines) $ readFile "twl"
     let allwordsSet = S.fromList allwords
     chosenwords <-
         fmap (filter (`S.member` allwordsSet))
