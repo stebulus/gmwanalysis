@@ -16,10 +16,6 @@ picks xs = zip xs (dropped xs)
     where dropped [] = []
           dropped (x:xs) = xs : (map (x:) (dropped xs))
 
-data Feature a b = Feature { tag :: String , func :: a->b }
-instance Show (Feature a b) where
-    show f = "f\"" ++ tag f ++ "\""
-
 conj :: Ord a => a -> b -> Map a [b] -> Map a [b]
 conj k v m = M.insert k
                       (v:(fromMaybe [] (M.lookup k m)))
@@ -30,6 +26,10 @@ conjUp = foldl' (\m (k,v) -> conj k v m) M.empty
 
 splitValues :: Ord b => (a->b) -> Map [b] [a] -> Map [b] [a]
 splitValues f m = conjUp [ ((f v):k, v) | (k,vs) <- assocs m, v <- vs ]
+
+data Feature a b = Feature { tag :: String , func :: a->b }
+instance Show (Feature a b) where
+    show f = "f\"" ++ tag f ++ "\""
 
 data Classed a b = Classed { classers :: [Feature a b]
                            , classes :: Map [b] [a]
