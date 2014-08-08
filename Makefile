@@ -32,3 +32,9 @@ wikt/reduce: wikt/reduce.hs
 	ghc -O $<
 wikt/etyls: wikt/reduced
 	grep -o "{{etyl|[^|]*|en}}" $< |sort |uniq -c |awk '$$1>=100 {print $$2}' >$@
+
+analyze : analyze.hs
+	ghc -O2 -W $<
+an : analyze twl words
+	/usr/bin/time ./analyze 10
+.PHONY : an

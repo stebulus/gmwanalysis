@@ -2,3 +2,6 @@
 /dates.mk
 /words
 /freq
+/*.o
+/*.hi
+/analyze
