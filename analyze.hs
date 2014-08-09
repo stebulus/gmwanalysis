@@ -194,4 +194,4 @@ main = do
             print (features model, sampleLogLikelihood model)
             return model)
         $ refinements (nullModel allwords chosenwords) feats
-    mapM_ print $ take 25 $ sortBy (flip (compare `on` snd)) $ weights bestmodel
+    withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel
