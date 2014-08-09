@@ -8,6 +8,8 @@ import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
 import System.Environment
+import System.IO
+import Text.Printf
 import Text.Regex
 
 infix 7 //  -- same as (/)
@@ -110,6 +112,13 @@ weights model = [ (x, wt)
                 | (cls, xs) <- assocs $ classes $ classedPop model
                 , let wt = weightInClass model cls
                 , x <- xs ]
+
+showWeight :: (String, Float) -> String
+showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
+
+hPutWeights :: Ord b => Handle -> Model String b -> IO ()
+hPutWeights hout model = do
+    mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model
 
 --
 -- Refining a Model to increase the likelihood of its sample
