@@ -180,6 +180,9 @@ main = do
                        $ readFile "wikt/reduced"
     let feats = logFreqFeatures (mapsnd fromInteger freqdata)
                     ++ regexFeatures wiktpatterns wiktreduced
-    mapM_ print $ take n $
-        [(features model, sampleLogLikelihood model)
-        | model<-refinements (nullModel allwords chosenwords) feats]
+    bestmodel <- lastM $ take n
+        $ map (\model -> do
+            print (features model, sampleLogLikelihood model)
+            return model)
+        $ refinements (nullModel allwords chosenwords) feats
+    mapM_ print $ take 25 $ sortBy (flip (compare `on` snd)) $ weights bestmodel
