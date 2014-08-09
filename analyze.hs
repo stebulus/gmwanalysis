@@ -175,7 +175,7 @@ regexFeatures regexes texts =
 
 main = do
     n <- fmap (read . (!!0)) getArgs :: IO Int
-    allwords <- fmap ((take 40000) . lines) $ readFile "twl"
+    allwords <- fmap lines $ readFile "twl"
     let allwordsSet = S.fromList allwords
     chosenwords <-
         fmap (filter (`member` allwordsSet))
