@@ -100,6 +100,12 @@ weightInClass model cls =
 weight :: (Ord b, Fractional c) => Model a b -> a -> c
 weight model x = weightInClass model $ classify model x
 
+weights :: (Ord b, Fractional c) => Model a b -> [(a,c)]
+weights model = [ (x, wt)
+                | (cls, xs) <- assocs $ classes $ classedPop model
+                , let wt = weightInClass model cls
+                , x <- xs ]
+
 --
 -- Refining a Model to increase the likelihood of its sample
 --
