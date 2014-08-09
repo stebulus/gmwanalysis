@@ -22,6 +22,11 @@ picks xs = zip xs (dropped xs)
 mapsnd :: (a->b) -> [(c,a)] -> [(c,b)]
 mapsnd f = map (\(x,y) -> (x, f y))
 
+lastM :: Monad m => [m a] -> m a
+lastM (mx:[]) = mx
+lastM (mx:mxs) = mx >> lastM mxs
+lastM [] = error "empty list"
+
 --
 -- Maps whose values are lists
 --
