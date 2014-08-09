@@ -4,8 +4,11 @@ import Data.List
 import Data.Maybe
 import Data.Map (Map, elems, assocs)
 import qualified Data.Map as M
+import Data.Set (Set, member)
 import qualified Data.Set as S
+import Data.Tuple
 import System.Environment
+import Text.Regex
 
 infix 7 //  -- same as (/)
 (//) :: (Integral a, Fractional b) => a -> a -> b
@@ -15,6 +18,9 @@ picks :: [a] -> [(a,[a])]
 picks xs = zip xs (dropped xs)
     where dropped [] = []
           dropped (x:xs) = xs : (map (x:) (dropped xs))
+
+mapsnd :: (a->b) -> [(c,a)] -> [(c,b)]
+mapsnd f = map (\(x,y) -> (x, f y))
 
 --
 -- Maps whose values are lists
@@ -116,6 +122,34 @@ refinements model features =
     $ iterate refineBest (model, features)
 
 --
+-- Some features
+--
+
+fromSet :: Ord a => String -> Set a -> Feature a Bool
+fromSet tag set = Feature tag (`member` set)
+
+fromList :: Ord a => [(String,a)] -> [Feature a Bool]
+fromList xs = [ fromSet k $ S.fromList vs
+              | (k,vs) <- assocs $ conjUp xs ]
+
+logFreqFeatures :: (RealFrac a, Floating a) =>
+    [(String, a)] -> [Feature String Bool]
+logFreqFeatures lst =
+    fromList $ map swap $ mapsnd ((++"logfreq") . show . floor . log) lst
+
+parseFreqData :: [String] -> [(String, Integer)]
+parseFreqData xs = [ let [word, intstr] = words x
+                     in (word, read intstr)
+                   | x<-xs ]
+
+regexFeatures :: [String] -> [(String,String)] -> [Feature String Bool]
+regexFeatures regexes texts =
+    fromList [ (rename, word)
+             | (word,page) <- texts, (rename,re) <- res,
+               isJust $ matchRegex re page ]
+    where res = zip regexes $ map mkRegex regexes
+
+--
 -- Testing performance on a smallish example from twl and words
 --
 
@@ -124,12 +158,17 @@ main = do
     allwords <- fmap ((take 40000) . lines) $ readFile "twl"
     let allwordsSet = S.fromList allwords
     chosenwords <-
-        fmap (filter (`S.member` allwordsSet))
+        fmap (filter (`member` allwordsSet))
         $ fmap (map ((!!2) . words))
         $ fmap lines
         $ readFile "words"
-    let feats = [Feature [letter] (\word -> last word == letter)
-                | letter<-['a'..'z']]
+    freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
+    wiktpatterns <- fmap lines $ readFile "wikt/macro-patterns"
+    wiktreduced <- fmap (map (break (==' ')))
+                       $ fmap lines
+                       $ readFile "wikt/reduced"
+    let feats = logFreqFeatures (mapsnd fromInteger freqdata)
+                    ++ regexFeatures wiktpatterns wiktreduced
     mapM_ print $ take n $
         [(features model, sampleLogLikelihood model)
         | model<-refinements (nullModel allwords chosenwords) feats]

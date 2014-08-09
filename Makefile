@@ -35,6 +35,6 @@ wikt/etyls: wikt/reduced
 
 analyze : analyze.hs
 	ghc -O2 -W $<
-an : analyze twl words
+an : analyze twl words freq wikt/macro-patterns wikt/reduced
 	/usr/bin/time ./analyze 10
 .PHONY : an
