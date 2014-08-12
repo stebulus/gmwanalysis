@@ -31,6 +31,14 @@ lastM (mx:[]) = mx
 lastM (mx:mxs) = mx >> lastM mxs
 lastM [] = error "empty list"
 
+partitionByIndex :: (Enum b, Num b) => (b->Bool) -> [a] -> ([a],[a])
+partitionByIndex f xs =
+    (yes,no)
+    where ((_,yes),(_,no)) =
+            applyboth unzip
+            $ partition (f.fst)
+            $ zip [0..] xs
+
 --
 -- Maps whose values are lists
 --
