@@ -21,6 +21,8 @@ picks xs = zip xs (dropped xs)
     where dropped [] = []
           dropped (x:xs) = xs : (map (x:) (dropped xs))
 
+applyboth :: (a->b) -> (a,a) -> (b,b)
+applyboth f (x,y) = (f x, f y)
 applysnd :: (a->b) -> (c,a) -> (c,b)
 applysnd f (x,y) = (x,f y)
 
