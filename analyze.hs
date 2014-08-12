@@ -7,6 +7,7 @@ import qualified Data.Map as M
 import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
+import System.Environment
 import System.IO
 import Text.Printf
 import Text.Regex
@@ -194,13 +195,14 @@ regexFeatures regexes texts =
 --
 
 main = do
+    chosenwordsfile <- fmap (!!0) getArgs
     allwords <- fmap lines $ readFile "twl"
     let allwordsSet = S.fromList allwords
     chosenwords <-
         fmap (filter (`member` allwordsSet))
         $ fmap (map ((!!2) . words))
         $ fmap lines
-        $ readFile "words"
+        $ readFile chosenwordsfile
     let (heldback,trainingset) =
             partitionByIndex (\n -> n `mod` 3 == 0) chosenwords
     freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
@@ -212,11 +214,13 @@ main = do
                     ++ regexFeatures wiktpatterns wiktreduced
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
-            print (features model,
-                    sampleLogLikelihood model,
-                    xval)
+            hPutStrLn stderr $ show
+                ( features model
+                , sampleLogLikelihood model
+                , xval
+                )
             return model)
         $ increasingPrefix (compare `on` snd)
         $ map (\model -> (model, logLikelihood model heldback))
         $ refinements (nullModel allwords trainingset) feats
-    withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel
+    hPutWeights stdout bestmodel

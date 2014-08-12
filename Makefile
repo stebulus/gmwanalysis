@@ -10,6 +10,10 @@ words: $(foreach d,${DATES},joon/$d.word mike/$d.word)
 	cat $^ |sort >$@
 %.word: %.html
 	grep '^<p>Select to reveal answer word: ' $< |sed -e 's,^.*<span[^>]*>,$* ,' -e 's,</span>.*$$,,' -e 's,/, ,' >$@
+training-set-%: words
+	awk '$$1=="$*" && $$2<"2014" {print}' $< >$@
+testing-set-%: words
+	awk '$$1=="$*" && $$2>="2014" {print}' $< >$@
 
 ALPHABET=a b c d e f g h i j k l m n o p q r s t u v w x y z
 freq: $(foreach L,$(ALPHABET),ngram/googlebooks-eng-all-1gram-20120701-$(L).twl)
@@ -35,5 +39,5 @@ wikt/etyls: wikt/reduced
 
 analyze : analyze.hs
 	ghc -O2 -W $<
-test-weights : analyze twl words freq wikt/macro-patterns wikt/reduced
-	/usr/bin/time ./analyze
+test-weights-% : analyze twl training-set-% freq wikt/macro-patterns wikt/reduced
+	/usr/bin/time ./analyze training-set-$* >$@
