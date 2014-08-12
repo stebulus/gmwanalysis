@@ -7,7 +7,6 @@ import qualified Data.Map as M
 import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
-import System.Environment
 import System.IO
 import Text.Printf
 import Text.Regex
@@ -38,6 +37,14 @@ partitionByIndex f xs =
             applyboth unzip
             $ partition (f.fst)
             $ zip [0..] xs
+
+increasingPrefix :: (a->a->Ordering) -> [a] -> [a]
+increasingPrefix cmp (x:y:rest) =
+    x:(case cmp x y of
+        LT -> increasingPrefix cmp (y:rest)
+        EQ -> increasingPrefix cmp (y:rest)
+        GT -> [])
+increasingPrefix _ xs = xs
 
 --
 -- Maps whose values are lists
@@ -187,7 +194,6 @@ regexFeatures regexes texts =
 --
 
 main = do
-    n <- fmap (read . (!!0)) getArgs :: IO Int
     allwords <- fmap lines $ readFile "twl"
     let allwordsSet = S.fromList allwords
     chosenwords <-
@@ -204,11 +210,12 @@ main = do
                        $ readFile "wikt/reduced"
     let feats = logFreqFeatures (map (applysnd fromInteger) freqdata)
                     ++ regexFeatures wiktpatterns wiktreduced
-    bestmodel <- lastM $ take n
+    bestmodel <- lastM
         $ map (\model -> do
             print (features model,
                     sampleLogLikelihood model,
                     logLikelihood model heldback)
             return model)
+        $ increasingPrefix (compare `on` ((flip logLikelihood) heldback))
         $ refinements (nullModel allwords trainingset) feats
     withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel

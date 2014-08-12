@@ -36,4 +36,4 @@ wikt/etyls: wikt/reduced
 analyze : analyze.hs
 	ghc -O2 -W $<
 test-weights : analyze twl words freq wikt/macro-patterns wikt/reduced
-	/usr/bin/time ./analyze 10
+	/usr/bin/time ./analyze
