@@ -139,6 +139,9 @@ sampleLogLikelihood model =
     sum [ fromIntegral (length sampcls) * log (weightInClass model cls)
         | (cls,sampcls) <- assocs $ classes $ classedSamp model ]
 
+logLikelihood :: (Ord b, Floating c) => Model a b -> [a] -> c
+logLikelihood model xs = sum $ map (log.(weight model)) xs
+
 refineBest :: (Eq b, Ord b) =>
     (Model a b,[Feature a b]) -> (Model a b,[Feature a b])
 refineBest (model, features) =
