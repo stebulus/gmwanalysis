@@ -21,8 +21,8 @@ picks xs = zip xs (dropped xs)
     where dropped [] = []
           dropped (x:xs) = xs : (map (x:) (dropped xs))
 
-mapsnd :: (a->b) -> [(c,a)] -> [(c,b)]
-mapsnd f = map (\(x,y) -> (x, f y))
+applysnd :: (a->b) -> (c,a) -> (c,b)
+applysnd f (x,y) = (x,f y)
 
 lastM :: Monad m => [m a] -> m a
 lastM (mx:[]) = mx
@@ -155,7 +155,7 @@ fromList xs = [ fromSet k $ S.fromList vs
 logFreqFeatures :: (RealFrac a, Floating a) =>
     [(String, a)] -> [Feature String Bool]
 logFreqFeatures lst =
-    fromList $ map swap $ mapsnd ((++"logfreq") . show . floor . log) lst
+    fromList $ map swap $ map (applysnd ((++"logfreq") . show . floor . log)) lst
 
 parseFreqData :: [String] -> [(String, Integer)]
 parseFreqData xs = [ let [word, intstr] = words x
@@ -187,7 +187,7 @@ main = do
     wiktreduced <- fmap (map (break (==' ')))
                        $ fmap lines
                        $ readFile "wikt/reduced"
-    let feats = logFreqFeatures (mapsnd fromInteger freqdata)
+    let feats = logFreqFeatures (map (applysnd fromInteger) freqdata)
                     ++ regexFeatures wiktpatterns wiktreduced
     bestmodel <- lastM $ take n
         $ map (\model -> do
