@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 from datetime import datetime, timedelta
 d = datetime(2012,1,1)
-lim = datetime(2013,11,14)
+lim = datetime(2014,06,05)
 incr = timedelta(days=1)
-while d < lim:
+while d <= lim:
     print d.strftime('%Y%m%d')
     d += incr
