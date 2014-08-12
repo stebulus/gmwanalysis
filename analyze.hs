@@ -211,11 +211,12 @@ main = do
     let feats = logFreqFeatures (map (applysnd fromInteger) freqdata)
                     ++ regexFeatures wiktpatterns wiktreduced
     bestmodel <- lastM
-        $ map (\model -> do
+        $ map (\ (model, xval) -> do
             print (features model,
                     sampleLogLikelihood model,
-                    logLikelihood model heldback)
+                    xval)
             return model)
-        $ increasingPrefix (compare `on` ((flip logLikelihood) heldback))
+        $ increasingPrefix (compare `on` snd)
+        $ map (\model -> (model, logLikelihood model heldback))
         $ refinements (nullModel allwords trainingset) feats
     withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel
