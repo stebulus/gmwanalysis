@@ -195,6 +195,8 @@ main = do
         $ fmap (map ((!!2) . words))
         $ fmap lines
         $ readFile "words"
+    let (heldback,trainingset) =
+            partitionByIndex (\n -> n `mod` 3 == 0) chosenwords
     freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
     wiktpatterns <- fmap lines $ readFile "wikt/macro-patterns"
     wiktreduced <- fmap (map (break (==' ')))
@@ -204,7 +206,9 @@ main = do
                     ++ regexFeatures wiktpatterns wiktreduced
     bestmodel <- lastM $ take n
         $ map (\model -> do
-            print (features model, sampleLogLikelihood model)
+            print (features model,
+                    sampleLogLikelihood model,
+                    logLikelihood model heldback)
             return model)
-        $ refinements (nullModel allwords chosenwords) feats
+        $ refinements (nullModel allwords trainingset) feats
     withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel
