@@ -211,13 +211,10 @@ regexFeatures regexes texts =
 main = do
     chosenwordsfile <- fmap (!!0) getArgs
     allwordsSet <- lineSet "twl"
-    chosenwords <-
-        fmap (filter (`member` allwordsSet))
-        $ fmap (map ((!!2) . words))
-        $ fmap lines
-        $ readFile chosenwordsfile
+    chosenwords <- fmap (`S.intersection` allwordsSet)
+        $ lineSet chosenwordsfile
     let (heldback,trainingset) =
-            partitionByIndex (\n -> n `mod` 3 == 0) chosenwords
+            partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
     freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
     wiktpatterns <- fmap lines $ readFile "wikt/macro-patterns"
     wiktreduced <- fmap (map (break (==' ')))

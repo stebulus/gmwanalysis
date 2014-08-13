@@ -11,9 +11,9 @@ words: $(foreach d,${DATES},joon/$d.word mike/$d.word)
 %.word: %.html
 	grep '^<p>Select to reveal answer word: ' $< |sed -e 's,^.*<span[^>]*>,$* ,' -e 's,</span>.*$$,,' -e 's,/, ,' >$@
 training-set-%: words
-	awk '$$1=="$*" && $$2<"2014" {print}' $< >$@
+	awk '$$1=="$*" && $$2<"2014" {print $$3}' $< >$@
 testing-set-%: words
-	awk '$$1=="$*" && $$2>="2014" {print}' $< >$@
+	awk '$$1=="$*" && $$2>="2014" {print $$3}' $< >$@
 
 ALPHABET=a b c d e f g h i j k l m n o p q r s t u v w x y z
 freq: $(foreach L,$(ALPHABET),ngram/googlebooks-eng-all-1gram-20120701-$(L).twl)
