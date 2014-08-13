@@ -47,6 +47,15 @@ increasingPrefix cmp (x:y:rest) =
         GT -> [])
 increasingPrefix _ xs = xs
 
+foldLines :: (a -> String -> a) -> a -> Handle -> IO a
+foldLines f init h = seq init $ do    -- the seq here halves memory usage
+    eof <- hIsEOF h
+    if eof
+      then return init
+      else do
+        line <- hGetLine h
+        foldLines f (f init line) h
+
 --
 -- Maps whose values are lists
 --
@@ -168,6 +177,11 @@ refinements model features =
 
 fromSet :: Ord a => String -> Set a -> Feature a Bool
 fromSet tag set = Feature tag (`member` set)
+
+hLineSet :: Handle -> IO (Set String)
+hLineSet = foldLines (flip S.insert) S.empty
+lineSet :: FilePath -> IO (Set String)
+lineSet path = withFile path ReadMode hLineSet
 
 fromList :: Ord a => [(String,a)] -> [Feature a Bool]
 fromList xs = [ fromSet k $ S.fromList vs
