@@ -210,8 +210,7 @@ regexFeatures regexes texts =
 
 main = do
     chosenwordsfile <- fmap (!!0) getArgs
-    allwords <- fmap lines $ readFile "twl"
-    let allwordsSet = S.fromList allwords
+    allwordsSet <- lineSet "twl"
     chosenwords <-
         fmap (filter (`member` allwordsSet))
         $ fmap (map ((!!2) . words))
@@ -236,5 +235,5 @@ main = do
             return model)
         $ increasingPrefix (compare `on` snd)
         $ map (\model -> (model, logLikelihood model heldback))
-        $ refinements (nullModel allwords trainingset) feats
+        $ refinements (nullModel (S.toList allwordsSet) trainingset) feats
     hPutWeights stdout bestmodel
