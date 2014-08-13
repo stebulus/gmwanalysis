@@ -187,16 +187,6 @@ fromList :: Ord a => [(String,a)] -> [Feature a Bool]
 fromList xs = [ fromSet k $ S.fromList vs
               | (k,vs) <- assocs $ conjUp xs ]
 
-logFreqFeatures :: (RealFrac a, Floating a) =>
-    [(String, a)] -> [Feature String Bool]
-logFreqFeatures lst =
-    fromList $ map swap $ map (applysnd ((++"logfreq") . show . floor . log)) lst
-
-parseFreqData :: [String] -> [(String, Integer)]
-parseFreqData xs = [ let [word, intstr] = words x
-                     in (word, read intstr)
-                   | x<-xs ]
-
 --
 -- Testing performance on a smallish example from twl and words
 --
@@ -209,14 +199,11 @@ main = do
     allwordsSet <- lineSet "twl"
     chosenwords <- fmap (`S.intersection` allwordsSet)
         $ lineSet chosenwordsfile
-    setfileFeats <- forM setfiles
+    feats <- forM setfiles
         (\path -> fmap (fromSet path) (lineSet path))
 
     let (heldback,trainingset) =
             partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
-    freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
-    let feats = logFreqFeatures (map (applysnd fromInteger) freqdata)
-                    ++ setfileFeats
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
