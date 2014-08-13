@@ -1,4 +1,5 @@
 import Control.Applicative
+import Control.Monad
 import Data.Function
 import Data.List
 import Data.Maybe
@@ -10,7 +11,6 @@ import Data.Tuple
 import System.Environment
 import System.IO
 import Text.Printf
-import Text.Regex
 
 infix 7 //  -- same as (/)
 (//) :: (Integral a, Fractional b) => a -> a -> b
@@ -197,31 +197,26 @@ parseFreqData xs = [ let [word, intstr] = words x
                      in (word, read intstr)
                    | x<-xs ]
 
-regexFeatures :: [String] -> [(String,String)] -> [Feature String Bool]
-regexFeatures regexes texts =
-    fromList [ (rename, word)
-             | (word,page) <- texts, (rename,re) <- res,
-               isJust $ matchRegex re page ]
-    where res = zip regexes $ map mkRegex regexes
-
 --
 -- Testing performance on a smallish example from twl and words
 --
 
 main = do
-    chosenwordsfile <- fmap (!!0) getArgs
+    args <- getArgs
+    let chosenwordsfile = head args
+    let setfiles = tail args
+
     allwordsSet <- lineSet "twl"
     chosenwords <- fmap (`S.intersection` allwordsSet)
         $ lineSet chosenwordsfile
+    setfileFeats <- forM setfiles
+        (\path -> fmap (fromSet path) (lineSet path))
+
     let (heldback,trainingset) =
             partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
     freqdata <- fmap (parseFreqData . lines) $ readFile "freq"
-    wiktpatterns <- fmap lines $ readFile "wikt/macro-patterns"
-    wiktreduced <- fmap (map (break (==' ')))
-                       $ fmap lines
-                       $ readFile "wikt/reduced"
     let feats = logFreqFeatures (map (applysnd fromInteger) freqdata)
-                    ++ regexFeatures wiktpatterns wiktreduced
+                    ++ setfileFeats
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show

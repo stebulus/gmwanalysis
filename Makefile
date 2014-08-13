@@ -37,7 +37,14 @@ wikt/reduce: wikt/reduce.hs
 wikt/etyls: wikt/reduced
 	grep -o "{{etyl|[^|]*|en}}" $< |sort |uniq -c |awk '$$1>=100 {print $$2}' >$@
 
+include wikt/macro-patterns.mk
+wikt/macro-patterns.mk: wikt/macro-patterns
+	tr -dc 'a-zA-Z0-9\n' <$< |paste - $< \
+	  |awk -F'\t' '{print "wikt/" $$1 ".set: wikt/reduced"; \
+          print "\tegrep -e \"" $$2 "\" $$< |cut -d\\  -f1 >$$@"; \
+	  print "SETS += wikt/" $$1 ".set" }' >$@
+
 analyze : analyze.hs
 	ghc -O2 -W $<
-test-weights-% : analyze twl training-set-% freq wikt/macro-patterns wikt/reduced
-	/usr/bin/time ./analyze training-set-$* >$@
+test-weights-% : analyze twl training-set-% freq $(SETS)
+	/usr/bin/time ./analyze training-set-$* $(SETS) >$@
