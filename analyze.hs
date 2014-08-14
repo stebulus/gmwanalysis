@@ -58,38 +58,18 @@ foldLines f init h = seq init $ do    -- the seq here halves memory usage
         foldLines f (f init line) h
 
 --
--- Classed: a collection of things classified by feature
+-- Model: a population with a probability distribution which matches
+-- a sample, as far as some features are concerned
 --
 
 data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
 
-data Classed a = Classed { classers :: [Feature a Bool]
-                         , classes :: Tree (Feature a Bool) [a]
-                         }
-
-nullClassed :: [a] -> Classed a
-nullClassed xs = Classed [] (Leaf xs)
-
-splitClasses :: Feature a Bool -> Classed a -> Classed a
-splitClasses f cl = Classed { classers = f:(classers cl)
-                            , classes = classes cl >>=
-                                branch f . swap . partition (func f)
-                            }
+type Model a = Tree (Feature a Bool) ([a],[a])
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
-
-classSize :: Classed a -> a -> Int
-classSize cl x = length $ featureLookup x $ classes cl
-
---
--- Model: a population with a probability distribution which matches
--- a sample, as far as some features are concerned
---
-
-type Model a = Tree (Feature a Bool) ([a],[a])
 
 nullModel :: [a] -> [a] -> Model a
 nullModel xs ys = Leaf (xs,ys)
