@@ -2,8 +2,9 @@ module Main where
 
 import Control.Applicative
 import Control.Monad
+import Data.Foldable (foldMap)
 import Data.Function
-import Data.List
+import Data.List (partition, sort, maximumBy)
 import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
@@ -88,34 +89,30 @@ classSize cl x = length $ featureLookup x $ classes cl
 -- a sample, as far as some features are concerned
 --
 
-data Model a = Model { classedPop :: Classed a
-                     , classedSamp :: Classed a
-                     }
+type Model a = Tree (Feature a Bool) ([a],[a])
 
 nullModel :: [a] -> [a] -> Model a
-nullModel = Model `on` nullClassed
+nullModel xs ys = Leaf (xs,ys)
 
 refine :: Model a -> Feature a Bool -> Model a
-refine model f = Model { classedPop = splitClasses f (classedPop model)
-                       , classedSamp = splitClasses f (classedSamp model)
-                       }
-
-features :: Model a -> [Feature a Bool]
-features = classers . classedPop
+refine model f = do
+    popsamp <- model
+    let popsamp2 = applyboth (swap . partition (func f)) popsamp
+    branch f (applyboth fst popsamp2, applyboth snd popsamp2)
 
 population :: Model a -> [a]
-population = concat . leaves . classes . classedPop
+population = foldMap fst
 
 sample :: Model a -> [a]
-sample = concat . leaves . classes . classedSamp
+sample = foldMap snd
 
 sampleSize :: Model a -> Int
 sampleSize = length . sample
 
 weight :: Fractional c => Model a -> a -> c
 weight model x =
-    classSize (classedSamp model) x
-    // (classSize (classedPop model) x * sampleSize model)
+    samp // (pop * sampleSize model)
+    where (pop,samp) = applyboth length $ featureLookup x model
 
 weights :: Fractional c => Model a -> [(a,c)]
 weights model = [ (x, weight model x) | x <- population model ]
@@ -180,7 +177,7 @@ main = do
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
-                ( features model
+                ( fmap (\_ -> ()) model
                 , sampleLogLikelihood model
                 , xval
                 )
