@@ -13,6 +13,7 @@ import Data.Tuple
 import System.Environment
 import System.IO
 import Text.Printf
+import Tree
 
 infix 7 //  -- same as (/)
 (//) :: (Integral a, Fractional b) => a -> a -> b
@@ -81,71 +82,66 @@ data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
 
-data Classed a b = Classed { classers :: [Feature a b]
-                           , classes :: Map [b] [a]
-                           }
+data Classed a = Classed { classers :: [Feature a Bool]
+                         , classes :: Tree (Feature a Bool) [a]
+                         }
 
-nullClassed :: Ord b => [a] -> Classed a b
-nullClassed xs = Classed [] (M.insert [] xs M.empty)
+nullClassed :: [a] -> Classed a
+nullClassed xs = Classed [] (Leaf xs)
 
-splitClasses :: Ord b => Feature a b -> Classed a b -> Classed a b
+splitClasses :: Feature a Bool -> Classed a -> Classed a
 splitClasses f cl = Classed { classers = f:(classers cl)
-                            , classes = splitValues (func f) (classes cl)
+                            , classes = classes cl >>=
+                                branch f . swap . partition (func f)
                             }
 
-classSize :: Ord b => Classed a b -> [b] -> Int
-classSize cl c = length $ fromMaybe [] $ M.lookup c (classes cl)
+featureLookup :: a -> Tree (Feature a Bool) b -> b
+featureLookup = Tree.lookup (\feat x -> (func feat) x)
+
+classSize :: Classed a -> a -> Int
+classSize cl x = length $ featureLookup x $ classes cl
 
 --
 -- Model: a population with a probability distribution which matches
 -- a sample, as far as some features are concerned
 --
 
-data Model a b = Model { classedPop :: Classed a b
-                       , classedSamp :: Classed a b
-                       }
+data Model a = Model { classedPop :: Classed a
+                     , classedSamp :: Classed a
+                     }
 
-nullModel :: Ord b => [a] -> [a] -> Model a b
+nullModel :: [a] -> [a] -> Model a
 nullModel = Model `on` nullClassed
 
-refine :: Ord b => Model a b -> Feature a b -> Model a b
+refine :: Model a -> Feature a Bool -> Model a
 refine model f = Model { classedPop = splitClasses f (classedPop model)
                        , classedSamp = splitClasses f (classedSamp model)
                        }
 
-features :: Model a b -> [Feature a b]
+features :: Model a -> [Feature a Bool]
 features = classers . classedPop
 
-population :: Ord b => Model a b -> [a]
-population = concat . elems . classes . classedPop
+population :: Model a -> [a]
+population = concat . leaves . classes . classedPop
 
-sample :: Ord b => Model a b -> [a]
-sample = concat . elems . classes . classedSamp
+sample :: Model a -> [a]
+sample = concat . leaves . classes . classedSamp
 
-classify :: Model a b -> a -> [b]
-classify model x = [func f x | f <- features model]
-
-sampleSize :: Ord b => Model a b -> Int
+sampleSize :: Model a -> Int
 sampleSize = length . sample
 
-weightInClass :: (Ord b, Fractional c) => Model a b -> [b] -> c
-weightInClass model cls =
-    classSize (classedSamp model) cls
-    // ((classSize (classedPop model) cls) * (sampleSize model))
+weight :: Fractional c => Model a -> a -> c
+weight model x =
+    classSize (classedSamp model) x
+    // (classSize (classedPop model) x * sampleSize model)
 
-weight :: (Ord b, Fractional c) => Model a b -> a -> c
-weight model x = weightInClass model $ classify model x
-
-weights :: (Ord b, Fractional c) => Model a b -> [(a,c)]
-weights model = [ (x, wt)
-                | (cls, xs) <- assocs $ classes $ classedPop model
-                , let wt = weightInClass model cls
-                , x <- xs ]
+weights :: Fractional c => Model a -> [(a,c)]
+weights model = [ (x, weight model x) | x <- population model ]
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
 
-hPutWeights :: Ord b => Handle -> Model String b -> IO ()
+hPutWeights :: Handle -> Model String -> IO ()
 hPutWeights hout model = do
     mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model
 
@@ -153,21 +149,18 @@ hPutWeights hout model = do
 -- Refining a Model to increase the likelihood of its sample
 --
 
-sampleLogLikelihood :: (Eq b, Ord b, Floating c) => Model a b -> c
-sampleLogLikelihood model =
-    sum [ fromIntegral (length sampcls) * log (weightInClass model cls)
-        | (cls,sampcls) <- assocs $ classes $ classedSamp model ]
+sampleLogLikelihood :: Floating c => Model a -> c
+sampleLogLikelihood model = logLikelihood model $ sample model
 
-logLikelihood :: (Ord b, Floating c) => Model a b -> [a] -> c
+logLikelihood :: Floating c => Model a -> [a] -> c
 logLikelihood model xs = sum $ map (log.(weight model)) xs
 
-refineBest :: (Eq b, Ord b) =>
-    (Model a b,[Feature a b]) -> (Model a b,[Feature a b])
+refineBest :: (Model a,[Feature a Bool]) -> (Model a,[Feature a Bool])
 refineBest (model, features) =
     maximumBy (compare `on` (sampleLogLikelihood.fst))
               [(refine model f, fs) | (f,fs) <- picks features]
 
-refinements :: (Eq b, Ord b) => Model a b -> [Feature a b] -> [Model a b]
+refinements :: Model a -> [Feature a Bool] -> [Model a]
 refinements model features =
     map fst
     $ takeWhile (not . null . snd)
