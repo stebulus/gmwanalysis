@@ -4,9 +4,6 @@ import Control.Applicative
 import Control.Monad
 import Data.Function
 import Data.List
-import Data.Maybe
-import Data.Map (Map, elems, assocs)
-import qualified Data.Map as M
 import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
@@ -58,21 +55,6 @@ foldLines f init h = seq init $ do    -- the seq here halves memory usage
       else do
         line <- hGetLine h
         foldLines f (f init line) h
-
---
--- Maps whose values are lists
---
-
-conj :: Ord a => a -> b -> Map a [b] -> Map a [b]
-conj k v m = M.insert k
-                      (v:(fromMaybe [] (M.lookup k m)))
-                      m
-
-conjUp :: Ord a => [(a,b)] -> Map a [b]
-conjUp = foldl' (\m (k,v) -> conj k v m) M.empty
-
-splitValues :: Ord b => (a->b) -> Map [b] [a] -> Map [b] [a]
-splitValues f m = conjUp [ ((f v):k, v) | (k,vs) <- assocs m, v <- vs ]
 
 --
 -- Classed: a collection of things classified by feature
@@ -177,10 +159,6 @@ hLineSet :: Handle -> IO (Set String)
 hLineSet = foldLines (flip S.insert) S.empty
 lineSet :: FilePath -> IO (Set String)
 lineSet path = withFile path ReadMode hLineSet
-
-fromList :: Ord a => [(String,a)] -> [Feature a Bool]
-fromList xs = [ fromSet k $ S.fromList vs
-              | (k,vs) <- assocs $ conjUp xs ]
 
 --
 -- Testing performance on a smallish example from twl and words
