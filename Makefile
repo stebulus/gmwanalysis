@@ -53,7 +53,7 @@ wikt/macro-patterns.mk: wikt/macro-patterns
           print "\tegrep -e \"" $$2 "\" $$< |cut -d\\  -f1 >$$@"; \
 	  print "SETS += wikt/" $$1 ".set" }' >$@
 
-analyze : analyze.hs
+analyze : analyze.hs Tree.hs
 	ghc -O2 -W $<
 test-weights-% : analyze twl training-set-% $(SETS)
 	/usr/bin/time ./analyze training-set-$* $(SETS) >$@
