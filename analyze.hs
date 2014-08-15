@@ -166,7 +166,7 @@ lineSet :: FilePath -> IO (Set String)
 lineSet path = withFile path ReadMode hLineSet
 
 --
--- Testing performance on a smallish example from twl and words
+-- Train and emit a model for the files specified on the command line
 --
 
 main = do
