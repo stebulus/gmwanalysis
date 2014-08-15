@@ -2,7 +2,7 @@
 
 module Tree where
 
-import Data.Foldable
+import Data.Foldable (Foldable, foldMap)
 import Data.Monoid
 import Prelude hiding (lookup)
 
@@ -22,6 +22,10 @@ instance Monad (Tree a) where
     return x = Leaf x
     (Branch x l r) >>= f = Branch x (l >>= f) (r >>= f)
     (Leaf x) >>= f = f x
+
+toList :: Tree a b -> [b]
+toList (Leaf b) = [b]
+toList (Branch _ l r) = (toList l) ++ (toList r)
 
 leaves :: Tree a b -> [b]
 leaves = foldMap (\x -> [x])

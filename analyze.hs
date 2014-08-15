@@ -101,6 +101,12 @@ instance Show (Feature a b) where
 
 type Class a = ([a],[a],[Feature a Bool])
 
+type ClassWeight a c = [a] -> [a] -> a -> c
+
+sizeClsWt :: Fractional c => Int -> ClassWeight a c
+sizeClsWt samplesz pop samp _ =
+    length samp // (length pop * samplesz)
+
 type Model a = Tree (Feature a Bool) (Class a)
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
@@ -120,17 +126,14 @@ sampleSize = length . sample
 
 weight :: Fractional c => Model a -> a -> c
 weight model x =
-    length samp // (length pop * sampleSize model)
+    sizeClsWt (sampleSize model) pop samp x
     where (pop,samp,_) = featureLookup x model
 
-addWeights :: Fractional c => Model a -> Tree (Feature a Bool) (Class a,c)
-addWeights model = fmap addWt model
-    where addWt cl@(pop,samp,_) = (cl, length samp // (length pop * totsamplesz))
-          totsamplesz = sampleSize model
-
 weights :: Fractional c => Model a -> [(a,c)]
-weights model = fold $ fmap popWt $ addWeights model
-    where popWt ((pop,_,_),wt) = zip pop (repeat wt)
+weights model = fold $ fmap popWt model
+    where popWt (pop,samp,_) = let clswt = sizeClsWt samplesz pop samp
+                               in zip pop $ map clswt pop
+          samplesz = sampleSize model
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
@@ -145,12 +148,11 @@ hPutWeights hout model = do
 
 sampleLogLikelihood :: Floating c => Model a -> c
 sampleLogLikelihood model =
-    sum
-    $ fmap (\ ((_,samp,_),wt) -> let len = length samp
-                               in if len == 0
-                                    then 0
-                                    else fromIntegral len * log wt)
-    $ addWeights model
+    sum $ do
+        (pop,samp,_) <- Tree.toList model
+        let wt = sizeClsWt samplesz pop samp
+        map (log . wt) samp
+    where samplesz = sampleSize model
 
 logLikelihood :: Floating c => Model a -> [a] -> c
 logLikelihood model xs = sum $ map (log.(weight model)) xs
