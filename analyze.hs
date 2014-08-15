@@ -1,6 +1,5 @@
 module Main where
 
-import Control.Applicative
 import Control.Monad
 import Data.Foldable (foldMap, fold)
 import Data.Function
