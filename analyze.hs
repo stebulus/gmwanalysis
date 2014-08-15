@@ -1,7 +1,8 @@
 module Main where
 
+import Prelude hiding (sum)
 import Control.Monad
-import Data.Foldable (foldMap, fold)
+import Data.Foldable (foldMap, fold, sum)
 import Data.Function
 import Data.List (partition, sort, maximumBy)
 import Data.Set (Set, member)
@@ -93,12 +94,14 @@ weight model x =
     samp // (pop * sampleSize model)
     where (pop,samp) = applyboth length $ featureLookup x model
 
-weights :: Fractional c => Model a -> [(a,c)]
-weights model = fold $ fmap popAndWt model
-    where popAndWt (pop,samp) =
-            zip pop
-                (repeat $ length samp // (length pop * totsamplesz))
+addWeights :: Fractional c => Model a -> Tree (Feature a Bool) ([a],[a],c)
+addWeights model = fmap addWt model
+    where addWt (pop,samp) = (pop, samp, length samp // (length pop * totsamplesz))
           totsamplesz = length $ sample model
+
+weights :: Fractional c => Model a -> [(a,c)]
+weights model = fold $ fmap popWt $ addWeights model
+    where popWt (pop,_,wt) = zip pop (repeat wt)
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
@@ -112,7 +115,13 @@ hPutWeights hout model = do
 --
 
 sampleLogLikelihood :: Floating c => Model a -> c
-sampleLogLikelihood model = logLikelihood model $ sample model
+sampleLogLikelihood model =
+    sum
+    $ fmap (\ (_,samp,wt) -> let len = length samp
+                             in if len == 0
+                                  then 0
+                                  else fromIntegral len * log wt)
+    $ addWeights model
 
 logLikelihood :: Floating c => Model a -> [a] -> c
 logLikelihood model xs = sum $ map (log.(weight model)) xs
