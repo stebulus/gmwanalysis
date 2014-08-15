@@ -23,15 +23,6 @@ ngram/googlebooks-eng-all-1gram-20120701-%.twl: ngram/googlebooks-eng-all-1gram-
 ngram/googlebooks-eng-all-1gram-20120701-%.gz:
 	wget -P ngram http://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-$*.gz
 
-intlogfreq: freq
-	awk '{print $$1, int(log($$2))}' $< >$@
-logfreq/le%.set: intlogfreq
-	awk '$$2 <= $* {print $$1}' $< >$@
-logfreq.mk: intlogfreq
-	seq $$(awk 'NR==1 {m=M=$$2} $$2<m {m=$$2} $$2>M {M=$$2} END {print m, M}' $<) \
-	| sed -e 's,^,SETS += logfreq/le,' -e 's,$$,.set,' >$@
-include logfreq.mk
-
 wikt/enwikt.xml.bz2:
 	wget -O "$@" http://dumps.wikimedia.org/enwiktionary/20140504/enwiktionary-20140504-pages-articles-multistream.xml.bz2
 wikt/reduced: wikt/reduce wikt/enwikt.xml.bz2 twl
