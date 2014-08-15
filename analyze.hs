@@ -170,7 +170,7 @@ regexFeatures regexes texts =
     where res = zip regexes $ map mkRegex regexes
 
 --
--- Testing performance on twl and words
+-- Train and emit a model for the files specified on the command line
 --
 
 main = do
@@ -194,4 +194,4 @@ main = do
             print (features model, sampleLogLikelihood model)
             return model)
         $ refinements (nullModel allwords chosenwords) feats
-    mapM_ print $ take 25 $ sortBy (flip (compare `on` snd)) $ weights bestmodel
+    withFile "test-weights" WriteMode $ (flip hPutWeights) bestmodel
