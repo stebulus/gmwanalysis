@@ -62,6 +62,12 @@ foldLines f init h = seq init $ do    -- the seq here halves memory usage
         line <- hGetLine h
         foldLines f (f init line) h
 
+iterateMaybe :: (a -> Maybe a) -> a -> [a]
+iterateMaybe f x =
+    map fromJust
+    $ takeWhile isJust
+    $ iterate (>>= f) (Just x)
+
 --
 -- Model: a population with a probability distribution which matches
 -- a sample, as far as some features are concerned
@@ -145,10 +151,7 @@ refineBest model = case refinements model of
         xs -> Just $ maximumBy (compare `on` sampleLogLikelihood) xs
 
 bestRefinements :: Model a -> [Model a]
-bestRefinements model =
-    map fromJust
-    $ takeWhile isJust
-    $ iterate (>>= refineBest) (Just model)
+bestRefinements model = iterateMaybe refineBest model
 
 --
 -- Some features
