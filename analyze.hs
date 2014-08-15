@@ -107,6 +107,19 @@ sizeClsWt :: Fractional c => Int -> ClassWeight a c
 sizeClsWt samplesz pop samp _ =
     length samp // (length pop * samplesz)
 
+fitNormalClsWt :: Floating c => (a->c) -> ClassWeight a c
+fitNormalClsWt f pop samp x = sampwt x / popwt x
+    where popwt = fitNormal (map f pop) . f
+          sampwt = fitNormal (map f samp) . f
+
+compound :: Num c => ClassWeight a c -> ClassWeight a c -> ClassWeight a c
+compound f g pop samp x = (f pop samp x) * (g pop samp x)
+
+classWt :: Floating c => Model a -> (a->c) -> ClassWeight a c
+classWt model logfreq =
+    compound (sizeClsWt $ sampleSize model)
+             (fitNormalClsWt logfreq)
+
 type Model a = Tree (Feature a Bool) (Class a)
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
@@ -124,38 +137,35 @@ sample = foldMap (\ (_,ys,_) -> ys)
 sampleSize :: Model a -> Int
 sampleSize = length . sample
 
-weight :: Fractional c => Model a -> a -> c
-weight model x =
-    sizeClsWt (sampleSize model) pop samp x
+weight :: Floating c => Model a -> (a->c) -> a -> c
+weight model logfreq x = classWt model logfreq pop samp x
     where (pop,samp,_) = featureLookup x model
 
-weights :: Fractional c => Model a -> [(a,c)]
-weights model = fold $ fmap popWt model
-    where popWt (pop,samp,_) = let clswt = sizeClsWt samplesz pop samp
+weights :: Floating c => Model a -> (a->c) -> [(a,c)]
+weights model logfreq = fold $ fmap popWt model
+    where popWt (pop,samp,_) = let clswt = classWt model logfreq pop samp
                                in zip pop $ map clswt pop
-          samplesz = sampleSize model
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
 
-hPutWeights :: Handle -> Model String -> IO ()
-hPutWeights hout model = do
-    mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model
+hPutWeights :: Handle -> Model String -> (String->Float) -> IO ()
+hPutWeights hout model logfreq = do
+    mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model logfreq
 
 --
 -- Refining a Model to increase the likelihood of its sample
 --
 
-sampleLogLikelihood :: Floating c => Model a -> c
-sampleLogLikelihood model =
+sampleLogLikelihood :: Floating c => Model a -> (a->c) -> c
+sampleLogLikelihood model logfreq =
     sum $ do
         (pop,samp,_) <- Tree.toList model
-        let wt = sizeClsWt samplesz pop samp
+        let wt = classWt model logfreq pop samp
         map (log . wt) samp
-    where samplesz = sampleSize model
 
-logLikelihood :: Floating c => Model a -> [a] -> c
-logLikelihood model xs = sum $ map (log.(weight model)) xs
+logLikelihood :: Floating c => Model a -> (a->c) -> [a] -> c
+logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
 
 classRefinements :: Class a -> [Model a]
 classRefinements (pop, samp, features) =
@@ -212,6 +222,8 @@ main = do
         $ lineSet chosenwordsfile
     feats <- forM setfiles
         (\path -> fmap (fromSet path) (lineSet path))
+    logfreq <- wordNumMap logfreqfile
+    let logfreqf = flip (M.findWithDefault (-1/0)) logfreq
 
     let (heldback,trainingset) =
             partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
@@ -219,12 +231,12 @@ main = do
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
                 ( fmap (\ (pop,samp,feats) -> (length pop, length samp, length feats)) model
-                , sampleLogLikelihood model
+                , sampleLogLikelihood model logfreqf
                 , xval
                 )
             return model)
         $ increasingPrefix (compare `on` snd)
-        $ map (\model -> (model, logLikelihood model heldback))
-        $ bestRefinements sampleLogLikelihood
+        $ map (\model -> (model, logLikelihood model logfreqf heldback))
+        $ bestRefinements (flip sampleLogLikelihood logfreqf)
         $ nullModel (S.toList allwordsSet) trainingset feats
-    hPutWeights stdout bestmodel
+    hPutWeights stdout bestmodel logfreqf
