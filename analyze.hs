@@ -2,7 +2,7 @@ module Main where
 
 import Control.Applicative
 import Control.Monad
-import Data.Foldable (foldMap)
+import Data.Foldable (foldMap, fold)
 import Data.Function
 import Data.List (partition, sort, maximumBy)
 import Data.Set (Set, member)
@@ -95,7 +95,11 @@ weight model x =
     where (pop,samp) = applyboth length $ featureLookup x model
 
 weights :: Fractional c => Model a -> [(a,c)]
-weights model = [ (x, weight model x) | x <- population model ]
+weights model = fold $ fmap popAndWt model
+    where popAndWt (pop,samp) =
+            zip pop
+                (repeat $ length samp // (length pop * totsamplesz))
+          totsamplesz = length $ sample model
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
