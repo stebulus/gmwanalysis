@@ -170,10 +170,7 @@ lineSet path = withFile path ReadMode hLineSet
 --
 
 main = do
-    args <- getArgs
-    let allwordsfile = args!!0
-    let chosenwordsfile = args!!1
-    let setfiles = drop 2 args
+    allwordsfile : chosenwordsfile : logfreqfile : setfiles <- getArgs
 
     allwordsSet <- lineSet allwordsfile
     chosenwords <- fmap (`S.intersection` allwordsSet)

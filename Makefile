@@ -48,5 +48,5 @@ wikt/macro-patterns.mk: wikt/macro-patterns
 
 analyze : analyze.hs Tree.hs
 	ghc -O2 -W $<
-test-weights-% : analyze twl training-set-% $(SETS)
-	/usr/bin/time ./analyze twl training-set-$* $(SETS) >$@
+test-weights-% : analyze twl training-set-% logfreq $(SETS)
+	/usr/bin/time ./analyze twl training-set-$* logfreq $(SETS) >$@
