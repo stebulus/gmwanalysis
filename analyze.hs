@@ -147,13 +147,13 @@ classRefinements (pop, samp, features) =
 refinements :: Model a -> [Model a]
 refinements model = splicers model >>= ($ classRefinements)
 
-refineBest :: Model a -> Maybe (Model a)
-refineBest model = case refinements model of
+refineBest :: Ord c => (Model a -> c) -> Model a -> Maybe (Model a)
+refineBest quality model = case refinements model of
         [] -> Nothing
-        xs -> Just $ maximumBy (compare `on` sampleLogLikelihood) xs
+        xs -> Just $ maximumBy (compare `on` quality) xs
 
-bestRefinements :: Model a -> [Model a]
-bestRefinements model = iterateMaybe refineBest model
+bestRefinements :: Ord c => (Model a -> c) -> Model a -> [Model a]
+bestRefinements quality model = iterateMaybe (refineBest quality) model
 
 --
 -- Construction of features
@@ -203,6 +203,6 @@ main = do
             return model)
         $ increasingPrefix (compare `on` snd)
         $ map (\model -> (model, logLikelihood model heldback))
-        $ bestRefinements
+        $ bestRefinements sampleLogLikelihood
         $ nullModel (S.toList allwordsSet) trainingset feats
     hPutWeights stdout bestmodel
