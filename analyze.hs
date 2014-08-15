@@ -154,7 +154,7 @@ bestRefinements :: Model a -> [Model a]
 bestRefinements model = iterateMaybe refineBest model
 
 --
--- Some features
+-- Construction of features
 --
 
 fromSet :: Ord a => String -> Set a -> Feature a Bool
