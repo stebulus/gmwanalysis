@@ -170,7 +170,7 @@ regexFeatures regexes texts =
     where res = zip regexes $ map mkRegex regexes
 
 --
--- Testing performance on a smallish example from twl and words
+-- Testing performance on twl and words
 --
 
 main = do
