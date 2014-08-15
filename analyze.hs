@@ -171,10 +171,11 @@ lineSet path = withFile path ReadMode hLineSet
 
 main = do
     args <- getArgs
-    let chosenwordsfile = head args
-    let setfiles = tail args
+    let allwordsfile = args!!0
+    let chosenwordsfile = args!!1
+    let setfiles = drop 2 args
 
-    allwordsSet <- lineSet "twl"
+    allwordsSet <- lineSet allwordsfile
     chosenwords <- fmap (`S.intersection` allwordsSet)
         $ lineSet chosenwordsfile
     feats <- forM setfiles
