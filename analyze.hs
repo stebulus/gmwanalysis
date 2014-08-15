@@ -5,6 +5,8 @@ import Control.Monad
 import Data.Foldable (foldMap, fold, sum)
 import Data.Function
 import Data.List (partition, sort, maximumBy)
+import Data.Map (Map)
+import qualified Data.Map as M
 import Data.Maybe
 import Data.Set (Set, member)
 import qualified Data.Set as S
@@ -164,6 +166,17 @@ hLineSet :: Handle -> IO (Set String)
 hLineSet = foldLines (flip S.insert) S.empty
 lineSet :: FilePath -> IO (Set String)
 lineSet path = withFile path ReadMode hLineSet
+
+--
+-- Input of word-float data
+--
+
+hWordNumMap :: Handle -> IO (Map String Float)
+hWordNumMap = foldLines parse M.empty
+    where parse map line = let [a,b] = words line
+                           in M.insert a (read b) map
+wordNumMap :: FilePath -> IO (Map String Float)
+wordNumMap path = withFile path ReadMode hWordNumMap
 
 --
 -- Train and emit a model for the files specified on the command line
