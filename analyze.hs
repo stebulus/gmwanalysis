@@ -169,7 +169,7 @@ main = do
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
-                ( fmap (\_ -> ()) model
+                ( fmap (applyboth length) model
                 , sampleLogLikelihood model
                 , xval
                 )
