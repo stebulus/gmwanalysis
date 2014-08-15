@@ -74,12 +74,6 @@ featureLookup = Tree.lookup (\feat x -> (func feat) x)
 nullModel :: [a] -> [a] -> Model a
 nullModel xs ys = Leaf (xs,ys)
 
-refine :: Model a -> Feature a Bool -> Model a
-refine model f = do
-    popsamp <- model
-    let popsamp2 = applyboth (swap . partition (func f)) popsamp
-    branch f (applyboth fst popsamp2, applyboth snd popsamp2)
-
 population :: Model a -> [a]
 population = foldMap fst
 
@@ -126,10 +120,20 @@ sampleLogLikelihood model =
 logLikelihood :: Floating c => Model a -> [a] -> c
 logLikelihood model xs = sum $ map (log.(weight model)) xs
 
+refineTuple :: Feature a Bool -> ([a],[a]) -> Model a
+refineTuple feat popsamp =
+    branch feat (applyboth fst popsamp2, applyboth snd popsamp2)
+    where popsamp2 = applyboth (swap . partition (func feat)) popsamp
+
+refiners :: Model a -> [Feature a Bool -> Model a]
+refiners model = map (. refineTuple) (splicers model)
+
 refineBest :: (Model a,[Feature a Bool]) -> (Model a,[Feature a Bool])
 refineBest (model, features) =
     maximumBy (compare `on` (sampleLogLikelihood.fst))
-              [(refine model f, fs) | (f,fs) <- picks features]
+              [ (ref f, fs)
+              | (f,fs) <- picks features
+              , ref <- refiners model ]
 
 refinements :: Model a -> [Feature a Bool] -> [Model a]
 refinements model features =
