@@ -172,7 +172,7 @@ refinements model features =
     $ iterate refineBest (model, features)
 
 --
--- Some features
+-- Construction of features
 --
 
 fromSet :: Ord a => String -> Set a -> Feature a Bool
