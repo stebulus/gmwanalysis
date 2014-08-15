@@ -25,11 +25,11 @@ ngram/googlebooks-eng-all-1gram-20120701-%.gz:
 
 intlogfreq: freq
 	awk '{print $$1, int(log($$2))}' $< >$@
-logfreq/%.set: intlogfreq
+logfreq/le%.set: intlogfreq
 	awk '$$2 <= $* {print $$1}' $< >$@
 logfreq.mk: intlogfreq
 	seq $$(awk 'NR==1 {m=M=$$2} $$2<m {m=$$2} $$2>M {M=$$2} END {print m, M}' $<) \
-	| sed -e 's,^,SETS += logfreq/,' -e 's,$$,.set,' >$@
+	| sed -e 's,^,SETS += logfreq/le,' -e 's,$$,.set,' >$@
 include logfreq.mk
 
 wikt/enwikt.xml.bz2:
