@@ -4,7 +4,7 @@ import Prelude hiding (sum)
 import Control.Monad
 import Data.Foldable (foldMap, fold, sum)
 import Data.Function
-import Data.List (partition, sort, maximumBy)
+import Data.List (partition, sort, maximumBy, foldl')
 import Data.Map (Map)
 import qualified Data.Map as M
 import Data.Maybe
@@ -69,6 +69,26 @@ iterateMaybe f x =
     map fromJust
     $ takeWhile isJust
     $ iterate (>>= f) (Just x)
+
+--
+-- Statistics
+--
+
+meanAndVar :: Fractional a => [a] -> (a,a)
+meanAndVar xs = (mean, meansq-mean*mean)
+    where (ilen,sum,sumsq) =
+              foldl' (\ (len,sum,sumsq) x -> (len+1, sum + x, sumsq + x*x))
+                     (0,0,0)
+                     xs
+          len = fromIntegral ilen
+          mean = sum/len
+          meansq = sumsq/len
+
+normal :: Floating a => a -> a -> a -> a
+normal mean var = (\x -> exp(-(x-mean)^2/(2*var)) / (sqrt (2*pi*var)))
+
+fitNormal :: Floating a => [a] -> a -> a
+fitNormal xs = normal mean var where (mean,var) = meanAndVar xs
 
 --
 -- Model: a population with a probability distribution which matches
