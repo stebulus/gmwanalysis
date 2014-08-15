@@ -14,6 +14,10 @@ import System.IO
 import Text.Printf
 import Tree
 
+--
+-- Generally handy functions
+--
+
 infix 7 //  -- same as (/)
 (//) :: (Integral a, Fractional b) => a -> a -> b
 (//) = (/) `on` fromIntegral
