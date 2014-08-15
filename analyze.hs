@@ -5,6 +5,7 @@ import Control.Monad
 import Data.Foldable (foldMap, fold, sum)
 import Data.Function
 import Data.List (partition, sort, maximumBy)
+import Data.Maybe
 import Data.Set (Set, member)
 import qualified Data.Set as S
 import Data.Tuple
@@ -66,38 +67,38 @@ data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
 
-type Class a = ([a],[a])
+type Class a = ([a],[a],[Feature a Bool])
 
 type Model a = Tree (Feature a Bool) (Class a)
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
 
-nullModel :: [a] -> [a] -> Model a
-nullModel xs ys = Leaf (xs,ys)
+nullModel :: [a] -> [a] -> [Feature a Bool] -> Model a
+nullModel xs ys fs = Leaf (xs,ys,fs)
 
 population :: Model a -> [a]
-population = foldMap fst
+population = foldMap (\ (xs,_,_) -> xs)
 
 sample :: Model a -> [a]
-sample = foldMap snd
+sample = foldMap (\ (_,ys,_) -> ys)
 
 sampleSize :: Model a -> Int
 sampleSize = length . sample
 
 weight :: Fractional c => Model a -> a -> c
 weight model x =
-    samp // (pop * sampleSize model)
-    where (pop,samp) = applyboth length $ featureLookup x model
+    length samp // (length pop * sampleSize model)
+    where (pop,samp,_) = featureLookup x model
 
 addWeights :: Fractional c => Model a -> Tree (Feature a Bool) (Class a,c)
 addWeights model = fmap addWt model
-    where addWt cl@(pop,samp) = (cl, length samp // (length pop * totsamplesz))
+    where addWt cl@(pop,samp,_) = (cl, length samp // (length pop * totsamplesz))
           totsamplesz = length $ sample model
 
 weights :: Fractional c => Model a -> [(a,c)]
 weights model = fold $ fmap popWt $ addWeights model
-    where popWt ((pop,_),wt) = zip pop (repeat wt)
+    where popWt ((pop,_,_),wt) = zip pop (repeat wt)
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
@@ -113,7 +114,7 @@ hPutWeights hout model = do
 sampleLogLikelihood :: Floating c => Model a -> c
 sampleLogLikelihood model =
     sum
-    $ fmap (\ ((_,samp),wt) -> let len = length samp
+    $ fmap (\ ((_,samp,_),wt) -> let len = length samp
                                in if len == 0
                                     then 0
                                     else fromIntegral len * log wt)
@@ -122,26 +123,28 @@ sampleLogLikelihood model =
 logLikelihood :: Floating c => Model a -> [a] -> c
 logLikelihood model xs = sum $ map (log.(weight model)) xs
 
-refineTuple :: Feature a Bool -> ([a],[a]) -> Model a
-refineTuple feat popsamp =
-    branch feat (applyboth fst popsamp2, applyboth snd popsamp2)
-    where popsamp2 = applyboth (swap . partition (func feat)) popsamp
+classRefinements :: Class a -> [Model a]
+classRefinements (pop, samp, features) =
+    [ branch feat ((popt,sampt,feats),(popf,sampf,feats))
+    | (feat, feats) <- picks features
+    , let (popt,popf) = split feat pop
+    , let (sampt,sampf) = split feat samp
+    ]
+    where split feat = swap . partition (func feat)
 
-refiners :: Model a -> [Feature a Bool -> Model a]
-refiners model = map (. refineTuple) (splicers model)
+refinements :: Model a -> [Model a]
+refinements model = splicers model >>= ($ classRefinements)
 
-refineBest :: (Model a,[Feature a Bool]) -> (Model a,[Feature a Bool])
-refineBest (model, features) =
-    maximumBy (compare `on` (sampleLogLikelihood.fst))
-              [ (ref f, fs)
-              | (f,fs) <- picks features
-              , ref <- refiners model ]
+refineBest :: Model a -> Maybe (Model a)
+refineBest model = case refinements model of
+        [] -> Nothing
+        xs -> Just $ maximumBy (compare `on` sampleLogLikelihood) xs
 
-refinements :: Model a -> [Feature a Bool] -> [Model a]
-refinements model features =
-    map fst
-    $ takeWhile (not . null . snd)
-    $ iterate refineBest (model, features)
+bestRefinements :: Model a -> [Model a]
+bestRefinements model =
+    map fromJust
+    $ takeWhile isJust
+    $ iterate (>>= refineBest) (Just model)
 
 --
 -- Some features
@@ -175,12 +178,13 @@ main = do
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
-                ( fmap (applyboth length) model
+                ( fmap (\ (pop,samp,feats) -> (length pop, length samp, length feats)) model
                 , sampleLogLikelihood model
                 , xval
                 )
             return model)
         $ increasingPrefix (compare `on` snd)
         $ map (\model -> (model, logLikelihood model heldback))
-        $ refinements (nullModel (S.toList allwordsSet) trainingset) feats
+        $ bestRefinements
+        $ nullModel (S.toList allwordsSet) trainingset feats
     hPutWeights stdout bestmodel

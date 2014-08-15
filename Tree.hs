@@ -29,11 +29,11 @@ leaves = foldMap (\x -> [x])
 branch :: a -> (b,b) -> Tree a b
 branch x (l,r) = Branch x (Leaf l) (Leaf r)
 
-splicers :: Tree a b -> [(b -> Tree a b) -> Tree a b]
+splicers :: Tree a b -> [(b -> [Tree a b]) -> [Tree a b]]
 splicers (Leaf y) = [($y)]
 splicers (Branch x l r) =
-    map ((\t -> Branch x t r) .) (splicers l)
-    ++ map ((\t -> Branch x l t) .) (splicers r)
+    map (map (\t -> Branch x t r) .) (splicers l)
+    ++ map (map (\t -> Branch x l t) .) (splicers r)
 
 lookup :: (a->c->Bool) -> c -> Tree a b -> b
 lookup _ _ (Leaf y) = y
