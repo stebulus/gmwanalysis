@@ -94,7 +94,7 @@ weight model x =
 addWeights :: Fractional c => Model a -> Tree (Feature a Bool) (Class a,c)
 addWeights model = fmap addWt model
     where addWt cl@(pop,samp,_) = (cl, length samp // (length pop * totsamplesz))
-          totsamplesz = length $ sample model
+          totsamplesz = sampleSize model
 
 weights :: Fractional c => Model a -> [(a,c)]
 weights model = fold $ fmap popWt $ addWeights model
