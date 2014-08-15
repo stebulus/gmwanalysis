@@ -66,7 +66,9 @@ data Feature a b = Feature { tag :: String , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ tag f ++ "\""
 
-type Model a = Tree (Feature a Bool) ([a],[a])
+type Class a = ([a],[a])
+
+type Model a = Tree (Feature a Bool) (Class a)
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
@@ -88,14 +90,14 @@ weight model x =
     samp // (pop * sampleSize model)
     where (pop,samp) = applyboth length $ featureLookup x model
 
-addWeights :: Fractional c => Model a -> Tree (Feature a Bool) ([a],[a],c)
+addWeights :: Fractional c => Model a -> Tree (Feature a Bool) (Class a,c)
 addWeights model = fmap addWt model
-    where addWt (pop,samp) = (pop, samp, length samp // (length pop * totsamplesz))
+    where addWt cl@(pop,samp) = (cl, length samp // (length pop * totsamplesz))
           totsamplesz = length $ sample model
 
 weights :: Fractional c => Model a -> [(a,c)]
 weights model = fold $ fmap popWt $ addWeights model
-    where popWt (pop,_,wt) = zip pop (repeat wt)
+    where popWt ((pop,_),wt) = zip pop (repeat wt)
 
 showWeight :: (String, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
@@ -111,10 +113,10 @@ hPutWeights hout model = do
 sampleLogLikelihood :: Floating c => Model a -> c
 sampleLogLikelihood model =
     sum
-    $ fmap (\ (_,samp,wt) -> let len = length samp
-                             in if len == 0
-                                  then 0
-                                  else fromIntegral len * log wt)
+    $ fmap (\ ((_,samp),wt) -> let len = length samp
+                               in if len == 0
+                                    then 0
+                                    else fromIntegral len * log wt)
     $ addWeights model
 
 logLikelihood :: Floating c => Model a -> [a] -> c
