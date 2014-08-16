@@ -223,13 +223,15 @@ wordNumMap path = withFile path ReadMode hWordNumMap
 main = do
     allwordsfile : chosenwordsfile : logfreqfile : setfiles <- getArgs
 
-    allwordsSet <- fmap (S.fromList . take 2000 . S.toList) $ lineSet allwordsfile
+    logfreq <- wordNumMap logfreqfile
+    allwordsSet <- fmap (S.fromList . take 2000 . S.toList)
+        $ fmap (`S.intersection` (M.keysSet logfreq))
+        $ lineSet allwordsfile
     chosenwords <- fmap (`S.intersection` allwordsSet)
         $ lineSet chosenwordsfile
     feats <- forM setfiles
         (\path -> fmap (fromSet $ pack path) (lineSet path))
-    logfreq <- wordNumMap logfreqfile
-    let logfreqf = flip (M.findWithDefault (-1/0)) logfreq
+    let logfreqf = fromJust . flip M.lookup logfreq
 
     let (heldback,trainingset) =
             partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
