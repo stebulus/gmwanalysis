@@ -67,9 +67,6 @@ iterateMaybe f x =
     $ takeWhile isJust
     $ iterate (>>= f) (Just x)
 
-tuple3' :: a -> b -> c -> (a,b,c)
-tuple3' !x !y !z = (x,y,z)
-
 withValue :: Ord a => Map a b -> [a] -> [(a,b)]
 withValue m = map (applysnd fromJust)
     . filter (isJust . snd)
@@ -79,12 +76,16 @@ withValue m = map (applysnd fromJust)
 -- Statistics
 --
 
-meanAndVar :: Fractional a => [a] -> (a,a)
+data MeanAndVarAcc = MeanAndVarAcc {-# UNPACK #-} !Int
+                                   {-# UNPACK #-} !Float
+                                   {-# UNPACK #-} !Float
+
+meanAndVar :: [Float] -> (Float,Float)
 meanAndVar xs = (mean, meansq-mean*mean)
-    where (ilen,sum,sumsq) =
-              foldl' (\ (len,sum,sumsq) x ->
-                        tuple3' (len+1) (sum+x) (sumsq+x*x))
-                     (0,0,0)
+    where MeanAndVarAcc ilen sum sumsq =
+              foldl' (\ (MeanAndVarAcc len sum sumsq) x ->
+                        MeanAndVarAcc (len+1) (sum+x) (sumsq+x*x))
+                     (MeanAndVarAcc 0 0 0)
                      xs
           len = fromIntegral ilen
           mean = sum/len
@@ -93,7 +94,7 @@ meanAndVar xs = (mean, meansq-mean*mean)
 normal :: Floating a => a -> a -> a -> a
 normal mean var = (\x -> exp(-(x-mean)^2/(2*var)) / (sqrt (2*pi*var)))
 
-fitNormal :: Floating a => [a] -> a -> a
+fitNormal :: [Float] -> Float -> Float
 fitNormal xs = normal mean var where (mean,var) = meanAndVar xs
 
 --
@@ -113,7 +114,7 @@ sizeClsWt :: Fractional c => Int -> ClassWeight a c
 sizeClsWt samplesz pop samp _ =
     length samp // (length pop * samplesz)
 
-fitNormalClsWt :: Floating c => (a->c) -> ClassWeight a c
+fitNormalClsWt :: (a->Float) -> ClassWeight a Float
 fitNormalClsWt f pop samp x = sampwt x / popwt x
     where popwt = fitNormal (map f pop) . f
           sampwt = fitNormal (map f samp) . f
@@ -121,7 +122,7 @@ fitNormalClsWt f pop samp x = sampwt x / popwt x
 compound :: Num c => ClassWeight a c -> ClassWeight a c -> ClassWeight a c
 compound f g pop samp x = (f pop samp x) * (g pop samp x)
 
-classWt :: Floating c => Model a -> (a->c) -> ClassWeight a c
+classWt :: Model a -> (a->Float) -> ClassWeight a Float
 classWt model logfreq =
     compound (sizeClsWt $ sampleSize model)
              (fitNormalClsWt logfreq)
@@ -143,11 +144,11 @@ sample = foldMap (\ (_,ys,_) -> ys)
 sampleSize :: Model a -> Int
 sampleSize = length . sample
 
-weight :: Floating c => Model a -> (a->c) -> a -> c
+weight :: Model a -> (a->Float) -> a -> Float
 weight model logfreq x = classWt model logfreq pop samp x
     where (pop,samp,_) = featureLookup x model
 
-weights :: Floating c => Model a -> (a->c) -> [(a,c)]
+weights :: Model a -> (a->Float) -> [(a,Float)]
 weights model logfreq = fold $ fmap popWt model
     where popWt (pop,samp,_) = let clswt = classWt model logfreq pop samp
                                in zip pop $ map clswt pop
@@ -167,14 +168,14 @@ hPutWeights hout model logfreq = do
 -- Refining a Model to increase the likelihood of its sample
 --
 
-sampleLogLikelihood :: Floating c => Model a -> (a->c) -> c
+sampleLogLikelihood :: Model a -> (a->Float) -> Float
 sampleLogLikelihood model logfreq =
     sum $ do
         (pop,samp,_) <- Tree.toList model
         let wt = classWt model logfreq pop samp
         map (log . wt) samp
 
-logLikelihood :: Floating c => Model a -> (a->c) -> [a] -> c
+logLikelihood :: Model a -> (a->Float) -> [a] -> Float
 logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
 
 classRefinements :: Class a -> [Model a]
