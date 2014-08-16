@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import Prelude hiding (sum)
@@ -10,6 +12,9 @@ import qualified Data.Map as M
 import Data.Maybe
 import Data.Set (Set, member)
 import qualified Data.Set as S
+import Data.Text (Text, pack, unpack)
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
 import Data.Tuple
 import System.Environment
 import System.IO
@@ -55,15 +60,6 @@ increasingPrefix cmp (x:y:rest) =
         GT -> [])
 increasingPrefix _ xs = xs
 
-foldLines :: (a -> String -> a) -> a -> Handle -> IO a
-foldLines f init h = seq init $ do    -- the seq here halves memory usage
-    eof <- hIsEOF h
-    if eof
-      then return init
-      else do
-        line <- hGetLine h
-        foldLines f (f init line) h
-
 iterateMaybe :: (a -> Maybe a) -> a -> [a]
 iterateMaybe f x =
     map fromJust
@@ -95,9 +91,9 @@ fitNormal xs = normal mean var where (mean,var) = meanAndVar xs
 -- a sample, as far as some features are concerned
 --
 
-data Feature a b = Feature { tag :: String , func :: a->b }
+data Feature a b = Feature { tag :: Text , func :: a->b }
 instance Show (Feature a b) where
-    show f = "f\"" ++ tag f ++ "\""
+    show f = "f\"" ++ unpack (tag f) ++ "\""
 
 type Class a = ([a],[a],[Feature a Bool])
 
@@ -146,10 +142,10 @@ weights model logfreq = fold $ fmap popWt model
     where popWt (pop,samp,_) = let clswt = classWt model logfreq pop samp
                                in zip pop $ map clswt pop
 
-showWeight :: (String, Float) -> String
-showWeight (word, weight) = printf "%s %.8f" word (10000*weight)
+showWeight :: (Text, Float) -> String
+showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
 
-hPutWeights :: Handle -> Model String -> (String->Float) -> IO ()
+hPutWeights :: Handle -> Model Text -> (Text->Float) -> IO ()
 hPutWeights hout model logfreq = do
     mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model logfreq
 
@@ -191,23 +187,28 @@ bestRefinements quality model = iterateMaybe (refineBest quality) model
 -- Construction of features
 --
 
-fromSet :: Ord a => String -> Set a -> Feature a Bool
+fromSet :: Ord a => Text -> Set a -> Feature a Bool
 fromSet tag set = Feature tag (`member` set)
 
-hLineSet :: Handle -> IO (Set String)
-hLineSet = foldLines (flip S.insert) S.empty
-lineSet :: FilePath -> IO (Set String)
+hLineSet :: Handle -> IO (Set Text)
+hLineSet h = do
+    txt <- TIO.hGetContents h
+    return $ foldl' (flip S.insert) S.empty $ T.lines txt
+lineSet :: FilePath -> IO (Set Text)
 lineSet path = withFile path ReadMode hLineSet
 
 --
 -- Input of word-float data
 --
 
-hWordNumMap :: Handle -> IO (Map String Float)
-hWordNumMap = foldLines parse M.empty
-    where parse map line = let [a,b] = words line
-                           in M.insert a (read b) map
-wordNumMap :: FilePath -> IO (Map String Float)
+hWordNumMap :: Handle -> IO (Map Text Float)
+hWordNumMap h = do
+    txt <- TIO.hGetContents h
+    return $ foldl' (\ map [k,v] -> M.insert k (read $ unpack v) map)
+                    M.empty
+           $ map T.words
+           $ T.lines txt
+wordNumMap :: FilePath -> IO (Map Text Float)
 wordNumMap path = withFile path ReadMode hWordNumMap
 
 --
@@ -217,11 +218,11 @@ wordNumMap path = withFile path ReadMode hWordNumMap
 main = do
     allwordsfile : chosenwordsfile : logfreqfile : setfiles <- getArgs
 
-    allwordsSet <- lineSet allwordsfile
+    allwordsSet <- fmap (S.fromList . take 2000 . S.toList) $ lineSet allwordsfile
     chosenwords <- fmap (`S.intersection` allwordsSet)
         $ lineSet chosenwordsfile
     feats <- forM setfiles
-        (\path -> fmap (fromSet path) (lineSet path))
+        (\path -> fmap (fromSet $ pack path) (lineSet path))
     logfreq <- wordNumMap logfreqfile
     let logfreqf = flip (M.findWithDefault (-1/0)) logfreq
 
