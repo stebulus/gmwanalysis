@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE BangPatterns #-}
 
 module Main where
 
@@ -66,6 +67,9 @@ iterateMaybe f x =
     $ takeWhile isJust
     $ iterate (>>= f) (Just x)
 
+tuple3' :: a -> b -> c -> (a,b,c)
+tuple3' !x !y !z = (x,y,z)
+
 --
 -- Statistics
 --
@@ -73,7 +77,8 @@ iterateMaybe f x =
 meanAndVar :: Fractional a => [a] -> (a,a)
 meanAndVar xs = (mean, meansq-mean*mean)
     where (ilen,sum,sumsq) =
-              foldl' (\ (len,sum,sumsq) x -> (len+1, sum + x, sumsq + x*x))
+              foldl' (\ (len,sum,sumsq) x ->
+                        tuple3' (len+1) (sum+x) (sumsq+x*x))
                      (0,0,0)
                      xs
           len = fromIntegral ilen
