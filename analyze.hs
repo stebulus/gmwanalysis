@@ -70,6 +70,11 @@ iterateMaybe f x =
 tuple3' :: a -> b -> c -> (a,b,c)
 tuple3' !x !y !z = (x,y,z)
 
+withValue :: Ord a => Map a b -> [a] -> [(a,b)]
+withValue m = map (applysnd fromJust)
+    . filter (isJust . snd)
+    . map (\x -> (x, M.lookup x m))
+
 --
 -- Statistics
 --
@@ -150,9 +155,13 @@ weights model logfreq = fold $ fmap popWt model
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
 
-hPutWeights :: Handle -> Model Text -> (Text->Float) -> IO ()
+hPutWeights :: Handle -> Model (Text,a) -> ((Text,a)->Float) -> IO ()
 hPutWeights hout model logfreq = do
-    mapM_ (hPutStrLn hout) $ map showWeight $ sort $ weights model logfreq
+    mapM_ (hPutStrLn hout)
+    $ map showWeight
+    $ sort
+    $ map (\ ((word,_),wt) -> (word,wt))
+    $ weights model logfreq
 
 --
 -- Refining a Model to increase the likelihood of its sample
@@ -216,6 +225,12 @@ hWordNumMap h = do
 wordNumMap :: FilePath -> IO (Map Text Float)
 wordNumMap path = withFile path ReadMode hWordNumMap
 
+linesWith :: Map Text b -> FilePath -> IO [(Text,b)]
+linesWith m path = withFile path ReadMode
+    (\h -> do
+        txt <- TIO.hGetContents h
+        return $ withValue m $ T.lines txt)
+
 --
 -- Train and emit a model for the files specified on the command line
 --
@@ -224,17 +239,19 @@ main = do
     allwordsfile : chosenwordsfile : logfreqfile : setfiles <- getArgs
 
     logfreq <- wordNumMap logfreqfile
-    allwordsSet <- fmap (S.fromList . take 2000 . S.toList)
-        $ fmap (`S.intersection` (M.keysSet logfreq))
-        $ lineSet allwordsfile
-    chosenwords <- fmap (`S.intersection` allwordsSet)
-        $ lineSet chosenwordsfile
+    allwords <- fmap (take 2000) $ linesWith logfreq allwordsfile
+    chosenwords <- fmap ( S.toList
+                        . (`S.intersection` (S.fromList allwords))
+                        . S.fromList
+                        )
+        $ linesWith logfreq chosenwordsfile
     feats <- forM setfiles
-        (\path -> fmap (fromSet $ pack path) (lineSet path))
-    let logfreqf = fromJust . flip M.lookup logfreq
+        (\path -> fmap (fromSet (pack path) . S.fromList)
+                       $ linesWith logfreq path)
+    let logfreqf = snd
 
     let (heldback,trainingset) =
-            partitionByIndex (\n -> n `mod` 3 == 0) (S.toList chosenwords)
+            partitionByIndex (\n -> n `mod` 3 == 0) chosenwords
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
@@ -246,5 +263,5 @@ main = do
         $ increasingPrefix (compare `on` snd)
         $ map (\model -> (model, logLikelihood model logfreqf heldback))
         $ bestRefinements (flip sampleLogLikelihood logfreqf)
-        $ nullModel (S.toList allwordsSet) trainingset feats
+        $ nullModel allwords trainingset feats
     hPutWeights stdout bestmodel logfreqf
