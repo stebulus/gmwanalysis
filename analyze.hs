@@ -142,14 +142,15 @@ sampleSize :: Model a -> Int
 sampleSize = sum . (map (length . sample)) . Tree.toList
 
 weight :: Model a -> (a->Float) -> a -> Float
-weight model logfreq x = classWt model logfreq pop samp x
-    where Class pop samp _ = featureLookup x model
+weight model logfreq x =
+    classWt model logfreq (population cls) (sample cls) x
+    where cls = featureLookup x model
 
 weights :: Model a -> (a->Float) -> [(a,Float)]
 weights model logfreq = fold $ fmap popWt model
-    where popWt (Class pop samp _) =
-            let clswt = classWt model logfreq pop samp
-            in zip pop $ map clswt pop
+    where popWt cls =
+            let clswt = classWt model logfreq (population cls) (sample cls)
+            in zip (population cls) $ map clswt (population cls)
 
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
@@ -169,19 +170,19 @@ hPutWeights hout model logfreq = do
 sampleLogLikelihood :: Model a -> (a->Float) -> Float
 sampleLogLikelihood model logfreq =
     sum $ do
-        Class pop samp _ <- Tree.toList model
-        let wt = classWt model logfreq pop samp
-        map (log . wt) samp
+        cls <- Tree.toList model
+        let wt = classWt model logfreq (population cls) (sample cls)
+        map (log . wt) (sample cls)
 
 logLikelihood :: Model a -> (a->Float) -> [a] -> Float
 logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
 
 classRefinements :: Class a -> [Model a]
-classRefinements (Class pop samp features) =
+classRefinements cls =
     [ branch feat (Class popt sampt feats, Class popf sampf feats)
-    | (feat, feats) <- picks features
-    , let (popt,popf) = split feat pop
-    , let (sampt,sampf) = split feat samp
+    | (feat, feats) <- picks (unusedFeatures cls)
+    , let (popt,popf) = split feat (population cls)
+    , let (sampt,sampf) = split feat (sample cls)
     ]
     where split feat = swap . partition (func feat)
 
@@ -254,8 +255,12 @@ main = do
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
-                ( fmap (\ (Class pop samp feats) ->
-                           (length pop, length samp, length feats))
+                ( fmap (\ cls ->
+                           ( length (population cls)
+                           , length (sample cls)
+                           , length (unusedFeatures cls)
+                           )
+                       )
                        model
                 , sampleLogLikelihood model logfreqf
                 , xval
