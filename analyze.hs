@@ -283,6 +283,7 @@ main = do
                        model
                 , sampleLogLikelihood model
                 , xval
+                , sum $ map snd $ weights model
                 )
             return model)
         $ increasingPrefix (compare `on` snd)
