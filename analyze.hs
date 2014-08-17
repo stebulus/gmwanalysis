@@ -95,13 +95,14 @@ normal :: Floating a => a -> a -> a -> a
 normal mean var = (\x -> exp(-(x-mean)^2/(2*var)) / (sqrt (2*pi*var)))
 
 --
--- Model: a population with a probability distribution which matches
--- a sample, as far as some features are concerned
+-- Words are classified by features; we assume that, within each
+-- class, the log frequencies of the words in the general population
+-- and of the words in the training set are distributed normally.
+-- Words are assigned weights so that the resulting distribution of log
+-- frequencies in the general population will match the distribution in
+-- the training set.  ClassWeightParams is a collection of statistics
+-- needed to describe that weight distribution.
 --
-
-data Feature a b = Feature { tag :: Text , func :: a->b }
-instance Show (Feature a b) where
-    show f = "f\"" ++ unpack (tag f) ++ "\""
 
 data ClassWeightParams = ClassWeightParams { totalWeight :: Float
                                            , populationMean :: Float
@@ -126,6 +127,15 @@ makeParams samplesz f pop samp =
                       }
     where (popmean,popvar) = meanAndVar (map f pop)
           (sampmean,sampvar) = meanAndVar (map f samp)
+
+--
+-- Model: a population with a probability distribution which matches
+-- a sample, as far as some features are concerned
+--
+
+data Feature a b = Feature { tag :: Text , func :: a->b }
+instance Show (Feature a b) where
+    show f = "f\"" ++ unpack (tag f) ++ "\""
 
 data Class a = Class { population :: [a]
                      , sample :: [a]
