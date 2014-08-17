@@ -39,6 +39,38 @@ wikt/reduce: wikt/reduce.hs
 wikt/etyls: wikt/reduced
 	grep -o "{{etyl|[^|]*|en}}" $< |sort |uniq -c |awk '$$1>=100 {print $$2}' |sed 's,[\\|.{}],\\&,g' >$@
 
+wordlists/%: wordlists/%.hs
+	ghc -W $<
+wordlists/%.set: wordlists/%.html wordlists/%
+	wordlists/$* $< >$@
+
+SETS += wordlists/gre.set
+wordlists/gre.set: wordlists/kaplan-gre.set wordlists/major-gre.set
+	cat $^ |sort -u >$@
+
+wordlists/kaplan-gre.html:
+	wget -O "$@" http://quizlet.com/216464/kaplan-gre-vocabulary-flash-cards/
+
+wordlists/major-gre-%-iso8859-1.html:
+	wget -O "$@" http://www.majortests.com/gre/wordlist_$*
+wordlists/major-gre-%.set: wordlists/major-gre-%.html wordlists/major
+	wordlists/major $< >$@
+MAJOR_GRE_ALL = $(foreach N,$(shell seq -f%02.0f 1 15),wordlists/major-gre-$N.set)
+wordlists/major-gre.set: $(MAJOR_GRE_ALL)
+	cat $^ >$@
+
+SETS += wordlists/major-sat.set
+wordlists/major-sat-%-iso8859-1.html:
+	wget -O "$@" http://www.majortests.com/sat/wordlist-$*
+wordlists/major-sat-%.set: wordlists/major-sat-%.html wordlists/major
+	wordlists/major $< >$@
+MAJOR_SAT_ALL = $(foreach N,$(shell seq -f%02.0f 1 10) $(shell seq -f%02.0f 16 25),wordlists/major-sat-$N.set)
+wordlists/major-sat.set: $(MAJOR_SAT_ALL)
+	cat $^ >$@
+
+wordlists/major-%.html: wordlists/major-%-iso8859-1.html
+	iconv -f ISO-8859-1 -t UTF-8 $< >$@
+
 include wikt/all-macro-patterns.mk
 wikt/all-macro-patterns.mk: wikt/all-macro-patterns
 	tr -dc 'a-zA-Z0-9\n' <$< |paste - $< \
