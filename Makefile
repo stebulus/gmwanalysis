@@ -48,6 +48,18 @@ wikt/all-macro-patterns.mk: wikt/all-macro-patterns
 wikt/all-macro-patterns: wikt/macro-patterns wikt/etyls
 	cat $^ >$@
 
+SETS += misc/dict-wotd.set
+DICT_WOTD_DATES = $(foreach M,$(shell seq -f%02.0f 5 12),1999-$M) \
+    $(foreach Y,$(shell seq 2000 2013),$(foreach M,$(shell seq -f%02.0f 1 12),$Y-$M))
+misc/dict-wotd.set: $(foreach D,$(DICT_WOTD_DATES),misc/dict-wotd-$D.set)
+	cat $^ >$@
+misc/dict-wotd-%.set: misc/dict-wotd-%.html misc/dict-wotd
+	misc/dict-wotd $< >$@
+misc/dict-wotd-%.html:
+	wget -O "$@" http://dictionary.reference.com/wordoftheday/archive/$$(echo $* |tr - /)
+misc/dict-wotd: misc/dict-wotd.hs
+	ghc $<
+
 analyze : analyze.hs Tree.hs
 	ghc -O2 -W $<
 test-weights-% : analyze twl training-set-% logfreq $(SETS)
