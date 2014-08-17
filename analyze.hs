@@ -104,7 +104,7 @@ normal mean var = (\x -> exp(-(x-mean)^2/(2*var)) / (sqrt (2*pi*var)))
 -- needed to describe that weight distribution.
 --
 
-data ClassWeightParams = ClassWeightParams { totalWeight :: Float
+data ClassWeightParams = ClassWeightParams { unitWeight :: Float
                                            , populationMean :: Float
                                            , populationVar :: Float
                                            , sampleMean :: Float
@@ -114,13 +114,13 @@ data ClassWeightParams = ClassWeightParams { totalWeight :: Float
 
 weightFromParams :: ClassWeightParams -> Float -> Float
 weightFromParams params logfreq =
-    totalWeight params * sampnwt logfreq / popnwt logfreq
+    unitWeight params * sampnwt logfreq / popnwt logfreq
     where popnwt = normal (populationMean params) (populationVar params)
           sampnwt = normal (sampleMean params) (sampleVar params)
 
 makeParams :: Int -> (a->Float) -> [a] -> [a] -> ClassWeightParams
 makeParams samplesz f pop samp =
-    ClassWeightParams { totalWeight = length samp // (length pop * samplesz)
+    ClassWeightParams { unitWeight = length samp // (length pop * samplesz)
                       , populationMean = popmean
                       , populationVar = popvar
                       , sampleMean = sampmean
