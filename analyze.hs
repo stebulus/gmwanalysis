@@ -94,9 +94,6 @@ meanAndVar xs = (mean, meansq-mean*mean)
 normal :: Floating a => a -> a -> a -> a
 normal mean var = (\x -> exp(-(x-mean)^2/(2*var)) / (sqrt (2*pi*var)))
 
-fitNormal :: [Float] -> Float -> Float
-fitNormal xs = normal mean var where (mean,var) = meanAndVar xs
-
 --
 -- Model: a population with a probability distribution which matches
 -- a sample, as far as some features are concerned
