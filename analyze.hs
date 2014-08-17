@@ -109,8 +109,9 @@ instance Show (Feature a b) where
 data Class a = Class { population :: [a]
                      , sample :: [a]
                      , unusedFeatures :: [Feature a Bool]
+                     , classWeight :: ClassWeight a Float
                      }
-makeClass :: [a] -> [a] -> [Feature a Bool] -> Class a
+makeClass :: [a] -> [a] -> [Feature a Bool] -> ClassWeight a Float -> Class a
 makeClass = Class
 
 type ClassWeight a c = [a] -> [a] -> a -> c
@@ -127,9 +128,9 @@ fitNormalClsWt f pop samp x = sampwt x / popwt x
 compound :: Num c => ClassWeight a c -> ClassWeight a c -> ClassWeight a c
 compound f g pop samp x = (f pop samp x) * (g pop samp x)
 
-classWt :: Model a -> (a->Float) -> ClassWeight a Float
-classWt model logfreq =
-    compound (sizeClsWt $ sampleSize model)
+classWt :: Int -> (a->Float) -> ClassWeight a Float
+classWt samplesz logfreq =
+    compound (sizeClsWt samplesz)
              (fitNormalClsWt logfreq)
 
 type Model a = Tree (Feature a Bool) (Class a)
@@ -137,51 +138,55 @@ type Model a = Tree (Feature a Bool) (Class a)
 featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
 
-nullModel :: [a] -> [a] -> [Feature a Bool] -> Model a
-nullModel xs ys fs = Leaf $ makeClass xs ys fs
+nullModel :: [a] -> [a] -> [Feature a Bool] -> (a->Float) -> Model a
+nullModel xs ys fs logfreq = Leaf
+    $ makeClass xs ys fs
+    $ classWt (length ys) logfreq
 
 sampleSize :: Model a -> Int
 sampleSize = sum . (map (length . sample)) . Tree.toList
 
-weight :: Model a -> (a->Float) -> a -> Float
-weight model logfreq x =
-    classWt model logfreq (population cls) (sample cls) x
+weight :: Model a -> a -> Float
+weight model x =
+    (classWeight cls) (population cls) (sample cls) x
     where cls = featureLookup x model
 
-weights :: Model a -> (a->Float) -> [(a,Float)]
-weights model logfreq = fold $ fmap popWt model
+weights :: Model a -> [(a,Float)]
+weights model = fold $ fmap popWt model
     where popWt cls =
-            let clswt = classWt model logfreq (population cls) (sample cls)
+            let clswt = (classWeight cls) (population cls) (sample cls)
             in zip (population cls) $ map clswt (population cls)
 
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
 
-hPutWeights :: Handle -> Model (Text,a) -> ((Text,a)->Float) -> IO ()
-hPutWeights hout model logfreq = do
+hPutWeights :: Handle -> Model (Text,a) -> IO ()
+hPutWeights hout model = do
     mapM_ (hPutStrLn hout)
     $ map showWeight
     $ sort
     $ map (\ ((word,_),wt) -> (word,wt))
-    $ weights model logfreq
+    $ weights model
 
 --
 -- Refining a Model to increase the likelihood of its sample
 --
 
-sampleLogLikelihood :: Model a -> (a->Float) -> Float
-sampleLogLikelihood model logfreq =
+sampleLogLikelihood :: Model a -> Float
+sampleLogLikelihood model =
     sum $ do
         cls <- Tree.toList model
-        let wt = classWt model logfreq (population cls) (sample cls)
+        let wt = (classWeight cls) (population cls) (sample cls)
         map (log . wt) (sample cls)
 
-logLikelihood :: Model a -> (a->Float) -> [a] -> Float
-logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
+logLikelihood :: Model a -> [a] -> Float
+logLikelihood model xs = sum $ map (log.(weight model)) xs
 
 classRefinements :: Class a -> [Model a]
 classRefinements cls =
-    [ branch feat (makeClass popt sampt feats, makeClass popf sampf feats)
+    [ branch feat ( makeClass popt sampt feats (classWeight cls)
+                  , makeClass popf sampf feats (classWeight cls)
+                  )
     | (feat, feats) <- picks (unusedFeatures cls)
     , let (popt,popf) = split feat (population cls)
     , let (sampt,sampf) = split feat (sample cls)
@@ -264,12 +269,12 @@ main = do
                            )
                        )
                        model
-                , sampleLogLikelihood model logfreqf
+                , sampleLogLikelihood model
                 , xval
                 )
             return model)
         $ increasingPrefix (compare `on` snd)
-        $ map (\model -> (model, logLikelihood model logfreqf heldback))
-        $ bestRefinements (flip sampleLogLikelihood logfreqf)
-        $ nullModel allwords trainingset feats
-    hPutWeights stdout bestmodel logfreqf
+        $ map (\model -> (model, logLikelihood model heldback))
+        $ bestRefinements sampleLogLikelihood
+        $ nullModel allwords trainingset feats logfreqf
+    hPutWeights stdout bestmodel
