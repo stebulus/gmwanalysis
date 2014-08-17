@@ -110,9 +110,12 @@ data Class a = Class { population :: [a]
                      , sample :: [a]
                      , unusedFeatures :: [Feature a Bool]
                      , classWeight :: ClassWeight a Float
+                     , sampleLL :: Float
                      }
 makeClass :: [a] -> [a] -> [Feature a Bool] -> ClassWeight a Float -> Class a
-makeClass = Class
+makeClass pop samp feats clswt =
+    Class pop samp feats clswt
+    $ sum $ map (log . clswt pop samp) samp
 
 type ClassWeight a c = [a] -> [a] -> a -> c
 
@@ -173,11 +176,7 @@ hPutWeights hout model = do
 --
 
 sampleLogLikelihood :: Model a -> Float
-sampleLogLikelihood model =
-    sum $ do
-        cls <- Tree.toList model
-        let wt = (classWeight cls) (population cls) (sample cls)
-        map (log . wt) (sample cls)
+sampleLogLikelihood model = sum $ map sampleLL $ Tree.toList model
 
 logLikelihood :: Model a -> [a] -> Float
 logLikelihood model xs = sum $ map (log.(weight model)) xs
