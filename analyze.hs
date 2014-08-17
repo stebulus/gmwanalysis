@@ -106,6 +106,30 @@ data Feature a b = Feature { tag :: Text , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ unpack (tag f) ++ "\""
 
+data ClassWeightParams = ClassWeightParams { totalWeight :: Float
+                                           , populationMean :: Float
+                                           , populationVar :: Float
+                                           , sampleMean :: Float
+                                           , sampleVar :: Float
+                                           }
+
+weightFromParams :: ClassWeightParams -> Float -> Float
+weightFromParams params logfreq =
+    totalWeight params * sampnwt logfreq / popnwt logfreq
+    where popnwt = normal (populationMean params) (populationVar params)
+          sampnwt = normal (sampleMean params) (sampleVar params)
+
+makeParams :: Int -> (a->Float) -> [a] -> [a] -> ClassWeightParams
+makeParams samplesz f pop samp =
+    ClassWeightParams { totalWeight = length samp // (length pop * samplesz)
+                      , populationMean = popmean
+                      , populationVar = popvar
+                      , sampleMean = sampmean
+                      , sampleVar = sampvar
+                      }
+    where (popmean,popvar) = meanAndVar (map f pop)
+          (sampmean,sampvar) = meanAndVar (map f samp)
+
 data Class a = Class { population :: [a]
                      , sample :: [a]
                      , unusedFeatures :: [Feature a Bool]
@@ -119,22 +143,9 @@ makeClass pop samp feats clswt =
 
 type ClassWeight a c = [a] -> [a] -> a -> c
 
-sizeClsWt :: Fractional c => Int -> ClassWeight a c
-sizeClsWt samplesz pop samp _ =
-    length samp // (length pop * samplesz)
-
-fitNormalClsWt :: (a->Float) -> ClassWeight a Float
-fitNormalClsWt f pop samp x = sampwt x / popwt x
-    where popwt = fitNormal (map f pop) . f
-          sampwt = fitNormal (map f samp) . f
-
-compound :: Num c => ClassWeight a c -> ClassWeight a c -> ClassWeight a c
-compound f g pop samp x = (f pop samp x) * (g pop samp x)
-
 classWt :: Int -> (a->Float) -> ClassWeight a Float
-classWt samplesz logfreq =
-    compound (sizeClsWt samplesz)
-             (fitNormalClsWt logfreq)
+classWt samplesz logfreq pop samp x =
+    weightFromParams (makeParams samplesz logfreq pop samp) (logfreq x)
 
 type Model a = Tree (Feature a Bool) (Class a)
 
@@ -145,9 +156,6 @@ nullModel :: [a] -> [a] -> [Feature a Bool] -> (a->Float) -> Model a
 nullModel xs ys fs logfreq = Leaf
     $ makeClass xs ys fs
     $ classWt (length ys) logfreq
-
-sampleSize :: Model a -> Int
-sampleSize = sum . (map (length . sample)) . Tree.toList
 
 weight :: Model a -> a -> Float
 weight model x =
