@@ -48,6 +48,13 @@ wikt/all-macro-patterns.mk: wikt/all-macro-patterns
 wikt/all-macro-patterns: wikt/macro-patterns wikt/etyls
 	cat $^ >$@
 
+misc/mw-wotd.html:
+	wget -O "$@" http://www.merriam-webster.com/word/archive.php
+misc/mw-wotd.set: misc/mw-wotd.html misc/mw-wotd
+	misc/mw-wotd $< >$@
+misc/mw-wotd: misc/mw-wotd.hs
+	ghc $<
+
 analyze : analyze.hs Tree.hs
 	ghc -O2 -W $<
 test-weights-% : analyze twl training-set-% logfreq $(SETS)
