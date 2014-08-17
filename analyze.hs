@@ -160,16 +160,16 @@ nullModel :: [a] -> [a] -> [Feature a Bool] -> (a->Float) -> Model a
 nullModel xs ys fs logfreq = Leaf
     $ makeClass xs ys fs (length ys) logfreq
 
+classWeight :: Class a -> a -> Float
+classWeight cls x = weightFromParams (clswtParams cls) (logfreqf cls x)
+
 weight :: Model a -> a -> Float
-weight model x =
-    weightFromParams (clswtParams cls) (logfreqf cls x)
-    where cls = featureLookup x model
+weight model x = classWeight (featureLookup x model) x
 
 weights :: Model a -> [(a,Float)]
 weights model = fold $ fmap popWt model
-    where popWt cls =
-            let wt = \x -> weightFromParams (clswtParams cls) (logfreqf cls x)
-            in zip (population cls) $ map wt (population cls)
+    where popWt cls = zip (population cls)
+                      $ map (classWeight cls) (population cls)
 
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
