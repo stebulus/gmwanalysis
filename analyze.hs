@@ -277,6 +277,7 @@ main = do
                            ( length (population cls)
                            , length (sample cls)
                            , length (unusedFeatures cls)
+                           , clswtParams cls
                            )
                        )
                        model
