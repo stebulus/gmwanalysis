@@ -257,7 +257,7 @@ main = do
     allwordsfile : chosenwordsfile : logfreqfile : setfiles <- getArgs
 
     logfreq <- wordNumMap logfreqfile
-    allwords <- fmap (take 2000) $ linesWith logfreq allwordsfile
+    allwords <- linesWith logfreq allwordsfile
     chosenwords <- fmap ( S.toList
                         . (`S.intersection` (S.fromList allwords))
                         . S.fromList
