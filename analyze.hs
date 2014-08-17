@@ -110,6 +110,7 @@ data ClassWeightParams = ClassWeightParams { totalWeight :: Float
                                            , sampleMean :: Float
                                            , sampleVar :: Float
                                            }
+                         deriving (Eq, Show)
 
 weightFromParams :: ClassWeightParams -> Float -> Float
 weightFromParams params logfreq =
