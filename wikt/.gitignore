@@ -5,4 +5,5 @@
 /reduced
 /etyls
 /*.set
-/macro-patterns.mk
+/all-macro-patterns
+/all-macro-patterns.mk

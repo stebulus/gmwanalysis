@@ -37,14 +37,16 @@ wikt/reduced: wikt/reduce wikt/enwikt.xml.bz2 twl
 wikt/reduce: wikt/reduce.hs
 	ghc -O $<
 wikt/etyls: wikt/reduced
-	grep -o "{{etyl|[^|]*|en}}" $< |sort |uniq -c |awk '$$1>=100 {print $$2}' >$@
+	grep -o "{{etyl|[^|]*|en}}" $< |sort |uniq -c |awk '$$1>=100 {print $$2}' |sed 's,[\\|.{}],\\&,g' >$@
 
-include wikt/macro-patterns.mk
-wikt/macro-patterns.mk: wikt/macro-patterns
+include wikt/all-macro-patterns.mk
+wikt/all-macro-patterns.mk: wikt/all-macro-patterns
 	tr -dc 'a-zA-Z0-9\n' <$< |paste - $< \
 	  |awk -F'\t' '{print "wikt/" $$1 ".set: wikt/reduced"; \
           print "\tegrep -e \"" $$2 "\" $$< |cut -d\\  -f1 >$$@"; \
 	  print "SETS += wikt/" $$1 ".set" }' >$@
+wikt/all-macro-patterns: wikt/macro-patterns wikt/etyls
+	cat $^ >$@
 
 analyze : analyze.hs Tree.hs
 	ghc -O2 -W $<
