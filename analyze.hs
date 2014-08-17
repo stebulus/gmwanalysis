@@ -132,20 +132,19 @@ makeParams samplesz f pop samp =
 
 data Class a = Class { population :: [a]
                      , sample :: [a]
+                     , totalSampleSize :: Int
+                     , logfreqf :: a->Float
                      , unusedFeatures :: [Feature a Bool]
-                     , classWeight :: ClassWeight a Float
+                     , clswtParams :: ClassWeightParams
                      , sampleLL :: Float
                      }
-makeClass :: [a] -> [a] -> [Feature a Bool] -> ClassWeight a Float -> Class a
-makeClass pop samp feats clswt =
-    Class pop samp feats clswt
-    $ sum $ map (log . clswt pop samp) samp
+makeClass :: [a] -> [a] -> [Feature a Bool] -> Int -> (a->Float) -> Class a
+makeClass pop samp feats samplesz logfreqf =
+    Class pop samp samplesz logfreqf feats params sampll
+    where params = makeParams samplesz logfreqf pop samp
+          sampll = sum $ map (log . weightFromParams params . logfreqf) samp
 
 type ClassWeight a c = [a] -> [a] -> a -> c
-
-classWt :: Int -> (a->Float) -> ClassWeight a Float
-classWt samplesz logfreq pop samp x =
-    weightFromParams (makeParams samplesz logfreq pop samp) (logfreq x)
 
 type Model a = Tree (Feature a Bool) (Class a)
 
@@ -154,19 +153,18 @@ featureLookup = Tree.lookup (\feat x -> (func feat) x)
 
 nullModel :: [a] -> [a] -> [Feature a Bool] -> (a->Float) -> Model a
 nullModel xs ys fs logfreq = Leaf
-    $ makeClass xs ys fs
-    $ classWt (length ys) logfreq
+    $ makeClass xs ys fs (length ys) logfreq
 
 weight :: Model a -> a -> Float
 weight model x =
-    (classWeight cls) (population cls) (sample cls) x
+    weightFromParams (clswtParams cls) (logfreqf cls x)
     where cls = featureLookup x model
 
 weights :: Model a -> [(a,Float)]
 weights model = fold $ fmap popWt model
     where popWt cls =
-            let clswt = (classWeight cls) (population cls) (sample cls)
-            in zip (population cls) $ map clswt (population cls)
+            let wt = \x -> weightFromParams (clswtParams cls) (logfreqf cls x)
+            in zip (population cls) $ map wt (population cls)
 
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
@@ -191,8 +189,8 @@ logLikelihood model xs = sum $ map (log.(weight model)) xs
 
 classRefinements :: Class a -> [Model a]
 classRefinements cls =
-    [ branch feat ( makeClass popt sampt feats (classWeight cls)
-                  , makeClass popf sampf feats (classWeight cls)
+    [ branch feat ( makeClass popt sampt feats (totalSampleSize cls) (logfreqf cls)
+                  , makeClass popf sampf feats (totalSampleSize cls) (logfreqf cls)
                   )
     | (feat, feats) <- picks (unusedFeatures cls)
     , let (popt,popf) = split feat (population cls)
