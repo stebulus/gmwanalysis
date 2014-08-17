@@ -110,6 +110,8 @@ data Class a = Class { population :: [a]
                      , sample :: [a]
                      , unusedFeatures :: [Feature a Bool]
                      }
+makeClass :: [a] -> [a] -> [Feature a Bool] -> Class a
+makeClass = Class
 
 type ClassWeight a c = [a] -> [a] -> a -> c
 
@@ -136,7 +138,7 @@ featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
 
 nullModel :: [a] -> [a] -> [Feature a Bool] -> Model a
-nullModel xs ys fs = Leaf $ Class xs ys fs
+nullModel xs ys fs = Leaf $ makeClass xs ys fs
 
 sampleSize :: Model a -> Int
 sampleSize = sum . (map (length . sample)) . Tree.toList
@@ -179,7 +181,7 @@ logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
 
 classRefinements :: Class a -> [Model a]
 classRefinements cls =
-    [ branch feat (Class popt sampt feats, Class popf sampf feats)
+    [ branch feat (makeClass popt sampt feats, makeClass popf sampf feats)
     | (feat, feats) <- picks (unusedFeatures cls)
     , let (popt,popf) = split feat (population cls)
     , let (sampt,sampf) = split feat (sample cls)
