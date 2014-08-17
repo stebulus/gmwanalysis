@@ -141,8 +141,6 @@ makeClass pop samp feats samplesz logfreqf =
     where params = makeParams samplesz logfreqf pop samp
           sampll = sum $ map (log . weightFromParams params . logfreqf) samp
 
-type ClassWeight a c = [a] -> [a] -> a -> c
-
 type Model a = Tree (Feature a Bool) (Class a)
 
 featureLookup :: a -> Tree (Feature a Bool) b -> b
