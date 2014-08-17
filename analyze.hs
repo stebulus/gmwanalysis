@@ -5,7 +5,7 @@ module Main where
 
 import Prelude hiding (sum)
 import Control.Monad
-import Data.Foldable (foldMap, fold, sum)
+import Data.Foldable (fold, sum)
 import Data.Function
 import Data.List (partition, sort, maximumBy, foldl')
 import Data.Map (Map)
@@ -106,7 +106,10 @@ data Feature a b = Feature { tag :: Text , func :: a->b }
 instance Show (Feature a b) where
     show f = "f\"" ++ unpack (tag f) ++ "\""
 
-type Class a = ([a],[a],[Feature a Bool])
+data Class a = Class { population :: [a]
+                     , sample :: [a]
+                     , unusedFeatures :: [Feature a Bool]
+                     }
 
 type ClassWeight a c = [a] -> [a] -> a -> c
 
@@ -133,25 +136,20 @@ featureLookup :: a -> Tree (Feature a Bool) b -> b
 featureLookup = Tree.lookup (\feat x -> (func feat) x)
 
 nullModel :: [a] -> [a] -> [Feature a Bool] -> Model a
-nullModel xs ys fs = Leaf (xs,ys,fs)
-
-population :: Model a -> [a]
-population = foldMap (\ (xs,_,_) -> xs)
-
-sample :: Model a -> [a]
-sample = foldMap (\ (_,ys,_) -> ys)
+nullModel xs ys fs = Leaf $ Class xs ys fs
 
 sampleSize :: Model a -> Int
-sampleSize = length . sample
+sampleSize = sum . (map (length . sample)) . Tree.toList
 
 weight :: Model a -> (a->Float) -> a -> Float
 weight model logfreq x = classWt model logfreq pop samp x
-    where (pop,samp,_) = featureLookup x model
+    where Class pop samp _ = featureLookup x model
 
 weights :: Model a -> (a->Float) -> [(a,Float)]
 weights model logfreq = fold $ fmap popWt model
-    where popWt (pop,samp,_) = let clswt = classWt model logfreq pop samp
-                               in zip pop $ map clswt pop
+    where popWt (Class pop samp _) =
+            let clswt = classWt model logfreq pop samp
+            in zip pop $ map clswt pop
 
 showWeight :: (Text, Float) -> String
 showWeight (word, weight) = printf "%s %.8f" (unpack word) (10000*weight)
@@ -171,7 +169,7 @@ hPutWeights hout model logfreq = do
 sampleLogLikelihood :: Model a -> (a->Float) -> Float
 sampleLogLikelihood model logfreq =
     sum $ do
-        (pop,samp,_) <- Tree.toList model
+        Class pop samp _ <- Tree.toList model
         let wt = classWt model logfreq pop samp
         map (log . wt) samp
 
@@ -179,8 +177,8 @@ logLikelihood :: Model a -> (a->Float) -> [a] -> Float
 logLikelihood model logfreq xs = sum $ map (log.(weight model logfreq)) xs
 
 classRefinements :: Class a -> [Model a]
-classRefinements (pop, samp, features) =
-    [ branch feat ((popt,sampt,feats),(popf,sampf,feats))
+classRefinements (Class pop samp features) =
+    [ branch feat (Class popt sampt feats, Class popf sampf feats)
     | (feat, feats) <- picks features
     , let (popt,popf) = split feat pop
     , let (sampt,sampf) = split feat samp
@@ -256,7 +254,9 @@ main = do
     bestmodel <- lastM
         $ map (\ (model, xval) -> do
             hPutStrLn stderr $ show
-                ( fmap (\ (pop,samp,feats) -> (length pop, length samp, length feats)) model
+                ( fmap (\ (Class pop samp feats) ->
+                           (length pop, length samp, length feats))
+                       model
                 , sampleLogLikelihood model logfreqf
                 , xval
                 )
