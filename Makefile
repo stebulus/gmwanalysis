@@ -55,6 +55,7 @@ misc/dict-wotd.set: $(foreach D,$(DICT_WOTD_DATES),misc/dict-wotd-$D.set)
 	cat $^ >$@
 misc/dict-wotd-%.set: misc/dict-wotd-%.html misc/dict-wotd
 	misc/dict-wotd $< >$@
+.SECONDARY: $(foreach D,$(DICT_WOTD_DATES),misc/dict-wotd-$D.html)
 misc/dict-wotd-%.html:
 	wget -O "$@" http://dictionary.reference.com/wordoftheday/archive/$$(echo $* |tr - /)
 misc/dict-wotd: misc/dict-wotd.hs
