@@ -45,7 +45,7 @@ wikt/all-macro-patterns.mk: wikt/all-macro-patterns
 	  |awk -F'\t' '{print "wikt/" $$1 ".set: wikt/reduced"; \
           print "\tegrep -e \"" $$2 "\" $$< |cut -d\\  -f1 >$$@"; \
 	  print "SETS += wikt/" $$1 ".set" }' >$@
-wikt/all-macro-patterns: wikt/macro-patterns wikt/etyls
+wikt/all-macro-patterns: wikt/macro-patterns  # wikt/etyls
 	cat $^ >$@
 
 SETS += misc/dict-wotd.set
